@@ -54,19 +54,26 @@ struct Communication {
    * form, or in the least-processed form available, if the original
    * is not available. 
    */
-  4: optional string text
+  4: required string rawText
+
+  /**
+   * Text that can be lightly processed - for example, taking an
+   * HTML document and removing tags so that NLP tools can better
+   * run over it. 
+   */
+  5: optional string cleanText
 
   /** 
    * The time when this communication started (in unix time UTC --
    * i.e., seconds since January 1, 1970).  
    */
-  5: optional i64 startTime
+  6: optional i64 startTime
 
   /** 
    * The time when this communication ended (in unix time UTC --
    * i.e., seconds since January 1, 1970). 
    */
-  6: optional i64 endTime
+  7: optional i64 endTime
   
   /** 
    * Theories about the languages that are present in this
