@@ -284,6 +284,26 @@ struct TokenLattice {
   4: optional LatticePath cachedBestPath
 }
 
+/** 
+ * A wrapper around a list of tokens. 
+ */
+struct TokenList {
+  /*
+   * An *ordered* list of tokens.
+   */
+  1 : required list<Token> tokenList
+
+  /*
+   * Optionally provide an explicit representation of the
+   * text, as seen by the tokenizer that produced the containing
+   * tokenization. When provided, this field gives easy access to 
+   * a common form for all tools and annotations relying on this
+   * containing tokenization.
+   */
+  2 : optional string reconstructedText
+}
+
+
 /**
  * Enumerated types of Tokenizations
  */
@@ -301,7 +321,7 @@ enum TokenizationKind {
  * machine translation systems, text normalizers, part-of-speech
  * taggers, and stemmers.
  *
- * Each Tokenization is encoded using either a single list of tokens,
+ * Each Tokenization is encoded using either a TokenList
  * or a TokenLattice. (If you want to encode an n-best list, then
  * you should store it as n separate Tokenization objects.) The
  * "kind" field is used to indicate whether this Tokenization contains
@@ -334,10 +354,12 @@ struct Tokenization {
   2: optional metadata.AnnotationMetadata metadata
   
   /**
-   * An ordered list of the tokens in this tokenization.  This field
-   * should only have a value if kind==TOKEN_LIST. 
+   * A wrapper around an ordered list of the tokens in this tokenization.  
+   * This may also give easy access to the "reconstructed text" associated
+   * with this tokenization.
+   * This field should only have a value if kind==TOKEN_LIST. 
    */
-  3: optional list<Token> tokenList
+  3: optional TokenList tokenList
 
   /**
    * A lattice that compactly describes a set of token sequences that
