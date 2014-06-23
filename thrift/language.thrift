@@ -3,6 +3,7 @@ namespace py concrete.language
 #@namespace scala edu.jhu.hlt.miser
 
 include "metadata.thrift"
+include "uuid.thrift"
 
 /** 
  * A theory about what languages are present in a given communication
@@ -13,7 +14,7 @@ struct LanguageIdentification {
   /**
    * Unique identifier for this language identification.
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /**
    * Information about where this language identification came from.

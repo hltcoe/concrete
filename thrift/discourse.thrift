@@ -3,28 +3,29 @@ namespace py concrete.discourse
 #@namespace scala edu.jhu.hlt.miser
 
 include "metadata.thrift"
+include "uuid.thrift"
 
 /**
  * A reference to an Entity in a Communication.
  */
 struct EntityRef {
-  1: required string entityId                // type=Entity
-  2: required string communicationId        // type=Communication
+  1: required UUID entityId                // type=Entity
+  2: required UUID communicationId        // type=Communication
 }
 
 /**
  * A reference to a Situation in a Communication.
  */
 struct SituationRef {
-  1: required string situationId                // type=Situation
-  2: required string communicationId        // type=Communication
+  1: required UUID situationId                // type=Situation
+  2: required UUID communicationId        // type=Communication
 }
 
 /**
  * Represents one Entity in a cross-doc situation coref/alignment.
  */
 struct DiscourseEntity {
-  1: required string uuid
+  1: required UUID uuid
   2: required list<EntityRef> entityRefList                        // all mentions of this entity
   3: optional double confidence
 }
@@ -33,7 +34,7 @@ struct DiscourseEntity {
  * Represents one Situation in a cross-doc situation coref/alignment.
  */
 struct DiscourseSituation {
-  1: required string uuid
+  1: required UUID uuid
   2: required list<SituationRef> situationRefList                // all mentions of this situation
   3: optional double confidence
 }
@@ -45,7 +46,7 @@ struct DiscourseAnnotation {        // come in gold and synthetic varieties
   /**
    * The ID associated with this DiscourseAnnotation.
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /**
    * The metadata associated with the tool responsible for suggesting this DiscourseAnnotation.
@@ -70,7 +71,7 @@ struct DiscourseAnnotation {        // come in gold and synthetic varieties
  */
 struct Discourse {        
   // the ID associated with this Discourse object.
-  1: required string uuid
+  1: required UUID uuid
 
   /**
    * The tool that identified this set of Communications

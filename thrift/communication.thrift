@@ -2,6 +2,7 @@ namespace java edu.jhu.hlt.concrete
 namespace py concrete.communication
 #@namespace scala edu.jhu.hlt.miser
 
+include "uuid.thrift"
 include "language.thrift"
 include "structure.thrift"
 include "entities.thrift"
@@ -38,7 +39,7 @@ struct Communication {
    * This is generated randomly, and can *not* be mapped back to the
    * source corpus. It is used as a target for symbolic "pointers".
    */
-  2: required string uuid
+  2: required UUID uuid
 
   /** 
    * An enumeration used to indicate what type of communication this

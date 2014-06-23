@@ -4,6 +4,7 @@ namespace py concrete.entities
 
 include "structure.thrift"
 include "metadata.thrift"
+include "uuid.thrift"
 
 /** 
  * A span of text with a specific referent, such as a person,
@@ -40,13 +41,13 @@ struct Entity {
   /**
    * Unique identifier for this entity.
    */
-  1: required string uuid
+  1: required UUID uuid
   
   /**
    * An list of pointers to all of the mentions of this Entity's
    * referent.  (type=EntityMention) 
    */
-  2: required list<string> mentionIdList
+  2: required list<UUID> mentionIdList
 
   /**
    * The basic type of this entity's referent. 
@@ -76,7 +77,7 @@ struct EntitySet {
   /** 
    * Unique identifier for this set. 
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /**
    * Information about where this set came from.
@@ -117,7 +118,7 @@ struct EntityMention {
   /*
    * A unique idenifier for this entity mention.
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /**
    * List of mentions in this set.
@@ -161,7 +162,7 @@ struct EntityMentionSet {
   /** 
    * Unique identifier for this set. 
    */
-  1: required string uuid
+  1: required UUID uuid
   
   /**
    * Information about where this set came from. 
