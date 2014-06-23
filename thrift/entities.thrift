@@ -6,6 +6,8 @@ include "structure.thrift"
 include "metadata.thrift"
 include "uuid.thrift"
 
+typedef uuid.UUID UUID
+
 /** 
  * A span of text with a specific referent, such as a person,
  * organization, or time. Things that can be referred to by a mention

@@ -5,6 +5,10 @@ namespace py concrete.language
 include "metadata.thrift"
 include "uuid.thrift"
 
+
+
+typedef uuid.UUID UUID
+
 /** 
  * A theory about what languages are present in a given communication
  * or piece of communication.  Note that it is possible to have more

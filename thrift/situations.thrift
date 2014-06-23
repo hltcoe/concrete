@@ -6,6 +6,8 @@ include "structure.thrift"
 include "metadata.thrift"
 include "uuid.thrift"
 
+typedef uuid.UUID UUID
+
 /** 
  * A situation argument, consisting of an argument role and a value.
  * Argument values may be Entities or Situations. 

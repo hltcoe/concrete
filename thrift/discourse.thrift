@@ -5,6 +5,8 @@ namespace py concrete.discourse
 include "metadata.thrift"
 include "uuid.thrift"
 
+typedef uuid.UUID UUID
+
 /**
  * A reference to an Entity in a Communication.
  */

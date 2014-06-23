@@ -6,6 +6,8 @@ include "metadata.thrift"
 include "spans.thrift"
 include "uuid.thrift"
 
+typedef uuid.UUID UUID
+
 //===========================================================================
 // Tokens & Tokenizations
 //===========================================================================
