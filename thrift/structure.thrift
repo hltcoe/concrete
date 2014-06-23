@@ -144,7 +144,7 @@ struct TokenTagging {
    * The mapping from tokens to annotations.
    * This may be a partial mapping. 
    */
-  3: list<TaggedToken> taggedTokenList
+  3: required list<TaggedToken> taggedTokenList
 }
 
 struct Dependency {
@@ -327,7 +327,7 @@ struct Tokenization {
   /*
    * Unique identifier for this tokenization. 
    */ 
-  1: UUID uuid
+  1: required UUID uuid
 
   /**
    * Information about where this tokenization came from.
@@ -351,7 +351,7 @@ struct Tokenization {
    * Enumerated value indicating whether this tokenization is
    * implemented using an n-best list or a lattice.
    */
-  5: TokenizationKind kind
+  5: required TokenizationKind kind
   
   6: optional TokenTagging posTagList
   7: optional TokenTagging nerTagList
@@ -411,7 +411,7 @@ struct Sentence {
  * SentenceSegmentation should be ordered and non-overlapping. 
  */
 struct SentenceSegmentation {
-  1: UUID uuid
+  1: required UUID uuid
 
   /**
    * Information about where this segmentation came from.
