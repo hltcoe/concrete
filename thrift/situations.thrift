@@ -4,6 +4,7 @@ namespace py concrete.situations
 
 include "structure.thrift"
 include "metadata.thrift"
+include "uuid.thrift"
 
 /** 
  * A situation argument, consisting of an argument role and a value.
@@ -22,12 +23,12 @@ struct Argument {
    * A pointer to the value of this argument, if it is explicitly
    * encoded as an Entity.
    */
-  2: optional string entityId
+  2: optional UUID entityId
 
   /**
    * A pointer to the value of this argument, if it is a situation.
    */
-  3: optional string situationId
+  3: optional UUID situationId
   
   /** 
    * New roles should usually be added to the enum, but for use
@@ -49,7 +50,7 @@ struct Justification {
   /** 
    * A pointer to the SituationMention itself. 
    */
-  2: required string mentionId
+  2: required UUID mentionId
 
   /** 
    * An optional list of pointers to tokens that are (especially)
@@ -78,7 +79,7 @@ struct Situation {
   /** 
    * Unique identifier for this situation. 
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /** 
    * The core type of this situation (eg EVENT or SENTIMENT).
@@ -97,7 +98,7 @@ struct Situation {
    * Ids of the mentions of this situation in a communication
    * (type=SituationMention) 
    */
-  4: optional list<string> mentionIdList
+  4: optional list<UUID> mentionIdList
 
   /** 
    * An list of pointers to SituationMentions that provide
@@ -176,7 +177,7 @@ struct SituationSet {
   /** 
    * Unique identifier for this set. 
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /** 
    * Information about where this set came from. 
@@ -206,12 +207,12 @@ struct MentionArgument {
    * A pointer to the value of an EntityMention, if this is being used to support
    * an EntityMention.
    */
-  2: optional string entityMentionId
+  2: optional UUID entityMentionId
 
   /**
    * A pointer to the value of this argument, if it is a SituationMention.
    */
-  3: optional string situationMentionId
+  3: optional UUID situationMentionId
   
   /** 
    * New roles should usually be added to the enum, but for use
@@ -238,7 +239,7 @@ struct SituationMention {
   /** 
    * Unique identifier for this situation. 
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /** 
    * The text content of this situation mention. This field is
@@ -319,7 +320,7 @@ struct SituationMentionSet {
   /** 
    * Unique identifier for this set. 
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /** 
    * Information about where this set came from. 

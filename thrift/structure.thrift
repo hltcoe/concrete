@@ -4,6 +4,7 @@ namespace py concrete.structure
 
 include "metadata.thrift"
 include "spans.thrift"
+include "uuid.thrift"
 
 //===========================================================================
 // Tokens & Tokenizations
@@ -75,7 +76,7 @@ struct TokenRefSequence {
   /** 
    * The UUID of the tokenization that contains the tokens. 
    */
-  3: required string tokenizationId
+  3: required UUID tokenizationId
 
   /**
    * The text span associated with this TokenRefSequence.
@@ -130,7 +131,7 @@ struct TokenTagging {
   /**
    * The UUID of this TokenTagging object.
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /** 
    * Information about where the annotation came from.
@@ -156,7 +157,7 @@ struct Dependency {
  * Represents a dependency parse with typed edges.
  */
 struct DependencyParse {
-  1: required string uuid
+  1: required UUID uuid
   2: optional metadata.AnnotationMetadata metadata
   3: required list<Dependency> dependencyList
 }
@@ -213,7 +214,7 @@ struct Constituent {
  * using a simple tree or a parse forest.
  */
 struct Parse {
-  1: required string uuid
+  1: required UUID uuid
   2: optional metadata.AnnotationMetadata metadata
   3: required list<Constituent> constituentList
 }
@@ -326,7 +327,7 @@ struct Tokenization {
   /*
    * Unique identifier for this tokenization. 
    */ 
-  1: string uuid
+  1: UUID uuid
 
   /**
    * Information about where this tokenization came from.
@@ -363,7 +364,7 @@ struct Tokenization {
   /**
    * A pointer to the sentence from which this Tokenization was generated.
    */
-  12: optional string sentenceId
+  12: optional UUID sentenceId
 }
 
 struct TokenizationCollection {
@@ -379,7 +380,7 @@ struct TokenizationCollection {
  * A single sentence or utterance in a communication. 
  */
 struct Sentence {
-  1: required string uuid
+  1: required UUID uuid
   
   /** 
    * Theories about the tokens that make up this sentence.  For text
@@ -410,7 +411,7 @@ struct Sentence {
  * SentenceSegmentation should be ordered and non-overlapping. 
  */
 struct SentenceSegmentation {
-  1: string uuid
+  1: UUID uuid
 
   /**
    * Information about where this segmentation came from.
@@ -433,7 +434,7 @@ struct SentenceSegmentation {
    * A UUID pointer to the "parent" Section that this SentenceSegmentation
    * is associated with. 
    */
-  4: optional string sectionId
+  4: optional UUID sectionId
 }
 
 /**
@@ -455,7 +456,7 @@ struct SentenceSegmentationCollection {
  * contain a list of sentences. 
  */
 struct Section { 
-  1: required string uuid
+  1: required UUID uuid
   
   /**
    * Theories about how this section is divided into sentences.
@@ -503,7 +504,7 @@ struct SectionSegmentation {
   /**
    * Unique identifier for this segmentation.
    */
-  1: required string uuid
+  1: required UUID uuid
 
   /**
    * Information about where this segmentation came from.
