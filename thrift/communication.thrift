@@ -1,3 +1,9 @@
+/*
+ * Copyright 2012-2014 Johns Hopkins University HLTCOE. All rights reserved.
+ * This software is released under the 2-clause BSD license.
+ * See LICENSE in the project root directory.
+ */
+
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.communication
 #@namespace scala edu.jhu.hlt.miser
@@ -11,8 +17,6 @@ include "email.thrift"
 include "twitter.thrift"
 include "audio.thrift"
 include "nitf.thrift"
-
-
 
 typedef uuid.UUID UUID
 
