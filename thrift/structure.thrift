@@ -51,11 +51,21 @@ struct Token {
    * may be given a value indicating "approximately" where the token
    * comes from. A span covering the entire sentence may be used if
    * no more precise value seems appropriate. 
+   *
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation.    
    */
   3: optional spans.TextSpan textSpan
 
   /** 
    * Location of this token in the original audio. 
+   *
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation.    
    */
   5: optional spans.AudioSpan audioSpan
 }
@@ -88,11 +98,21 @@ struct TokenRefSequence {
 
   /**
    * The text span associated with this TokenRefSequence.
+   *
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation.    
    */
   4: optional spans.TextSpan textSpan
 
   /** 
    * The audio span associated with this TokenRefSequence.
+   *
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation.    
    */
   5: optional spans.AudioSpan audioSpan
 }
@@ -404,11 +424,21 @@ struct Sentence {
 
   /**
    * Location of this sentence in the original text.
+   *
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation.    
    */
   3: optional spans.TextSpan textSpan
   
   /**
    * Location of this sentence in the original audio.
+   *
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation.    
    */
   4: optional spans.AudioSpan audioSpan
 }
@@ -464,6 +494,9 @@ struct SentenceSegmentationCollection {
  * contain a list of sentences. 
  */
 struct Section { 
+  /**
+   * The unique identifier for this section. 
+   */
   1: required UUID uuid
   
   /**
@@ -473,11 +506,21 @@ struct Section {
   
   /**
    * Location of this section in the original text.
+   *
+   * NOTE: This text span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation. 
    */
   3: optional spans.TextSpan textSpan
 
   /**
    * Location of this section in the original audio. 
+   * 
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation. 
    */
   9: optional spans.AudioSpan audioSpan
 
@@ -487,7 +530,8 @@ struct Section {
   4: required string kind
   
   /**
-   * The name of the section
+   * The name of the section. For example, a title of a section on 
+   * Wikipedia. 
    */
   5: optional string label
 

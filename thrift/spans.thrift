@@ -21,6 +21,11 @@ namespace py concrete.spans
  * (unicode) string data type. If you are using a Python build where
  * sys.maxunicode==0xffffffff, then you would need to encode the
  * unicode string using UTF-16 before using the character offsets. 
+ *
+ * NOTE: This span represents a best guess, or 'provenance':
+ * it cannot be guaranteed that this text span matches the _exact_
+ * text of the original document, but is the annotation's best
+ * effort at such a representation.    
  */
 struct TextSpan {
   /** 
@@ -37,6 +42,11 @@ struct TextSpan {
 /** 
  * A span of audio within a single communication, identified by a
  * pair of time offests. Time offsets are zero-based.
+ *
+ * NOTE: This span represents a best guess, or 'provenance':
+ * it cannot be guaranteed that this text span matches the _exact_
+ * text of the original document, but is the annotation's best
+ * effort at such a representation. 
  */
 struct AudioSpan {
   /**
