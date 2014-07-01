@@ -13,6 +13,7 @@ include "metadata.thrift"
 include "uuid.thrift"
 
 typedef uuid.UUID UUID
+typedef metadata.AnnotationMetadata MD
 
 /**
  * Attached to Arguments to support situations where
@@ -28,7 +29,7 @@ struct Property {
   /**
    * Metadata to support this particular property object.
    */  
-  2: optional AnnotationMetadata metadata
+  2: optional MD metadata
   
   /** 
    * This value is typically boolean, 0.0 or 1.0, but we use a
