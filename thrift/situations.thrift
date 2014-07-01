@@ -20,8 +20,23 @@ typedef uuid.UUID UUID
  * whereas Arguments notionally only support one Role. 
  */
 struct Property {
+  /**
+   * The required value of the property.
+   */
   1: required string value
-  2: optional string description
+  
+  /**
+   * Metadata to support this particular property object.
+   */  
+  2: optional AnnotationMetadata metadata
+  
+  /** 
+   * This value is typically boolean, 0.0 or 1.0, but we use a
+   * float in order to potentially capture cases where an annotator is
+   * highly confident that the value is underspecified, via a value of
+   * 0.5.  
+   */
+  3: optional double polarity
 }
 
 /** 
