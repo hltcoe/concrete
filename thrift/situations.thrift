@@ -13,6 +13,32 @@ include "metadata.thrift"
 include "uuid.thrift"
 
 typedef uuid.UUID UUID
+typedef metadata.AnnotationMetadata MD
+
+/**
+ * Attached to Arguments to support situations where
+ * a 'participant' has more than one 'property' (in BinarySRL terms),
+ * whereas Arguments notionally only support one Role. 
+ */
+struct Property {
+  /**
+   * The required value of the property.
+   */
+  1: required string value
+  
+  /**
+   * Metadata to support this particular property object.
+   */  
+  2: optional MD metadata
+  
+  /** 
+   * This value is typically boolean, 0.0 or 1.0, but we use a
+   * float in order to potentially capture cases where an annotator is
+   * highly confident that the value is underspecified, via a value of
+   * 0.5.  
+   */
+  3: optional double polarity
+}
 
 /** 
  * A situation argument, consisting of an argument role and a value.
@@ -45,6 +71,13 @@ struct Argument {
    * analytic, with roles eventually "hardening" and moving to the enum. 
    */
   4: optional string roleLabel
+
+  /**
+   * For the BinarySRL task, there may be situations
+   * where more than one property is attached to a single
+   * participant. A list of these properties can be stored in this field.
+   */
+  5: optional list<Property> properties
 }
 
 struct Justification {
