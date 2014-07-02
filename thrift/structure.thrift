@@ -320,7 +320,7 @@ struct TokenList {
   /*
    * An *ordered* list of tokens.
    */
-  1 : required list<Token> tokenList
+  1 : required list<Token> tokens
 
   /*
    * Optionally provide an explicit representation of the
