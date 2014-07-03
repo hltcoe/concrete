@@ -104,6 +104,31 @@ struct Justification {
 }
 
 //===========================================================================
+// TimeML annotations
+//===========================================================================
+
+/** 
+ * A wrapper for various TimeML annotations.
+ */
+
+struct TimeML {
+  /** 
+   * The TimeML class for situations representing TimeML events 
+   */
+  1: optional string timemlClass
+  
+  /** 
+   * The TimeML tense for situations representing TimeML events 
+   */
+  2: optional string timemlTense
+  
+  /** 
+   * The TimeML aspect for situations representing TimeML events 
+   */
+  3: optional string timemlAspect
+}
+
+//===========================================================================
 // Situations
 //===========================================================================
 
@@ -173,20 +198,10 @@ struct Situation {
    */
   53: optional string situationKindLemma
   
-  /** 
-   * The TimeML class for situations representing TimeML events 
+  /**
+   * A wrapper for TimeML annotations.
    */
-  54: optional string timemlClass
-  
-  /** 
-   * The TimeML tense for situations representing TimeML events 
-   */
-  55: optional string timemlTense
-  
-  /** 
-   * The TimeML aspect for situations representing TimeML events 
-   */
-  56: optional string timemlAspect
+  54: optional TimeML timeML
 
   /** 
    * An "intensity" rating for this situation, typically ranging from
