@@ -87,37 +87,37 @@ struct Communication {
    * Theories about the languages that are present in this
    * communication. 
    */
-  10: optional list<language.LanguageIdentification> lids
+  10: optional list<language.LanguageIdentification> lidList
 
   
   /**
    * Theories about the block structure of this communication.
    */
-  11: optional list<structure.SectionSegmentation> sectionSegmentations
+  11: optional list<structure.SectionSegmentation> sectionSegmentationList
 
   /** 
    * Theories about which spans of text are used to mention entities
    * in this communication. 
    */
-  12: optional list<entities.EntityMentionSet> entityMentionSets
+  12: optional list<entities.EntityMentionSet> entityMentionSetList
 
   /** 
    * Theories about what entities are discussed in this
    * communication, with pointers to individual mentions. 
    */
-  13: optional list<entities.EntitySet> entitySets
+  13: optional list<entities.EntitySet> entitySetList
 
   /** 
    * Theories about what situations are explicitly mentioned in this
    * communication. 
    */
-  14: optional list<situations.SituationMentionSet> situationMentionSets
+  14: optional list<situations.SituationMentionSet> situationMentionSetList
 
   /** 
    * Theories about what situations are asserted in this
    * communication. 
    */
-  15: optional list<situations.SituationSet> situationSets
+  15: optional list<situations.SituationSet> situationSetList
   
   /** 
    * The full audio contents of this communication in its original

@@ -320,7 +320,7 @@ struct TokenList {
   /*
    * An *ordered* list of tokens.
    */
-  1 : required list<Token> tokens
+  1 : required list<Token> tokenList
 
   /*
    * Optionally provide an explicit representation of the
@@ -524,7 +524,7 @@ struct Section {
   /**
    * Theories about how this section is divided into sentences.
    */ 
-  2: optional list<SentenceSegmentation> sentenceSegmentation
+  2: optional list<SentenceSegmentation> sentenceSegmentationList
   
   /**
    * Location of this section in the original text.
@@ -566,7 +566,7 @@ struct Section {
    * arranged linearly, where reading these numbers should not be required
    * to get a start-to-finish enumeration of the Communication's content.
    */
-  6: optional list<i32> number
+  6: optional list<i32> numberList
 }
 
 /** 

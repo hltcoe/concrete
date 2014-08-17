@@ -77,7 +77,7 @@ struct Argument {
    * where more than one property is attached to a single
    * participant. A list of these properties can be stored in this field.
    */
-  5: optional list<Property> properties
+  5: optional list<Property> propertyList
 }
 
 struct Justification {
@@ -100,7 +100,7 @@ struct Justification {
    * analytics to decide what tokens (if any) they wish to include
    * in this field. 
    */
-  3: optional list<structure.TokenRefSequence> tokens
+  3: optional list<structure.TokenRefSequence> tokenRefSeqList
 }
 
 //===========================================================================

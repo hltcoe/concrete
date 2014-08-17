@@ -67,7 +67,7 @@ struct NITFInfo {
    * <li>Politics and Government (U.S.) <li>Books and Magazines <li>Royalty
    * </ol>
    */
-  5: optional list<string> biographicalCategories
+  5: optional list<string> biographicalCategoryList
 
   /**
    * The body field is the text content of the article. Please note that this
@@ -180,7 +180,7 @@ struct NITFInfo {
    * <li>VIOLINS
    * </ol>
    */
-  15: optional list<string> descriptors
+  15: optional list<string> descriptorList
 
   /**
    * The
@@ -200,7 +200,7 @@ struct NITFInfo {
    * <li>Ranches
    * </ol>
    */
-  17: list<string> generalOnlineDescriptors
+  17: optional list<string> generalOnlineDescriptorList
 
   /**
    * The GUID field specifies a an integer that is guaranteed to be unique for
@@ -240,7 +240,7 @@ struct NITFInfo {
    * <li>Park Slope (NYC)
    * </ol>
    */
-  22: optional list<string> locations
+  22: optional list<string> locationList
 
   /**
    * The �names� field specifies a list of names mentioned in the article.
@@ -254,7 +254,7 @@ struct NITFInfo {
    * <li>Chris Schenkel
    * </ol>
    */
-  23: optional list<string> names
+  23: optional list<string> nameList
 
   /**
    * This field specifies the desk in the New York Times newsroom that
@@ -282,7 +282,7 @@ struct NITFInfo {
    * <li>Cooking and Cookbooks
    * </ol>
    */
-  26: optional list<string> onlineDescriptors
+  26: optional list<string> onlineDescriptorList
 
   /**
    * This field specifies the headline displayed with the article on
@@ -308,7 +308,7 @@ struct NITFInfo {
    * <li>Arcadia
    * </ol>
    */
-  29: optional list<string> onlineLocations
+  29: optional list<string> onlineLocationList
 
   /**
    * This field specifies a list of organizations that correspond to
@@ -322,7 +322,7 @@ struct NITFInfo {
    * <li>Rose Center
    * </ol>
    */
-  30: optional list<string> onlineOrganizations
+  30: optional list<string> onlineOrganizationList
 
   /**
    * This field specifies a list of people that correspond to individuals
@@ -357,7 +357,7 @@ struct NITFInfo {
    * <li>Bridge & Tunnel (Play)
    * </ol>
    */
-  33: optional list<string> onlineTitles
+  33: optional list<string> onlineTitleList
 
   /**
    * This field specifies a list of organization names drawn from a normalized
@@ -372,7 +372,7 @@ struct NITFInfo {
    * <li>CONNECTICUT GRAND OPERA
    * </ol>
    */
-  34: optional list<string> organizations
+  34: optional list<string> organizationList
 
   /**
    * This field specifies the page of the section in the paper in which the
@@ -395,7 +395,7 @@ struct NITFInfo {
    * <li>COLLINS, GLENN
    * </ol>
    */
-  36: optional list<string> people
+  36: optional list<string> peopleList
 
   /**
    * This field specifies the date of the article�s publication.
@@ -464,7 +464,7 @@ struct NITFInfo {
    * <li>Top/Opinion
    * </ol>
    */
-  45: optional list<string> taxonomicClassifiers
+  45: optional list<string> taxonomicClassifierList
 
   /**
    * This field specifies a list of authored works that correspond to works
@@ -478,7 +478,7 @@ struct NITFInfo {
    * <li>BATTLEFIELD EARTH (BOOK)
    * </ol>
    */
-  46: optional list<string> titles
+  46: optional list<string> titleList
 
   /**
    * This field specifies a normalized list of terms describing the general
@@ -492,7 +492,7 @@ struct NITFInfo {
    * <li>ANALYSIS
    * </ol>
    */
-  47: optional list<string> typesOfMaterial
+  47: optional list<string> typesOfMaterialList
 
   /**
    * This field specifies the location on nytimes.com of the article. The
