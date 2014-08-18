@@ -403,12 +403,12 @@ struct Tokenization {
    */
   5: required TokenizationKind kind
   
-  6: optional TokenTagging posTagList
-  7: optional TokenTagging nerTagList
-  8: optional TokenTagging lemmaList
-  9: optional TokenTagging langIdList
+  6: optional list<TokenTagging> posTagList
+  7: optional list<TokenTagging> nerTagList
+  8: optional list<TokenTagging> lemmaList
+  9: optional list<TokenTagging> langIdList
 
-  10: optional Parse parse
+  10: optional list<Parse> parse
   11: optional list<DependencyParse> dependencyParseList
   
   /**
