@@ -417,12 +417,6 @@ struct Tokenization {
   12: optional UUID sentenceId
 }
 
-struct TokenizationCollection {
-  1: required metadata.AnnotationMetadata metadata
-  2: required list<Tokenization> tokenizationList
-  
-}
-
 //===========================================================================
 // Sentences
 //===========================================================================
@@ -495,15 +489,6 @@ struct SentenceSegmentation {
    * is associated with. 
    */
   4: optional UUID sectionId
-}
-
-/**
- * A simple wrapper around a list of SentenceSegmentations, used by the API 
- * to better wrap up and merge results.
- */
-struct SentenceSegmentationCollection {
-  1: required metadata.AnnotationMetadata metadata
-  2: required list<SentenceSegmentation> sentSegList
 }
 
 //===========================================================================
