@@ -17,8 +17,29 @@ include "email.thrift"
 include "twitter.thrift"
 include "audio.thrift"
 include "nitf.thrift"
+include "metadata.thrift"
 
 typedef uuid.UUID UUID
+typedef metadata.AnnotationMetadata Metadata
+
+/**
+ * A struct that represents information about where a communication
+ * originated from. This was created in order to represent a
+ * notion of derived communications from systems like machine
+ * translation.
+ */
+struct Derivation {
+  /**
+   * Pointer to derived parent's UUID.
+   */
+  1: required UUID parentUuid
+
+  /**
+   * AnnotationMetadata object. Useful to determine
+   * what tool is responsible for producing this derived communication.
+   */
+  2: required Metadata metadata
+}
 
 /** 
  * A single communication instance, containing linguistic content
@@ -150,4 +171,21 @@ struct Communication {
    * A catch-all store of keys and values. Use sparingly!
    */
   30: optional map<string, string> keyValueMap
+
+  
+  /**
+   * Is this a derived communication (e.g., via machine translation)?
+   *
+   * Required to encourage developers to label appropriately.
+   */ 
+  40: required bool isDerived
+
+  /**
+   * Information about how this communication originated, if
+   * it is derived. 
+   *
+   * Validation will require this field be set if isDerived is set
+   * to true. 
+   */ 
+  41: optional Derivation derivation
 }
