@@ -97,13 +97,6 @@ struct Communication {
    */
   6: optional i64 endTime
 
-  /**
-   * Text that can be lightly processed - for example, taking an
-   * HTML document and removing tags so that NLP tools can better
-   * run over it. 
-   */
-  7: optional string processedContent
-  
   /** 
    * Theories about the languages that are present in this
    * communication. 
