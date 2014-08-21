@@ -64,20 +64,12 @@ struct Argument {
    */
   3: optional UUID situationId
   
-  /** 
-   * New roles should usually be added to the enum, but for use
-   * cases with many varied and possibly dynamic role names, this can be
-   * used. Presumably this would only be used in a prototype stage of an
-   * analytic, with roles eventually "hardening" and moving to the enum. 
-   */
-  4: optional string roleLabel
-
   /**
    * For the BinarySRL task, there may be situations
    * where more than one property is attached to a single
    * participant. A list of these properties can be stored in this field.
    */
-  5: optional list<Property> propertyList
+  4: optional list<Property> propertyList
 }
 
 struct Justification {
@@ -269,14 +261,6 @@ struct MentionArgument {
    * A pointer to the value of this argument, if it is a SituationMention.
    */
   3: optional UUID situationMentionId
-  
-  /** 
-   * New roles should usually be added to the enum, but for use
-   * cases with many varied and possibly dynamic role names, this can be
-   * used. Presumably this would only be used in a prototype stage of an
-   * analytic, with roles eventually "hardening" and moving to the enum. 
-   */
-  4: optional string roleLabel
 }
 
 //===========================================================================
