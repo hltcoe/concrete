@@ -8,6 +8,10 @@ namespace java edu.jhu.hlt.concrete
 namespace py concrete.metadata
 #@namespace scala edu.jhu.hlt.miser
 
+import "metadata.thrift"
+
+typedef uuid.UUID UUID
+
 //===========================================================================
 // Metadata
 //===========================================================================
@@ -61,4 +65,9 @@ struct AnnotationMetadata {
    * wishes to carry over.
    */
   4: optional Digest digest
+
+  /**
+   * A UUID pointer that identifies this AnnotationMetadata object.
+   */
+  5: required UUID uuid
 }
