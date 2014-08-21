@@ -408,9 +408,9 @@ struct Tokenization {
   8: optional list<TokenTagging> lemmaList
   9: optional list<TokenTagging> langIdList
 
-  10: optional list<Parse> parse
+  10: optional list<Parse> parseList
   11: optional list<DependencyParse> dependencyParseList
-  12: optional list<TokenTagging> TokenAnnotationsList 
+  12: optional list<TokenTagging> tokenAnnotationsList
   
   /**
    * A pointer to the sentence from which this Tokenization was generated.
