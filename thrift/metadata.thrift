@@ -67,7 +67,11 @@ struct AnnotationMetadata {
   4: optional Digest digest
 
   /**
-   * A UUID pointer that identifies this AnnotationMetadata object.
+   * A UUID pointer that identifies the annotation that the
+   * accompanying "annotation" object refers to.
+   *
+   * e.g., for a Tokenization, this would be a UUID of its parent
+   * SentenceSegmentation.
    */
-  5: required UUID uuid
+  5: required UUID annotationParentUUID
 }
