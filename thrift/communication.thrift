@@ -22,6 +22,16 @@ include "metadata.thrift"
 typedef uuid.UUID UUID
 typedef metadata.AnnotationMetadata Metadata
 
+struct ExistingTheories {
+  1: required map<string, UUID> nameToSectSegTheoryMap
+  2: required map<string, UUID> nameToSentSegTheoryMap
+  3: required map<string, UUID> nameToTokenizationTheoryMap
+  4: required map<string, UUID> 
+
+
+  // 4: required map<string, UUID>
+}
+
 /**
  * A struct that represents information about where a communication
  * originated from. This was created in order to represent a
