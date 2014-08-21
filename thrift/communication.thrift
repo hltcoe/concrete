@@ -26,6 +26,7 @@ struct ExistingTheories {
   1: required map<string, UUID> nameToSectSegTheoryMap
   2: required map<string, UUID> nameToSentSegTheoryMap
   3: required map<string, UUID> nameToTokenizationTheoryMap
+
   4: required map<string, UUID> nameToPOSTagTheoryMap
   5: required map<string, UUID> nameToNERTagTheoryMap
   6: required map<string, UUID> nameToLemmaTheoryMap
@@ -33,6 +34,11 @@ struct ExistingTheories {
   8: required map<string, UUID> nameToParseTheoryMap
   9: required map<string, UUID> nameToDependencyParseTheoryMap
   10: required map<string, UUID> nameToTokenAnnotationTheoryMap
+
+  11: required map<string, UUID> nameToEntityMentionSetTheoryMap
+  12: required map<string, UUID> nameToEntitySetTheoryMap
+  13: required map<string, UUID> nameToSituationMentionSetMap
+  14: required map<string, UUID> nameToSituationSetMap
 }
 
 /**
