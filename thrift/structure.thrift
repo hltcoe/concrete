@@ -411,11 +411,6 @@ struct Tokenization {
   10: optional list<Parse> parseList
   11: optional list<DependencyParse> dependencyParseList
   12: optional list<TokenTagging> tokenAnnotationsList
-  
-  /**
-   * A pointer to the sentence from which this Tokenization was generated.
-   */
-  12: optional UUID sentenceId
 }
 
 //===========================================================================
@@ -484,12 +479,6 @@ struct SentenceSegmentation {
    * systems. 
    */
   3: required list<Sentence> sentenceList
-  
-  /**
-   * A UUID pointer to the "parent" Section that this SentenceSegmentation
-   * is associated with. 
-   */
-  4: optional UUID sectionId
 }
 
 //===========================================================================
