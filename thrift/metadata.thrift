@@ -12,6 +12,31 @@ import "metadata.thrift"
 
 typedef uuid.UUID UUID
 
+/**
+ * A struct that holds UUIDs for all theories
+ * that a particular annotation was based upon
+ * (and presumably requires). 
+ *
+ * All fields are required; empty lists should be set
+ * if the dependency is not applicable.
+ */
+struct TheoryDependencies {
+  1: required list<UUID> sectionTheoryUUIDList
+  2: required list<UUID> sentenceTheoryUUIDList
+  3: required list<UUID> tokenizationTheoryUUIDList
+  4: required list<UUID> posTagTheoryUUIDList
+  5: required list<UUID> nerTagTheoryUUIDList
+  6: required list<UUID> lemmaTheoryUUIDList
+  7: required list<UUID> langIdTheoryUUIDList
+  8: required list<UUID> parseTheoryUUIDList
+  9: required list<UUID> dependencyParseTheoryUUIDList
+  10: required list<UUID> tokenAnnotationTheoryUUIDList
+  11: required list<UUID> entityMentionSetTheoryUUIDList
+  12: required list<UUID> entitySetTheoryUUIDList
+  13: required list<UUID> situationMentionSetTheoryUUIDList
+  14: required list<UUID> situationSetTheoryUUIDList
+}
+
 //===========================================================================
 // Metadata
 //===========================================================================
@@ -67,11 +92,7 @@ struct AnnotationMetadata {
   4: optional Digest digest
 
   /**
-   * A UUID pointer that identifies the annotation that the
-   * accompanying "annotation" object refers to.
-   *
-   * e.g., for a Tokenization, this would be a UUID of its parent
-   * SentenceSegmentation.
+   * The theories that supported this annotation. 
    */
-  5: required UUID annotationParentUUID
+  5: required TheoryDependencies dependencies
 }
