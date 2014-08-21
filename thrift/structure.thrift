@@ -410,6 +410,7 @@ struct Tokenization {
 
   10: optional list<Parse> parse
   11: optional list<DependencyParse> dependencyParseList
+  12: optional list<TokenTagging> TokenAnnotationsList 
   
   /**
    * A pointer to the sentence from which this Tokenization was generated.
