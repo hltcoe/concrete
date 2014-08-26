@@ -28,11 +28,11 @@ struct EmailCommunicationInfo {
   1: optional string messageId
   2: optional string contentType
   3: optional string userAgent
-  4: optional list<string> inReplyTo //!< defined by RFC 822, RFC 2822
-  5: optional list<string> reference //!< defined by RFC 1036, RFC 2822
+  4: optional list<string> inReplyToList //!< defined by RFC 822, RFC 2822
+  5: optional list<string> referenceList //!< defined by RFC 1036, RFC 2822
   6: optional EmailAddress senderAddress
   7: optional EmailAddress returnPathAddress
-  8: optional list<EmailAddress> toAddress
-  9: optional list<EmailAddress> ccAddress
-  10: optional list<EmailAddress> bccAddress
+  8: optional list<EmailAddress> toAddressList
+  9: optional list<EmailAddress> ccAddressList
+  10: optional list<EmailAddress> bccAddressList
 }

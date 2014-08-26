@@ -180,5 +180,5 @@ struct EntityMentionSet {
   /**
    * List of mentions in this set. 
    */
-  3: required list<EntityMention> mentionSet
+  3: required list<EntityMention> mentionList
 }

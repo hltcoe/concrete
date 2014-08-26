@@ -57,7 +57,7 @@ struct TwitterLatLong {
 
 struct BoundingBox {
   1: optional string type
-  2: required list<TwitterLatLong> coordinates
+  2: required list<TwitterLatLong> coordinateList
 }
 
 struct PlaceAttributes {
@@ -89,9 +89,9 @@ struct HashTag {
 }
 
 struct TwitterEntities {
-  1: optional list<HashTag> hashtags
-  2: optional list<URL> urls
-  3: optional list<UserMention> userMentions
+  1: optional list<HashTag> hashtagList
+  2: optional list<URL> urlList
+  3: optional list<UserMention> userMentionList
 }
 
 struct TwitterPlace {

@@ -320,7 +320,7 @@ struct TokenList {
   /*
    * An *ordered* list of tokens.
    */
-  1 : required list<Token> tokens
+  1 : required list<Token> tokenList
 
   /*
    * Optionally provide an explicit representation of the
@@ -402,25 +402,11 @@ struct Tokenization {
    * implemented using an n-best list or a lattice.
    */
   5: required TokenizationKind kind
-  
-  6: optional TokenTagging posTagList
-  7: optional TokenTagging nerTagList
-  8: optional TokenTagging lemmaList
-  9: optional TokenTagging langIdList
 
-  10: optional Parse parse
-  11: optional list<DependencyParse> dependencyParseList
   
-  /**
-   * A pointer to the sentence from which this Tokenization was generated.
-   */
-  12: optional UUID sentenceId
-}
-
-struct TokenizationCollection {
-  1: required metadata.AnnotationMetadata metadata
-  2: required list<Tokenization> tokenizationList
-  
+  6: optional list<TokenTagging> tokenTaggingList
+  7: optional list<Parse> parseList
+  8: optional list<DependencyParse> dependencyParseList
 }
 
 //===========================================================================
@@ -489,21 +475,6 @@ struct SentenceSegmentation {
    * systems. 
    */
   3: required list<Sentence> sentenceList
-  
-  /**
-   * A UUID pointer to the "parent" Section that this SentenceSegmentation
-   * is associated with. 
-   */
-  4: optional UUID sectionId
-}
-
-/**
- * A simple wrapper around a list of SentenceSegmentations, used by the API 
- * to better wrap up and merge results.
- */
-struct SentenceSegmentationCollection {
-  1: required metadata.AnnotationMetadata metadata
-  2: required list<SentenceSegmentation> sentSegList
 }
 
 //===========================================================================
@@ -524,7 +495,7 @@ struct Section {
   /**
    * Theories about how this section is divided into sentences.
    */ 
-  2: optional list<SentenceSegmentation> sentenceSegmentation
+  2: optional list<SentenceSegmentation> sentenceSegmentationList
   
   /**
    * Location of this section in the original text.
@@ -566,7 +537,7 @@ struct Section {
    * arranged linearly, where reading these numbers should not be required
    * to get a start-to-finish enumeration of the Communication's content.
    */
-  6: optional list<i32> number
+  6: optional list<i32> numberList
 }
 
 /** 
