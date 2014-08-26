@@ -78,6 +78,20 @@ struct Communication {
    */
   6: optional i64 endTime
 
+  /**
+   * Metadata to support this particular communication. 
+   * 
+   * Communications derived from other communications should
+   * indicate in this metadata object their dependency
+   * to the original communication ID.
+   */ 
+  8: required Metadata metadata
+
+  /**
+   * A catch-all store of keys and values. Use sparingly!
+   */
+  9: optional map<string, string> keyValueMap
+
   /** 
    * Theories about the languages that are present in this
    * communication. 
@@ -141,25 +155,9 @@ struct Communication {
 
   23: optional nitf.NITFInfo nitfInfo
   
-  /**
-   * A catch-all store of keys and values. Use sparingly!
-   */
-  30: optional map<string, string> keyValueMap
-
+  ////////////////////////////////////////////////
+  //// Blocks 24-50 reserved for corpus-specific
+  //// document metadata.
+  ////////////////////////////////////////////////
   
-  /**
-   * Is this a derived communication (e.g., via machine translation)?
-   *
-   * Required to encourage developers to label appropriately.
-   */ 
-  40: required bool isDerived
-
-  /**
-   * Metadata to support this particular communication. 
-   * 
-   * Communications derived from other communications should
-   * indicate in this metadata object their dependency
-   * to the original communication ID.
-   */ 
-  41: required Metadata metadata
 }
