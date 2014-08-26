@@ -8,7 +8,7 @@ namespace java edu.jhu.hlt.concrete
 namespace py concrete.metadata
 #@namespace scala edu.jhu.hlt.miser
 
-import "metadata.thrift"
+include "uuid.thrift"
 
 typedef uuid.UUID UUID
 
@@ -104,5 +104,5 @@ struct AnnotationMetadata {
    * For systems that do not output k-best lists, 
    * the default value (1) should suffice.
    */
-  6: required int32 kBest = 1
+  6: required i32 kBest = 1
 }
