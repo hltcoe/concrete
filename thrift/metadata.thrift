@@ -21,20 +21,21 @@ typedef uuid.UUID UUID
  * if the dependency is not applicable.
  */
 struct TheoryDependencies {
-  1: required list<UUID> sectionTheoryUUIDList
-  2: required list<UUID> sentenceTheoryUUIDList
-  3: required list<UUID> tokenizationTheoryUUIDList
-  4: required list<UUID> posTagTheoryUUIDList
-  5: required list<UUID> nerTagTheoryUUIDList
-  6: required list<UUID> lemmaTheoryUUIDList
-  7: required list<UUID> langIdTheoryUUIDList
-  8: required list<UUID> parseTheoryUUIDList
-  9: required list<UUID> dependencyParseTheoryUUIDList
-  10: required list<UUID> tokenAnnotationTheoryUUIDList
-  11: required list<UUID> entityMentionSetTheoryUUIDList
-  12: required list<UUID> entitySetTheoryUUIDList
-  13: required list<UUID> situationMentionSetTheoryUUIDList
-  14: required list<UUID> situationSetTheoryUUIDList
+  1: optional list<UUID> sectionTheoryList
+  2: optional list<UUID> sentenceTheoryList
+  3: optional list<UUID> tokenizationTheoryList
+  4: optional list<UUID> posTagTheoryList
+  5: optional list<UUID> nerTagTheoryList
+  6: optional list<UUID> lemmaTheoryList
+  7: optional list<UUID> langIdTheoryList
+  8: optional list<UUID> parseTheoryList
+  9: optional list<UUID> dependencyParseTheoryList
+  10: optional list<UUID> tokenAnnotationTheoryList
+  11: optional list<UUID> entityMentionSetTheoryList
+  12: optional list<UUID> entitySetTheoryList
+  13: optional list<UUID> situationMentionSetTheoryList
+  14: optional list<UUID> situationSetTheoryList
+  15: optional list<UUID> communicationsList
 }
 
 //===========================================================================
@@ -78,7 +79,7 @@ struct AnnotationMetadata {
    * The time at which this annotation was generated (in unix time
    * UTC -- i.e., seconds since January 1, 1970). 
    */
-  2: optional i64 timestamp
+  2: required i64 timestamp
 
   /** 
    * Confidence score. To do: define what this means!
@@ -93,6 +94,18 @@ struct AnnotationMetadata {
 
   /**
    * The theories that supported this annotation. 
+   * 
+   * An empty field indicates that the theory has no 
+   * dependencies (e.g., an ingester).
    */
-  5: required TheoryDependencies dependencies
+  5: optional TheoryDependencies dependencies
+  
+  /**
+   * An integer that represents a ranking for systems
+   * that output k-best lists. 
+   * 
+   * For systems that do not output k-best lists, 
+   * the default value (1) should suffice.
+   */
+  6: required int32 kBest = 1
 }

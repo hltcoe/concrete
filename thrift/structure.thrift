@@ -402,15 +402,11 @@ struct Tokenization {
    * implemented using an n-best list or a lattice.
    */
   5: required TokenizationKind kind
-  
-  6: optional list<TokenTagging> posTagList
-  7: optional list<TokenTagging> nerTagList
-  8: optional list<TokenTagging> lemmaList
-  9: optional list<TokenTagging> langIdList
 
-  10: optional list<Parse> parseList
-  11: optional list<DependencyParse> dependencyParseList
-  12: optional list<TokenTagging> tokenAnnotationsList
+  
+  6: optional list<TokenTagging> tokenTaggingList
+  7: optional list<Parse> parseList
+  8: optional list<DependencyParse> dependencyParseList
 }
 
 //===========================================================================
