@@ -16,9 +16,6 @@ typedef uuid.UUID UUID
  * A struct that holds UUIDs for all theories
  * that a particular annotation was based upon
  * (and presumably requires). 
- *
- * All fields are required; empty lists should be set
- * if the dependency is not applicable.
  */
 struct TheoryDependencies {
   1: optional list<UUID> sectionTheoryList
