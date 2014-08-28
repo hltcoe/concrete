@@ -173,6 +173,13 @@ struct TokenTagging {
    * This may be a partial mapping. 
    */
   3: required list<TaggedToken> taggedTokenList
+
+  /**
+   * An ontology-backed string that represents the
+   * type of token taggings this TokenTagging object
+   * produces.
+   */ 
+  4: optional string taggingType
 }
 
 struct Dependency {
