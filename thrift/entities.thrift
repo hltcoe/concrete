@@ -60,7 +60,7 @@ struct Entity {
   /**
    * The basic type of this entity's referent. 
    */
-  3: required string type
+  3: optional string type
 
   /**  
    * Confidence score for this individual entity.  You can also set a
@@ -136,7 +136,7 @@ struct EntityMention {
   /**
    * The type of referent that is referred to by this mention. 
    */
-  3: required string entityType
+  3: optional string entityType
   
   /**
    * The phrase type of the tokens that constitute this mention. 
