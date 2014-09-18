@@ -28,14 +28,14 @@ typedef metadata.AnnotationMetadata MD
  */
 struct Token {
   /** 
-   * A tokenization-relative identifier for this token. Together
-   * with the UUID for a Tokenization, this can be used to define
-   * pointers to specific tokens. If a Tokenization object contains
-   * multiple Token objects with the same id (e.g., in different
-   * n-best lists), then all of their other fields *must* be
-   * identical as well. 
+   * A 0-based tokenization-relative identifier for this token that
+   * represents the order that this token appears in the
+   * sentence. Together with the UUID for a Tokenization, this can be
+   * used to define pointers to specific tokens. If a Tokenization
+   * object contains multiple Token objects with the same id (e.g., in
+   * different n-best lists), then all of their other fields *must* be
+   * identical as well.
    */
-  // A 0-based index that represents the order that this token appears in the sentence.
   1: required i32 tokenIndex
 
   /** 
