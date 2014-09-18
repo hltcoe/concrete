@@ -142,7 +142,7 @@ struct EntityMention {
   /**
    * The phrase type of the tokens that constitute this mention. 
    */
-  4: required string phraseType
+  4: optional string phraseType
 
   /**
    * A confidence score for this individual mention.  You can also
