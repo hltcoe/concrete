@@ -79,15 +79,10 @@ struct AnnotationMetadata {
   2: required i64 timestamp
 
   /** 
-   * Confidence score. To do: define what this means!
-   */
-  3: optional double confidence
-
-  /** 
    * A Digest, carrying over any information the annotation metadata
    * wishes to carry over.
    */
-  4: optional Digest digest
+  3: optional Digest digest
 
   /**
    * The theories that supported this annotation. 
@@ -95,7 +90,7 @@ struct AnnotationMetadata {
    * An empty field indicates that the theory has no 
    * dependencies (e.g., an ingester).
    */
-  5: optional TheoryDependencies dependencies
+  4: optional TheoryDependencies dependencies
   
   /**
    * An integer that represents a ranking for systems
@@ -104,5 +99,5 @@ struct AnnotationMetadata {
    * For systems that do not output k-best lists, 
    * the default value (1) should suffice.
    */
-  6: required i32 kBest = 1
+  5: required i32 kBest = 1
 }
