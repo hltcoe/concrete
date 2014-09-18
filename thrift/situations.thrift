@@ -284,6 +284,21 @@ struct SituationMention {
    */
   3: optional string situationType
 
+  /**
+   * A more descriptive field that specifically describes the
+   * situation mention based on situationType above. It allows for
+   * more detailed description of the situation mention.
+   * 
+   * Some examples:
+   * 
+   * if situationType == EVENT, the event type for the sit. mention
+   * if situationType == STATE, the state type for this sit. mention
+   * 
+   * Different and more varied situationTypes may be added
+   * in the future. 
+   */
+  50: optional string situationKind
+  
   /** 
    * The arguments for this situation mention. Each argument
    * consists of a role and a value. It is possible for an situation
@@ -291,26 +306,6 @@ struct SituationMention {
    * unordered. 
    */
   4: required list<MentionArgument> argumentList
-
-  /** 
-   * The event type for situations where situation_type=EVENT 
-   */
-  50: optional string eventType
-
-  /** 
-   * The state type for situations where situation_type=STATE 
-   */
-  51: optional string stateType
-  
-  /** 
-   * This lemma represents a canonical lemma for the situation kind
-   * when the situation kind cannot be specified by a situation type subtype
-   * (ex, when using arbitrary verbs or nominalizations as events which do
-   * not appear in the event_type enumeration).
-   * If this kind is grounded in a token sequence from the original text, the
-   * SituationMention should have a reference to the token sequence.
-   */
-  53: optional string situationKindLemma
 
   /** 
    * An "intensity" rating for the situation, typically ranging from
