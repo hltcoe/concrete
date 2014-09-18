@@ -144,6 +144,22 @@ struct Situation {
    */
   2: required string situationType
 
+  /**
+   * A more descriptive field that specifically describes the
+   * situation based on situationType above. It allows for more
+   * detailed description of the situation.
+   * 
+   * Some examples:
+   * 
+   * if situationType == EVENT, the event type for the situation
+   * if situationType == STATE, the state type
+   * if situationType == TEMPORAL_FACT, the temporal fact type
+   * 
+   * Different and more varied situationTypes may be added
+   * in the future. 
+   */
+  50: optional string situationKind
+
   /** 
    * The arguments for this situation. Each argument consists of a
    * role and a value. It is possible for an situation to have
@@ -165,31 +181,6 @@ struct Situation {
    */
   5: optional list<Justification> justificationList
 
-  /** 
-   * The event type for situations where situation_type=EVENT 
-   */
-  50: optional string eventType
-
-  /** 
-   * The state type for situations where situation_type=STATE 
-   */
-  51: optional string stateType
-  
-  /** 
-   * The temporal fact type for situations where situation_type=TEMPORAL_FACT 
-   */
-  52: optional string temporalFactType
-  
-  /** 
-   * This lemma represents a canonical lemma for the situation kind
-   * when the situation kind cannot be specified by a situation type subtype
-   * (ex, when using arbitrary verbs or nominalizations as events which do
-   * not appear in the event_type enumeration).
-   * If this kind is grounded in a token sequence from the original text, the
-   * appropriate SituationMention should have a reference to the token sequence.
-   */
-  53: optional string situationKindLemma
-  
   /**
    * A wrapper for TimeML annotations.
    */
