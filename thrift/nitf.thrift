@@ -82,10 +82,10 @@ struct NITFInfo {
    * <br />
    * Sample byline:
    * <ul>
-   * <li>By James Reston
+   * <li>By James Reston </li>
    * <li>By JAMES GLANZ; William J. Broad contributed reporting for this
-   * article.
-   * <li>By ADAM NAGOURNEY and JEFF ZELENY
+   * article.</li>
+   * <li>By ADAM NAGOURNEY and JEFF ZELENY</li>
    * </ul>
    */
   7: optional string byline
@@ -93,13 +93,13 @@ struct NITFInfo {
   /**
    * If the article is part of a regular column, this field specifies the name
    * of that column.
-   * <p>
+   * <br />
    * Sample Column Names:
-   * <p>
+   * <br />
    * <ol>
-   * <li>World News Briefs
-   * <li>WEDDINGS
-   * <li>The Accessories Channel
+   * <li>World News Briefs</li>
+   * <li>WEDDINGS</li>
+   * <li>The Accessories Channel</li>
    * </ol>
    * 
    */
@@ -137,21 +137,21 @@ struct NITFInfo {
    * The &quot;dateline&quot; field is the dateline of the article. Generally a dateline
    * is the name of the geographic location from which the article was filed
    * followed by a comma and the month and day of the filing.
-   * <p>
+   * <br />
    * Sample datelines:
    * <ul>
-   * <li>WASHINGTON, April 30
-   * <li>RIYADH, Saudi Arabia, March 29
-   * <li>ONTARIO, N.Y., Jan. 26
+   * <li>WASHINGTON, April 30</li>
+   * <li>RIYADH, Saudi Arabia, March 29</li>
+   * <li>ONTARIO, N.Y., Jan. 26</li>
    * </ul>
    * Please note:
    * <ol>
    * <li>The dateline location is the location from which the article was
    * filed. Often times this location is related to the content of the
-   * article, but this is not guaranteed.
+   * article, but this is not guaranteed.</li>
    * <li>The date specified for the dateline is often but not always the day
-   * previous to the publication date.
-   * <li>The date is usually but not always specified.
+   * previous to the publication date.</li>
+   * <li>The date is usually but not always specified.</li>
    * </ol>
    */
   13: optional string dateline
@@ -159,8 +159,13 @@ struct NITFInfo {
   /**
    * This field specifies the day of week on which the article was published.
    * <ul>
-   * <li>Monday <li>Tuesday <li>Wednesday <li>Thursday <li>Friday <li>Saturday
-   * <li>Sunday
+   * <li>Monday</li>
+   * <li>Tuesday</li> 
+   * <li>Wednesday</li> 
+   * <li>Thursday</li> 
+   * <li>Friday</li> 
+   * <li>Saturday</li>
+   * <li>Sunday</li>
    * </ul>
    */
   14: optional string dayOfWeek
@@ -168,14 +173,13 @@ struct NITFInfo {
   /**
    * The &quot;descriptors&quot; field specifies a list of descriptive terms drawn from
    * a normalized controlled vocabulary corresponding to subjects mentioned in
-   * the article. These tags are hand-assigned by a team of library scientists
-   * working in the New York Times Indexing service.
-   * <p>
+   * the article. 
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>ECONOMIC CONDITIONS AND TRENDS
-   * <li>AIRPLANES
-   * <li>VIOLINS
+   * <li>ECONOMIC CONDITIONS AND TRENDS</li>
+   * <li>AIRPLANES</li>
+   * <li>VIOLINS</li>
    * </ol>
    */
   15: optional list<string> descriptorList
@@ -188,14 +192,13 @@ struct NITFInfo {
   /**
    * The &quot;general online descriptors&quot; field specifies a list of descriptors
    * that are at a higher level of generality than the other tags associated
-   * with the article. These tags are algorithmically assigned and manually
-   * verified by nytimes.com production staff.
-   * <p>
+   * with the article.
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>Surfing
-   * <li>Venice Biennale
-   * <li>Ranches
+   * <li>Surfing</li>
+   * <li>Venice Biennale</li>
+   * <li>Ranches</li>
    * </ol>
    */
   17: optional list<string> generalOnlineDescriptorList
@@ -228,14 +231,13 @@ struct NITFInfo {
   /**
    * The &quot;locations&quot; field specifies a list of geographic descriptors drawn
    * from a normalized controlled vocabulary that correspond to places
-   * mentioned in the article. These tags are hand-assigned by a team of
-   * library scientists working for the New York Times Indexing service.
-   * <p>
+   * mentioned in the article. 
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>Wellsboro (Pa)
-   * <li>Kansas City (Kan)
-   * <li>Park Slope (NYC)
+   * <li>Wellsboro (Pa)</li>
+   * <li>Kansas City (Kan)</li>
+   * <li>Park Slope (NYC)</li>
    * </ol>
    */
   22: optional list<string> locationList
@@ -245,9 +247,9 @@ struct NITFInfo {
    * <br />
    * Examples Include:
    * <ol>
-   * <li>Azza Fahmy
-   * <li>George C. Izenour
-   * <li>Chris Schenkel
+   * <li>Azza Fahmy</li>
+   * <li>George C. Izenour</li>
+   * <li>Chris Schenkel</li>
    * </ol>
    */
   23: optional list<string> nameList
@@ -271,9 +273,9 @@ struct NITFInfo {
    * <br />
    * Examples Include:
    * <ol>
-   * <li>Marriages
-   * <li>Parks and Other Recreation Areas
-   * <li>Cooking and Cookbooks
+   * <li>Marriages</li>
+   * <li>Parks and Other Recreation Areas</li>
+   * <li>Cooking and Cookbooks</li>
    * </ol>
    */
   26: optional list<string> onlineDescriptorList
@@ -295,9 +297,9 @@ struct NITFInfo {
    * <br />
    * Examples Include:
    * <ol>
-   * <li>Hollywood
-   * <li>Los Angeles
-   * <li>Arcadia
+   * <li>Hollywood</li>
+   * <li>Los Angeles</li>
+   * <li>Arcadia</li>
    * </ol>
    */
   29: optional list<string> onlineLocationList
@@ -308,9 +310,9 @@ struct NITFInfo {
    * <br />
    * Examples Include:
    * <ol>
-   * <li>Nintendo Company Limited
-   * <li>Yeshiva University
-   * <li>Rose Center
+   * <li>Nintendo Company Limited</li>
+   * <li>Yeshiva University</li>
+   * <li>Rose Center</li>
    * </ol>
    */
   30: optional list<string> onlineOrganizationList
@@ -321,9 +323,9 @@ struct NITFInfo {
    * <br/>
    * Examples Include:
    * <ol>
-   * <li>Lopez, Jennifer
-   * <li>Joyce, James
-   * <li>Robinson, Jackie
+   * <li>Lopez, Jennifer</li>
+   * <li>Joyce, James</li>
+   * <li>Robinson, Jackie</li>
    * </ol>
    */
   31: optional list<string> onlinePeople
@@ -340,9 +342,9 @@ struct NITFInfo {
    * <br/>
    * Examples Include:
    * <ol>
-   * <li>Matchstick Men (Movie)
-   * <li>Blades of Glory (Movie)
-   * <li>Bridge & Tunnel (Play)
+   * <li>Matchstick Men (Movie)</li>
+   * <li>Blades of Glory (Movie)</li>
+   * <li>Bridge & Tunnel (Play)</li>
    * </ol>
    */
   33: optional list<string> onlineTitleList
@@ -354,9 +356,9 @@ struct NITFInfo {
    * <br />
    * Examples Include:
    * <ol>
-   * <li>Circuit City Stores Inc
-   * <li>Delaware County Community College (Pa)
-   * <li>CONNECTICUT GRAND OPERA
+   * <li>Circuit City Stores Inc</li>
+   * <li>Delaware County Community College (Pa)</li>
+   * <li>CONNECTICUT GRAND OPERA</li>
    * </ol>
    */
   34: optional list<string> organizationList
@@ -376,9 +378,9 @@ struct NITFInfo {
    * <br />
    * Examples Include:
    * <ol>
-   * <li>REAGAN, RONALD WILSON (PRES)
-   * <li>BEGIN, MENACHEM (PRIME MIN)
-   * <li>COLLINS, GLENN
+   * <li>REAGAN, RONALD WILSON (PRES)</li>
+   * <li>BEGIN, MENACHEM (PRIME MIN)</li>
+   * <li>COLLINS, GLENN</li>
    * </ol>
    */
   36: optional list<string> peopleList
@@ -424,7 +426,8 @@ struct NITFInfo {
    * other articles published on the same day. Please note, however, that
    * different articles on different days may have the same slug.
    * <ul>
-   * <li>30other <li>12reunion
+   * <li>30other</li> 
+   * <li>12reunion</li>
    * </ul>
    */
   43: optional string slug
@@ -442,9 +445,9 @@ struct NITFInfo {
    * Examples Include:
    * <ol>
    * <li>Top/Features/Travel/Guides/Destinations/North America/United
-   * States/Arizona
-   * <li>Top/News/U.S./Rockies
-   * <li>Top/Opinion
+   * States/Arizona</li>
+   * <li>Top/News/U.S./Rockies</li>
+   * <li>Top/Opinion</li>
    * </ol>
    */
   45: optional list<string> taxonomicClassifierList
@@ -455,9 +458,9 @@ struct NITFInfo {
    * <br/>
    * Examples Include:
    * <ol>
-   * <li>Greystoke: The Legend of Tarzan, Lord of the Apes (Movie)
-   * <li>Law & Order (TV Program)
-   * <li>BATTLEFIELD EARTH (BOOK)
+   * <li>Greystoke: The Legend of Tarzan, Lord of the Apes (Movie)</li>
+   * <li>Law & Order (TV Program)</li>
+   * <li>BATTLEFIELD EARTH (BOOK)</li>
    * </ol>
    */
   46: optional list<string> titleList
@@ -468,9 +471,9 @@ struct NITFInfo {
    * <br />
    * Examples Include:
    * <ol>
-   * <li>REVIEW
-   * <li>OBITUARY
-   * <li>ANALYSIS
+   * <li>REVIEW</li>
+   * <li>OBITUARY</li>
+   * <li>ANALYSIS</li>
    * </ol>
    */
   47: optional list<string> typesOfMaterialList
