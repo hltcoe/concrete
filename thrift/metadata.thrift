@@ -13,9 +13,32 @@ include "uuid.thrift"
 typedef uuid.UUID UUID
 
 /**
- * A struct that holds UUIDs for all theories
- * that a particular annotation was based upon
- * (and presumably requires). 
+ * A struct that holds UUIDs for all theories that a particular
+ * annotation was based upon (and presumably requires).
+ *
+ * Producers of TheoryDependencies should list all stages that they
+ * used in constructing their particular annotation. They do not, 
+ * however, need to explicitly label *each* stage; they can label
+ * only the immediate stage before them.
+ * 
+ * Examples:
+ * 
+ * If you are producing a Tokenization, and only used the
+ * SentenceSegmentation in order to produce that Tokenization, list
+ * only the single SentenceSegmentation UUID in sentenceTheoryList.
+ *
+ * In this example, even though the SentenceSegmentation will have
+ * a dependency on some SectionSegmentation, it is not necessary
+ * for the Tokenization to list the SectionSegmentation UUID as a
+ * dependency. 
+ *
+ * If you are a producer of EntityMentions, and you use two
+ * POSTokenTagging and one NERTokenTagging objects, add the UUIDs for
+ * the POSTokenTagging objects to posTagTheoryList, and the UUID of
+ * the NER TokenTagging to the nerTagTheoryList.
+ *
+ * In this example, because multiple annotations influenced the 
+ * new annotation, they should all be listed as dependencies.
  */
 struct TheoryDependencies {
   1: optional list<UUID> sectionTheoryList
