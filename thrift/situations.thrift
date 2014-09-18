@@ -107,17 +107,17 @@ struct TimeML {
   /** 
    * The TimeML class for situations representing TimeML events 
    */
-  1: optional string timemlClass
+  1: optional string timeMLClass
   
   /** 
    * The TimeML tense for situations representing TimeML events 
    */
-  2: optional string timemlTense
+  2: optional string timeMLTense
   
   /** 
    * The TimeML aspect for situations representing TimeML events 
    */
-  3: optional string timemlAspect
+  3: optional string timeMLAspect
 }
 
 //===========================================================================
