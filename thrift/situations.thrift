@@ -29,7 +29,7 @@ struct Property {
   /**
    * Metadata to support this particular property object.
    */  
-  2: optional MD metadata
+  2: required MD metadata
   
   /** 
    * This value is typically boolean, 0.0 or 1.0, but we use a
@@ -230,7 +230,7 @@ struct SituationSet {
   /** 
    * Information about where this set came from. 
    */
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
 
   /** 
    * List of mentions in this set. 
@@ -365,7 +365,7 @@ struct SituationMentionSet {
   /** 
    * Information about where this set came from. 
    */
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
 
   /** 
    * List of mentions in this set. 

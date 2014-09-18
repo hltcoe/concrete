@@ -13,6 +13,7 @@ include "spans.thrift"
 include "uuid.thrift"
 
 typedef uuid.UUID UUID
+typedef metadata.AnnotationMetadata MD
 
 //===========================================================================
 // Tokens & Tokenizations
@@ -166,7 +167,7 @@ struct TokenTagging {
    * This should be used to tell between gold-standard annotations
    * and automatically-generated theories about the data 
    */
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
 
   /** 
    * The mapping from tokens to annotations.
@@ -193,7 +194,7 @@ struct Dependency {
  */
 struct DependencyParse {
   1: required UUID uuid
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
   3: required list<Dependency> dependencyList
 }
 
@@ -250,7 +251,7 @@ struct Constituent {
  */
 struct Parse {
   1: required UUID uuid
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
   3: required list<Constituent> constituentList
 }
 
@@ -387,7 +388,7 @@ struct Tokenization {
   /**
    * Information about where this tokenization came from.
    */
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
   
   /**
    * A wrapper around an ordered list of the tokens in this tokenization.  
@@ -469,7 +470,7 @@ struct SentenceSegmentation {
   /**
    * Information about where this segmentation came from.
    */  
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
   
   /** 
    * Theories about the tokens that make up this sentence.  For text
@@ -561,7 +562,7 @@ struct SectionSegmentation {
   /**
    * Information about where this segmentation came from.
    */
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
 
   /**
    * Ordered list of sections in this segmentation.

@@ -13,6 +13,7 @@ include "metadata.thrift"
 include "uuid.thrift"
 
 typedef uuid.UUID UUID
+typedef metadata.AnnotationMetadata MD
 
 /** 
  * A span of text with a specific referent, such as a person,
@@ -90,7 +91,7 @@ struct EntitySet {
   /**
    * Information about where this set came from.
    */
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
 
   /**
    * List of entities in this set.
@@ -176,7 +177,7 @@ struct EntityMentionSet {
   /**
    * Information about where this set came from. 
    */
-  2: optional metadata.AnnotationMetadata metadata
+  2: required MD metadata
 
   /**
    * List of mentions in this set. 
