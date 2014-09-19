@@ -62,7 +62,8 @@ struct NITFInfo {
    * This field is most often defined for Obituaries and Book Reviews. 
    * 
    * <ol>
-   * <li>Politics and Government (U.S.) <li>Books and Magazines <li>Royalty
+   * <li>Politics and Government (U.S.)</li>
+   * <li>Books and Magazines <li>Royalty</li>
    * </ol>
    */
   5: optional list<string> biographicalCategoryList
@@ -185,7 +186,11 @@ struct NITFInfo {
   15: optional list<string> descriptorList
 
   /**
-   * The
+   * The feature page containing this article, such as 
+   * <ul>
+   * <li>Education Page</li>
+   * <li>Fashion Page</li>
+   * </ul>
    */
   16: optional string featurePage
 
