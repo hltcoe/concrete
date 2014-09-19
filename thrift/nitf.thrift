@@ -231,7 +231,7 @@ struct NITFInfo {
    * Generally this field is populated with the first two paragraphs from the
    * article.
    */
-  21: optional string leadParagraph
+  21: optional list<string> leadParagraphList
 
   /**
    * The &quot;locations&quot; field specifies a list of geographic descriptors drawn
@@ -337,10 +337,9 @@ struct NITFInfo {
 
   /**
    * This field specifies the section(s) in which the online version of the article
-   * is placed. If the article is placed in multiple sections, this field will
-   * be specified as a &quot;;&quot; delineated list.
+   * is placed. This may typically be populated from a semicolon (;) delineated list.
    */
-  32: optional string onlineSection
+  32: optional list<string> onlineSectionList
 
   /**
    * This field specifies a list of authored works mentioned in the article.
