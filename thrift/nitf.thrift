@@ -28,23 +28,23 @@ namespace py concrete.nitf
 
 struct NITFInfo {
   /**
-   * This field specifies the location on nytimes.com of the article. When
-   * present, this URL is preferred to the URL field on articles published on
+   * This field specifies the URL of the article, if published online. In some
+   * cases, such as with the New York Times, when this field is present, 
+   * the URL is preferred to the URL field on articles published on
    * or after April 02, 2006, as the linked page will have richer content.
    */
   1: optional string alternateURL
 
   /**
-   * This field is a summary of the article written by the New York Times
-   * Indexing Service.
+   * This field is a summary of the article, possibly written by 
+   * and indexing service.
    */
   2: optional string articleAbstract
 
   /**
    * This field specifies the biography of the author of the article.
-   * Generally, this field is specified for guest authors not for New York
-   * Times reporters. When this field is specified for Times reporters, it is
-   * usually used to provide the author's email address.
+   * Generally, this field is specified for guest authors, and not for 
+   * regular reporters, except to provide the author's email address.
    */
   3: optional string authorBiography;
 
@@ -59,12 +59,11 @@ struct NITFInfo {
    * When present, the biographical category field generally indicates that a
    * document focuses on a particular individual. The value of the field
    * indicates the area or category in which this individual is best known.
-   * This field is most often defined for Obituaries and Book Reviews. These
-   * tags are hand-assigned by a team of library scientists working for the
-   * New York Times Indexing service.
+   * This field is most often defined for Obituaries and Book Reviews. 
    * 
    * <ol>
-   * <li>Politics and Government (U.S.) <li>Books and Magazines <li>Royalty
+   * <li>Politics and Government (U.S.)</li>
+   * <li>Books and Magazines <li>Royalty</li>
    * </ol>
    */
   5: optional list<string> biographicalCategoryList
@@ -76,17 +75,18 @@ struct NITFInfo {
   6: optional string body
 
   /**
-   * This field specifies the byline of the article as it appeared in the
-   * print edition of the New York Times. Please note that not every article
-   * in this collection has a byline, as editorials and other types of
-   * articles are generally unsigned.
-   * <P>
+   * This field specifies the byline of the article as it appeared in its
+   * print edition. Please note that not every article in this collection 
+   * has a byline, as editorials and other types of articles are generally 
+   * unsigned. A normalized version, of the form (LAST NAME, FIRST NAME),
+   * can be stored in the <strong>normalizedByline</strong> field.
+   * <br />
    * Sample byline:
    * <ul>
-   * <li>By James Reston
+   * <li>By James Reston </li>
    * <li>By JAMES GLANZ; William J. Broad contributed reporting for this
-   * article.
-   * <li>By ADAM NAGOURNEY and JEFF ZELENY
+   * article.</li>
+   * <li>By ADAM NAGOURNEY and JEFF ZELENY</li>
    * </ul>
    */
   7: optional string byline
@@ -94,13 +94,13 @@ struct NITFInfo {
   /**
    * If the article is part of a regular column, this field specifies the name
    * of that column.
-   * <p>
+   * <br />
    * Sample Column Names:
-   * <p>
+   * <br />
    * <ol>
-   * <li>World News Briefs
-   * <li>WEDDINGS
-   * <li>The Accessories Channel
+   * <li>World News Briefs</li>
+   * <li>WEDDINGS</li>
+   * <li>The Accessories Channel</li>
    * </ol>
    * 
    */
@@ -130,30 +130,29 @@ struct NITFInfo {
 
   /**
    * This field indicates the entity that produced the editorial content of
-   * this document. For this collection, the credit will always be set to 'The
-   * New York Times'.
+   * this document. 
    */
   12: optional string credit
 
   /**
-   * The �dateline� field is the dateline of the article. Generally a dateline
+   * The &quot;dateline&quot; field is the dateline of the article. Generally a dateline
    * is the name of the geographic location from which the article was filed
    * followed by a comma and the month and day of the filing.
-   * <p>
+   * <br />
    * Sample datelines:
    * <ul>
-   * <li>WASHINGTON, April 30
-   * <li>RIYADH, Saudi Arabia, March 29
-   * <li>ONTARIO, N.Y., Jan. 26
+   * <li>WASHINGTON, April 30</li>
+   * <li>RIYADH, Saudi Arabia, March 29</li>
+   * <li>ONTARIO, N.Y., Jan. 26</li>
    * </ul>
    * Please note:
    * <ol>
    * <li>The dateline location is the location from which the article was
    * filed. Often times this location is related to the content of the
-   * article, but this is not guaranteed.
+   * article, but this is not guaranteed.</li>
    * <li>The date specified for the dateline is often but not always the day
-   * previous to the publication date.
-   * <li>The date is usually but not always specified.
+   * previous to the publication date.</li>
+   * <li>The date is usually but not always specified.</li>
    * </ol>
    */
   13: optional string dateline
@@ -161,56 +160,63 @@ struct NITFInfo {
   /**
    * This field specifies the day of week on which the article was published.
    * <ul>
-   * <li>Monday <li>Tuesday <li>Wednesday <li>Thursday <li>Friday <li>Saturday
-   * <li>Sunday
+   * <li>Monday</li>
+   * <li>Tuesday</li> 
+   * <li>Wednesday</li> 
+   * <li>Thursday</li> 
+   * <li>Friday</li> 
+   * <li>Saturday</li>
+   * <li>Sunday</li>
    * </ul>
    */
   14: optional string dayOfWeek
 
   /**
-   * The �descriptors� field specifies a list of descriptive terms drawn from
+   * The &quot;descriptors&quot; field specifies a list of descriptive terms drawn from
    * a normalized controlled vocabulary corresponding to subjects mentioned in
-   * the article. These tags are hand-assigned by a team of library scientists
-   * working in the New York Times Indexing service.
-   * <p>
+   * the article. 
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>ECONOMIC CONDITIONS AND TRENDS
-   * <li>AIRPLANES
-   * <li>VIOLINS
+   * <li>ECONOMIC CONDITIONS AND TRENDS</li>
+   * <li>AIRPLANES</li>
+   * <li>VIOLINS</li>
    * </ol>
    */
   15: optional list<string> descriptorList
 
   /**
-   * The
+   * The feature page containing this article, such as 
+   * <ul>
+   * <li>Education Page</li>
+   * <li>Fashion Page</li>
+   * </ul>
    */
   16: optional string featurePage
 
   /**
-   * The �general online descriptors� field specifies a list of descriptors
+   * The &quot;general online descriptors&quot; field specifies a list of descriptors
    * that are at a higher level of generality than the other tags associated
-   * with the article. These tags are algorithmically assigned and manually
-   * verified by nytimes.com production staff.
-   * <p>
+   * with the article.
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>Surfing
-   * <li>Venice Biennale
-   * <li>Ranches
+   * <li>Surfing</li>
+   * <li>Venice Biennale</li>
+   * <li>Ranches</li>
    * </ol>
    */
   17: optional list<string> generalOnlineDescriptorList
 
   /**
-   * The GUID field specifies a an integer that is guaranteed to be unique for
+   * The GUID field specifies an integer that is guaranteed to be unique for
    * every document in the corpus.
    */
   18: optional i32 guid
 
   /**
-   * This field specifies the headline of the article as it appeared in the
-   * print edition of the New York Times.
+   * This field specifies the headline of the article as it appeared in a
+   * print edition.
    */
   19: optional string headline
 
@@ -221,43 +227,40 @@ struct NITFInfo {
   20: optional string kicker
 
   /**
-   * The �lead Paragraph� field is the lead paragraph of the article.
+   * The &quot;lead Paragraph&quot; field is the lead paragraph of the article.
    * Generally this field is populated with the first two paragraphs from the
    * article.
    */
-  21: optional string leadParagraph
+  21: optional list<string> leadParagraphList
 
   /**
-   * The �locations� field specifies a list of geographic descriptors drawn
+   * The &quot;locations&quot; field specifies a list of geographic descriptors drawn
    * from a normalized controlled vocabulary that correspond to places
-   * mentioned in the article. These tags are hand-assigned by a team of
-   * library scientists working for the New York Times Indexing service.
-   * <p>
+   * mentioned in the article. 
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>Wellsboro (Pa)
-   * <li>Kansas City (Kan)
-   * <li>Park Slope (NYC)
+   * <li>Wellsboro (Pa)</li>
+   * <li>Kansas City (Kan)</li>
+   * <li>Park Slope (NYC)</li>
    * </ol>
    */
   22: optional list<string> locationList
 
   /**
-   * The �names� field specifies a list of names mentioned in the article.
-   * These tags are hand-assigned by a team of library scientists working for
-   * the New York Times Indexing service.
-   * <p>
+   * The &quot;names&quot; field specifies a list of names mentioned in the article.
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>Azza Fahmy
-   * <li>George C. Izenour
-   * <li>Chris Schenkel
+   * <li>Azza Fahmy</li>
+   * <li>George C. Izenour</li>
+   * <li>Chris Schenkel</li>
    * </ol>
    */
   23: optional list<string> nameList
 
   /**
-   * This field specifies the desk in the New York Times newsroom that
+   * This field specifies the desk in the newsroom that
    * produced the article. The desk is related to, but is not the same as the
    * section in which the article appears.
    */
@@ -271,90 +274,81 @@ struct NITFInfo {
 
   /**
    * This field specifies a list of descriptors from a normalized controlled
-   * vocabulary that correspond to topics mentioned in the article. These tags
-   * are algorithmically assigned and manually verified by nytimes.com
-   * production staff.
-   * <p>
+   * vocabulary that correspond to topics mentioned in the article.
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>Marriages
-   * <li>Parks and Other Recreation Areas
-   * <li>Cooking and Cookbooks
+   * <li>Marriages</li>
+   * <li>Parks and Other Recreation Areas</li>
+   * <li>Cooking and Cookbooks</li>
    * </ol>
    */
   26: optional list<string> onlineDescriptorList
 
   /**
-   * This field specifies the headline displayed with the article on
-   * nytimes.com. Often this differs from the headline used in print.
+   * This field specifies the headline displayed with the article
+   * online. Often this differs from the headline used in print.
    */
   27: optional string onlineHeadline
 
   /**
-   * This field specifies the lead paragraph as defined by the producers at
-   * nytimes.com.
+   * This field specifies the lead paragraph for the online version.
    */
   28: optional string onlineLeadParagraph
 
   /**
    * This field specifies a list of place names that correspond to geographic
-   * locations mentioned in the article. These tags are algorithmically
-   * assigned and manually verified by nytimes.com production staff.
-   * <p>
+   * locations mentioned in the article.
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>Hollywood
-   * <li>Los Angeles
-   * <li>Arcadia
+   * <li>Hollywood</li>
+   * <li>Los Angeles</li>
+   * <li>Arcadia</li>
    * </ol>
    */
   29: optional list<string> onlineLocationList
 
   /**
    * This field specifies a list of organizations that correspond to
-   * organizations mentioned in the article. These tags are algorithmically
-   * assigned and manually verified by nytimes.com production staff.
-   * <p>
+   * organizations mentioned in the article.
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>Nintendo Company Limited
-   * <li>Yeshiva University
-   * <li>Rose Center
+   * <li>Nintendo Company Limited</li>
+   * <li>Yeshiva University</li>
+   * <li>Rose Center</li>
    * </ol>
    */
   30: optional list<string> onlineOrganizationList
 
   /**
    * This field specifies a list of people that correspond to individuals
-   * mentioned in the article. These tags are algorithmically assigned and
-   * manually verified by nytimes.com production staff.
-   * <p>
+   * mentioned in the article.
+   * <br/>
    * Examples Include:
    * <ol>
-   * <li>Lopez, Jennifer
-   * <li>Joyce, James
-   * <li>Robinson, Jackie
+   * <li>Lopez, Jennifer</li>
+   * <li>Joyce, James</li>
+   * <li>Robinson, Jackie</li>
    * </ol>
    */
   31: optional list<string> onlinePeople
 
   /**
-   * This field specifies the section(s) on nytimes.com in which the article
-   * is placed. If the article is placed in multiple sections, this field will
-   * be specified as a �;� delineated list.
+   * This field specifies the section(s) in which the online version of the article
+   * is placed. This may typically be populated from a semicolon (;) delineated list.
    */
-  32: optional string onlineSection
+  32: optional list<string> onlineSectionList
 
   /**
    * This field specifies a list of authored works mentioned in the article.
-   * These tags are algorithmically assigned and manually verified by
-   * nytimes.com production staff.
-   * <p>
+   * <br/>
    * Examples Include:
    * <ol>
-   * <li>Matchstick Men (Movie)
-   * <li>Blades of Glory (Movie)
-   * <li>Bridge & Tunnel (Play)
+   * <li>Matchstick Men (Movie)</li>
+   * <li>Blades of Glory (Movie)</li>
+   * <li>Bridge & Tunnel (Play)</li>
    * </ol>
    */
   33: optional list<string> onlineTitleList
@@ -362,14 +356,13 @@ struct NITFInfo {
   /**
    * This field specifies a list of organization names drawn from a normalized
    * controlled vocabulary that correspond to organizations mentioned in the
-   * article. These tags are hand-assigned by a team of library scientists
-   * working in the New York Times Indexing service.
-   * <p>
+   * article.
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>Circuit City Stores Inc
-   * <li>Delaware County Community College (Pa)
-   * <li>CONNECTICUT GRAND OPERA
+   * <li>Circuit City Stores Inc</li>
+   * <li>Delaware County Community College (Pa)</li>
+   * <li>CONNECTICUT GRAND OPERA</li>
    * </ol>
    */
   34: optional list<string> organizationList
@@ -378,27 +371,26 @@ struct NITFInfo {
    * This field specifies the page of the section in the paper in which the
    * article appears. This is not an absolute pagination. An article that
    * appears on page 3 in section A occurs in the physical paper before an
-   * article that occurs on page 1 of section F.
+   * article that occurs on page 1 of section F. The section is encoded in 
+   * the <strong>section</strong> field.
    */
   35: optional i32 page
 
   /**
    * This field specifies a list of people from a normalized controlled
-   * vocabulary that correspond to individuals mentioned in the article. These
-   * tags are hand-assigned by a team of library scientists working in the New
-   * York Times Indexing service.
-   * <p>
+   * vocabulary that correspond to individuals mentioned in the article.
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>REAGAN, RONALD WILSON (PRES)
-   * <li>BEGIN, MENACHEM (PRIME MIN)
-   * <li>COLLINS, GLENN
+   * <li>REAGAN, RONALD WILSON (PRES)</li>
+   * <li>BEGIN, MENACHEM (PRIME MIN)</li>
+   * <li>COLLINS, GLENN</li>
    * </ol>
    */
   36: optional list<string> peopleList
 
   /**
-   * This field specifies the date of the article�s publication.
+   * This field specifies the date of the article's publication.
    */
   37: optional i64 publicationDate
 
@@ -438,7 +430,8 @@ struct NITFInfo {
    * other articles published on the same day. Please note, however, that
    * different articles on different days may have the same slug.
    * <ul>
-   * <li>30other <li>12reunion
+   * <li>30other</li> 
+   * <li>12reunion</li>
    * </ul>
    */
   43: optional string slug
@@ -451,52 +444,47 @@ struct NITFInfo {
   /**
    * This field specifies a list of taxonomic classifiers that place this
    * article into a hierarchy of articles. The individual terms of each
-   * taxonomic classifier are separated with the '/' character. These tags are
-   * algorithmically assigned and manually verified by nytimes.com production
-   * staff. These tags are algorithmically assigned and manually verified by
-   * nytimes.com production staff.
-   * <p>
+   * taxonomic classifier are separated with the '/' character.
+   * <br/>
    * Examples Include:
    * <ol>
    * <li>Top/Features/Travel/Guides/Destinations/North America/United
-   * States/Arizona
-   * <li>Top/News/U.S./Rockies
-   * <li>Top/Opinion
+   * States/Arizona</li>
+   * <li>Top/News/U.S./Rockies</li>
+   * <li>Top/Opinion</li>
    * </ol>
    */
   45: optional list<string> taxonomicClassifierList
 
   /**
    * This field specifies a list of authored works that correspond to works
-   * mentioned in the article. These tags are hand-assigned by a team of
-   * library scientists working in the New York Times Indexing service.
-   * <p>
+   * mentioned in the article.
+   * <br/>
    * Examples Include:
    * <ol>
-   * <li>Greystoke: The Legend of Tarzan, Lord of the Apes (Movie)
-   * <li>Law & Order (TV Program)
-   * <li>BATTLEFIELD EARTH (BOOK)
+   * <li>Greystoke: The Legend of Tarzan, Lord of the Apes (Movie)</li>
+   * <li>Law & Order (TV Program)</li>
+   * <li>BATTLEFIELD EARTH (BOOK)</li>
    * </ol>
    */
   46: optional list<string> titleList
 
   /**
    * This field specifies a normalized list of terms describing the general
-   * editorial category of the article. These tags are algorithmically
-   * assigned and manually verified by nytimes.com production staff.
-   * <p>
+   * editorial category of the article.
+   * <br />
    * Examples Include:
    * <ol>
-   * <li>REVIEW
-   * <li>OBITUARY
-   * <li>ANALYSIS
+   * <li>REVIEW</li>
+   * <li>OBITUARY</li>
+   * <li>ANALYSIS</li>
    * </ol>
    */
   47: optional list<string> typesOfMaterialList
 
   /**
-   * This field specifies the location on nytimes.com of the article. The
-   * �Alternative Url� field is preferred to this field on articles published
+   * This field specifies the location of the online version of the article. The
+   * &quot;Alternative Url&quot; field is preferred to this field on articles published
    * on or after April 02, 2006, as the linked page will have richer content.
    */
   48: optional string url
