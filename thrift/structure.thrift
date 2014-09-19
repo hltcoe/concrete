@@ -545,13 +545,13 @@ struct Section {
   /**
    * The type of this section.
    */
-  4: required string kind
+  5: required string kind
   
   /**
    * The name of the section. For example, a title of a section on 
    * Wikipedia. 
    */
-  5: optional string label
+  6: optional string label
 
   /**
    * Position within the communication with respect to other Sections:
@@ -562,5 +562,5 @@ struct Section {
    * arranged linearly, where reading these numbers should not be required
    * to get a start-to-finish enumeration of the Communication's content.
    */
-  6: optional list<i32> numberList
+  7: optional list<i32> numberList
 }
