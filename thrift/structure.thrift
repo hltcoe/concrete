@@ -43,7 +43,22 @@ struct Token {
   2: optional string text
 
   /** 
-   * Location of this token in the original text. In cases where
+   * Location of this token in <strong>this perspective's</strong> text. 
+   * In cases where this token does not correspond directly with any 
+   * text span in the text (such as word insertion during MT),
+   * this field may be given a value indicating "approximately" where 
+   * the token comes from. A span covering the entire sentence may be 
+   * used if no more precise value seems appropriate. 
+   *
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the document, but is the annotation's best
+   * effort at such a representation.    
+   */
+  3: optional spans.TextSpan textSpan
+
+  /** 
+   * Location of this token in the original, raw text. In cases where
    * this token does not correspond directly with any text span in
    * the original text (such as word insertion during MT), this field
    * may be given a value indicating "approximately" where the token
@@ -52,10 +67,10 @@ struct Token {
    *
    * NOTE: This span represents a best guess, or 'provenance':
    * it cannot be guaranteed that this text span matches the _exact_
-   * text of the original document, but is the annotation's best
+   * text of the original raw document, but is the annotation's best
    * effort at such a representation.    
    */
-  3: optional spans.TextSpan textSpan
+  4: optional spans.TextSpan rawTextSpan
 
   /** 
    * Location of this token in the original audio. 
@@ -95,7 +110,7 @@ struct TokenRefSequence {
   3: required uuid.UUID tokenizationId
 
   /**
-   * The text span associated with this TokenRefSequence.
+   * The text span in the main text associated with this TokenRefSequence.
    *
    * NOTE: This span represents a best guess, or 'provenance':
    * it cannot be guaranteed that this text span matches the _exact_
@@ -105,6 +120,17 @@ struct TokenRefSequence {
   4: optional spans.TextSpan textSpan
 
   /** 
+   * The text span in the <em>raw</em> text associated with this
+   * TokenRefSequence.
+   *
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original raw document, but is the annotation's best
+   * effort at such a representation.    
+   */
+  5: optional spans.TextSpan rawTextSpan
+
+  /** 
    * The audio span associated with this TokenRefSequence.
    *
    * NOTE: This span represents a best guess, or 'provenance':
@@ -112,7 +138,7 @@ struct TokenRefSequence {
    * text of the original document, but is the annotation's best
    * effort at such a representation.    
    */
-  5: optional spans.AudioSpan audioSpan
+  6: optional spans.AudioSpan audioSpan
 }
 
 struct TaggedToken {
@@ -436,7 +462,7 @@ struct Sentence {
   2: optional Tokenization tokenization
 
   /**
-   * Location of this sentence in the original text.
+   * Location of this sentence in the communication text.
    *
    * NOTE: This span represents a best guess, or 'provenance':
    * it cannot be guaranteed that this text span matches the _exact_
@@ -444,6 +470,16 @@ struct Sentence {
    * effort at such a representation.    
    */
   3: optional spans.TextSpan textSpan
+
+  /**
+   * Location of this sentence in the raw text.
+   *
+   * NOTE: This span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation.    
+   */
+  4: optional spans.TextSpan rawTextSpan
   
   /**
    * Location of this sentence in the original audio.
@@ -453,7 +489,7 @@ struct Sentence {
    * text of the original document, but is the annotation's best
    * effort at such a representation.    
    */
-  4: optional spans.AudioSpan audioSpan
+  5: optional spans.AudioSpan audioSpan
 }
 
 //===========================================================================
@@ -477,7 +513,7 @@ struct Section {
   2: optional list<Sentence> sentenceList
   
   /**
-   * Location of this section in the original text.
+   * Location of this section in the communication text.
    *
    * NOTE: This text span represents a best guess, or 'provenance':
    * it cannot be guaranteed that this text span matches the _exact_
@@ -485,6 +521,16 @@ struct Section {
    * effort at such a representation. 
    */
   3: optional spans.TextSpan textSpan
+
+  /**
+   * Location of this section in the raw text.
+   *
+   * NOTE: This text span represents a best guess, or 'provenance':
+   * it cannot be guaranteed that this text span matches the _exact_
+   * text of the original document, but is the annotation's best
+   * effort at such a representation. 
+   */
+  4: optional spans.TextSpan rawTextSpan
 
   /**
    * Location of this section in the original audio. 
