@@ -102,7 +102,7 @@ struct Communication {
   /**
    * Theories about the block structure of this communication.
    */
-  11: optional list<structure.SectionSegmentation> sectionSegmentationList
+  11: optional list<structure.Section> sectionList
 
   /** 
    * Theories about which spans of text are used to mention entities
