@@ -12,9 +12,6 @@ include "metadata.thrift"
 include "spans.thrift"
 include "uuid.thrift"
 
-typedef uuid.UUID UUID
-typedef metadata.AnnotationMetadata MD
-
 //===========================================================================
 // Tokens & Tokenizations
 //===========================================================================
@@ -95,7 +92,7 @@ struct TokenRefSequence {
   /** 
    * The UUID of the tokenization that contains the tokens. 
    */
-  3: required UUID tokenizationId
+  3: required uuid.UUID tokenizationId
 
   /**
    * The text span associated with this TokenRefSequence.
@@ -160,14 +157,14 @@ struct TokenTagging {
   /**
    * The UUID of this TokenTagging object.
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
 
   /** 
    * Information about where the annotation came from.
    * This should be used to tell between gold-standard annotations
    * and automatically-generated theories about the data 
    */
-  2: required MD metadata
+  2: required metadata.AnnotationMetadata metadata
 
   /** 
    * The mapping from tokens to annotations.
@@ -193,8 +190,8 @@ struct Dependency {
  * Represents a dependency parse with typed edges.
  */
 struct DependencyParse {
-  1: required UUID uuid
-  2: required MD metadata
+  1: required uuid.UUID uuid
+  2: required metadata.AnnotationMetadata metadata
   3: required list<Dependency> dependencyList
 }
 
@@ -250,8 +247,8 @@ struct Constituent {
  * using a simple tree or a parse forest.
  */
 struct Parse {
-  1: required UUID uuid
-  2: required MD metadata
+  1: required uuid.UUID uuid
+  2: required metadata.AnnotationMetadata metadata
   3: required list<Constituent> constituentList
 }
 
@@ -383,12 +380,12 @@ struct Tokenization {
   /*
    * Unique identifier for this tokenization. 
    */ 
-  1: required UUID uuid
+  1: required uuid.UUID uuid
 
   /**
    * Information about where this tokenization came from.
    */
-  2: required MD metadata
+  2: required metadata.AnnotationMetadata metadata
   
   /**
    * A wrapper around an ordered list of the tokens in this tokenization.  
@@ -424,7 +421,7 @@ struct Tokenization {
  * A single sentence or utterance in a communication. 
  */
 struct Sentence {
-  1: required UUID uuid
+  1: required uuid.UUID uuid
   
   /** 
    * Theories about the tokens that make up this sentence.  For text
@@ -472,7 +469,7 @@ struct Section {
   /**
    * The unique identifier for this section. 
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
   
   /**
    * Theories about how this section is divided into sentences.
