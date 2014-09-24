@@ -99,7 +99,7 @@ struct Communication {
   /**
    * Theories about the block structure of this communication.
    */
-  11: optional list<structure.SectionSegmentation> sectionSegmentationList
+  11: optional list<structure.Section> sectionList
 
   /** 
    * Theories about which spans of text are used to mention entities
@@ -124,6 +124,18 @@ struct Communication {
    * communication. 
    */
   15: optional list<situations.SituationSet> situationSetList
+
+  /**
+   * Optional original text field that points back to an original 
+   * communication.
+   * 
+   * This field can be populated for sake of convenience when creating
+   * "perspective" communication (communications that are based on
+   * highly destructive changes to an original communication [e.g.,
+   * via MT]). This allows developers to quickly access the original
+   * text that this perspective communication is based off of.
+   */
+  16: optional string originalText
   
   /** 
    * The full audio contents of this communication in its original
@@ -155,6 +167,5 @@ struct Communication {
   ////////////////////////////////////////////////
   //// Blocks 24-50 reserved for corpus-specific
   //// document metadata.
-  ////////////////////////////////////////////////
-  
+  ////////////////////////////////////////////////  
 }
