@@ -12,9 +12,6 @@ include "structure.thrift"
 include "metadata.thrift"
 include "uuid.thrift"
 
-typedef uuid.UUID UUID
-typedef metadata.AnnotationMetadata MD
-
 /**
  * Attached to Arguments to support situations where
  * a 'participant' has more than one 'property' (in BinarySRL terms),
@@ -29,7 +26,7 @@ struct Property {
   /**
    * Metadata to support this particular property object.
    */  
-  2: required MD metadata
+  2: required metadata.AnnotationMetadata metadata
   
   /** 
    * This value is typically boolean, 0.0 or 1.0, but we use a
@@ -57,12 +54,12 @@ struct Argument {
    * A pointer to the value of this argument, if it is explicitly
    * encoded as an Entity.
    */
-  2: optional UUID entityId
+  2: optional uuid.UUID entityId
 
   /**
    * A pointer to the value of this argument, if it is a situation.
    */
-  3: optional UUID situationId
+  3: optional uuid.UUID situationId
   
   /**
    * For the BinarySRL task, there may be situations
@@ -83,7 +80,7 @@ struct Justification {
   /** 
    * A pointer to the SituationMention itself. 
    */
-  2: required UUID mentionId
+  2: required uuid.UUID mentionId
 
   /** 
    * An optional list of pointers to tokens that are (especially)
@@ -137,7 +134,7 @@ struct Situation {
   /** 
    * Unique identifier for this situation. 
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
 
   /** 
    * The core type of this situation (eg EVENT or SENTIMENT).
@@ -172,7 +169,7 @@ struct Situation {
    * Ids of the mentions of this situation in a communication
    * (type=SituationMention) 
    */
-  4: optional list<UUID> mentionIdList
+  4: optional list<uuid.UUID> mentionIdList
 
   /** 
    * An list of pointers to SituationMentions that provide
@@ -216,12 +213,12 @@ struct SituationSet {
   /** 
    * Unique identifier for this set. 
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
 
   /** 
    * Information about where this set came from. 
    */
-  2: required MD metadata
+  2: required metadata.AnnotationMetadata metadata
 
   /** 
    * List of mentions in this set. 
@@ -246,12 +243,12 @@ struct MentionArgument {
    * A pointer to the value of an EntityMention, if this is being used to support
    * an EntityMention.
    */
-  2: optional UUID entityMentionId
+  2: optional uuid.UUID entityMentionId
 
   /**
    * A pointer to the value of this argument, if it is a SituationMention.
    */
-  3: optional UUID situationMentionId
+  3: optional uuid.UUID situationMentionId
 }
 
 //===========================================================================
@@ -270,7 +267,7 @@ struct SituationMention {
   /** 
    * Unique identifier for this situation. 
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
 
   /** 
    * The text content of this situation mention. This field is
@@ -351,12 +348,12 @@ struct SituationMentionSet {
   /** 
    * Unique identifier for this set. 
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
 
   /** 
    * Information about where this set came from. 
    */
-  2: required MD metadata
+  2: required metadata.AnnotationMetadata metadata
 
   /** 
    * List of mentions in this set. 

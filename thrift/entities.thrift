@@ -12,9 +12,6 @@ include "structure.thrift"
 include "metadata.thrift"
 include "uuid.thrift"
 
-typedef uuid.UUID UUID
-typedef metadata.AnnotationMetadata MD
-
 /** 
  * A span of text with a specific referent, such as a person,
  * organization, or time. Things that can be referred to by a mention
@@ -50,13 +47,13 @@ struct Entity {
   /**
    * Unique identifier for this entity.
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
   
   /**
    * An list of pointers to all of the mentions of this Entity's
    * referent.  (type=EntityMention) 
    */
-  2: required list<UUID> mentionIdList
+  2: required list<uuid.UUID> mentionIdList
 
   /**
    * The basic type of this entity's referent. 
@@ -86,12 +83,12 @@ struct EntitySet {
   /** 
    * Unique identifier for this set. 
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
 
   /**
    * Information about where this set came from.
    */
-  2: required MD metadata
+  2: required metadata.AnnotationMetadata metadata
 
   /**
    * List of entities in this set.
@@ -127,7 +124,7 @@ struct EntityMention {
   /*
    * A unique idenifier for this entity mention.
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
 
   /**
    * Pointer to sequence of tokens.
@@ -172,12 +169,12 @@ struct EntityMentionSet {
   /** 
    * Unique identifier for this set. 
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
   
   /**
    * Information about where this set came from. 
    */
-  2: required MD metadata
+  2: required metadata.AnnotationMetadata metadata
 
   /**
    * List of mentions in this set. 

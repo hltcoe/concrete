@@ -11,9 +11,6 @@ namespace py concrete.language
 include "metadata.thrift"
 include "uuid.thrift"
 
-typedef uuid.UUID UUID
-typedef metadata.AnnotationMetadata MD
-
 /** 
  * A theory about what languages are present in a given communication
  * or piece of communication.  Note that it is possible to have more
@@ -23,12 +20,12 @@ struct LanguageIdentification {
   /**
    * Unique identifier for this language identification.
    */
-  1: required UUID uuid
+  1: required uuid.UUID uuid
 
   /**
    * Information about where this language identification came from.
    */
-  2: required MD metadata
+  2: required metadata.AnnotationMetadata metadata
 
   /** 
    * A list mapping from a language to the probability that that
