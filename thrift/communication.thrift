@@ -135,7 +135,7 @@ struct Communication {
    * via MT]). This allows developers to quickly access the original
    * text that this perspective communication is based off of.
    */
-  16: optional string originalCommunicationText
+  16: optional string originalText
   
   /** 
    * The full audio contents of this communication in its original
