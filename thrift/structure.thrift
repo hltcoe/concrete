@@ -43,7 +43,7 @@ struct Token {
   2: optional string text
 
   /** 
-   * Location of this token in <strong>this perspective's</strong> text. 
+   * Location of this token in this perspective's text (.text field).
    * In cases where this token does not correspond directly with any 
    * text span in the text (such as word insertion during MT),
    * this field may be given a value indicating "approximately" where 
@@ -58,12 +58,13 @@ struct Token {
   3: optional spans.TextSpan textSpan
 
   /** 
-   * Location of this token in the original, raw text. In cases where
-   * this token does not correspond directly with any text span in
-   * the original text (such as word insertion during MT), this field
-   * may be given a value indicating "approximately" where the token
-   * comes from. A span covering the entire sentence may be used if
-   * no more precise value seems appropriate. 
+   * Location of this token in the original, raw text (.originalText
+   * field).  In cases where this token does not correspond directly
+   * with any text span in the original text (such as word insertion
+   * during MT), this field may be given a value indicating
+   * "approximately" where the token comes from. A span covering the
+   * entire sentence may be used if no more precise value seems
+   * appropriate.
    *
    * NOTE: This span represents a best guess, or 'provenance':
    * it cannot be guaranteed that this text span matches the _exact_
@@ -110,23 +111,24 @@ struct TokenRefSequence {
   3: required uuid.UUID tokenizationId
 
   /**
-   * The text span in the main text associated with this TokenRefSequence.
+   * The text span in the main text (.text field) associated with this
+   * TokenRefSequence.
    *
-   * NOTE: This span represents a best guess, or 'provenance':
-   * it cannot be guaranteed that this text span matches the _exact_
-   * text of the original document, but is the annotation's best
-   * effort at such a representation.    
+   * NOTE: This span represents a best guess, or 'provenance': it
+   * cannot be guaranteed that this text span matches the _exact_ text
+   * of the original document, but is the annotation's best effort at
+   * such a representation.
    */
   4: optional spans.TextSpan textSpan
 
   /** 
-   * The text span in the <em>raw</em> text associated with this
-   * TokenRefSequence.
+   * The text span in the original text (.originalText field)
+   * associated with this TokenRefSequence.
    *
-   * NOTE: This span represents a best guess, or 'provenance':
-   * it cannot be guaranteed that this text span matches the _exact_
-   * text of the original raw document, but is the annotation's best
-   * effort at such a representation.    
+   * NOTE: This span represents a best guess, or 'provenance': it
+   * cannot be guaranteed that this text span matches the _exact_ text
+   * of the original raw document, but is the annotation's best effort
+   * at such a representation.
    */
   5: optional spans.TextSpan rawTextSpan
 
