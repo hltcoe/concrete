@@ -354,15 +354,6 @@ struct TokenList {
    * An *ordered* list of tokens.
    */
   1 : required list<Token> tokenList
-
-  /*
-   * Optionally provide an explicit representation of the
-   * text, as seen by the tokenizer that produced the containing
-   * tokenization. When provided, this field gives easy access to 
-   * a common form for all tools and annotations relying on this
-   * containing tokenization.
-   */
-  2 : optional string reconstructedText
 }
 
 
