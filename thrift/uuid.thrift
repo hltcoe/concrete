@@ -6,6 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.uuid
+namespace cpp concrete
 
 struct UUID {
   /**
