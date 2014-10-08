@@ -208,9 +208,23 @@ struct TokenTagging {
   4: optional string taggingType
 }
 
+/**
+ * A syntactic edge between two tokens in a tokenized sentence.
+ */
 struct Dependency {
-  1: optional i32 gov        // will be null for ROOT token (only)
+  /**
+   * The governor or the head token. 0 indexed.
+   */
+  1: optional i32 gov = -1  // can be omitted when dep is the root token
+
+  /**
+   * The dependent token. 0 indexed.
+   */
   2: required i32 dep
+
+  /**
+   * The relation that holds between gov and dep.
+   */
   3: optional string edgeType
 }
 
