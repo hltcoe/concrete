@@ -64,7 +64,7 @@ compiler, you can regenerate the documentation by running the
 ```regenerate_docs.sh``` script:
 
     cd doc
-    regenerate_docs.sh
+    regenerate_docs.sh path_to_thrift_compiler
 
 This script will call ```thrift --gen html``` to generate HTML files
 for each .thrift file, and then copy modified versions of each HTML
