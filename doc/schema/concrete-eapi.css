@@ -1,0 +1,44 @@
+.dummyLeftPane {
+    float:left;
+    width: 25px;
+}
+.concreteRequired {
+    color: #ee44aa;
+    font-weight: bold;
+}
+.concreteOptional {
+    color: #aa88dd;
+}
+th.headerSortUp {
+    background-image: url(tablesorter/themes/blue/asc.gif);
+    background-color: #3399FF;
+}
+th.headerSortDown {
+    background-image: url(tablesorter/themes/blue/desc.gif);
+    background-color: #3399FF;
+}
+.header {
+    background-image: url(tablesorter/themes/blue/bg.gif);
+    cursor: pointer;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: center left;
+    padding-left: 20px;
+    border-right: 1px solid #dad9c7;
+    margin-left: -1px;
+    overflow:hidden;
+}
+.leftPane {
+    float:left;
+    width: 25%;
+    position:fixed;
+    top:0;
+}
+.rightPane {
+    float:right;
+    width: 75%;
+}
+
+body {
+    padding: 1em;
+}
