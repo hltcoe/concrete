@@ -235,6 +235,27 @@ struct DependencyParse {
   1: required uuid.UUID uuid
   2: required metadata.AnnotationMetadata metadata
   3: required list<Dependency> dependencyList
+
+  /**
+   * True iff there are no cycles in the dependency graph.
+   */
+  4: optional bool isAcyclic
+
+  /**
+   * True iff the dependency graph forms a single connected component.
+   */
+  5: optional bool isConnected
+
+  /**
+   * True iff every node in the dependency parse has at most
+   * one head/parent/governor.
+   */
+  6: optional bool isSingleHeaded
+
+  /**
+   * True iff there are no crossing edges in the dependency parse.
+   */
+  7: optional bool isProjective
 }
 
 //===========================================================================
