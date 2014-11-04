@@ -146,6 +146,8 @@ struct TokenRefSequence {
 struct TaggedToken {
   /** 
    * A pointer to the token being tagged. 
+   *
+   * Token indices are 0-based. These indices are also 0-based.
    */
   1: optional i32 tokenIndex
 
