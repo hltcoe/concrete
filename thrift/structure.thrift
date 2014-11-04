@@ -162,6 +162,24 @@ struct TaggedToken {
    * Confidence of the annotation. 
    */
   3: optional double confidence
+
+  /**
+   * A list of strings that represent a distribution of possible
+   * tags for this token.
+   *
+   * If populated, the 'tag' field should also be populated
+   * with the "best" value from this list.
+   */
+  4: optional list<string> tagList
+
+  /**
+   * A list of doubles that represent confidences associated with
+   * the tags in the 'tagList' field.
+   *
+   * If populated, the 'confidence' field should also be populated
+   * with the confidence associated with the "best" tag in 'tagList'.
+   */
+  5: optional list<double> confidenceList
 }
 
 /** 
