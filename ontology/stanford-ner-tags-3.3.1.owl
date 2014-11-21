@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#"
+     xml:base="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Date -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Date">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Duration -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Duration">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Location -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Location">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Misc -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Misc">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Money -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Money">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Number -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Number">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#O -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#O">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Ordinal -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Ordinal">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Organization -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Organization">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Percent -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Percent">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Person -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Person">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Set -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Set">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Time -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#Time">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-ner-tags-v3.3.1#NamedEntityRecognitionTag"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
