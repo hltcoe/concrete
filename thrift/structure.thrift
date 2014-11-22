@@ -249,12 +249,42 @@ struct Dependency {
 }
 
 /**
+ * Information about the structure of a dependency parse.
+ * This information is computable from the list of dependencies,
+ * but this allows the consumer to make (verified) assumptions
+ * about the dependencies being processed.
+ */
+struct DependencyParseStructure {
+  /**
+   * True iff there are no cycles in the dependency graph.
+   */
+  1: required bool isAcyclic
+
+  /**
+   * True iff the dependency graph forms a single connected component.
+   */
+  2: required bool isConnected
+
+  /**
+   * True iff every node in the dependency parse has at most
+   * one head/parent/governor.
+   */
+  3: required bool isSingleHeaded
+
+  /**
+   * True iff there are no crossing edges in the dependency parse.
+   */
+  4: required bool isProjective
+}
+
+/**
  * Represents a dependency parse with typed edges.
  */
 struct DependencyParse {
   1: required uuid.UUID uuid
   2: required metadata.AnnotationMetadata metadata
   3: required list<Dependency> dependencyList
+  4: optional DependencyParseStructure structureInformation
 }
 
 //===========================================================================
