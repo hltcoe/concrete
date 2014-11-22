@@ -5,6 +5,8 @@ See LICENSE in the project root directory.
 Concrete
 ========
 
+Current version: `3.10`
+
 Introduction
 ------------
 
@@ -47,7 +49,7 @@ and then start the web server with the command:
 
 This command will start a web server on your machine on the default
 port number (8097).
- 
+
 Point your browser to ```http://localhost:8097``` to navigate to the
 documentation (assuming port 8097).
 
