@@ -98,7 +98,7 @@ struct Communication {
 
   
   /**
-   * Theories about the block structure of this communication.
+   * Theory about the block structure of this communication.
    */
   11: optional list<structure.Section> sectionList
 

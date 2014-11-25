@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#"
+     xml:base="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1"/>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#$ -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#$">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#&apos;&apos; -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#&apos;&apos;">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#, -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#,">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#-LRB- -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#-LRB-">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#-RRB- -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#-RRB-">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#. -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#.">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#: -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#:">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#CC -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#CC">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#CD -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#CD">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#DT -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#DT">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#EX -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#EX">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#FW -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#FW">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#IN -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#IN">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#JJ -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#JJ">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#JJR -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#JJR">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#JJS -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#JJS">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#MD -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#MD">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#NN -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#NN">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#NNP -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#NNP">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#NNPS -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#NNPS">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#NNS -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#NNS">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PDT -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PDT">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#POS -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#POS">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PRP -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PRP">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PRP$ -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PRP$">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#RB -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#RB">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#RBR -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#RBR">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#RBS -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#RBS">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#RP -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#RP">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#SYM -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#SYM">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#TO -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#TO">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#UH -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#UH">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VB -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VB">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBD -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBD">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBG -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBG">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBN -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBN">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBP -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBP">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBZ -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#VBZ">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#WDT -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#WDT">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#WP -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#WP">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#WP$ -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#WP$">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#WRB -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#WRB">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/stanford-pos-tags-v3.3.1#PartOfSpeechTag"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->

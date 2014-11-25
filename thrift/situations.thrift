@@ -250,6 +250,19 @@ struct MentionArgument {
    * A pointer to the value of this argument, if it is a SituationMention.
    */
   3: optional uuid.UUID situationMentionId
+
+  /**
+   * The location of this MentionArgument in the Communication.
+   * If this MentionArgument can be identified in a document using an
+   * EntityMention or SituationMention, then UUID references to those
+   * types should be preferred and this field left as null.
+   */
+  4: optional structure.TokenRefSequence tokens
+
+  /**
+   * Confidence of this argument belonging to its SituationMention
+   */
+  5: optional double confidence
 }
 
 //===========================================================================

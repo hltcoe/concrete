@@ -147,6 +147,8 @@ struct TokenRefSequence {
 struct TaggedToken {
   /** 
    * A pointer to the token being tagged. 
+   *
+   * Token indices are 0-based. These indices are also 0-based.
    */
   1: optional i32 tokenIndex
 
@@ -161,6 +163,24 @@ struct TaggedToken {
    * Confidence of the annotation. 
    */
   3: optional double confidence
+
+  /**
+   * A list of strings that represent a distribution of possible
+   * tags for this token.
+   *
+   * If populated, the 'tag' field should also be populated
+   * with the "best" value from this list.
+   */
+  4: optional list<string> tagList
+
+  /**
+   * A list of doubles that represent confidences associated with
+   * the tags in the 'tagList' field.
+   *
+   * If populated, the 'confidence' field should also be populated
+   * with the confidence associated with the "best" tag in 'tagList'.
+   */
+  5: optional list<double> confidenceList
 }
 
 /** 
@@ -209,10 +229,53 @@ struct TokenTagging {
   4: optional string taggingType
 }
 
+/**
+ * A syntactic edge between two tokens in a tokenized sentence.
+ */
 struct Dependency {
-  1: optional i32 gov        // will be null for ROOT token (only)
+  /**
+   * The governor or the head token. 0 indexed.
+   */
+  1: optional i32 gov = -1  // can be omitted when dep is the root token
+
+  /**
+   * The dependent token. 0 indexed.
+   */
   2: required i32 dep
+
+  /**
+   * The relation that holds between gov and dep.
+   */
   3: optional string edgeType
+}
+
+/**
+ * Information about the structure of a dependency parse.
+ * This information is computable from the list of dependencies,
+ * but this allows the consumer to make (verified) assumptions
+ * about the dependencies being processed.
+ */
+struct DependencyParseStructure {
+  /**
+   * True iff there are no cycles in the dependency graph.
+   */
+  1: required bool isAcyclic
+
+  /**
+   * True iff the dependency graph forms a single connected component.
+   */
+  2: required bool isConnected
+
+  /**
+   * True iff every node in the dependency parse has at most
+   * one head/parent/governor.
+   */
+  3: required bool isSingleHeaded
+
+  /**
+   * True iff there are no crossing edges in the dependency parse.
+   */
+  4: required bool isProjective
 }
 
 /**
@@ -222,6 +285,7 @@ struct DependencyParse {
   1: required uuid.UUID uuid
   2: required metadata.AnnotationMetadata metadata
   3: required list<Dependency> dependencyList
+  4: optional DependencyParseStructure structureInformation
 }
 
 //===========================================================================

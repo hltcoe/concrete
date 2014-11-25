@@ -26,6 +26,7 @@
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.nitf
 namespace cpp concrete
+#@namespace scala edu.jhu.hlt.miser
 
 struct NITFInfo {
   /**

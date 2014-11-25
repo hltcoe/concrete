@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#"
+     xml:base="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Communication -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Communication"/>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Conversation -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Conversation">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Communication"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Document -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Document">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Communication"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Email -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Email">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Conversation"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#ForumPost -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#ForumPost">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Conversation"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Image -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Image">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Section"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#List -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#List">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Section"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Metadata -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Metadata">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Section"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#NewsDocument -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#NewsDocument">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Document"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Other -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Other">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Section"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Passage -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Passage">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Section"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Section -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Section"/>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Table -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Table">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Section"/>
+    </owl:Class>
+
+
+
+    <!-- http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Title -->
+
+    <owl:Class rdf:about="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Title">
+        <rdfs:subClassOf rdf:resource="http://hltcoe.jhu.edu/ontologies/2014/4/concrete-3.0.0#Section"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
