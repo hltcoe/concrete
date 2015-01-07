@@ -6,6 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.situations
+namespace cpp concrete
 #@namespace scala edu.jhu.hlt.miser
 
 include "structure.thrift"
