@@ -263,6 +263,14 @@ struct MentionArgument {
    * Confidence of this argument belonging to its SituationMention
    */
   5: optional double confidence
+
+  /**
+   * For the BinarySRL task, there may be situations
+   * where more than one property is attached to a single
+   * participant. A list of these properties can be stored in this field.
+   */
+  6: optional list<Property> propertyList
+
 }
 
 //===========================================================================
