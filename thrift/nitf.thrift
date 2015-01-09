@@ -386,11 +386,6 @@ struct NITFInfo {
    */
   39: optional string slug
 
-  /** 
-   * The file from which this object was read. 
-   */
-  40: optional string sourceFilePath;
-
   /**
    * This field specifies a list of taxonomic classifiers that place this
    * article into a hierarchy of articles. The individual terms of each
@@ -404,7 +399,7 @@ struct NITFInfo {
    * <li>Top/Opinion</li>
    * </ol>
    */
-  41: optional list<string> taxonomicClassifierList
+  40: optional list<string> taxonomicClassifierList
 
   /**
    * This field specifies a list of authored works that correspond to works
@@ -417,7 +412,7 @@ struct NITFInfo {
    * <li>BATTLEFIELD EARTH (BOOK)</li>
    * </ol>
    */
-  42: optional list<string> titleList
+  41: optional list<string> titleList
 
   /**
    * This field specifies a normalized list of terms describing the general
@@ -430,18 +425,18 @@ struct NITFInfo {
    * <li>ANALYSIS</li>
    * </ol>
    */
-  43: optional list<string> typesOfMaterialList
+  42: optional list<string> typesOfMaterialList
 
   /**
    * This field specifies the location of the online version of the article. The
    * &quot;Alternative Url&quot; field is preferred to this field on articles published
    * on or after April 02, 2006, as the linked page will have richer content.
    */
-  44: optional string url
+  43: optional string url
 
   /**
    * This field specifies the number of words in the body of the article,
    * including the lead paragraph.
    */
-  45: optional i32 wordCount
+  44: optional i32 wordCount
  }
