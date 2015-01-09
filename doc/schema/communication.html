@@ -99,8 +99,11 @@
        </td>
        <td>
         Stable identifier for this communication, identifying both the
-name of the source corpus and the document that it corresponds to
-in that corpus.
+        <br/>
+        name of the source corpus and the document that it corresponds to
+        <br/>
+        in that corpus.
+        <br/>
        </td>
        <td>
         required
@@ -124,8 +127,11 @@ in that corpus.
        </td>
        <td>
         Universally unique identifier for this communication instance.
-This is generated randomly, and can *not* be mapped back to the
-source corpus. It is used as a target for symbolic "pointers".
+        <br/>
+        This is generated randomly, and can *not* be mapped back to the
+        <br/>
+        source corpus. It is used as a target for symbolic "pointers".
+        <br/>
        </td>
        <td>
         required
@@ -147,13 +153,17 @@ source corpus. It is used as a target for symbolic "pointers".
        </td>
        <td>
         An enumeration used to indicate what type of communication this
-is. The optional fields named "
+        <br/>
+        is. The optional fields named "
         <i>
          kind
         </i>
         Info" can be used to
-store extra fields that are specific to the communication
-type.
+        <br/>
+        store extra fields that are specific to the communication
+        <br/>
+        type.
+        <br/>
        </td>
        <td>
         required
@@ -175,8 +185,11 @@ type.
        </td>
        <td>
         The full text contents of this communication in its original
-form, or in the least-processed form available, if the original
-is not available.
+        <br/>
+        form, or in the least-processed form available, if the original
+        <br/>
+        is not available.
+        <br/>
        </td>
        <td>
         optional
@@ -198,7 +211,9 @@ is not available.
        </td>
        <td>
         The time when this communication started (in unix time UTC --
-i.e., seconds since January 1, 1970).
+        <br/>
+        i.e., seconds since January 1, 1970).
+        <br/>
        </td>
        <td>
         optional
@@ -220,7 +235,9 @@ i.e., seconds since January 1, 1970).
        </td>
        <td>
         The time when this communication ended (in unix time UTC --
-i.e., seconds since January 1, 1970).
+        <br/>
+        i.e., seconds since January 1, 1970).
+        <br/>
        </td>
        <td>
         optional
@@ -244,10 +261,14 @@ i.e., seconds since January 1, 1970).
        </td>
        <td>
         metadata.AnnotationMetadata to support this particular communication.
-
-Communications derived from other communications should
-indicate in this metadata object their dependency
-to the original communication ID.
+        <br/>
+        <br/>
+        Communications derived from other communications should
+        <br/>
+        indicate in this metadata object their dependency
+        <br/>
+        to the original communication ID.
+        <br/>
        </td>
        <td>
         required
@@ -277,6 +298,7 @@ to the original communication ID.
        </td>
        <td>
         A catch-all store of keys and values. Use sparingly!
+        <br/>
        </td>
        <td>
         optional
@@ -304,7 +326,9 @@ to the original communication ID.
        </td>
        <td>
         Theories about the languages that are present in this
-communication.
+        <br/>
+        communication.
+        <br/>
        </td>
        <td>
         optional
@@ -331,7 +355,8 @@ communication.
         </code>
        </td>
        <td>
-        Theories about the block structure of this communication.
+        Theory about the block structure of this communication.
+        <br/>
        </td>
        <td>
         optional
@@ -359,7 +384,9 @@ communication.
        </td>
        <td>
         Theories about which spans of text are used to mention entities
-in this communication.
+        <br/>
+        in this communication.
+        <br/>
        </td>
        <td>
         optional
@@ -387,7 +414,9 @@ in this communication.
        </td>
        <td>
         Theories about what entities are discussed in this
-communication, with pointers to individual mentions.
+        <br/>
+        communication, with pointers to individual mentions.
+        <br/>
        </td>
        <td>
         optional
@@ -415,7 +444,9 @@ communication, with pointers to individual mentions.
        </td>
        <td>
         Theories about what situations are explicitly mentioned in this
-communication.
+        <br/>
+        communication.
+        <br/>
        </td>
        <td>
         optional
@@ -443,7 +474,9 @@ communication.
        </td>
        <td>
         Theories about what situations are asserted in this
-communication.
+        <br/>
+        communication.
+        <br/>
        </td>
        <td>
         optional
@@ -465,13 +498,20 @@ communication.
        </td>
        <td>
         Optional original text field that points back to an original
-communication.
-
-This field can be populated for sake of convenience when creating
-"perspective" communication (communications that are based on
-highly destructive changes to an original communication [e.g.,
-via MT]). This allows developers to quickly access the original
-text that this perspective communication is based off of.
+        <br/>
+        communication.
+        <br/>
+        <br/>
+        This field can be populated for sake of convenience when creating
+        <br/>
+        "perspective" communication (communications that are based on
+        <br/>
+        highly destructive changes to an original communication [e.g.,
+        <br/>
+        via MT]). This allows developers to quickly access the original
+        <br/>
+        text that this perspective communication is based off of.
+        <br/>
        </td>
        <td>
         optional
@@ -495,8 +535,11 @@ text that this perspective communication is based off of.
        </td>
        <td>
         The full audio contents of this communication in its original
-form, or in the least-processed form available, if the original
-is not available.
+        <br/>
+        form, or in the least-processed form available, if the original
+        <br/>
+        is not available.
+        <br/>
        </td>
        <td>
         optional
@@ -520,9 +563,14 @@ is not available.
        </td>
        <td>
         Extra information for communications where kind==TWEET:
-Information about this tweet that is provided by the Twitter
-API.  For information about the Twitter API, see:
-&lt;https://dev.twitter.com/docs/platform-objects&gt;
+        <br/>
+        Information about this tweet that is provided by the Twitter
+        <br/>
+        API.  For information about the Twitter API, see:
+        <br/>
+        <https:>
+         <br/>
+        </https:>
        </td>
        <td>
         optional
@@ -546,6 +594,7 @@ API.  For information about the Twitter API, see:
        </td>
        <td>
         Extra information for communications where kind==EMAIL
+        <br/>
        </td>
        <td>
         optional
@@ -569,7 +618,9 @@ API.  For information about the Twitter API, see:
        </td>
        <td>
         Extra information that may come from the NITF
-(News Industry Text Format) schema. See 'nitf.thrift'.
+        <br/>
+        (News Industry Text Format) schema. See 'nitf.thrift'.
+        <br/>
        </td>
        <td>
         optional
@@ -584,8 +635,9 @@ generated by a single speaker or author.  This type is used for
 both inter-personal communications (such as phone calls or
 conversations) and third-party communications (such as news
 articles).
-
-Each communication instance is grounded by its original
+     <p>
+     </p>
+     Each communication instance is grounded by its original
 (unannotated) contents, which should be stored in either the
 "text" field (for text communications) or the "audio" field (for
 audio communications).  If the communication is not available in
