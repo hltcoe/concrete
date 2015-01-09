@@ -71,23 +71,6 @@ struct NITFInfo {
   5: optional list<string> biographicalCategoryList
 
   /**
-   * This field specifies the byline of the article as it appeared in its
-   * print edition. Please note that not every article in this collection 
-   * has a byline, as editorials and other types of articles are generally 
-   * unsigned. A normalized version, of the form (LAST NAME, FIRST NAME),
-   * can be stored in the <strong>normalizedByline</strong> field.
-   * <br />
-   * Sample byline:
-   * <ul>
-   * <li>By James Reston </li>
-   * <li>By JAMES GLANZ; William J. Broad contributed reporting for this
-   * article.</li>
-   * <li>By ADAM NAGOURNEY and JEFF ZELENY</li>
-   * </ul>
-   */
-  7: optional string byline
-
-  /**
    * If the article is part of a regular column, this field specifies the name
    * of that column.
    * <br />
