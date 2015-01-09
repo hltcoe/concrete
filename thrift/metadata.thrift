@@ -10,6 +10,9 @@ namespace cpp concrete
 #@namespace scala edu.jhu.hlt.miser
 
 include "uuid.thrift"
+include "twitter.thrift"
+include "email.thrift"
+include "nitf.thrift"
 
 typedef uuid.UUID UUID
 
@@ -124,4 +127,32 @@ struct AnnotationMetadata {
    * the default value (1) should suffice.
    */
   6: required i32 kBest = 1
+}
+
+/**
+ * Metadata specific to a particular Communication object.
+ * This might include corpus-specific metadata (from the Twitter API),
+ * attributes associated with the Communication (the author),
+ * or other information about the Communication.
+ */
+struct CommunicationMetadata {
+  /** 
+   * Extra information for communications where kind==TWEET:
+   * Information about this tweet that is provided by the Twitter
+   * API.  For information about the Twitter API, see:
+   * <https://dev.twitter.com/docs/platform-objects> 
+   */
+  1: optional twitter.TweetInfo tweetInfo
+
+  /**
+   * Extra information for communications where kind==EMAIL
+   */
+  2: optional email.EmailCommunicationInfo emailInfo
+
+  /**
+   * Extra information that may come from the NITF
+   * (News Industry Text Format) schema. See 'nitf.thrift'.
+   */
+
+  3: optional nitf.NITFInfo nitfInfo
 }

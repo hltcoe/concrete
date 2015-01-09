@@ -14,10 +14,7 @@ include "language.thrift"
 include "structure.thrift"
 include "entities.thrift"
 include "situations.thrift"
-include "email.thrift"
-include "twitter.thrift"
 include "audio.thrift"
-include "nitf.thrift"
 include "metadata.thrift"
 
 /** 
@@ -144,29 +141,11 @@ struct Communication {
    * is not available. 
    */
   20: optional audio.Sound sound
-  
-  /** 
-   * Extra information for communications where kind==TWEET:
-   * Information about this tweet that is provided by the Twitter
-   * API.  For information about the Twitter API, see:
-   * <https://dev.twitter.com/docs/platform-objects> 
-   */
-  21: optional twitter.TweetInfo tweetInfo
 
   /**
-   * Extra information for communications where kind==EMAIL
+   * Metadata about this specific Communication, such as information
+   * about its author, information specific to this Communication
+   * or Communications like it (info from an API, for example), etc. 
    */
-  22: optional email.EmailCommunicationInfo emailInfo
-
-  /**
-   * Extra information that may come from the NITF
-   * (News Industry Text Format) schema. See 'nitf.thrift'.
-   */
-
-  23: optional nitf.NITFInfo nitfInfo
-  
-  ////////////////////////////////////////////////
-  //// Blocks 24-50 reserved for corpus-specific
-  //// document metadata.
-  ////////////////////////////////////////////////  
+  21: optional metadata.CommunicationMetadata communicationMetadata
 }
