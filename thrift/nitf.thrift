@@ -71,12 +71,6 @@ struct NITFInfo {
   5: optional list<string> biographicalCategoryList
 
   /**
-   * The body field is the text content of the article. Please note that this
-   * value includes the lead paragraph.
-   */
-  6: optional string body
-
-  /**
    * This field specifies the byline of the article as it appeared in its
    * print edition. Please note that not every article in this collection 
    * has a byline, as editorials and other types of articles are generally 
