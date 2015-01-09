@@ -39,7 +39,7 @@ struct NITFInfo {
 
   /**
    * This field is a summary of the article, possibly written by 
-   * and indexing service.
+   * an indexing service.
    */
   2: optional string articleAbstract
 
