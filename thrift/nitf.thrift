@@ -83,7 +83,7 @@ struct NITFInfo {
    * </ol>
    * 
    */
-  8: optional string columnName
+  6: optional string columnName
 
   /**
    * This field specifies the column in which the article starts in the print
@@ -91,27 +91,27 @@ struct NITFInfo {
    * right to left. As a consequence most, but not all, of the values for this
    * field fall in the range 1-6.
    */
-  9: optional i32 columnNumber
+  7: optional i32 columnNumber
 
   /**
    * This field specifies the date on which a correction was made to the
    * article. Generally, if the correction date is specified, the correction
    * text will also be specified (and vice versa).
    */
-  10: optional i64 correctionDate
+  8: optional i64 correctionDate
 
   /**
    * For articles corrected following publication, this field specifies the
    * correction. Generally, if the correction text is specified, the
    * correction date will also be specified (and vice versa).
    */
-  11: optional string correctionText
+  9: optional string correctionText
 
   /**
    * This field indicates the entity that produced the editorial content of
    * this document. 
    */
-  12: optional string credit
+  10: optional string credit
 
   /**
    * This field specifies the day of week on which the article was published.
@@ -125,7 +125,7 @@ struct NITFInfo {
    * <li>Sunday</li>
    * </ul>
    */
-  14: optional string dayOfWeek
+  11: optional string dayOfWeek
 
   /**
    * The &quot;descriptors&quot; field specifies a list of descriptive terms drawn from
@@ -139,7 +139,7 @@ struct NITFInfo {
    * <li>VIOLINS</li>
    * </ol>
    */
-  15: optional list<string> descriptorList
+  12: optional list<string> descriptorList
 
   /**
    * The feature page containing this article, such as 
@@ -148,7 +148,7 @@ struct NITFInfo {
    * <li>Fashion Page</li>
    * </ul>
    */
-  16: optional string featurePage
+  13: optional string featurePage
 
   /**
    * The &quot;general online descriptors&quot; field specifies a list of descriptors
@@ -162,26 +162,26 @@ struct NITFInfo {
    * <li>Ranches</li>
    * </ol>
    */
-  17: optional list<string> generalOnlineDescriptorList
+  14: optional list<string> generalOnlineDescriptorList
 
   /**
    * The GUID field specifies an integer that is guaranteed to be unique for
    * every document in the corpus.
    */
-  18: optional i32 guid
+  15: optional i32 guid
 
   /**
    * The kicker is an additional piece of information printed as an
    * accompaniment to a news headline.
    */
-  20: optional string kicker
+  16: optional string kicker
 
   /**
    * The &quot;lead Paragraph&quot; field is the lead paragraph of the article.
    * Generally this field is populated with the first two paragraphs from the
    * article.
    */
-  21: optional list<string> leadParagraphList
+  17: optional list<string> leadParagraphList
 
   /**
    * The &quot;locations&quot; field specifies a list of geographic descriptors drawn
@@ -195,7 +195,7 @@ struct NITFInfo {
    * <li>Park Slope (NYC)</li>
    * </ol>
    */
-  22: optional list<string> locationList
+  18: optional list<string> locationList
 
   /**
    * The &quot;names&quot; field specifies a list of names mentioned in the article.
@@ -207,20 +207,20 @@ struct NITFInfo {
    * <li>Chris Schenkel</li>
    * </ol>
    */
-  23: optional list<string> nameList
+  19: optional list<string> nameList
 
   /**
    * This field specifies the desk in the newsroom that
    * produced the article. The desk is related to, but is not the same as the
    * section in which the article appears.
    */
-  24: optional string newsDesk
+  20: optional string newsDesk
 
   /**
    * The Normalized Byline field is the byline normalized to the form (last
    * name, first name).
    */
-  25: optional string normalizedByline
+  21: optional string normalizedByline
 
   /**
    * This field specifies a list of descriptors from a normalized controlled
@@ -233,18 +233,18 @@ struct NITFInfo {
    * <li>Cooking and Cookbooks</li>
    * </ol>
    */
-  26: optional list<string> onlineDescriptorList
+  22: optional list<string> onlineDescriptorList
 
   /**
    * This field specifies the headline displayed with the article
    * online. Often this differs from the headline used in print.
    */
-  27: optional string onlineHeadline
+  23: optional string onlineHeadline
 
   /**
    * This field specifies the lead paragraph for the online version.
    */
-  28: optional string onlineLeadParagraph
+  24: optional string onlineLeadParagraph
 
   /**
    * This field specifies a list of place names that correspond to geographic
@@ -257,7 +257,7 @@ struct NITFInfo {
    * <li>Arcadia</li>
    * </ol>
    */
-  29: optional list<string> onlineLocationList
+  25: optional list<string> onlineLocationList
 
   /**
    * This field specifies a list of organizations that correspond to
@@ -270,7 +270,7 @@ struct NITFInfo {
    * <li>Rose Center</li>
    * </ol>
    */
-  30: optional list<string> onlineOrganizationList
+  26: optional list<string> onlineOrganizationList
 
   /**
    * This field specifies a list of people that correspond to individuals
@@ -283,13 +283,13 @@ struct NITFInfo {
    * <li>Robinson, Jackie</li>
    * </ol>
    */
-  31: optional list<string> onlinePeople
+  27: optional list<string> onlinePeople
 
   /**
    * This field specifies the section(s) in which the online version of the article
    * is placed. This may typically be populated from a semicolon (;) delineated list.
    */
-  32: optional list<string> onlineSectionList
+  28: optional list<string> onlineSectionList
 
   /**
    * This field specifies a list of authored works mentioned in the article.
@@ -301,7 +301,7 @@ struct NITFInfo {
    * <li>Bridge & Tunnel (Play)</li>
    * </ol>
    */
-  33: optional list<string> onlineTitleList
+  29: optional list<string> onlineTitleList
 
   /**
    * This field specifies a list of organization names drawn from a normalized
@@ -315,7 +315,7 @@ struct NITFInfo {
    * <li>CONNECTICUT GRAND OPERA</li>
    * </ol>
    */
-  34: optional list<string> organizationList
+  30: optional list<string> organizationList
 
   /**
    * This field specifies the page of the section in the paper in which the
@@ -324,7 +324,7 @@ struct NITFInfo {
    * article that occurs on page 1 of section F. The section is encoded in 
    * the <strong>section</strong> field.
    */
-  35: optional i32 page
+  31: optional i32 page
 
   /**
    * This field specifies a list of people from a normalized controlled
@@ -337,43 +337,43 @@ struct NITFInfo {
    * <li>COLLINS, GLENN</li>
    * </ol>
    */
-  36: optional list<string> peopleList
+  32: optional list<string> peopleList
 
   /**
    * This field specifies the date of the article's publication.
    */
-  37: optional i64 publicationDate
+  33: optional i64 publicationDate
 
   /**
    * This field specifies the day of the month on which the article was
    * published, always in the range 1-31.
    */
-  38: optional i32 publicationDayOfMonth
+  34: optional i32 publicationDayOfMonth
 
   /**
    * This field specifies the month on which the article was published in the
    * range 1-12 where 1 is January 2 is February etc.
    */
-  39: optional i32 publicationMonth
+  35: optional i32 publicationMonth
 
   /**
    * This field specifies the year in which the article was published. This
    * value is in the range 1987-2007 for this collection.
    */
-  40: optional i32 publicationYear
+  36: optional i32 publicationYear
 
   /**
    * This field specifies the section of the paper in which the article
    * appears. This is not the name of the section, but rather a letter or
    * number that indicates the section.
    */
-  41: optional string section
+  37: optional string section
 
   /**
    * If the article is part of a regular series, this field specifies the name
    * of that column.
    */
-  42: optional string seriesName
+  38: optional string seriesName
 
   /**
    * The slug is a short string that uniquely identifies an article from all
@@ -384,12 +384,12 @@ struct NITFInfo {
    * <li>12reunion</li>
    * </ul>
    */
-  43: optional string slug
+  39: optional string slug
 
   /** 
    * The file from which this object was read. 
    */
-  44: optional string sourceFilePath;
+  40: optional string sourceFilePath;
 
   /**
    * This field specifies a list of taxonomic classifiers that place this
@@ -404,7 +404,7 @@ struct NITFInfo {
    * <li>Top/Opinion</li>
    * </ol>
    */
-  45: optional list<string> taxonomicClassifierList
+  41: optional list<string> taxonomicClassifierList
 
   /**
    * This field specifies a list of authored works that correspond to works
@@ -417,7 +417,7 @@ struct NITFInfo {
    * <li>BATTLEFIELD EARTH (BOOK)</li>
    * </ol>
    */
-  46: optional list<string> titleList
+  42: optional list<string> titleList
 
   /**
    * This field specifies a normalized list of terms describing the general
@@ -430,18 +430,18 @@ struct NITFInfo {
    * <li>ANALYSIS</li>
    * </ol>
    */
-  47: optional list<string> typesOfMaterialList
+  43: optional list<string> typesOfMaterialList
 
   /**
    * This field specifies the location of the online version of the article. The
    * &quot;Alternative Url&quot; field is preferred to this field on articles published
    * on or after April 02, 2006, as the linked page will have richer content.
    */
-  48: optional string url
+  44: optional string url
 
   /**
    * This field specifies the number of words in the body of the article,
    * including the lead paragraph.
    */
-  49: optional i32 wordCount
+  45: optional i32 wordCount
  }
