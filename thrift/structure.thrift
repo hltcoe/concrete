@@ -315,12 +315,12 @@ struct Constituent {
   4: optional i32 headChildIndex = -1
 
   /**
-   * The character position where this Constituent starts.
+   * The token index that marks the beginning of this constituent.
    */
   5: optional i32 start
 
   /**
-   * The character position where this Constituent ends (exclusive). 
+   * The token index that marks the end of this constituent.
    */
   6: optional i32 ending
 }
