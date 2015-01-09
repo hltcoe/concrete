@@ -101,7 +101,6 @@
        </td>
        <td>
         Unique identifier for this language identification.
-        <br/>
        </td>
        <td>
         required
@@ -125,7 +124,6 @@
        </td>
        <td>
         Information about where this language identification came from.
-        <br/>
        </td>
        <td>
         required
@@ -155,29 +153,19 @@
        </td>
        <td>
         A list mapping from a language to the probability that that
-        <br/>
-        language occurs in a given communication.  Each language code should
-        <br/>
-        occur at most once in this list.  The probabilities do
+language occurs in a given communication.  Each language code should
+occur at most once in this list.  The probabilities do
         <i>
          not
         </i>
-        <br/>
         need to sum to one -- for example, if a single communication is known
-        <br/>
-        to contain both English and French, then it would be appropriate
-        <br/>
-        to assign a probability of 1 to both langauges.  (Manually
-        <br/>
-        annotated LanguageProb objects should always have probabilities
-        <br/>
-        of either zero or one; machine-generated LanguageProbs may have
-        <br/>
-        intermediate probabilities.)
-        <br/>
-        <br/>
-        Note: The string key should represent the ISO 639-3 three-letter code.
-        <br/>
+to contain both English and French, then it would be appropriate
+to assign a probability of 1 to both langauges.  (Manually
+annotated LanguageProb objects should always have probabilities
+of either zero or one; machine-generated LanguageProbs may have
+intermediate probabilities.)
+
+Note: The string key should represent the ISO 639-3 three-letter code.
        </td>
        <td>
         required

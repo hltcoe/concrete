@@ -132,7 +132,6 @@
        </td>
        <td>
         The name of the tool that generated this annotation.
-        <br/>
        </td>
        <td>
         required
@@ -154,9 +153,7 @@
        </td>
        <td>
         The time at which this annotation was generated (in unix time
-        <br/>
-        UTC -- i.e., seconds since January 1, 1970).
-        <br/>
+UTC -- i.e., seconds since January 1, 1970).
        </td>
        <td>
         required
@@ -180,9 +177,7 @@
        </td>
        <td>
         A Digest, carrying over any information the annotation metadata
-        <br/>
-        wishes to carry over.
-        <br/>
+wishes to carry over.
        </td>
        <td>
         optional
@@ -206,12 +201,9 @@
        </td>
        <td>
         The theories that supported this annotation.
-        <br/>
-        <br/>
-        An empty field indicates that the theory has no
-        <br/>
-        dependencies (e.g., an ingester).
-        <br/>
+
+An empty field indicates that the theory has no
+dependencies (e.g., an ingester).
        </td>
        <td>
         optional
@@ -233,20 +225,18 @@
        </td>
        <td>
         An integer that represents a ranking for systems
-        <br/>
-        that output k-best lists.
-        <br/>
-        <br/>
-        For systems that do not output k-best lists,
-        <br/>
-        the default value (1) should suffice.
-        <br/>
+that output k-best lists.
+
+For systems that do not output k-best lists,
+the default value (1) should suffice.
        </td>
        <td>
         required
        </td>
        <td>
-        1
+        <code>
+         1
+        </code>
        </td>
       </tr>
      </table>
@@ -293,13 +283,9 @@ that identifies where those annotations came from.
        </td>
        <td>
         The following fields define various ways you can store the
-        <br/>
-        digest data (for convenience). If none of these meets your
-        <br/>
-        needs, then serialize the digest to a byte sequence and store it
-        <br/>
-        in bytesValue.
-        <br/>
+digest data (for convenience). If none of these meets your
+needs, then serialize the digest to a byte sequence and store it
+in bytesValue.
        </td>
        <td>
         optional
@@ -867,35 +853,29 @@ information in whatever way is convenient.
      <br/>
      A struct that holds UUIDs for all theories that a particular
 annotation was based upon (and presumably requires).
-     <p>
-     </p>
-     Producers of TheoryDependencies should list all stages that they
+
+Producers of TheoryDependencies should list all stages that they
 used in constructing their particular annotation. They do not,
 however, need to explicitly label *each* stage; they can label
 only the immediate stage before them.
-     <p>
-     </p>
-     Examples:
-     <p>
-     </p>
-     If you are producing a Tokenization, and only used the
+
+Examples:
+
+If you are producing a Tokenization, and only used the
 SentenceSegmentation in order to produce that Tokenization, list
 only the single SentenceSegmentation UUID in sentenceTheoryList.
-     <p>
-     </p>
-     In this example, even though the SentenceSegmentation will have
+
+In this example, even though the SentenceSegmentation will have
 a dependency on some SectionSegmentation, it is not necessary
 for the Tokenization to list the SectionSegmentation UUID as a
 dependency.
-     <p>
-     </p>
-     If you are a producer of EntityMentions, and you use two
+
+If you are a producer of EntityMentions, and you use two
 POSTokenTagging and one NERTokenTagging objects, add the UUIDs for
 the POSTokenTagging objects to posTagTheoryList, and the UUID of
 the NER TokenTagging to the nerTagTheoryList.
-     <p>
-     </p>
-     In this example, because multiple annotations influenced the
+
+In this example, because multiple annotations influenced the
 new annotation, they should all be listed as dependencies.
      <br/>
     </div>
