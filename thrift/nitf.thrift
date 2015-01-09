@@ -171,12 +171,6 @@ struct NITFInfo {
   18: optional i32 guid
 
   /**
-   * This field specifies the headline of the article as it appeared in a
-   * print edition.
-   */
-  19: optional string headline
-
-  /**
    * The kicker is an additional piece of information printed as an
    * accompaniment to a news headline.
    */
