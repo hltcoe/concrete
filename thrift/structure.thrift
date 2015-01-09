@@ -106,11 +106,6 @@ struct TokenRefSequence {
    */
   2: optional i32 anchorTokenIndex = -1
 
-  /** 
-   * The UUID of the tokenization that contains the tokens. 
-   */
-  3: required uuid.UUID tokenizationId
-
   /**
    * The text span in the main text (.text field) associated with this
    * TokenRefSequence.
@@ -120,7 +115,7 @@ struct TokenRefSequence {
    * of the original document, but is the annotation's best effort at
    * such a representation.
    */
-  4: optional spans.TextSpan textSpan
+  3: optional spans.TextSpan textSpan
 
   /** 
    * The text span in the original text (.originalText field)
@@ -131,7 +126,7 @@ struct TokenRefSequence {
    * of the original raw document, but is the annotation's best effort
    * at such a representation.
    */
-  5: optional spans.TextSpan rawTextSpan
+  4: optional spans.TextSpan rawTextSpan
 
   /** 
    * The audio span associated with this TokenRefSequence.
@@ -141,7 +136,7 @@ struct TokenRefSequence {
    * text of the original document, but is the annotation's best
    * effort at such a representation.    
    */
-  6: optional spans.AudioSpan audioSpan
+  5: optional spans.AudioSpan audioSpan
 }
 
 struct TaggedToken {
