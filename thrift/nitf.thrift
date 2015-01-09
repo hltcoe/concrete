@@ -114,29 +114,6 @@ struct NITFInfo {
   12: optional string credit
 
   /**
-   * The &quot;dateline&quot; field is the dateline of the article. Generally a dateline
-   * is the name of the geographic location from which the article was filed
-   * followed by a comma and the month and day of the filing.
-   * <br />
-   * Sample datelines:
-   * <ul>
-   * <li>WASHINGTON, April 30</li>
-   * <li>RIYADH, Saudi Arabia, March 29</li>
-   * <li>ONTARIO, N.Y., Jan. 26</li>
-   * </ul>
-   * Please note:
-   * <ol>
-   * <li>The dateline location is the location from which the article was
-   * filed. Often times this location is related to the content of the
-   * article, but this is not guaranteed.</li>
-   * <li>The date specified for the dateline is often but not always the day
-   * previous to the publication date.</li>
-   * <li>The date is usually but not always specified.</li>
-   * </ol>
-   */
-  13: optional string dateline
-
-  /**
    * This field specifies the day of week on which the article was published.
    * <ul>
    * <li>Monday</li>
