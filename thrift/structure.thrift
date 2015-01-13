@@ -106,7 +106,7 @@ struct TokenRefSequence {
    */
   2: optional i32 anchorTokenIndex = -1
 
-  /** 
+  /**
    * The UUID of the tokenization that contains the tokens. 
    */
   3: required uuid.UUID tokenizationId
@@ -312,21 +312,22 @@ struct Constituent {
   3: required list<i32> childList
 
   /** 
-   * The list of pointers to the tokens dominated by this
-   * constituent. Typically, this field will only be defined for
-   * leaf constituents (i.e., constituents with no children). For
-   * many parsers, len(tokens) will always be either 1 (for leaf
-   * constituents) or 0 (for non-leaf constituents). 
-   */
-  4: optional TokenRefSequence tokenSequence
-
-  /** 
    * The index of the head child of this constituent. I.e., the
    * head child of constituent <tt>c</tt> is
    * <tt>c.children[c.head_child_index]</tt>. A value of -1
    * indicates that no child head was identified. 
    */
-  5: optional i32 headChildIndex = -1
+  4: optional i32 headChildIndex = -1
+
+  /**
+   * The token index that marks the beginning of this constituent.
+   */
+  5: optional i32 start
+
+  /**
+   * The token index that marks the end of this constituent.
+   */
+  6: optional i32 ending
 }
 
 /** 
