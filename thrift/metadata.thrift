@@ -11,8 +11,6 @@ namespace cpp concrete
 
 include "uuid.thrift"
 
-typedef uuid.UUID UUID
-
 /**
  * A struct that holds UUIDs for all theories that a particular
  * annotation was based upon (and presumably requires).
@@ -42,21 +40,21 @@ typedef uuid.UUID UUID
  * new annotation, they should all be listed as dependencies.
  */
 struct TheoryDependencies {
-  1: optional list<UUID> sectionTheoryList
-  2: optional list<UUID> sentenceTheoryList
-  3: optional list<UUID> tokenizationTheoryList
-  4: optional list<UUID> posTagTheoryList
-  5: optional list<UUID> nerTagTheoryList
-  6: optional list<UUID> lemmaTheoryList
-  7: optional list<UUID> langIdTheoryList
-  8: optional list<UUID> parseTheoryList
-  9: optional list<UUID> dependencyParseTheoryList
-  10: optional list<UUID> tokenAnnotationTheoryList
-  11: optional list<UUID> entityMentionSetTheoryList
-  12: optional list<UUID> entitySetTheoryList
-  13: optional list<UUID> situationMentionSetTheoryList
-  14: optional list<UUID> situationSetTheoryList
-  15: optional list<UUID> communicationsList
+  1: optional list<uuid.UUID> sectionTheoryList
+  2: optional list<uuid.UUID> sentenceTheoryList
+  3: optional list<uuid.UUID> tokenizationTheoryList
+  4: optional list<uuid.UUID> posTagTheoryList
+  5: optional list<uuid.UUID> nerTagTheoryList
+  6: optional list<uuid.UUID> lemmaTheoryList
+  7: optional list<uuid.UUID> langIdTheoryList
+  8: optional list<uuid.UUID> parseTheoryList
+  9: optional list<uuid.UUID> dependencyParseTheoryList
+  10: optional list<uuid.UUID> tokenAnnotationTheoryList
+  11: optional list<uuid.UUID> entityMentionSetTheoryList
+  12: optional list<uuid.UUID> entitySetTheoryList
+  13: optional list<uuid.UUID> situationMentionSetTheoryList
+  14: optional list<uuid.UUID> situationSetTheoryList
+  15: optional list<uuid.UUID> communicationsList
 }
 
 //===========================================================================
