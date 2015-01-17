@@ -12,6 +12,7 @@ namespace cpp concrete
 include "structure.thrift"
 include "metadata.thrift"
 include "uuid.thrift"
+include "linking.thrift"
 
 /** 
  * A span of text with a specific referent, such as a person,
@@ -95,6 +96,11 @@ struct EntitySet {
    * List of entities in this set.
    */
   3: required list<Entity> entityList
+
+  /**
+   * Entity linking annotations associated with this EntitySet.
+   */
+  4: optional list<linking.Linking> linkingList
 }
 
 //===========================================================================
@@ -161,6 +167,7 @@ struct EntityMention {
    * EntityMention.
    */
   7: optional list<uuid.UUID> childMentionIdList
+
 }
 
 
@@ -187,4 +194,9 @@ struct EntityMentionSet {
    * List of mentions in this set. 
    */
   3: required list<EntityMention> mentionList
+
+  /**
+   * Entity linking annotations associated with this EntityMentionSet.
+   */
+  4: optional list<linking.Linking> linkingList
 }

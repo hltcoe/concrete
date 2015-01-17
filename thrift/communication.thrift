@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2014 Johns Hopkins University HLTCOE. All rights reserved.
+ * Copyright 2012-2015 Johns Hopkins University HLTCOE. All rights reserved.
  * This software is released under the 2-clause BSD license.
  * See LICENSE in the project root directory.
  */
@@ -134,7 +134,7 @@ struct Communication {
    * text that this perspective communication is based off of.
    */
   16: optional string originalText
-  
+
   /** 
    * The full audio contents of this communication in its original
    * form, or in the least-processed form available, if the original

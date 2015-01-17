@@ -12,6 +12,7 @@ namespace cpp concrete
 include "structure.thrift"
 include "metadata.thrift"
 include "uuid.thrift"
+include "linking.thrift"
 
 /**
  * Attached to Arguments to support situations where
@@ -225,6 +226,12 @@ struct SituationSet {
    * List of mentions in this set. 
    */
   3: required list<Situation> situationList
+
+  /**
+   * Entity linking annotations associated with this SituationSet.
+   */
+  4: optional list<linking.Linking> linkingList
+
 }
 
 /**
@@ -376,4 +383,9 @@ struct SituationMentionSet {
    * List of mentions in this set. 
    */
   3: required list<SituationMention> mentionList
+
+  /**
+   * Entity linking annotations associated with this SituationMentionSet.
+   */
+  4: optional list<linking.Linking> linkingList
 }
