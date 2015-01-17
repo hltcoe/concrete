@@ -16,6 +16,7 @@ include "entities.thrift"
 include "situations.thrift"
 include "audio.thrift"
 include "metadata.thrift"
+include "cluster.thrift"
 
 /** 
  * A single communication instance, containing linguistic content
@@ -148,4 +149,54 @@ struct Communication {
    * or Communications like it (info from an API, for example), etc. 
    */
   21: optional metadata.CommunicationMetadata communicationMetadata
+}
+
+/**
+ * A structure that represents a collection of Communications. 
+ */
+struct CommunicationSet {
+  /**
+   * A list of Communication UUIDs that this CommunicationSet
+   * represents.
+   *
+   * This field may be absent if this CommunicationSet represents
+   * a large corpus. If absent, 'corpus' field should be present.
+   */
+  1: optional list<uuid.UUID> communicationIdList
+  
+  /**
+   * The name of a corpus or other document body that this
+   * CommunicationSet represents.
+   *
+   * Should be present if 'communicationIdList' is absent. 
+   */ 
+  2: optional string corpus
+
+  /**
+   * A list of Clustering objects that represent a
+   * group of EntityMentions that are a part of this
+   * CommunicationSet.
+   */ 
+  3: optional list<cluster.Clustering> entityMentionClusterList
+
+  /**
+   * A list of Clustering objects that represent a
+   * group of Entities that are a part of this
+   * CommunicationSet.
+   */ 
+  4: optional list<cluster.Clustering> entityClusterList
+
+  /**
+   * A list of Clustering objects that represent a
+   * group of SituationMentions that are a part of this
+   * CommunicationSet.
+   */ 
+  5: optional list<cluster.Clustering> situationMentionClusterList
+
+  /**
+   * A list of Clustering objects that represent a
+   * group of Situations that are a part of this
+   * CommunicationSet.
+   */ 
+  6: optional list<cluster.Clustering> situationClusterList
 }
