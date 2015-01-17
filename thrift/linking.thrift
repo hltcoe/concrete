@@ -13,7 +13,7 @@ include "uuid.thrift"
 include "metadata.thrift"
 
 /**
- * A structure that represents the target of an entity linking assertion. 
+ * A structure that represents the target of an entity linking annotation.
  */
 struct LinkTarget {
 
@@ -23,24 +23,20 @@ struct LinkTarget {
   1: optional double confidence
 
   /**
-   * a UUID that represents the target of this LinkTarget. 
-   *
-   * If this LinkTarget is represented in Concrete (for example, an Entity),
-   * then the Linking object's setId should capture the EntitySet
-   * which contains this Entity's UUID.
+   * A UUID that represents the target of this LinkTarget. This
+   * UUID should exist in the Entity/Situation(Mention)Set that the
+   * Linking object is contained in.
    */
   2: optional uuid.UUID targetId
-
-  // or a string ID and an optional reference to the collection
 
   /**
    * A database ID that represents the target of this linking. 
    *
    * This should be used if the target of the linking is not associated
-   * with an EntitySet in Concrete, and therefore cannot be linked by
+   * with an Entity|Situation(Mention)Set in Concrete, and therefore cannot be linked by
    * a UUID internal to concrete. 
    *
-   * Additionally, the other optional field 'dbName' should be populated.
+   * If present, other optional field 'dbName' should also be populated.
    */
   3: optional string dbId
 
@@ -56,7 +52,7 @@ struct LinkTarget {
 }
 
 /**
- * A structure that represents the origin of an entity linking assertion.
+ * A structure that represents the origin of an entity linking annotation.
  */
 struct Link {
   /**
@@ -71,7 +67,7 @@ struct Link {
 }
 
 /**
- * A structure that represents entity linking assertions. 
+ * A structure that represents entity linking annotations.
  */
 struct Linking {
   /**
