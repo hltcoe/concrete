@@ -10,48 +10,7 @@ namespace cpp concrete
 #@namespace scala edu.jhu.hlt.miser
 
 include "uuid.thrift"
-include "language.thrift"
-include "structure.thrift"
-include "entities.thrift"
-include "situations.thrift"
-include "audio.thrift"
 include "metadata.thrift"
-
-/**
- * A structure that represents entity linking assertions. 
- */
-struct Linking {
-  /**
-   * The UUID of the EntitySet, EntityMentionSet, SituationSet, or SituationMentionSet
-   * that this Linking object is associated with.
-   */
-  required uuid.UUID setId
-
-  /**
-   * Metadata related to this Linking object.
-   */
-  required metadata.AnnotationMetadata metadata
-
-  /**
-   * A list of Link objects that this Linking object contains.
-   */
-  required List<Link> linkList
-}
-
-/**
- * A structure that represents the origin of an entity linking assertion.
- */
-struct Link {
-  /**
-   * The "root" of this Link; points to a EntityMention UUID, Entity UUID, etc. 
-   */
-  required uuid.UUID sourceId
-
-  /**
-   * A list of LinkTarget objects that this Link contains.
-   */
-  required list<LinkTarget> linkTargetList
-}
 
 /**
  * A structure that represents the target of an entity linking assertion. 
@@ -61,7 +20,7 @@ struct LinkTarget {
   /**
    * Confidence of this LinkTarget object.
    */
-  optional double confidence
+  1: optional double confidence
 
   /**
    * a UUID that represents the target of this LinkTarget. 
@@ -70,7 +29,7 @@ struct LinkTarget {
    * then the Linking object's setId should capture the EntitySet
    * which contains this Entity's UUID.
    */
-  optional uuid.UUID targetId
+  2: optional uuid.UUID targetId
 
   // or a string ID and an optional reference to the collection
 
@@ -83,7 +42,7 @@ struct LinkTarget {
    *
    * Additionally, the other optional field 'dbName' should be populated.
    */
-  optional String dbId
+  3: optional string dbId
 
   /**
    * The name of the database that represents the target of this linking.
@@ -93,5 +52,35 @@ struct LinkTarget {
    *
    * Should be populated alongside 'dbId'.
    */
-  optional String dbName // e.g., "Freebase"
+  4: optional string dbName // e.g., "Freebase"
+}
+
+/**
+ * A structure that represents the origin of an entity linking assertion.
+ */
+struct Link {
+  /**
+   * The "root" of this Link; points to a EntityMention UUID, Entity UUID, etc. 
+   */
+  1: required uuid.UUID sourceId
+
+  /**
+   * A list of LinkTarget objects that this Link contains.
+   */
+  2: required list<LinkTarget> linkTargetList
+}
+
+/**
+ * A structure that represents entity linking assertions. 
+ */
+struct Linking {
+  /**
+   * Metadata related to this Linking object.
+   */
+  1: required metadata.AnnotationMetadata metadata
+
+  /**
+   * A list of Link objects that this Linking object contains.
+   */
+  2: required list<Link> linkList
 }
