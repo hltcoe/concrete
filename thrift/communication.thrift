@@ -16,7 +16,7 @@ include "entities.thrift"
 include "situations.thrift"
 include "audio.thrift"
 include "metadata.thrift"
-include "clustering.thrift"
+include "cluster.thrift"
 
 /** 
  * A single communication instance, containing linguistic content
