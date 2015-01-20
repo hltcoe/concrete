@@ -131,13 +131,9 @@
        </td>
        <td>
         The relationship between this argument and the situation that
-        <br/>
-        owns it. The roles that a situation's arguments can take
-        <br/>
-        depend on the type of the situation (including subtype
-        <br/>
-        information, such as event_type).
-        <br/>
+owns it. The roles that a situation's arguments can take
+depend on the type of the situation (including subtype
+information, such as event_type).
        </td>
        <td>
         optional
@@ -161,9 +157,7 @@
        </td>
        <td>
         A pointer to the value of this argument, if it is explicitly
-        <br/>
-        encoded as an Entity.
-        <br/>
+encoded as an Entity.
        </td>
        <td>
         optional
@@ -187,7 +181,6 @@
        </td>
        <td>
         A pointer to the value of this argument, if it is a situation.
-        <br/>
        </td>
        <td>
         optional
@@ -215,11 +208,8 @@
        </td>
        <td>
         For the BinarySRL task, there may be situations
-        <br/>
-        where more than one property is attached to a single
-        <br/>
-        participant. A list of these properties can be stored in this field.
-        <br/>
+where more than one property is attached to a single
+participant. A list of these properties can be stored in this field.
        </td>
        <td>
         optional
@@ -272,11 +262,8 @@ Argument values may be Entities or Situations.
        </td>
        <td>
         An enumerated value used to describe the way in which the
-        <br/>
-        justification's mention provides supporting evidence for the
-        <br/>
-        situation.
-        <br/>
+justification's mention provides supporting evidence for the
+situation.
        </td>
        <td>
         optional
@@ -300,7 +287,6 @@ Argument values may be Entities or Situations.
        </td>
        <td>
         A pointer to the SituationMention itself.
-        <br/>
        </td>
        <td>
         required
@@ -328,15 +314,10 @@ Argument values may be Entities or Situations.
        </td>
        <td>
         An optional list of pointers to tokens that are (especially)
-        <br/>
-        relevant to the way in which this mention provides
-        <br/>
-        justification for the situation. It is left up to individual
-        <br/>
-        analytics to decide what tokens (if any) they wish to include
-        <br/>
-        in this field.
-        <br/>
+relevant to the way in which this mention provides
+justification for the situation. It is left up to individual
+analytics to decide what tokens (if any) they wish to include
+in this field.
        </td>
        <td>
         optional
@@ -386,13 +367,9 @@ Argument values may be Entities or Situations.
        </td>
        <td>
         The relationship between this argument and the situation that
-        <br/>
-        owns it. The roles that a situation's arguments can take
-        <br/>
-        depend on the type of the situation (including subtype
-        <br/>
-        information, such as event_type).
-        <br/>
+owns it. The roles that a situation's arguments can take
+depend on the type of the situation (including subtype
+information, such as event_type).
        </td>
        <td>
         optional
@@ -416,9 +393,7 @@ Argument values may be Entities or Situations.
        </td>
        <td>
         A pointer to the value of an EntityMention, if this is being used to support
-        <br/>
-        an EntityMention.
-        <br/>
+an EntityMention.
        </td>
        <td>
         optional
@@ -442,7 +417,6 @@ Argument values may be Entities or Situations.
        </td>
        <td>
         A pointer to the value of this argument, if it is a SituationMention.
-        <br/>
        </td>
        <td>
         optional
@@ -466,13 +440,9 @@ Argument values may be Entities or Situations.
        </td>
        <td>
         The location of this MentionArgument in the Communication.
-        <br/>
-        If this MentionArgument can be identified in a document using an
-        <br/>
-        EntityMention or SituationMention, then UUID references to those
-        <br/>
-        types should be preferred and this field left as null.
-        <br/>
+If this MentionArgument can be identified in a document using an
+EntityMention or SituationMention, then UUID references to those
+types should be preferred and this field left as null.
        </td>
        <td>
         optional
@@ -494,7 +464,6 @@ Argument values may be Entities or Situations.
        </td>
        <td>
         Confidence of this argument belonging to its SituationMention
-        <br/>
        </td>
        <td>
         optional
@@ -522,11 +491,8 @@ Argument values may be Entities or Situations.
        </td>
        <td>
         For the BinarySRL task, there may be situations
-        <br/>
-        where more than one property is attached to a single
-        <br/>
-        participant. A list of these properties can be stored in this field.
-        <br/>
+where more than one property is attached to a single
+participant. A list of these properties can be stored in this field.
        </td>
        <td>
         optional
@@ -579,7 +545,6 @@ to avoid conflicts where abstract Arguments were being used to support concrete 
        </td>
        <td>
         The required value of the property.
-        <br/>
        </td>
        <td>
         required
@@ -603,7 +568,6 @@ to avoid conflicts where abstract Arguments were being used to support concrete 
        </td>
        <td>
         Metadata to support this particular property object.
-        <br/>
        </td>
        <td>
         required
@@ -625,13 +589,9 @@ to avoid conflicts where abstract Arguments were being used to support concrete 
        </td>
        <td>
         This value is typically boolean, 0.0 or 1.0, but we use a
-        <br/>
-        float in order to potentially capture cases where an annotator is
-        <br/>
-        highly confident that the value is underspecified, via a value of
-        <br/>
-        0.5.
-        <br/>
+float in order to potentially capture cases where an annotator is
+highly confident that the value is underspecified, via a value of
+0.5.
        </td>
        <td>
         optional
@@ -687,7 +647,6 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         Unique identifier for this situation.
-        <br/>
        </td>
        <td>
         required
@@ -709,7 +668,6 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         The core type of this situation (eg EVENT or SENTIMENT).
-        <br/>
        </td>
        <td>
         required
@@ -731,26 +689,17 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         A more descriptive field that specifically describes the
-        <br/>
-        situation based on situationType above. It allows for more
-        <br/>
-        detailed description of the situation.
-        <br/>
-        <br/>
-        Some examples:
-        <br/>
-        <br/>
-        if situationType == EVENT, the event type for the situation
-        <br/>
-        if situationType == STATE, the state type
-        <br/>
-        if situationType == TEMPORAL_FACT, the temporal fact type
-        <br/>
-        <br/>
-        Different and more varied situationTypes may be added
-        <br/>
-        in the future.
-        <br/>
+situation based on situationType above. It allows for more
+detailed description of the situation.
+
+Some examples:
+
+if situationType == EVENT, the event type for the situation
+if situationType == STATE, the state type
+if situationType == TEMPORAL_FACT, the temporal fact type
+
+Different and more varied situationTypes may be added
+in the future.
        </td>
        <td>
         optional
@@ -778,13 +727,9 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         The arguments for this situation. Each argument consists of a
-        <br/>
-        role and a value. It is possible for an situation to have
-        <br/>
-        multiple arguments with the same role. Arguments are
-        <br/>
-        unordered.
-        <br/>
+role and a value. It is possible for an situation to have
+multiple arguments with the same role. Arguments are
+unordered.
        </td>
        <td>
         optional
@@ -812,9 +757,7 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         Ids of the mentions of this situation in a communication
-        <br/>
-        (type=SituationMention)
-        <br/>
+(type=SituationMention)
        </td>
        <td>
         optional
@@ -842,11 +785,8 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         An list of pointers to SituationMentions that provide
-        <br/>
-        justification for this situation. These mentions may be either
-        <br/>
-        direct mentions of the situation, or indirect evidence.
-        <br/>
+justification for this situation. These mentions may be either
+direct mentions of the situation, or indirect evidence.
        </td>
        <td>
         optional
@@ -870,7 +810,6 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         A wrapper for TimeML annotations.
-        <br/>
        </td>
        <td>
         optional
@@ -892,11 +831,8 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         An "intensity" rating for this situation, typically ranging from
-        <br/>
-        0-1. In the case of SENTIMENT situations, this is used to record
-        <br/>
-        the intensity of the sentiment.
-        <br/>
+0-1. In the case of SENTIMENT situations, this is used to record
+the intensity of the sentiment.
        </td>
        <td>
         optional
@@ -918,11 +854,8 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         The polarity of this situation. In the case of SENTIMENT
-        <br/>
-        situations, this is used to record the polarity of the
-        <br/>
-        sentiment.
-        <br/>
+situations, this is used to record the polarity of the
+sentiment.
        </td>
        <td>
         optional
@@ -944,11 +877,8 @@ whereas Arguments notionally only support one Role.
        </td>
        <td>
         A confidence score for this individual situation. You can also
-        <br/>
-        set a confidence score for an entire SituationSet using the
-        <br/>
-        SituationSet's metadata.
-        <br/>
+set a confidence score for an entire SituationSet using the
+SituationSet's metadata.
        </td>
        <td>
         optional
@@ -1007,7 +937,6 @@ a set of zero or more unordered arguments.
        </td>
        <td>
         Unique identifier for this situation.
-        <br/>
        </td>
        <td>
         required
@@ -1029,11 +958,8 @@ a set of zero or more unordered arguments.
        </td>
        <td>
         The text content of this situation mention. This field is
-        <br/>
-        often redundant with the 'tokens' field, and may not
-        <br/>
-        be generated by all analytics.
-        <br/>
+often redundant with the 'tokens' field, and may not
+be generated by all analytics.
        </td>
        <td>
         optional
@@ -1055,7 +981,6 @@ a set of zero or more unordered arguments.
        </td>
        <td>
         The core type of this situation (eg EVENT or SENTIMENT)
-        <br/>
        </td>
        <td>
         optional
@@ -1077,24 +1002,16 @@ a set of zero or more unordered arguments.
        </td>
        <td>
         A more descriptive field that specifically describes the
-        <br/>
-        situation mention based on situationType above. It allows for
-        <br/>
-        more detailed description of the situation mention.
-        <br/>
-        <br/>
-        Some examples:
-        <br/>
-        <br/>
-        if situationType == EVENT, the event type for the sit. mention
-        <br/>
-        if situationType == STATE, the state type for this sit. mention
-        <br/>
-        <br/>
-        Different and more varied situationTypes may be added
-        <br/>
-        in the future.
-        <br/>
+situation mention based on situationType above. It allows for
+more detailed description of the situation mention.
+
+Some examples:
+
+if situationType == EVENT, the event type for the sit. mention
+if situationType == STATE, the state type for this sit. mention
+
+Different and more varied situationTypes may be added
+in the future.
        </td>
        <td>
         optional
@@ -1122,13 +1039,9 @@ a set of zero or more unordered arguments.
        </td>
        <td>
         The arguments for this situation mention. Each argument
-        <br/>
-        consists of a role and a value. It is possible for an situation
-        <br/>
-        to have multiple arguments with the same role. Arguments are
-        <br/>
-        unordered.
-        <br/>
+consists of a role and a value. It is possible for an situation
+to have multiple arguments with the same role. Arguments are
+unordered.
        </td>
        <td>
         required
@@ -1150,11 +1063,8 @@ a set of zero or more unordered arguments.
        </td>
        <td>
         An "intensity" rating for the situation, typically ranging from
-        <br/>
-        0-1. In the case of SENTIMENT situations, this is used to record
-        <br/>
-        the intensity of the sentiment.
-        <br/>
+0-1. In the case of SENTIMENT situations, this is used to record
+the intensity of the sentiment.
        </td>
        <td>
         optional
@@ -1176,11 +1086,8 @@ a set of zero or more unordered arguments.
        </td>
        <td>
         The polarity of this situation. In the case of SENTIMENT
-        <br/>
-        situations, this is used to record the polarity of the
-        <br/>
-        sentiment.
-        <br/>
+situations, this is used to record the polarity of the
+sentiment.
        </td>
        <td>
         optional
@@ -1204,15 +1111,10 @@ a set of zero or more unordered arguments.
        </td>
        <td>
         An optional pointer to tokens that are (especially)
-        <br/>
-        relevant to this situation mention. It is left up to individual
-        <br/>
-        analytics to decide what tokens (if any) they wish to include in
-        <br/>
-        this field. In particular, it is not specified whether the
-        <br/>
-        arguments' tokens should be included.
-        <br/>
+relevant to this situation mention. It is left up to individual
+analytics to decide what tokens (if any) they wish to include in
+this field. In particular, it is not specified whether the
+arguments' tokens should be included.
        </td>
        <td>
         optional
@@ -1234,11 +1136,8 @@ a set of zero or more unordered arguments.
        </td>
        <td>
         A confidence score for this individual situation mention. You
-        <br/>
-        can also set a confidence score for an entire SituationMentionSet
-        <br/>
-        using the SituationMentionSet's metadata.
-        <br/>
+can also set a confidence score for an entire SituationMentionSet
+using the SituationMentionSet's metadata.
        </td>
        <td>
         optional
@@ -1297,7 +1196,6 @@ arguments.
        </td>
        <td>
         Unique identifier for this set.
-        <br/>
        </td>
        <td>
         required
@@ -1321,7 +1219,6 @@ arguments.
        </td>
        <td>
         Information about where this set came from.
-        <br/>
        </td>
        <td>
         required
@@ -1349,10 +1246,36 @@ arguments.
        </td>
        <td>
         List of mentions in this set.
-        <br/>
        </td>
        <td>
         required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        linkingList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="linking.html#Struct_Linking">
+           linking.Linking
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Entity linking annotations associated with this SituationMentionSet.
+       </td>
+       <td>
+        optional
        </td>
        <td>
        </td>
@@ -1403,7 +1326,6 @@ message. See also: SituationMention
        </td>
        <td>
         Unique identifier for this set.
-        <br/>
        </td>
        <td>
         required
@@ -1427,7 +1349,6 @@ message. See also: SituationMention
        </td>
        <td>
         Information about where this set came from.
-        <br/>
        </td>
        <td>
         required
@@ -1455,10 +1376,36 @@ message. See also: SituationMention
        </td>
        <td>
         List of mentions in this set.
-        <br/>
        </td>
        <td>
         required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        linkingList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="linking.html#Struct_Linking">
+           linking.Linking
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Entity linking annotations associated with this SituationSet.
+       </td>
+       <td>
+        optional
        </td>
        <td>
        </td>
@@ -1508,7 +1455,6 @@ message. See also: Situation
        </td>
        <td>
         The TimeML class for situations representing TimeML events
-        <br/>
        </td>
        <td>
         optional
@@ -1530,7 +1476,6 @@ message. See also: Situation
        </td>
        <td>
         The TimeML tense for situations representing TimeML events
-        <br/>
        </td>
        <td>
         optional
@@ -1552,7 +1497,6 @@ message. See also: Situation
        </td>
        <td>
         The TimeML aspect for situations representing TimeML events
-        <br/>
        </td>
        <td>
         optional

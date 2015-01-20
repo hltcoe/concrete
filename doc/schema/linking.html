@@ -16,13 +16,13 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
   <link href="style.css" rel="stylesheet" type="text/css"/>
   <title>
-   Thrift module: email
+   Thrift module: linking
   </title>
  </head>
  <body>
   <div class="container-fluid">
    <h1>
-    Thrift module: email
+    Thrift module: linking
    </h1>
    <table class="table-bordered table-striped table-condensed">
     <thead>
@@ -41,17 +41,21 @@
     </thead>
     <tr>
      <td>
-      email
+      linking
      </td>
      <td>
      </td>
      <td>
-      <a href="#Struct_EmailAddress">
-       EmailAddress
+      <a href="#Struct_Link">
+       Link
       </a>
       <br/>
-      <a href="#Struct_EmailCommunicationInfo">
-       EmailCommunicationInfo
+      <a href="#Struct_LinkTarget">
+       LinkTarget
+      </a>
+      <br/>
+      <a href="#Struct_Linking">
+       Linking
       </a>
       <br/>
      </td>
@@ -65,8 +69,8 @@
      Data structures
     </h2>
     <div class="definition">
-     <h3 id="Struct_EmailAddress">
-      Struct: EmailAddress
+     <h3 id="Struct_Link">
+      Struct: Link
      </h3>
      <table class="table-bordered table-striped table-condensed">
       <thead>
@@ -94,17 +98,20 @@
         1
        </td>
        <td>
-        address
+        sourceId
        </td>
        <td>
         <code>
-         string
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
        </td>
        <td>
+        The "root" of this Link; points to a EntityMention UUID, Entity UUID, etc.
        </td>
        <td>
-        optional
+        required
        </td>
        <td>
        </td>
@@ -114,36 +121,36 @@
         2
        </td>
        <td>
-        displayName
+        linkTargetList
        </td>
        <td>
         <code>
-         string
+         list&lt;
+         <code>
+          <a href="linking.html#Struct_LinkTarget">
+           LinkTarget
+          </a>
+         </code>
+         &gt;
         </code>
        </td>
        <td>
+        A list of LinkTarget objects that this Link contains.
        </td>
        <td>
-        optional
+        required
        </td>
        <td>
        </td>
       </tr>
      </table>
      <br/>
-     An email address, optionally accompanied by a display_name. These
-values are typically extracted from strings such as:
-     <tt>
-      "John Smith" &lt;john\@xyz.com&gt;
-     </tt>
-     .
-
-\see RFC2822 &lt;http://tools.ietf.org/html/rfc2822&gt;
+     A structure that represents the origin of an entity linking annotation.
      <br/>
     </div>
     <div class="definition">
-     <h3 id="Struct_EmailCommunicationInfo">
-      Struct: EmailCommunicationInfo
+     <h3 id="Struct_LinkTarget">
+      Struct: LinkTarget
      </h3>
      <table class="table-bordered table-striped table-condensed">
       <thead>
@@ -171,14 +178,15 @@ values are typically extracted from strings such as:
         1
        </td>
        <td>
-        messageId
+        confidence
        </td>
        <td>
         <code>
-         string
+         double
         </code>
        </td>
        <td>
+        Confidence of this LinkTarget object.
        </td>
        <td>
         optional
@@ -191,14 +199,19 @@ values are typically extracted from strings such as:
         2
        </td>
        <td>
-        contentType
+        targetId
        </td>
        <td>
         <code>
-         string
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
        </td>
        <td>
+        A UUID that represents the target of this LinkTarget. This
+UUID should exist in the Entity/Situation(Mention)Set that the
+Linking object is contained in.
        </td>
        <td>
         optional
@@ -211,7 +224,7 @@ values are typically extracted from strings such as:
         3
        </td>
        <td>
-        userAgent
+        dbId
        </td>
        <td>
         <code>
@@ -219,6 +232,13 @@ values are typically extracted from strings such as:
         </code>
        </td>
        <td>
+        A database ID that represents the target of this linking.
+
+This should be used if the target of the linking is not associated
+with an Entity|Situation(Mention)Set in Concrete, and therefore cannot be linked by
+a UUID internal to concrete.
+
+If present, other optional field 'dbName' should also be populated.
        </td>
        <td>
         optional
@@ -231,164 +251,20 @@ values are typically extracted from strings such as:
         4
        </td>
        <td>
-        inReplyToList
+        dbName
        </td>
        <td>
         <code>
-         list&lt;
-         <code>
-          string
-         </code>
-         &gt;
+         string
         </code>
        </td>
        <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        referenceList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          string
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        6
-       </td>
-       <td>
-        senderAddress
-       </td>
-       <td>
-        <code>
-         <a href="email.html#Struct_EmailAddress">
-          EmailAddress
-         </a>
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        7
-       </td>
-       <td>
-        returnPathAddress
-       </td>
-       <td>
-        <code>
-         <a href="email.html#Struct_EmailAddress">
-          EmailAddress
-         </a>
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        8
-       </td>
-       <td>
-        toAddressList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="email.html#Struct_EmailAddress">
-           EmailAddress
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        9
-       </td>
-       <td>
-        ccAddressList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="email.html#Struct_EmailAddress">
-           EmailAddress
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        10
-       </td>
-       <td>
-        bccAddressList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="email.html#Struct_EmailAddress">
-           EmailAddress
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
+        The name of the database that represents the target of this linking.
+
+Together with the 'dbId', this can form a pointer to a target
+that is not represented inside concrete.
+
+Should be populated alongside 'dbId'.
        </td>
        <td>
         optional
@@ -398,7 +274,87 @@ values are typically extracted from strings such as:
       </tr>
      </table>
      <br/>
-     Extra information about an email communication instance.
+     A structure that represents the target of an entity linking annotation.
+     <br/>
+    </div>
+    <div class="definition">
+     <h3 id="Struct_Linking">
+      Struct: Linking
+     </h3>
+     <table class="table-bordered table-striped table-condensed">
+      <thead>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </thead>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        metadata
+       </td>
+       <td>
+        <code>
+         <a href="metadata.html#Struct_AnnotationMetadata">
+          metadata.AnnotationMetadata
+         </a>
+        </code>
+       </td>
+       <td>
+        Metadata related to this Linking object.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        linkList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="linking.html#Struct_Link">
+           Link
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of Link objects that this Linking object contains.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </table>
+     <br/>
+     A structure that represents entity linking annotations.
      <br/>
     </div>
    </div>

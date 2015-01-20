@@ -1,9 +1,11 @@
 var CONCRETE_FILELIST = [
 'audio',
+'cluster',
 'communication',
 'email',
 'entities',
 'language',
+'linking',
 'metadata',
 'nitf',
 'situations',

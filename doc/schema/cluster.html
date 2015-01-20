@@ -16,13 +16,13 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
   <link href="style.css" rel="stylesheet" type="text/css"/>
   <title>
-   Thrift module: email
+   Thrift module: cluster
   </title>
  </head>
  <body>
   <div class="container-fluid">
    <h1>
-    Thrift module: email
+    Thrift module: cluster
    </h1>
    <table class="table-bordered table-striped table-condensed">
     <thead>
@@ -41,17 +41,21 @@
     </thead>
     <tr>
      <td>
-      email
+      cluster
      </td>
      <td>
      </td>
      <td>
-      <a href="#Struct_EmailAddress">
-       EmailAddress
+      <a href="#Struct_Cluster">
+       Cluster
       </a>
       <br/>
-      <a href="#Struct_EmailCommunicationInfo">
-       EmailCommunicationInfo
+      <a href="#Struct_ClusterMember">
+       ClusterMember
+      </a>
+      <br/>
+      <a href="#Struct_Clustering">
+       Clustering
       </a>
       <br/>
      </td>
@@ -65,8 +69,8 @@
      Data structures
     </h2>
     <div class="definition">
-     <h3 id="Struct_EmailAddress">
-      Struct: EmailAddress
+     <h3 id="Struct_Cluster">
+      Struct: Cluster
      </h3>
      <table class="table-bordered table-striped table-condensed">
       <thead>
@@ -94,14 +98,20 @@
         1
        </td>
        <td>
-        address
+        clusterMemberIndexList
        </td>
        <td>
         <code>
-         string
+         list&lt;
+         <code>
+          i32
+         </code>
+         &gt;
         </code>
        </td>
        <td>
+        A list of integers that represent indices into a list of ClusterMember
+objects (likely represented in a Clustering object).
        </td>
        <td>
         optional
@@ -114,91 +124,19 @@
         2
        </td>
        <td>
-        displayName
+        confidenceList
        </td>
        <td>
         <code>
-         string
+         list&lt;
+         <code>
+          double
+         </code>
+         &gt;
         </code>
        </td>
        <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     An email address, optionally accompanied by a display_name. These
-values are typically extracted from strings such as:
-     <tt>
-      "John Smith" &lt;john\@xyz.com&gt;
-     </tt>
-     .
-
-\see RFC2822 &lt;http://tools.ietf.org/html/rfc2822&gt;
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_EmailCommunicationInfo">
-      Struct: EmailCommunicationInfo
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        messageId
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        contentType
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
+        Confidence values for members of 'memberIndexList' field.
        </td>
        <td>
         optional
@@ -211,14 +149,231 @@ values are typically extracted from strings such as:
         3
        </td>
        <td>
-        userAgent
+        childIndexList
        </td>
        <td>
         <code>
-         string
+         list&lt;
+         <code>
+          i32
+         </code>
+         &gt;
         </code>
        </td>
        <td>
+        A list of integers that represent indices into a list of Cluster objects,
+used to represent child Clusters associated with this particular Cluster.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </table>
+     <br/>
+     A structure that represents a cluster of Communications.
+
+This structure allows for  specific grouping of ClusterMembers,
+as well as other Clusters that this Cluster object considers children.
+     <br/>
+    </div>
+    <div class="definition">
+     <h3 id="Struct_ClusterMember">
+      Struct: ClusterMember
+     </h3>
+     <table class="table-bordered table-striped table-condensed">
+      <thead>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </thead>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        communicationId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        The UUID of the Communication this ClusterMember is associated with.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        setId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        The UUID of the Entity|Situation(Mention)Set this ClusterMember
+is associated with.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        elementId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        The UUID of the specific EntityMention, Entity, SituationMention,
+or Situation that this ClusterMember is tied to.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </table>
+     <br/>
+     A member of a 'cluster'.
+
+Contains a communication ID, an Entity|Situation(Mention)Set ID,
+and an element ID that identifies the specific
+Entity|Situation(Mention) associated with this object.
+     <br/>
+    </div>
+    <div class="definition">
+     <h3 id="Struct_Clustering">
+      Struct: Clustering
+     </h3>
+     <table class="table-bordered table-striped table-condensed">
+      <thead>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </thead>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        uuid
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        UUID for this Clustering object.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        metadata
+       </td>
+       <td>
+        <code>
+         <a href="metadata.html#Struct_AnnotationMetadata">
+          metadata.AnnotationMetadata
+         </a>
+        </code>
+       </td>
+       <td>
+        Metadata for this Clustering object.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        clusterMemberList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="cluster.html#Struct_ClusterMember">
+           ClusterMember
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A complete list of ClusterMember objects that this Clustering holds.
        </td>
        <td>
         optional
@@ -231,18 +386,21 @@ values are typically extracted from strings such as:
         4
        </td>
        <td>
-        inReplyToList
+        clusterList
        </td>
        <td>
         <code>
          list&lt;
          <code>
-          string
+          <a href="cluster.html#Struct_Cluster">
+           Cluster
+          </a>
          </code>
          &gt;
         </code>
        </td>
        <td>
+        A complete list of Cluster objects that this Clustering holds.
        </td>
        <td>
         optional
@@ -255,140 +413,20 @@ values are typically extracted from strings such as:
         5
        </td>
        <td>
-        referenceList
+        rootClusterIndexList
        </td>
        <td>
         <code>
          list&lt;
          <code>
-          string
+          i32
          </code>
          &gt;
         </code>
        </td>
        <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        6
-       </td>
-       <td>
-        senderAddress
-       </td>
-       <td>
-        <code>
-         <a href="email.html#Struct_EmailAddress">
-          EmailAddress
-         </a>
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        7
-       </td>
-       <td>
-        returnPathAddress
-       </td>
-       <td>
-        <code>
-         <a href="email.html#Struct_EmailAddress">
-          EmailAddress
-         </a>
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        8
-       </td>
-       <td>
-        toAddressList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="email.html#Struct_EmailAddress">
-           EmailAddress
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        9
-       </td>
-       <td>
-        ccAddressList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="email.html#Struct_EmailAddress">
-           EmailAddress
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        10
-       </td>
-       <td>
-        bccAddressList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="email.html#Struct_EmailAddress">
-           EmailAddress
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
+        A list of integers that represent root Clusters. These integers should be
+indices into the 'clusterList' object.
        </td>
        <td>
         optional
@@ -398,7 +436,8 @@ values are typically extracted from strings such as:
       </tr>
      </table>
      <br/>
-     Extra information about an email communication instance.
+     A structure that represents a "clustering" of Communications, to support
+cross-document coreference tasks.
      <br/>
     </div>
    </div>
