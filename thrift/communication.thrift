@@ -38,10 +38,10 @@ struct CommunicationTagging {
   2: required metadata.AnnotationMetadata metadata
 
   /**
-   * A string that attempts to capture the type of this CommunicationTagging
-   * object. For example, 'topic' or 'gender'.
+   * A string that captures the type of this CommunicationTagging
+   * object. For example: 'topic' or 'gender'.
    */
-  3: optional string taggingType
+  3: required string taggingType
 
   /**
    * A list of strings that represent different tags related to the taggingType.
