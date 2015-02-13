@@ -54,6 +54,10 @@
        CommunicationSet
       </a>
       <br/>
+      <a href="#Struct_CommunicationTagging">
+       CommunicationTagging
+      </a>
+      <br/>
      </td>
      <td>
      </td>
@@ -103,8 +107,11 @@
        </td>
        <td>
         Stable identifier for this communication, identifying both the
-name of the source corpus and the document that it corresponds to
-in that corpus.
+        <br/>
+        name of the source corpus and the document that it corresponds to
+        <br/>
+        in that corpus.
+        <br/>
        </td>
        <td>
         required
@@ -128,8 +135,11 @@ in that corpus.
        </td>
        <td>
         Universally unique identifier for this communication instance.
-This is generated randomly, and can *not* be mapped back to the
-source corpus. It is used as a target for symbolic "pointers".
+        <br/>
+        This is generated randomly, and can *not* be mapped back to the
+        <br/>
+        source corpus. It is used as a target for symbolic "pointers".
+        <br/>
        </td>
        <td>
         required
@@ -151,13 +161,17 @@ source corpus. It is used as a target for symbolic "pointers".
        </td>
        <td>
         An enumeration used to indicate what type of communication this
-is. The optional fields named "
+        <br/>
+        is. The optional fields named "
         <i>
          kind
         </i>
         Info" can be used to
-store extra fields that are specific to the communication
-type.
+        <br/>
+        store extra fields that are specific to the communication
+        <br/>
+        type.
+        <br/>
        </td>
        <td>
         required
@@ -179,8 +193,11 @@ type.
        </td>
        <td>
         The full text contents of this communication in its original
-form, or in the least-processed form available, if the original
-is not available.
+        <br/>
+        form, or in the least-processed form available, if the original
+        <br/>
+        is not available.
+        <br/>
        </td>
        <td>
         optional
@@ -202,7 +219,9 @@ is not available.
        </td>
        <td>
         The time when this communication started (in unix time UTC --
-i.e., seconds since January 1, 1970).
+        <br/>
+        i.e., seconds since January 1, 1970).
+        <br/>
        </td>
        <td>
         optional
@@ -224,7 +243,41 @@ i.e., seconds since January 1, 1970).
        </td>
        <td>
         The time when this communication ended (in unix time UTC --
-i.e., seconds since January 1, 1970).
+        <br/>
+        i.e., seconds since January 1, 1970).
+        <br/>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        7
+       </td>
+       <td>
+        communicationTaggingList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="communication.html#Struct_CommunicationTagging">
+           CommunicationTagging
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of CommunicationTagging objects that can support this
+        <br/>
+        Communication. CommunicationTagging objects can be used to
+        <br/>
+        annotate Communications with topics, gender identification, etc.
+        <br/>
        </td>
        <td>
         optional
@@ -248,10 +301,14 @@ i.e., seconds since January 1, 1970).
        </td>
        <td>
         metadata.AnnotationMetadata to support this particular communication.
-
-Communications derived from other communications should
-indicate in this metadata object their dependency
-to the original communication ID.
+        <br/>
+        <br/>
+        Communications derived from other communications should
+        <br/>
+        indicate in this metadata object their dependency
+        <br/>
+        to the original communication ID.
+        <br/>
        </td>
        <td>
         required
@@ -281,6 +338,7 @@ to the original communication ID.
        </td>
        <td>
         A catch-all store of keys and values. Use sparingly!
+        <br/>
        </td>
        <td>
         optional
@@ -308,7 +366,9 @@ to the original communication ID.
        </td>
        <td>
         Theories about the languages that are present in this
-communication.
+        <br/>
+        communication.
+        <br/>
        </td>
        <td>
         optional
@@ -336,6 +396,7 @@ communication.
        </td>
        <td>
         Theory about the block structure of this communication.
+        <br/>
        </td>
        <td>
         optional
@@ -363,7 +424,9 @@ communication.
        </td>
        <td>
         Theories about which spans of text are used to mention entities
-in this communication.
+        <br/>
+        in this communication.
+        <br/>
        </td>
        <td>
         optional
@@ -391,7 +454,9 @@ in this communication.
        </td>
        <td>
         Theories about what entities are discussed in this
-communication, with pointers to individual mentions.
+        <br/>
+        communication, with pointers to individual mentions.
+        <br/>
        </td>
        <td>
         optional
@@ -419,7 +484,9 @@ communication, with pointers to individual mentions.
        </td>
        <td>
         Theories about what situations are explicitly mentioned in this
-communication.
+        <br/>
+        communication.
+        <br/>
        </td>
        <td>
         optional
@@ -447,7 +514,9 @@ communication.
        </td>
        <td>
         Theories about what situations are asserted in this
-communication.
+        <br/>
+        communication.
+        <br/>
        </td>
        <td>
         optional
@@ -469,13 +538,20 @@ communication.
        </td>
        <td>
         Optional original text field that points back to an original
-communication.
-
-This field can be populated for sake of convenience when creating
-"perspective" communication (communications that are based on
-highly destructive changes to an original communication [e.g.,
-via MT]). This allows developers to quickly access the original
-text that this perspective communication is based off of.
+        <br/>
+        communication.
+        <br/>
+        <br/>
+        This field can be populated for sake of convenience when creating
+        <br/>
+        "perspective" communication (communications that are based on
+        <br/>
+        highly destructive changes to an original communication [e.g.,
+        <br/>
+        via MT]). This allows developers to quickly access the original
+        <br/>
+        text that this perspective communication is based off of.
+        <br/>
        </td>
        <td>
         optional
@@ -499,8 +575,11 @@ text that this perspective communication is based off of.
        </td>
        <td>
         The full audio contents of this communication in its original
-form, or in the least-processed form available, if the original
-is not available.
+        <br/>
+        form, or in the least-processed form available, if the original
+        <br/>
+        is not available.
+        <br/>
        </td>
        <td>
         optional
@@ -524,8 +603,11 @@ is not available.
        </td>
        <td>
         Metadata about this specific Communication, such as information
-about its author, information specific to this Communication
-or Communications like it (info from an API, for example), etc.
+        <br/>
+        about its author, information specific to this Communication
+        <br/>
+        or Communications like it (info from an API, for example), etc.
+        <br/>
        </td>
        <td>
         optional
@@ -540,8 +622,9 @@ generated by a single speaker or author.  This type is used for
 both inter-personal communications (such as phone calls or
 conversations) and third-party communications (such as news
 articles).
-
-Each communication instance is grounded by its original
+     <p>
+     </p>
+     Each communication instance is grounded by its original
 (unannotated) contents, which should be stored in either the
 "text" field (for text communications) or the "audio" field (for
 audio communications).  If the communication is not available in
@@ -594,10 +677,14 @@ communication in the least-processed form available.
        </td>
        <td>
         A list of Communication UUIDs that this CommunicationSet
-represents.
-
-This field may be absent if this CommunicationSet represents
-a large corpus. If absent, 'corpus' field should be present.
+        <br/>
+        represents.
+        <br/>
+        <br/>
+        This field may be absent if this CommunicationSet represents
+        <br/>
+        a large corpus. If absent, 'corpus' field should be present.
+        <br/>
        </td>
        <td>
         optional
@@ -619,9 +706,12 @@ a large corpus. If absent, 'corpus' field should be present.
        </td>
        <td>
         The name of a corpus or other document body that this
-CommunicationSet represents.
-
-Should be present if 'communicationIdList' is absent.
+        <br/>
+        CommunicationSet represents.
+        <br/>
+        <br/>
+        Should be present if 'communicationIdList' is absent.
+        <br/>
        </td>
        <td>
         optional
@@ -649,8 +739,11 @@ Should be present if 'communicationIdList' is absent.
        </td>
        <td>
         A list of Clustering objects that represent a
-group of EntityMentions that are a part of this
-CommunicationSet.
+        <br/>
+        group of EntityMentions that are a part of this
+        <br/>
+        CommunicationSet.
+        <br/>
        </td>
        <td>
         optional
@@ -678,8 +771,11 @@ CommunicationSet.
        </td>
        <td>
         A list of Clustering objects that represent a
-group of Entities that are a part of this
-CommunicationSet.
+        <br/>
+        group of Entities that are a part of this
+        <br/>
+        CommunicationSet.
+        <br/>
        </td>
        <td>
         optional
@@ -707,8 +803,11 @@ CommunicationSet.
        </td>
        <td>
         A list of Clustering objects that represent a
-group of SituationMentions that are a part of this
-CommunicationSet.
+        <br/>
+        group of SituationMentions that are a part of this
+        <br/>
+        CommunicationSet.
+        <br/>
        </td>
        <td>
         optional
@@ -736,8 +835,11 @@ CommunicationSet.
        </td>
        <td>
         A list of Clustering objects that represent a
-group of Situations that are a part of this
-CommunicationSet.
+        <br/>
+        group of Situations that are a part of this
+        <br/>
+        CommunicationSet.
+        <br/>
        </td>
        <td>
         optional
@@ -748,6 +850,171 @@ CommunicationSet.
      </table>
      <br/>
      A structure that represents a collection of Communications.
+     <br/>
+    </div>    <div class="definition">
+     <h3 id="Struct_CommunicationTagging">
+      Struct: CommunicationTagging
+     </h3>
+     <table class="table-bordered table-striped table-condensed">
+      <thead>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </thead>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        uuid
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        A unique identifier for this CommunicationTagging object.
+        <br/>
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        metadata
+       </td>
+       <td>
+        <code>
+         <a href="metadata.html#Struct_AnnotationMetadata">
+          metadata.AnnotationMetadata
+         </a>
+        </code>
+       </td>
+       <td>
+        AnnotationMetadata to support this CommunicationTagging object.
+        <br/>
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        taggingType
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        A string that captures the type of this CommunicationTagging
+        <br/>
+        object. For example: 'topic' or 'gender'.
+        <br/>
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        tagList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of strings that represent different tags related to the taggingType.
+        <br/>
+        For example, if the taggingType is 'topic', some example tags might be
+        <br/>
+        'politics', 'science', etc.
+        <br/>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        confidenceList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          double
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of doubles, parallel to the list of strings in tagList,
+        <br/>
+        that indicate the confidences of each tag.
+        <br/>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </table>
+     <br/>
+     A structure that represents a 'tagging' of a Communication. These
+might be labels or annotations on a particular communcation.
+     <p>
+     </p>
+     For example, this structure might be used to describe the topics
+discussed in a Communication. The taggingType might be 'topic', and
+the tagList might include 'politics' and 'science'.
      <br/>
     </div>
    </div>

@@ -109,6 +109,7 @@
        </td>
        <td>
         The "root" of this Link; points to a EntityMention UUID, Entity UUID, etc.
+        <br/>
        </td>
        <td>
         required
@@ -136,6 +137,7 @@
        </td>
        <td>
         A list of LinkTarget objects that this Link contains.
+        <br/>
        </td>
        <td>
         required
@@ -187,6 +189,7 @@
        </td>
        <td>
         Confidence of this LinkTarget object.
+        <br/>
        </td>
        <td>
         optional
@@ -210,8 +213,11 @@
        </td>
        <td>
         A UUID that represents the target of this LinkTarget. This
-UUID should exist in the Entity/Situation(Mention)Set that the
-Linking object is contained in.
+        <br/>
+        UUID should exist in the Entity/Situation(Mention)Set that the
+        <br/>
+        Linking object is contained in.
+        <br/>
        </td>
        <td>
         optional
@@ -233,12 +239,17 @@ Linking object is contained in.
        </td>
        <td>
         A database ID that represents the target of this linking.
-
-This should be used if the target of the linking is not associated
-with an Entity|Situation(Mention)Set in Concrete, and therefore cannot be linked by
-a UUID internal to concrete.
-
-If present, other optional field 'dbName' should also be populated.
+        <br/>
+        <br/>
+        This should be used if the target of the linking is not associated
+        <br/>
+        with an Entity|Situation(Mention)Set in Concrete, and therefore cannot be linked by
+        <br/>
+        a UUID internal to concrete.
+        <br/>
+        <br/>
+        If present, other optional field 'dbName' should also be populated.
+        <br/>
        </td>
        <td>
         optional
@@ -260,11 +271,15 @@ If present, other optional field 'dbName' should also be populated.
        </td>
        <td>
         The name of the database that represents the target of this linking.
-
-Together with the 'dbId', this can form a pointer to a target
-that is not represented inside concrete.
-
-Should be populated alongside 'dbId'.
+        <br/>
+        <br/>
+        Together with the 'dbId', this can form a pointer to a target
+        <br/>
+        that is not represented inside concrete.
+        <br/>
+        <br/>
+        Should be populated alongside 'dbId'.
+        <br/>
        </td>
        <td>
         optional
@@ -318,6 +333,7 @@ Should be populated alongside 'dbId'.
        </td>
        <td>
         Metadata related to this Linking object.
+        <br/>
        </td>
        <td>
         required
@@ -345,6 +361,7 @@ Should be populated alongside 'dbId'.
        </td>
        <td>
         A list of Link objects that this Linking object contains.
+        <br/>
        </td>
        <td>
         required
