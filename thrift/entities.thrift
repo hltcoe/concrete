@@ -101,6 +101,16 @@ struct EntitySet {
    * Entity linking annotations associated with this EntitySet.
    */
   4: optional list<linking.Linking> linkingList
+
+  /**
+   * An optional UUID pointer to an EntityMentionSet.
+   *
+   * If this field is present, consumers can assume that all
+   * Entity objects in this EntitySet have EntityMentions that are included
+   * in the named EntityMentionSet.
+   */
+  5: optional uuid.UUID mentionSetId
+
 }
 
 //===========================================================================
