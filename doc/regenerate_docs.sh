@@ -5,7 +5,7 @@
 set -o nounset
 
 if [ $# -ne 1 ]; then
-    echo "ERROR: You must specify the location of the Thrift compiler and schema files:"
+    echo "ERROR: You must specify the location of the Thrift compiler:"
     echo
     echo "  $0 path_to_thrift_compiler"
     exit
