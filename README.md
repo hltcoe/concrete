@@ -7,6 +7,8 @@ Concrete
 
 Current version: `4.4`
 
+Please consult `NEWS.md` for more information about changes between versions.
+
 Introduction
 ------------
 
