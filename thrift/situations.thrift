@@ -101,7 +101,6 @@ struct Justification {
 /** 
  * A wrapper for various TimeML annotations.
  */
-
 struct TimeML {
   /** 
    * The TimeML class for situations representing TimeML events 
@@ -130,8 +129,12 @@ struct TimeML {
  * core type (such as EVENT or SENTIMENT), along with an optional
  * subtype based on its core type (e.g., event_type=CONTACT_MEET), and
  * a set of zero or more unordered arguments. 
+ *
+ * This struct may be used for a variety of "processed" Situations such
+ * as (but not limited to):
+ * - SituationMentions which have been collapsed into a coreferential cluster
+ * - Situations which are inferred and not directly supported by a textual mention
  */
-
 struct Situation {
   /** 
    * Unique identifier for this situation. 
@@ -139,21 +142,26 @@ struct Situation {
   1: required uuid.UUID uuid
 
   /** 
-   * The core type of this situation (eg EVENT or SENTIMENT).
+   * The core type of this situation (eg EVENT or SENTIMENT),
+   * or a coarse grain situation type.
    */
   2: required string situationType
 
   /**
-   * A more descriptive field that specifically describes the
+   * A fine grain situation type that specifically describes the
    * situation based on situationType above. It allows for more
    * detailed description of the situation.
-   * 
+   *
    * Some examples:
-   * 
+   *
    * if situationType == EVENT, the event type for the situation
    * if situationType == STATE, the state type
    * if situationType == TEMPORAL_FACT, the temporal fact type
-   * 
+   *
+   * For Propbank, this field should be the predicate lemma and id,
+   * e.g. "strike.02". For FrameNet, this should be the frame name,
+   * e.g. "Commerce_buy".
+   *
    * Different and more varied situationTypes may be added
    * in the future. 
    */
@@ -291,6 +299,9 @@ struct MentionArgument {
  * optional subtype based on its core type (e.g.,
  * event_type=CONTACT_MEET), and a set of zero or more unordered
  * arguments. 
+ *
+ * This struct should be used for most types of SRL labelings
+ * (e.g. Propbank and FrameNet) because they are grounded in text.
  */
 struct SituationMention {
   /** 
@@ -306,20 +317,25 @@ struct SituationMention {
   2: optional string text
 
   /** 
-   * The core type of this situation (eg EVENT or SENTIMENT) 
+   * The core type of this situation (eg EVENT or SENTIMENT),
+   * or a coarse grain situation type.
    */
   3: optional string situationType
 
   /**
-   * A more descriptive field that specifically describes the
+   * A fine grain situation type that specifically describes the
    * situation mention based on situationType above. It allows for
    * more detailed description of the situation mention.
-   * 
+   *
    * Some examples:
-   * 
+   *
    * if situationType == EVENT, the event type for the sit. mention
    * if situationType == STATE, the state type for this sit. mention
-   * 
+   *
+   * For Propbank, this field should be the predicate lemma and id,
+   * e.g. "strike.02". For FrameNet, this should be the frame name,
+   * e.g. "Commerce_buy".
+   *
    * Different and more varied situationTypes may be added
    * in the future. 
    */
