@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="concrete-eapi.css"/>
-  <script type="text/javascript" src="concrete_filelist.js"></script>
+  <script type="text/javascript" src="concrete_info.js"></script>
   <script type="text/javascript" src="concrete-eapi.js"></script>
   <script type="text/javascript" src="tablesorter/jquery-latest.js"></script>
   <script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script>
@@ -708,7 +708,9 @@ whereas Arguments notionally only support one Role.
         </code>
        </td>
        <td>
-        The core type of this situation (eg EVENT or SENTIMENT).
+        The core type of this situation (eg EVENT or SENTIMENT),
+        <br/>
+        or a coarse grain situation type.
         <br/>
        </td>
        <td>
@@ -730,7 +732,7 @@ whereas Arguments notionally only support one Role.
         </code>
        </td>
        <td>
-        A more descriptive field that specifically describes the
+        A fine grain situation type that specifically describes the
         <br/>
         situation based on situationType above. It allows for more
         <br/>
@@ -745,6 +747,13 @@ whereas Arguments notionally only support one Role.
         if situationType == STATE, the state type
         <br/>
         if situationType == TEMPORAL_FACT, the temporal fact type
+        <br/>
+        <br/>
+        For Propbank, this field should be the predicate lemma and id,
+        <br/>
+        e.g. "strike.02". For FrameNet, this should be the frame name,
+        <br/>
+        e.g. "Commerce_buy".
         <br/>
         <br/>
         Different and more varied situationTypes may be added
@@ -964,6 +973,12 @@ relations, facts, sentiments, and beliefs. Each situation has a
 core type (such as EVENT or SENTIMENT), along with an optional
 subtype based on its core type (e.g., event_type=CONTACT_MEET), and
 a set of zero or more unordered arguments.
+     <p>
+     </p>
+     This struct may be used for a variety of "processed" Situations such
+as (but not limited to):
+- SituationMentions which have been collapsed into a coreferential cluster
+- Situations which are inferred and not directly supported by a textual mention
      <br/>
     </div>
     <div class="definition">
@@ -1054,7 +1069,9 @@ a set of zero or more unordered arguments.
         </code>
        </td>
        <td>
-        The core type of this situation (eg EVENT or SENTIMENT)
+        The core type of this situation (eg EVENT or SENTIMENT),
+        <br/>
+        or a coarse grain situation type.
         <br/>
        </td>
        <td>
@@ -1076,7 +1093,7 @@ a set of zero or more unordered arguments.
         </code>
        </td>
        <td>
-        A more descriptive field that specifically describes the
+        A fine grain situation type that specifically describes the
         <br/>
         situation mention based on situationType above. It allows for
         <br/>
@@ -1089,6 +1106,13 @@ a set of zero or more unordered arguments.
         if situationType == EVENT, the event type for the sit. mention
         <br/>
         if situationType == STATE, the state type for this sit. mention
+        <br/>
+        <br/>
+        For Propbank, this field should be the predicate lemma and id,
+        <br/>
+        e.g. "strike.02". For FrameNet, this should be the frame name,
+        <br/>
+        e.g. "Commerce_buy".
         <br/>
         <br/>
         Different and more varied situationTypes may be added
@@ -1254,6 +1278,10 @@ has a core type (such as EVENT or SENTIMENT), along with an
 optional subtype based on its core type (e.g.,
 event_type=CONTACT_MEET), and a set of zero or more unordered
 arguments.
+     <p>
+     </p>
+     This struct should be used for most types of SRL labelings
+(e.g. Propbank and FrameNet) because they are grounded in text.
      <br/>
     </div>
     <div class="definition">
