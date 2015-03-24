@@ -303,11 +303,16 @@ struct Constituent {
    */
   1: required i32 id
   
+  /**
+   * A description of this constituency node, e.g. the category "NP".
+   * For leaf nodes, this should be a word and for pre-terminal nodes
+   * this should be a POS tag.
+   */
   2: optional string tag
 
   /*
    * The list of parse constituents that are directly dominated by
-   * this constituent. 
+   * this constituent. This will be an empty list for leaf nodes.
    */
   3: required list<i32> childList
 
@@ -320,12 +325,14 @@ struct Constituent {
   4: optional i32 headChildIndex = -1
 
   /**
-   * The token index that marks the beginning of this constituent.
+   * The first token (inclusive) of this constituent in the
+   * parent Tokenization. Almost certainly should be populated.
    */
   5: optional i32 start
 
   /**
-   * The token index that marks the end of this constituent.
+   * The last token (exclusive) of this constituent in the
+   * parent Tokenization. Almost certainly should be populated.
    */
   6: optional i32 ending
 }
