@@ -344,6 +344,12 @@
         </code>
        </td>
        <td>
+        A description of this constituency node, e.g. the category "NP".
+        <br/>
+        For leaf nodes, this should be a word and for pre-terminal nodes
+        <br/>
+        this should be a POS tag.
+        <br/>
        </td>
        <td>
         optional
@@ -424,7 +430,9 @@
         </code>
        </td>
        <td>
-        The token index that marks the beginning of this constituent.
+        The first token (inclusive) of this constituent in the
+        <br/>
+        parent Tokenization. Almost certainly should be populated.
         <br/>
        </td>
        <td>
@@ -446,7 +454,9 @@
         </code>
        </td>
        <td>
-        The token index that marks the end of this constituent.
+        The last token (exclusive) of this constituent in the
+        <br/>
+        parent Tokenization. Almost certainly should be populated.
         <br/>
        </td>
        <td>
@@ -2110,6 +2120,11 @@ state to the end state.
         for instance, it is not easy to map this sequence to a another
         <br/>
         annotation that has a head.
+        <br/>
+        <br/>
+        This field is defined with respect to the Tokenization given
+        <br/>
+        by tokenizationId, and not to this object's tokenIndexList.
         <br/>
        </td>
        <td>
