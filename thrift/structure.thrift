@@ -103,6 +103,9 @@ struct TokenRefSequence {
    * or some other form of "canonical" token in this sequence if,
    * for instance, it is not easy to map this sequence to a another
    * annotation that has a head. 
+   *
+   * This field is defined with respect to the Tokenization given 
+   * by tokenizationId, and not to this object's tokenIndexList.
    */
   2: optional i32 anchorTokenIndex = -1
 
