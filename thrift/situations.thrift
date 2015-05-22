@@ -275,6 +275,11 @@ struct MentionArgument {
   4: optional structure.TokenRefSequence tokens
 
   /**
+   * An alternative way to specify the same thing as tokens.
+   */
+  7: optional structure.ConstituentRef constituent
+
+  /**
    * Confidence of this argument belonging to its SituationMention
    */
   5: optional double confidence
@@ -371,6 +376,11 @@ struct SituationMention {
    * arguments' tokens should be included. 
    */
   150: optional structure.TokenRefSequence tokens
+
+  /**
+   * An alternative way to specify the same thing as tokens.
+   */
+  151: optional structure.ConstituentRef constituent
 
   /** 
    * A confidence score for this individual situation mention. You
