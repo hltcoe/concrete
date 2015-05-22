@@ -377,6 +377,11 @@ struct SituationMention {
    */
   150: optional structure.TokenRefSequence tokens
 
+  /**
+   * An alternative way to specify the same thing as tokens.
+   */
+  151: optional structure.ConstituentRef constituent
+
   /** 
    * A confidence score for this individual situation mention. You
    * can also set a confidence score for an entire SituationMentionSet
