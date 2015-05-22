@@ -275,6 +275,11 @@ struct MentionArgument {
   4: optional structure.TokenRefSequence tokens
 
   /**
+   * An alternative way to specify the same thing as tokens.
+   */
+  7: optional structure.ConstituentRef constituent
+
+  /**
    * Confidence of this argument belonging to its SituationMention
    */
   5: optional double confidence

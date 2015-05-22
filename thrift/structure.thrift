@@ -85,6 +85,21 @@ struct Token {
   5: optional spans.AudioSpan audioSpan
 }
 
+/**
+ * A reference to a Constituent within a Parse.
+ */
+struct ConstituentRef {
+  /**
+   * The UUID of the Parse that this Constituent belongs to.
+   */
+  1: required uuid.UUID parseId
+
+  /**
+   * The index in the constituent list of this Constituent.
+   */
+  2: required i32 constituentIndex
+}
+
 /** 
  * A list of pointers to tokens that all belong to the same
  * tokenization. 
