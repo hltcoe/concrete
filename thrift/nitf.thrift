@@ -73,9 +73,9 @@ struct NITFInfo {
   /**
    * If the article is part of a regular column, this field specifies the name
    * of that column.
-   * <br />
+   * <br>
    * Sample Column Names:
-   * <br />
+   * <br>
    * <ol>
    * <li>World News Briefs</li>
    * <li>WEDDINGS</li>
@@ -131,7 +131,7 @@ struct NITFInfo {
    * The &quot;descriptors&quot; field specifies a list of descriptive terms drawn from
    * a normalized controlled vocabulary corresponding to subjects mentioned in
    * the article. 
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>ECONOMIC CONDITIONS AND TRENDS</li>
@@ -154,7 +154,7 @@ struct NITFInfo {
    * The &quot;general online descriptors&quot; field specifies a list of descriptors
    * that are at a higher level of generality than the other tags associated
    * with the article.
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Surfing</li>
@@ -187,7 +187,7 @@ struct NITFInfo {
    * The &quot;locations&quot; field specifies a list of geographic descriptors drawn
    * from a normalized controlled vocabulary that correspond to places
    * mentioned in the article. 
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Wellsboro (Pa)</li>
@@ -199,7 +199,7 @@ struct NITFInfo {
 
   /**
    * The &quot;names&quot; field specifies a list of names mentioned in the article.
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Azza Fahmy</li>
@@ -225,7 +225,7 @@ struct NITFInfo {
   /**
    * This field specifies a list of descriptors from a normalized controlled
    * vocabulary that correspond to topics mentioned in the article.
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Marriages</li>
@@ -249,7 +249,7 @@ struct NITFInfo {
   /**
    * This field specifies a list of place names that correspond to geographic
    * locations mentioned in the article.
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Hollywood</li>
@@ -262,7 +262,7 @@ struct NITFInfo {
   /**
    * This field specifies a list of organizations that correspond to
    * organizations mentioned in the article.
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Nintendo Company Limited</li>
@@ -275,7 +275,7 @@ struct NITFInfo {
   /**
    * This field specifies a list of people that correspond to individuals
    * mentioned in the article.
-   * <br/>
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Lopez, Jennifer</li>
@@ -293,12 +293,12 @@ struct NITFInfo {
 
   /**
    * This field specifies a list of authored works mentioned in the article.
-   * <br/>
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Matchstick Men (Movie)</li>
    * <li>Blades of Glory (Movie)</li>
-   * <li>Bridge & Tunnel (Play)</li>
+   * <li>Bridge and Tunnel (Play)</li>
    * </ol>
    */
   29: optional list<string> onlineTitleList
@@ -307,7 +307,7 @@ struct NITFInfo {
    * This field specifies a list of organization names drawn from a normalized
    * controlled vocabulary that correspond to organizations mentioned in the
    * article.
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Circuit City Stores Inc</li>
@@ -329,7 +329,7 @@ struct NITFInfo {
   /**
    * This field specifies a list of people from a normalized controlled
    * vocabulary that correspond to individuals mentioned in the article.
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>REAGAN, RONALD WILSON (PRES)</li>
@@ -390,7 +390,7 @@ struct NITFInfo {
    * This field specifies a list of taxonomic classifiers that place this
    * article into a hierarchy of articles. The individual terms of each
    * taxonomic classifier are separated with the '/' character.
-   * <br/>
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Top/Features/Travel/Guides/Destinations/North America/United
@@ -404,11 +404,11 @@ struct NITFInfo {
   /**
    * This field specifies a list of authored works that correspond to works
    * mentioned in the article.
-   * <br/>
+   * <br>
    * Examples Include:
    * <ol>
    * <li>Greystoke: The Legend of Tarzan, Lord of the Apes (Movie)</li>
-   * <li>Law & Order (TV Program)</li>
+   * <li>Law and Order (TV Program)</li>
    * <li>BATTLEFIELD EARTH (BOOK)</li>
    * </ol>
    */
@@ -417,7 +417,7 @@ struct NITFInfo {
   /**
    * This field specifies a normalized list of terms describing the general
    * editorial category of the article.
-   * <br />
+   * <br>
    * Examples Include:
    * <ol>
    * <li>REVIEW</li>
