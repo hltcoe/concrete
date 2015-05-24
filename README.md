@@ -5,7 +5,7 @@ See LICENSE in the project root directory.
 Concrete
 ========
 
-Current version: `4.4`
+Current version: `4.5`
 
 Please consult `NEWS.md` for more information about changes between versions.
 
