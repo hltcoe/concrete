@@ -36,4 +36,34 @@ struct EmailCommunicationInfo {
   8: optional list<EmailAddress> toAddressList
   9: optional list<EmailAddress> ccAddressList
   10: optional list<EmailAddress> bccAddressList
+
+  //
+  // added 2015-6-25 to support email tasks
+  //
+  
+  /*
+   * The email folder containing the email, such as "deleted" or "mid-east oil".
+   */
+  11: optional string emailFolder
+
+  /*
+   * The email addresses in the quoted messages.
+   */
+  12: optional list<string> quotedAddresses
+
+  /*
+   * A list of strings representing the paths on disk
+   * to any attachments this email had. 
+   */
+  13: optional list<string> attachmentPaths
+
+  /*
+   * The content of this email's salutation.
+   */
+  14: optional string salutation
+
+  /*
+   * The content of this email's signature.
+   */
+  15: optional string signatureLine
 }
