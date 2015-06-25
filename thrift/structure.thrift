@@ -447,6 +447,25 @@ struct TokenList {
   1 : required list<Token> tokenList
 }
 
+/**
+ * An object that represents a link between 
+ */
+struct SpanLink {
+  /**
+   * The tokens that make up this SpanLink object.
+   */
+  1: required TokenRefSequence tokens
+
+  /*
+   * The target of this SpanLink object.
+   */
+  2: required uuid.UUID target
+
+  /*
+   * The type of this SpanLink object.
+   */
+  3: required string linkType
+}
 
 /**
  * Enumerated types of Tokenizations
