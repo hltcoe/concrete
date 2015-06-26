@@ -47,23 +47,32 @@ struct EmailCommunicationInfo {
   11: optional string emailFolder
 
   /*
-   * The email addresses in the quoted messages.
+   * The subject of the email. Should also be indicated with a 
+   * Section with kind == subject.
    */
-  12: optional list<string> quotedAddresses
+  12: optional string subject
+  
+  /*
+   * The email addresses in the quoted messages. Should also be
+   * indicated with a Section with kind == 'quoted-addresses'
+   */
+  13: optional list<string> quotedAddresses
 
   /*
    * A list of strings representing the paths on disk
    * to any attachments this email had. 
    */
-  13: optional list<string> attachmentPaths
+  14: optional list<string> attachmentPaths
 
   /*
-   * The content of this email's salutation.
+   * The content of this email's salutation. Should also be
+   * indicated with a Section with kind == 'salutation'
    */
-  14: optional string salutation
+  15: optional string salutation
 
   /*
-   * The content of this email's signature.
+   * The content of this email's signature. Should also be
+   * indicated with a Section with kind == 'signature'
    */
-  15: optional string signatureLine
+  16: optional string signature
 }
