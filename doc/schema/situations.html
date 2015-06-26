@@ -11,1547 +11,1690 @@
       addConcreteNavigation();
     });
   </script>
-<html>
- <head>
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-  <link href="style.css" rel="stylesheet" type="text/css"/>
-  <title>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>
+ Thrift module: situations
+</title>
+<body>
+ <div class="container-fluid">
+  <h1>
    Thrift module: situations
-  </title>
- </head>
- <body>
-  <div class="container-fluid">
-   <h1>
-    Thrift module: situations
-   </h1>
-   <table class="table-bordered table-striped table-condensed">
-    <thead>
-     <th>
-      Module
-     </th>
-     <th>
-      Services
-     </th>
-     <th>
-      Data types
-     </th>
-     <th>
-      Constants
-     </th>
-    </thead>
-    <tr>
-     <td>
-      situations
-     </td>
-     <td>
-     </td>
-     <td>
-      <a href="#Struct_Argument">
-       Argument
-      </a>
-      <br/>
-      <a href="#Struct_Justification">
-       Justification
-      </a>
-      <br/>
-      <a href="#Struct_MentionArgument">
-       MentionArgument
-      </a>
-      <br/>
-      <a href="#Struct_Property">
-       Property
-      </a>
-      <br/>
-      <a href="#Struct_Situation">
-       Situation
-      </a>
-      <br/>
-      <a href="#Struct_SituationMention">
-       SituationMention
-      </a>
-      <br/>
-      <a href="#Struct_SituationMentionSet">
-       SituationMentionSet
-      </a>
-      <br/>
-      <a href="#Struct_SituationSet">
-       SituationSet
-      </a>
-      <br/>
-      <a href="#Struct_TimeML">
-       TimeML
-      </a>
-      <br/>
-     </td>
-     <td>
-     </td>
-    </tr>
-   </table>
-   <hr/>
-   <div id="Structs_div">
-    <h2 id="Structs">
-     Data structures
-    </h2>
-    <div class="definition">
-     <h3 id="Struct_Argument">
-      Struct: Argument
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        role
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The relationship between this argument and the situation that
-owns it. The roles that a situation's arguments can take
-depend on the type of the situation (including subtype
-information, such as event_type).
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        entityId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        A pointer to the value of this argument, if it is explicitly
-encoded as an Entity.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        situationId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        A pointer to the value of this argument, if it is a situation.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        propertyList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="situations.html#Struct_Property">
-           Property
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        For the BinarySRL task, there may be situations
-where more than one property is attached to a single
-participant. A list of these properties can be stored in this field.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
+  </h1>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Module
+    </th>
+    <th>
+     Services
+    </th>
+    <th>
+     Data types
+    </th>
+    <th>
+     Constants
+    </th>
+   </thead>
+   <tr>
+    <td>
+     situations
+    </td>
+    <td>
+    </td>
+    <td>
+     <a href="#Struct_Argument">
+      Argument
+     </a>
      <br/>
-     A situation argument, consisting of an argument role and a value.
+     <a href="#Struct_Justification">
+      Justification
+     </a>
+     <br/>
+     <a href="#Struct_MentionArgument">
+      MentionArgument
+     </a>
+     <br/>
+     <a href="#Struct_Property">
+      Property
+     </a>
+     <br/>
+     <a href="#Struct_Situation">
+      Situation
+     </a>
+     <br/>
+     <a href="#Struct_SituationMention">
+      SituationMention
+     </a>
+     <br/>
+     <a href="#Struct_SituationMentionSet">
+      SituationMentionSet
+     </a>
+     <br/>
+     <a href="#Struct_SituationSet">
+      SituationSet
+     </a>
+     <br/>
+     <a href="#Struct_TimeML">
+      TimeML
+     </a>
+     <br/>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_Argument">
+     Struct: Argument
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       role
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The relationship between this argument and the situation that
+       <br/>
+       owns it. The roles that a situation's arguments can take
+       <br/>
+       depend on the type of the situation (including subtype
+       <br/>
+       information, such as event_type).
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       entityId
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       A pointer to the value of this argument, if it is explicitly
+       <br/>
+       encoded as an Entity.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       situationId
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       A pointer to the value of this argument, if it is a situation.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       propertyList
+      </td>
+      <td>
+       <code>
+        list&lt;
+        <code>
+         <a href="situations.html#Struct_Property">
+          Property
+         </a>
+        </code>
+        &gt;
+       </code>
+      </td>
+      <td>
+       For the BinarySRL task, there may be situations
+       <br/>
+       where more than one property is attached to a single
+       <br/>
+       participant. A list of these properties can be stored in this field.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A situation argument, consisting of an argument role and a value.
 Argument values may be Entities or Situations.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_Justification">
-      Struct: Justification
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        justificationType
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        An enumerated value used to describe the way in which the
-justification's mention provides supporting evidence for the
-situation.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        mentionId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        A pointer to the SituationMention itself.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        tokenRefSeqList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="structure.html#Struct_TokenRefSequence">
-           structure.TokenRefSequence
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        An optional list of pointers to tokens that are (especially)
-relevant to the way in which this mention provides
-justification for the situation. It is left up to individual
-analytics to decide what tokens (if any) they wish to include
-in this field.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_MentionArgument">
-      Struct: MentionArgument
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        role
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The relationship between this argument and the situation that
-owns it. The roles that a situation's arguments can take
-depend on the type of the situation (including subtype
-information, such as event_type).
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        entityMentionId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        A pointer to the value of an EntityMention, if this is being used to support
-an EntityMention.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        situationMentionId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        A pointer to the value of this argument, if it is a SituationMention.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        tokens
-       </td>
-       <td>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_Justification">
+     Struct: Justification
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       justificationType
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       An enumerated value used to describe the way in which the
+       <br/>
+       justification's mention provides supporting evidence for the
+       <br/>
+       situation.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       mentionId
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       A pointer to the SituationMention itself.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       tokenRefSeqList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
          <a href="structure.html#Struct_TokenRefSequence">
           structure.TokenRefSequence
          </a>
         </code>
-       </td>
-       <td>
-        The location of this MentionArgument in the Communication.
-If this MentionArgument can be identified in a document using an
-EntityMention or SituationMention, then UUID references to those
-types should be preferred and this field left as null.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        7
-       </td>
-       <td>
-        constituent
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+       An optional list of pointers to tokens that are (especially)
+       <br/>
+       relevant to the way in which this mention provides
+       <br/>
+       justification for the situation. It is left up to individual
+       <br/>
+       analytics to decide what tokens (if any) they wish to include
+       <br/>
+       in this field.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_MentionArgument">
+     Struct: MentionArgument
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       role
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The relationship between this argument and the situation that
+       <br/>
+       owns it. The roles that a situation's arguments can take
+       <br/>
+       depend on the type of the situation (including subtype
+       <br/>
+       information, such as event_type).
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       entityMentionId
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       A pointer to the value of an EntityMention, if this is being used to support
+       <br/>
+       an EntityMention.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       situationMentionId
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       A pointer to the value of this argument, if it is a SituationMention.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       tokens
+      </td>
+      <td>
+       <code>
+        <a href="structure.html#Struct_TokenRefSequence">
+         structure.TokenRefSequence
+        </a>
+       </code>
+      </td>
+      <td>
+       The location of this MentionArgument in the Communication.
+       <br/>
+       If this MentionArgument can be identified in a document using an
+       <br/>
+       EntityMention or SituationMention, then UUID references to those
+       <br/>
+       types should be preferred and this field left as null.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       7
+      </td>
+      <td>
+       constituent
+      </td>
+      <td>
+       <code>
+        <a href="structure.html#Struct_ConstituentRef">
+         structure.ConstituentRef
+        </a>
+       </code>
+      </td>
+      <td>
+       An alternative way to specify the same thing as tokens.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       confidence
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+       Confidence of this argument belonging to its SituationMention
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       6
+      </td>
+      <td>
+       propertyList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="structure.html#Struct_ConstituentRef">
-          structure.ConstituentRef
+         <a href="situations.html#Struct_Property">
+          Property
          </a>
         </code>
-       </td>
-       <td>
-        An alternative way to specify the same thing as tokens.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        confidence
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        Confidence of this argument belonging to its SituationMention
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        6
-       </td>
-       <td>
-        propertyList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="situations.html#Struct_Property">
-           Property
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        For the BinarySRL task, there may be situations
-where more than one property is attached to a single
-participant. A list of these properties can be stored in this field.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A "concrete" argument, that may be used by SituationMentions or EntityMentions
+        &gt;
+       </code>
+      </td>
+      <td>
+       For the BinarySRL task, there may be situations
+       <br/>
+       where more than one property is attached to a single
+       <br/>
+       participant. A list of these properties can be stored in this field.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A "concrete" argument, that may be used by SituationMentions or EntityMentions
 to avoid conflicts where abstract Arguments were being used to support concrete Mentions.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_Property">
-      Struct: Property
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        value
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The required value of the property.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        metadata
-       </td>
-       <td>
-        <code>
-         <a href="metadata.html#Struct_AnnotationMetadata">
-          metadata.AnnotationMetadata
-         </a>
-        </code>
-       </td>
-       <td>
-        Metadata to support this particular property object.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        polarity
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        This value is typically boolean, 0.0 or 1.0, but we use a
-float in order to potentially capture cases where an annotator is
-highly confident that the value is underspecified, via a value of
-0.5.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     Attached to Arguments to support situations where
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_Property">
+     Struct: Property
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       value
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The required value of the property.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       metadata
+      </td>
+      <td>
+       <code>
+        <a href="metadata.html#Struct_AnnotationMetadata">
+         metadata.AnnotationMetadata
+        </a>
+       </code>
+      </td>
+      <td>
+       Metadata to support this particular property object.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       polarity
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+       This value is typically boolean, 0.0 or 1.0, but we use a
+       <br/>
+       float in order to potentially capture cases where an annotator is
+       <br/>
+       highly confident that the value is underspecified, via a value of
+       <br/>
+       0.5.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    Attached to Arguments to support situations where
 a 'participant' has more than one 'property' (in BinarySRL terms),
 whereas Arguments notionally only support one Role.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_Situation">
-      Struct: Situation
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        uuid
-       </td>
-       <td>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_Situation">
+     Struct: Situation
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       uuid
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       Unique identifier for this situation.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       situationType
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The core type of this situation (eg EVENT or SENTIMENT),
+       <br/>
+       or a coarse grain situation type.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       50
+      </td>
+      <td>
+       situationKind
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       A fine grain situation type that specifically describes the
+       <br/>
+       situation based on situationType above. It allows for more
+       <br/>
+       detailed description of the situation.
+       <br/>
+       <br/>
+       Some examples:
+       <br/>
+       <br/>
+       if situationType == EVENT, the event type for the situation
+       <br/>
+       if situationType == STATE, the state type
+       <br/>
+       if situationType == TEMPORAL_FACT, the temporal fact type
+       <br/>
+       <br/>
+       For Propbank, this field should be the predicate lemma and id,
+       <br/>
+       e.g. "strike.02". For FrameNet, this should be the frame name,
+       <br/>
+       e.g. "Commerce_buy".
+       <br/>
+       <br/>
+       Different and more varied situationTypes may be added
+       <br/>
+       in the future.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       argumentList
+      </td>
+      <td>
+       <code>
+        list&lt;
+        <code>
+         <a href="situations.html#Struct_Argument">
+          Argument
+         </a>
+        </code>
+        &gt;
+       </code>
+      </td>
+      <td>
+       The arguments for this situation. Each argument consists of a
+       <br/>
+       role and a value. It is possible for an situation to have
+       <br/>
+       multiple arguments with the same role. Arguments are
+       <br/>
+       unordered.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       mentionIdList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
          <a href="uuid.html#Struct_UUID">
           uuid.UUID
          </a>
         </code>
-       </td>
-       <td>
-        Unique identifier for this situation.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        situationType
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+       Ids of the mentions of this situation in a communication
+       <br/>
+       (type=SituationMention)
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       justificationList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         string
-        </code>
-       </td>
-       <td>
-        The core type of this situation (eg EVENT or SENTIMENT),
-or a coarse grain situation type.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        50
-       </td>
-       <td>
-        situationKind
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        A fine grain situation type that specifically describes the
-situation based on situationType above. It allows for more
-detailed description of the situation.
-
-Some examples:
-
-if situationType == EVENT, the event type for the situation
-if situationType == STATE, the state type
-if situationType == TEMPORAL_FACT, the temporal fact type
-
-For Propbank, this field should be the predicate lemma and id,
-e.g. "strike.02". For FrameNet, this should be the frame name,
-e.g. "Commerce_buy".
-
-Different and more varied situationTypes may be added
-in the future.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        argumentList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="situations.html#Struct_Argument">
-           Argument
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        The arguments for this situation. Each argument consists of a
-role and a value. It is possible for an situation to have
-multiple arguments with the same role. Arguments are
-unordered.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        mentionIdList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        Ids of the mentions of this situation in a communication
-(type=SituationMention)
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        justificationList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="situations.html#Struct_Justification">
-           Justification
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        An list of pointers to SituationMentions that provide
-justification for this situation. These mentions may be either
-direct mentions of the situation, or indirect evidence.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        54
-       </td>
-       <td>
-        timeML
-       </td>
-       <td>
-        <code>
-         <a href="situations.html#Struct_TimeML">
-          TimeML
+         <a href="situations.html#Struct_Justification">
+          Justification
          </a>
         </code>
-       </td>
-       <td>
-        A wrapper for TimeML annotations.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        100
-       </td>
-       <td>
-        intensity
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        An "intensity" rating for this situation, typically ranging from
-0-1. In the case of SENTIMENT situations, this is used to record
-the intensity of the sentiment.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        101
-       </td>
-       <td>
-        polarity
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The polarity of this situation. In the case of SENTIMENT
-situations, this is used to record the polarity of the
-sentiment.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        200
-       </td>
-       <td>
-        confidence
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        A confidence score for this individual situation. You can also
-set a confidence score for an entire SituationSet using the
-SituationSet's metadata.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A single situation, along with pointers to situation mentions that
+        &gt;
+       </code>
+      </td>
+      <td>
+       An list of pointers to SituationMentions that provide
+       <br/>
+       justification for this situation. These mentions may be either
+       <br/>
+       direct mentions of the situation, or indirect evidence.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       54
+      </td>
+      <td>
+       timeML
+      </td>
+      <td>
+       <code>
+        <a href="situations.html#Struct_TimeML">
+         TimeML
+        </a>
+       </code>
+      </td>
+      <td>
+       A wrapper for TimeML annotations.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       100
+      </td>
+      <td>
+       intensity
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+       An "intensity" rating for this situation, typically ranging from
+       <br/>
+       0-1. In the case of SENTIMENT situations, this is used to record
+       <br/>
+       the intensity of the sentiment.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       101
+      </td>
+      <td>
+       polarity
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The polarity of this situation. In the case of SENTIMENT
+       <br/>
+       situations, this is used to record the polarity of the
+       <br/>
+       sentiment.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       confidence
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+       A confidence score for this individual situation. You can also
+       <br/>
+       set a confidence score for an entire SituationSet using the
+       <br/>
+       SituationSet's metadata.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A single situation, along with pointers to situation mentions that
 provide evidence for the situation. "Situations" include events,
 relations, facts, sentiments, and beliefs. Each situation has a
 core type (such as EVENT or SENTIMENT), along with an optional
 subtype based on its core type (e.g., event_type=CONTACT_MEET), and
 a set of zero or more unordered arguments.
-
-This struct may be used for a variety of "processed" Situations such
+    <p>
+    </p>
+    This struct may be used for a variety of "processed" Situations such
 as (but not limited to):
 - SituationMentions which have been collapsed into a coreferential cluster
 - Situations which are inferred and not directly supported by a textual mention
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_SituationMention">
-      Struct: SituationMention
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        uuid
-       </td>
-       <td>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_SituationMention">
+     Struct: SituationMention
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       uuid
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       Unique identifier for this situation.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       text
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The text content of this situation mention. This field is
+       <br/>
+       often redundant with the 'tokens' field, and may not
+       <br/>
+       be generated by all analytics.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       situationType
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The core type of this situation (eg EVENT or SENTIMENT),
+       <br/>
+       or a coarse grain situation type.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       50
+      </td>
+      <td>
+       situationKind
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       A fine grain situation type that specifically describes the
+       <br/>
+       situation mention based on situationType above. It allows for
+       <br/>
+       more detailed description of the situation mention.
+       <br/>
+       <br/>
+       Some examples:
+       <br/>
+       <br/>
+       if situationType == EVENT, the event type for the sit. mention
+       <br/>
+       if situationType == STATE, the state type for this sit. mention
+       <br/>
+       <br/>
+       For Propbank, this field should be the predicate lemma and id,
+       <br/>
+       e.g. "strike.02". For FrameNet, this should be the frame name,
+       <br/>
+       e.g. "Commerce_buy".
+       <br/>
+       <br/>
+       Different and more varied situationTypes may be added
+       <br/>
+       in the future.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       argumentList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
+         <a href="situations.html#Struct_MentionArgument">
+          MentionArgument
          </a>
         </code>
-       </td>
-       <td>
-        Unique identifier for this situation.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        text
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The text content of this situation mention. This field is
-often redundant with the 'tokens' field, and may not
-be generated by all analytics.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        situationType
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The core type of this situation (eg EVENT or SENTIMENT),
-or a coarse grain situation type.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        50
-       </td>
-       <td>
-        situationKind
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        A fine grain situation type that specifically describes the
-situation mention based on situationType above. It allows for
-more detailed description of the situation mention.
-
-Some examples:
-
-if situationType == EVENT, the event type for the sit. mention
-if situationType == STATE, the state type for this sit. mention
-
-For Propbank, this field should be the predicate lemma and id,
-e.g. "strike.02". For FrameNet, this should be the frame name,
-e.g. "Commerce_buy".
-
-Different and more varied situationTypes may be added
-in the future.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        argumentList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="situations.html#Struct_MentionArgument">
-           MentionArgument
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        The arguments for this situation mention. Each argument
-consists of a role and a value. It is possible for an situation
-to have multiple arguments with the same role. Arguments are
-unordered.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        100
-       </td>
-       <td>
-        intensity
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        An "intensity" rating for the situation, typically ranging from
-0-1. In the case of SENTIMENT situations, this is used to record
-the intensity of the sentiment.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        101
-       </td>
-       <td>
-        polarity
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The polarity of this situation. In the case of SENTIMENT
-situations, this is used to record the polarity of the
-sentiment.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        150
-       </td>
-       <td>
-        tokens
-       </td>
-       <td>
-        <code>
-         <a href="structure.html#Struct_TokenRefSequence">
-          structure.TokenRefSequence
-         </a>
-        </code>
-       </td>
-       <td>
-        An optional pointer to tokens that are (especially)
-relevant to this situation mention. It is left up to individual
-analytics to decide what tokens (if any) they wish to include in
-this field. In particular, it is not specified whether the
-arguments' tokens should be included.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        200
-       </td>
-       <td>
-        confidence
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        A confidence score for this individual situation mention. You
-can also set a confidence score for an entire SituationMentionSet
-using the SituationMentionSet's metadata.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A concrete mention of a situation, where "situations" include
+        &gt;
+       </code>
+      </td>
+      <td>
+       The arguments for this situation mention. Each argument
+       <br/>
+       consists of a role and a value. It is possible for an situation
+       <br/>
+       to have multiple arguments with the same role. Arguments are
+       <br/>
+       unordered.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       100
+      </td>
+      <td>
+       intensity
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+       An "intensity" rating for the situation, typically ranging from
+       <br/>
+       0-1. In the case of SENTIMENT situations, this is used to record
+       <br/>
+       the intensity of the sentiment.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       101
+      </td>
+      <td>
+       polarity
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The polarity of this situation. In the case of SENTIMENT
+       <br/>
+       situations, this is used to record the polarity of the
+       <br/>
+       sentiment.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       150
+      </td>
+      <td>
+       tokens
+      </td>
+      <td>
+       <code>
+        <a href="structure.html#Struct_TokenRefSequence">
+         structure.TokenRefSequence
+        </a>
+       </code>
+      </td>
+      <td>
+       An optional pointer to tokens that are (especially)
+       <br/>
+       relevant to this situation mention. It is left up to individual
+       <br/>
+       analytics to decide what tokens (if any) they wish to include in
+       <br/>
+       this field. In particular, it is not specified whether the
+       <br/>
+       arguments' tokens should be included.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       151
+      </td>
+      <td>
+       constituent
+      </td>
+      <td>
+       <code>
+        <a href="structure.html#Struct_ConstituentRef">
+         structure.ConstituentRef
+        </a>
+       </code>
+      </td>
+      <td>
+       An alternative way to specify the same thing as tokens.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       200
+      </td>
+      <td>
+       confidence
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+       A confidence score for this individual situation mention. You
+       <br/>
+       can also set a confidence score for an entire SituationMentionSet
+       <br/>
+       using the SituationMentionSet's metadata.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A concrete mention of a situation, where "situations" include
 events, relations, facts, sentiments, and beliefs. Each situation
 has a core type (such as EVENT or SENTIMENT), along with an
 optional subtype based on its core type (e.g.,
 event_type=CONTACT_MEET), and a set of zero or more unordered
 arguments.
-
-This struct should be used for most types of SRL labelings
+    <p>
+    </p>
+    This struct should be used for most types of SRL labelings
 (e.g. Propbank and FrameNet) because they are grounded in text.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_SituationMentionSet">
-      Struct: SituationMentionSet
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        uuid
-       </td>
-       <td>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_SituationMentionSet">
+     Struct: SituationMentionSet
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       uuid
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       Unique identifier for this set.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       metadata
+      </td>
+      <td>
+       <code>
+        <a href="metadata.html#Struct_AnnotationMetadata">
+         metadata.AnnotationMetadata
+        </a>
+       </code>
+      </td>
+      <td>
+       Information about where this set came from.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       mentionList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
+         <a href="situations.html#Struct_SituationMention">
+          SituationMention
          </a>
         </code>
-       </td>
-       <td>
-        Unique identifier for this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        metadata
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+       List of mentions in this set.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       linkingList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="metadata.html#Struct_AnnotationMetadata">
-          metadata.AnnotationMetadata
+         <a href="linking.html#Struct_Linking">
+          linking.Linking
          </a>
         </code>
-       </td>
-       <td>
-        Information about where this set came from.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        mentionList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="situations.html#Struct_SituationMention">
-           SituationMention
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        List of mentions in this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        linkingList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="linking.html#Struct_Linking">
-           linking.Linking
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        Entity linking annotations associated with this SituationMentionSet.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A theory about the set of situation mentions that are present in a
+        &gt;
+       </code>
+      </td>
+      <td>
+       Entity linking annotations associated with this SituationMentionSet.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A theory about the set of situation mentions that are present in a
 message. See also: SituationMention
-     <br/>
-    </div>    <div class="definition">
-     <h3 id="Struct_SituationSet">
-      Struct: SituationSet
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        uuid
-       </td>
-       <td>
+    <br/>
+   </div>   <div class="definition">
+    <h3 id="Struct_SituationSet">
+     Struct: SituationSet
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       uuid
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       Unique identifier for this set.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       metadata
+      </td>
+      <td>
+       <code>
+        <a href="metadata.html#Struct_AnnotationMetadata">
+         metadata.AnnotationMetadata
+        </a>
+       </code>
+      </td>
+      <td>
+       Information about where this set came from.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       situationList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
+         <a href="situations.html#Struct_Situation">
+          Situation
          </a>
         </code>
-       </td>
-       <td>
-        Unique identifier for this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        metadata
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+       List of mentions in this set.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       linkingList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="metadata.html#Struct_AnnotationMetadata">
-          metadata.AnnotationMetadata
+         <a href="linking.html#Struct_Linking">
+          linking.Linking
          </a>
         </code>
-       </td>
-       <td>
-        Information about where this set came from.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        situationList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="situations.html#Struct_Situation">
-           Situation
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        List of mentions in this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        linkingList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="linking.html#Struct_Linking">
-           linking.Linking
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        Entity linking annotations associated with this SituationSet.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A theory about the set of situations that are present in a
+        &gt;
+       </code>
+      </td>
+      <td>
+       Entity linking annotations associated with this SituationSet.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A theory about the set of situations that are present in a
 message. See also: Situation
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_TimeML">
-      Struct: TimeML
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        timeMLClass
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The TimeML class for situations representing TimeML events
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        timeMLTense
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The TimeML tense for situations representing TimeML events
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        timeMLAspect
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The TimeML aspect for situations representing TimeML events
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A wrapper for various TimeML annotations.
-     <br/>
-    </div>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_TimeML">
+     Struct: TimeML
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       timeMLClass
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The TimeML class for situations representing TimeML events
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       timeMLTense
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The TimeML tense for situations representing TimeML events
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       timeMLAspect
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The TimeML aspect for situations representing TimeML events
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A wrapper for various TimeML annotations.
+    <br/>
    </div>
   </div>
- </body>
-</html>
+ </div>
+</body>
 

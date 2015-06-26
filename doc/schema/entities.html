@@ -11,724 +11,771 @@
       addConcreteNavigation();
     });
   </script>
-<html>
- <head>
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-  <link href="style.css" rel="stylesheet" type="text/css"/>
-  <title>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>
+ Thrift module: entities
+</title>
+<body>
+ <div class="container-fluid">
+  <h1>
    Thrift module: entities
-  </title>
- </head>
- <body>
-  <div class="container-fluid">
-   <h1>
-    Thrift module: entities
-   </h1>
-   <table class="table-bordered table-striped table-condensed">
-    <thead>
-     <th>
-      Module
-     </th>
-     <th>
-      Services
-     </th>
-     <th>
-      Data types
-     </th>
-     <th>
-      Constants
-     </th>
-    </thead>
-    <tr>
-     <td>
-      entities
-     </td>
-     <td>
-     </td>
-     <td>
-      <a href="#Struct_Entity">
-       Entity
-      </a>
-      <br/>
-      <a href="#Struct_EntityMention">
-       EntityMention
-      </a>
-      <br/>
-      <a href="#Struct_EntityMentionSet">
-       EntityMentionSet
-      </a>
-      <br/>
-      <a href="#Struct_EntitySet">
-       EntitySet
-      </a>
-      <br/>
-     </td>
-     <td>
-     </td>
-    </tr>
-   </table>
-   <hr/>
-   <div id="Structs_div">
-    <h2 id="Structs">
-     Data structures
-    </h2>
-    <div class="definition">
-     <h3 id="Struct_Entity">
-      Struct: Entity
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        uuid
-       </td>
-       <td>
+  </h1>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Module
+    </th>
+    <th>
+     Services
+    </th>
+    <th>
+     Data types
+    </th>
+    <th>
+     Constants
+    </th>
+   </thead>
+   <tr>
+    <td>
+     entities
+    </td>
+    <td>
+    </td>
+    <td>
+     <a href="#Struct_Entity">
+      Entity
+     </a>
+     <br/>
+     <a href="#Struct_EntityMention">
+      EntityMention
+     </a>
+     <br/>
+     <a href="#Struct_EntityMentionSet">
+      EntityMentionSet
+     </a>
+     <br/>
+     <a href="#Struct_EntitySet">
+      EntitySet
+     </a>
+     <br/>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_Entity">
+     Struct: Entity
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       uuid
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       Unique identifier for this entity.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       mentionIdList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
          <a href="uuid.html#Struct_UUID">
           uuid.UUID
          </a>
         </code>
-       </td>
-       <td>
-        Unique identifier for this entity.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        mentionIdList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        An list of pointers to all of the mentions of this Entity's
-referent.  (type=EntityMention)
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        type
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The basic type of this entity's referent.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        confidence
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        Confidence score for this individual entity.  You can also set a
-confidence score for an entire EntitySet using the EntitySet's
-metadata.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        canonicalName
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        A string containing a representative, canonical, or "best" name
-for this entity's referent.  This string may match one of the
-mentions' text strings, but it is not required to.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A single referent (or "entity") that is referred to at least once
+        &gt;
+       </code>
+      </td>
+      <td>
+       An list of pointers to all of the mentions of this Entity's
+       <br/>
+       referent.  (type=EntityMention)
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       type
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The basic type of this entity's referent.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       confidence
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+       Confidence score for this individual entity.  You can also set a
+       <br/>
+       confidence score for an entire EntitySet using the EntitySet's
+       <br/>
+       metadata.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       canonicalName
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       A string containing a representative, canonical, or "best" name
+       <br/>
+       for this entity's referent.  This string may match one of the
+       <br/>
+       mentions' text strings, but it is not required to.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A single referent (or "entity") that is referred to at least once
 in a given communication, along with pointers to all of the
 references to that referent. The referent's type (e.g., is it a
 person, or a location, or an organization, etc) is also recorded.
-
-Because each Entity contains pointers to all references to a
+    <p>
+    </p>
+    Because each Entity contains pointers to all references to a
 referent with a given communication, an Entity can be
 thought of as a coreference set.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_EntityMention">
-      Struct: EntityMention
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        uuid
-       </td>
-       <td>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_EntityMention">
+     Struct: EntityMention
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       uuid
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       tokens
+      </td>
+      <td>
+       <code>
+        <a href="structure.html#Struct_TokenRefSequence">
+         structure.TokenRefSequence
+        </a>
+       </code>
+      </td>
+      <td>
+       Pointer to sequence of tokens.
+       <br/>
+       <br/>
+       Special note: In the case of PRO-drop, where there is no explicit
+       <br/>
+       mention, but an EntityMention is needed for downstream Entity
+       <br/>
+       analysis, this field should be set to a TokenRefSequence with an
+       <br/>
+       empty tokenIndexList and the anchorTokenIndex set to the head/only
+       <br/>
+       token of the verb/predicate from which the PRO was dropped.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       entityType
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The type of referent that is referred to by this mention.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       phraseType
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The phrase type of the tokens that constitute this mention.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       confidence
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+       A confidence score for this individual mention.  You can also
+       <br/>
+       set a confidence score for an entire EntityMentionSet using the
+       <br/>
+       EntityMentionSet's metadata.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       6
+      </td>
+      <td>
+       text
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The text content of this entity mention.  This field is
+       <br/>
+       typically redundant with the string formed by cross-referencing
+       <br/>
+       the 'tokens.tokenIndexList' field with this mention's
+       <br/>
+       tokenization. This field may not be generated by all analytics.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       7
+      </td>
+      <td>
+       childMentionIdList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
          <a href="uuid.html#Struct_UUID">
           uuid.UUID
          </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        tokens
-       </td>
-       <td>
-        <code>
-         <a href="structure.html#Struct_TokenRefSequence">
-          structure.TokenRefSequence
-         </a>
-        </code>
-       </td>
-       <td>
-        Pointer to sequence of tokens.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        entityType
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The type of referent that is referred to by this mention.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        phraseType
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The phrase type of the tokens that constitute this mention.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        confidence
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        A confidence score for this individual mention.  You can also
-set a confidence score for an entire EntityMentionSet using the
-EntityMentionSet's metadata.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        6
-       </td>
-       <td>
-        text
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The text content of this entity mention.  This field is
-typically redundant with the 'token_sequence' field, and may not
-be generated by all analytics.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        7
-       </td>
-       <td>
-        childMentionIdList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        A list of pointers to the "child" EntityMentions of this
-EntityMention.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A span of text with a specific referent, such as a person,
+        &gt;
+       </code>
+      </td>
+      <td>
+       A list of pointers to the "child" EntityMentions of this
+       <br/>
+       EntityMention.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A span of text with a specific referent, such as a person,
 organization, or time. Things that can be referred to by a mention
 are called "entities."
-
-It is left up to individual EntityMention taggers to decide which
+    <p>
+    </p>
+    It is left up to individual EntityMention taggers to decide which
 referent types and phrase types to identify. For example, some
 EntityMention taggers may only identify proper nouns, or may only
 identify EntityMentions that refer to people.
-
-Each EntityMention consists of a sequence of tokens. This sequence
+    <p>
+    </p>
+    Each EntityMention consists of a sequence of tokens. This sequence
 is usually annotated with information about the referent type
 (e.g., is it a person, or a location, or an organization, etc) as
 well as the phrase type (is it a name, pronoun, common noun, etc.).
-
-EntityMentions typically consist of a single noun phrase; however,
+    <p>
+    </p>
+    EntityMentions typically consist of a single noun phrase; however,
 other phrase types may also be marked as mentions. For
 example, in the phrase "French hotel," the adjective "French" might
 be marked as a mention for France.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_EntityMentionSet">
-      Struct: EntityMentionSet
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        uuid
-       </td>
-       <td>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_EntityMentionSet">
+     Struct: EntityMentionSet
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       uuid
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       Unique identifier for this set.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       metadata
+      </td>
+      <td>
+       <code>
+        <a href="metadata.html#Struct_AnnotationMetadata">
+         metadata.AnnotationMetadata
+        </a>
+       </code>
+      </td>
+      <td>
+       Information about where this set came from.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       mentionList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
+         <a href="entities.html#Struct_EntityMention">
+          EntityMention
          </a>
         </code>
-       </td>
-       <td>
-        Unique identifier for this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        metadata
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+       List of mentions in this set.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       linkingList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="metadata.html#Struct_AnnotationMetadata">
-          metadata.AnnotationMetadata
+         <a href="linking.html#Struct_Linking">
+          linking.Linking
          </a>
         </code>
-       </td>
-       <td>
-        Information about where this set came from.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        mentionList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="entities.html#Struct_EntityMention">
-           EntityMention
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        List of mentions in this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        linkingList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="linking.html#Struct_Linking">
-           linking.Linking
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        Entity linking annotations associated with this EntityMentionSet.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A theory about the set of entity mentions that are present in a
+        &gt;
+       </code>
+      </td>
+      <td>
+       Entity linking annotations associated with this EntityMentionSet.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A theory about the set of entity mentions that are present in a
 message. See also: EntityMention
-
-This type does not represent a coreference relationship, which is handled by Entity.
+    <p>
+    </p>
+    This type does not represent a coreference relationship, which is handled by Entity.
 This type is meant to represent the output of a entity-mention-identifier,
 which is often a part of an in-doc coreference system.
-     <br/>
-    </div>    <div class="definition">
-     <h3 id="Struct_EntitySet">
-      Struct: EntitySet
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        uuid
-       </td>
-       <td>
+    <br/>
+   </div>   <div class="definition">
+    <h3 id="Struct_EntitySet">
+     Struct: EntitySet
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       uuid
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       Unique identifier for this set.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       metadata
+      </td>
+      <td>
+       <code>
+        <a href="metadata.html#Struct_AnnotationMetadata">
+         metadata.AnnotationMetadata
+        </a>
+       </code>
+      </td>
+      <td>
+       Information about where this set came from.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       entityList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
+         <a href="entities.html#Struct_Entity">
+          Entity
          </a>
         </code>
-       </td>
-       <td>
-        Unique identifier for this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        metadata
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+       List of entities in this set.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       linkingList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="metadata.html#Struct_AnnotationMetadata">
-          metadata.AnnotationMetadata
+         <a href="linking.html#Struct_Linking">
+          linking.Linking
          </a>
         </code>
-       </td>
-       <td>
-        Information about where this set came from.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        entityList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="entities.html#Struct_Entity">
-           Entity
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        List of entities in this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        linkingList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="linking.html#Struct_Linking">
-           linking.Linking
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        Entity linking annotations associated with this EntitySet.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        mentionSetId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        An optional UUID pointer to an EntityMentionSet.
-
-If this field is present, consumers can assume that all
-Entity objects in this EntitySet have EntityMentions that are included
-in the named EntityMentionSet.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A theory about the set of entities that are present in a
+        &gt;
+       </code>
+      </td>
+      <td>
+       Entity linking annotations associated with this EntitySet.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       mentionSetId
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       An optional UUID pointer to an EntityMentionSet.
+       <br/>
+       <br/>
+       If this field is present, consumers can assume that all
+       <br/>
+       Entity objects in this EntitySet have EntityMentions that are included
+       <br/>
+       in the named EntityMentionSet.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A theory about the set of entities that are present in a
 message. See also: Entity.
-     <br/>
-    </div>
+    <br/>
    </div>
   </div>
- </body>
-</html>
+ </div>
+</body>
 

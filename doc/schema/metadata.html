@@ -11,961 +11,984 @@
       addConcreteNavigation();
     });
   </script>
-<html>
- <head>
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-  <link href="style.css" rel="stylesheet" type="text/css"/>
-  <title>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>
+ Thrift module: metadata
+</title>
+<body>
+ <div class="container-fluid">
+  <h1>
    Thrift module: metadata
-  </title>
- </head>
- <body>
-  <div class="container-fluid">
-   <h1>
-    Thrift module: metadata
-   </h1>
-   <table class="table-bordered table-striped table-condensed">
-    <thead>
-     <th>
-      Module
-     </th>
-     <th>
-      Services
-     </th>
-     <th>
-      Data types
-     </th>
-     <th>
-      Constants
-     </th>
-    </thead>
-    <tr>
-     <td>
-      metadata
-     </td>
-     <td>
-     </td>
-     <td>
-      <a href="#Struct_AnnotationMetadata">
-       AnnotationMetadata
-      </a>
-      <br/>
-      <a href="#Struct_CommunicationMetadata">
-       CommunicationMetadata
-      </a>
-      <br/>
-      <a href="#Struct_Digest">
-       Digest
-      </a>
-      <br/>
-      <a href="#Struct_TheoryDependencies">
-       TheoryDependencies
-      </a>
-      <br/>
-     </td>
-     <td>
-     </td>
-    </tr>
-   </table>
-   <hr/>
-   <div id="Structs_div">
-    <h2 id="Structs">
-     Data structures
-    </h2>
-    <div class="definition">
-     <h3 id="Struct_AnnotationMetadata">
-      Struct: AnnotationMetadata
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        tool
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The name of the tool that generated this annotation.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        timestamp
-       </td>
-       <td>
-        <code>
-         i64
-        </code>
-       </td>
-       <td>
-        The time at which this annotation was generated (in unix time
-UTC -- i.e., seconds since January 1, 1970).
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        digest
-       </td>
-       <td>
-        <code>
-         <a href="metadata.html#Struct_Digest">
-          Digest
-         </a>
-        </code>
-       </td>
-       <td>
-        A Digest, carrying over any information the annotation metadata
-wishes to carry over.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        dependencies
-       </td>
-       <td>
-        <code>
-         <a href="metadata.html#Struct_TheoryDependencies">
-          TheoryDependencies
-         </a>
-        </code>
-       </td>
-       <td>
-        The theories that supported this annotation.
-
-An empty field indicates that the theory has no
-dependencies (e.g., an ingester).
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        6
-       </td>
-       <td>
-        kBest
-       </td>
-       <td>
-        <code>
-         i32
-        </code>
-       </td>
-       <td>
-        An integer that represents a ranking for systems
-that output k-best lists.
-
-For systems that do not output k-best lists,
-the default value (1) should suffice.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-        <code>
-         1
-        </code>
-       </td>
-      </tr>
-     </table>
+  </h1>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Module
+    </th>
+    <th>
+     Services
+    </th>
+    <th>
+     Data types
+    </th>
+    <th>
+     Constants
+    </th>
+   </thead>
+   <tr>
+    <td>
+     metadata
+    </td>
+    <td>
+    </td>
+    <td>
+     <a href="#Struct_AnnotationMetadata">
+      AnnotationMetadata
+     </a>
      <br/>
-     Metadata associated with an annotation or a set of annotations,
+     <a href="#Struct_CommunicationMetadata">
+      CommunicationMetadata
+     </a>
+     <br/>
+     <a href="#Struct_Digest">
+      Digest
+     </a>
+     <br/>
+     <a href="#Struct_TheoryDependencies">
+      TheoryDependencies
+     </a>
+     <br/>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_AnnotationMetadata">
+     Struct: AnnotationMetadata
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       tool
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The name of the tool that generated this annotation.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       timestamp
+      </td>
+      <td>
+       <code>
+        i64
+       </code>
+      </td>
+      <td>
+       The time at which this annotation was generated (in unix time
+       <br/>
+       UTC -- i.e., seconds since January 1, 1970).
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       digest
+      </td>
+      <td>
+       <code>
+        <a href="metadata.html#Struct_Digest">
+         Digest
+        </a>
+       </code>
+      </td>
+      <td>
+       A Digest, carrying over any information the annotation metadata
+       <br/>
+       wishes to carry over.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       dependencies
+      </td>
+      <td>
+       <code>
+        <a href="metadata.html#Struct_TheoryDependencies">
+         TheoryDependencies
+        </a>
+       </code>
+      </td>
+      <td>
+       The theories that supported this annotation.
+       <br/>
+       <br/>
+       An empty field indicates that the theory has no
+       <br/>
+       dependencies (e.g., an ingester).
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       6
+      </td>
+      <td>
+       kBest
+      </td>
+      <td>
+       <code>
+        i32
+       </code>
+      </td>
+      <td>
+       An integer that represents a ranking for systems
+       <br/>
+       that output k-best lists.
+       <br/>
+       <br/>
+       For systems that do not output k-best lists,
+       <br/>
+       the default value (1) should suffice.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+       1
+      </td>
+     </tr>
+    </table>
+    <br/>
+    Metadata associated with an annotation or a set of annotations,
 that identifies where those annotations came from.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_CommunicationMetadata">
-      Struct: CommunicationMetadata
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        tweetInfo
-       </td>
-       <td>
-        <code>
-         <a href="twitter.html#Struct_TweetInfo">
-          twitter.TweetInfo
-         </a>
-        </code>
-       </td>
-       <td>
-        Extra information for communications where kind==TWEET:
-Information about this tweet that is provided by the Twitter
-API.  For information about the Twitter API, see:
-&lt;https://dev.twitter.com/docs/platform-objects&gt;
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        emailInfo
-       </td>
-       <td>
-        <code>
-         <a href="email.html#Struct_EmailCommunicationInfo">
-          email.EmailCommunicationInfo
-         </a>
-        </code>
-       </td>
-       <td>
-        Extra information for communications where kind==EMAIL
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        nitfInfo
-       </td>
-       <td>
-        <code>
-         <a href="nitf.html#Struct_NITFInfo">
-          nitf.NITFInfo
-         </a>
-        </code>
-       </td>
-       <td>
-        Extra information that may come from the NITF
-(News Industry Text Format) schema. See 'nitf.thrift'.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     Metadata specific to a particular Communication object.
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_CommunicationMetadata">
+     Struct: CommunicationMetadata
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       tweetInfo
+      </td>
+      <td>
+       <code>
+        <a href="twitter.html#Struct_TweetInfo">
+         twitter.TweetInfo
+        </a>
+       </code>
+      </td>
+      <td>
+       Extra information for communications where kind==TWEET:
+       <br/>
+       Information about this tweet that is provided by the Twitter
+       <br/>
+       API.  For information about the Twitter API, see:
+       <br/>
+       https://dev.twitter.com/docs/platform-objects
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       emailInfo
+      </td>
+      <td>
+       <code>
+        <a href="email.html#Struct_EmailCommunicationInfo">
+         email.EmailCommunicationInfo
+        </a>
+       </code>
+      </td>
+      <td>
+       Extra information for communications where kind==EMAIL
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       nitfInfo
+      </td>
+      <td>
+       <code>
+        <a href="nitf.html#Struct_NITFInfo">
+         nitf.NITFInfo
+        </a>
+       </code>
+      </td>
+      <td>
+       Extra information that may come from the NITF
+       <br/>
+       (News Industry Text Format) schema. See 'nitf.thrift'.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    Metadata specific to a particular Communication object.
 This might include corpus-specific metadata (from the Twitter API),
 attributes associated with the Communication (the author),
 or other information about the Communication.
-     <br/>
-    </div>    <div class="definition">
-     <h3 id="Struct_Digest">
-      Struct: Digest
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        bytesValue
-       </td>
-       <td>
-        <code>
-         binary
-        </code>
-       </td>
-       <td>
-        The following fields define various ways you can store the
-digest data (for convenience). If none of these meets your
-needs, then serialize the digest to a byte sequence and store it
-in bytesValue.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        int64Value
-       </td>
-       <td>
+    <br/>
+   </div>   <div class="definition">
+    <h3 id="Struct_Digest">
+     Struct: Digest
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       bytesValue
+      </td>
+      <td>
+       <code>
+        binary
+       </code>
+      </td>
+      <td>
+       The following fields define various ways you can store the
+       <br/>
+       digest data (for convenience). If none of these meets your
+       <br/>
+       needs, then serialize the digest to a byte sequence and store it
+       <br/>
+       in bytesValue.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       int64Value
+      </td>
+      <td>
+       <code>
+        i64
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       doubleValue
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       stringValue
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       int64List
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
          i64
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        doubleValue
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       6
+      </td>
+      <td>
+       doubleList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
          double
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        stringValue
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       7
+      </td>
+      <td>
+       stringList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
          string
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        int64List
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          i64
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        6
-       </td>
-       <td>
-        doubleList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          double
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        7
-       </td>
-       <td>
-        stringList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          string
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     Analytic-specific information about an attribute or edge. Digests
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    Analytic-specific information about an attribute or edge. Digests
 are used to combine information from multiple sources to generate a
 unified value. The digests generated by an analytic will only ever
 be used by that same analytic, so analytics can feel free to encode
 information in whatever way is convenient.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_TheoryDependencies">
-      Struct: TheoryDependencies
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        sectionTheoryList
-       </td>
-       <td>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_TheoryDependencies">
+     Struct: TheoryDependencies
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       sectionTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        sentenceTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       sentenceTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        tokenizationTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       tokenizationTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        posTagTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       posTagTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        nerTagTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       5
+      </td>
+      <td>
+       nerTagTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        6
-       </td>
-       <td>
-        lemmaTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       6
+      </td>
+      <td>
+       lemmaTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        7
-       </td>
-       <td>
-        langIdTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       7
+      </td>
+      <td>
+       langIdTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        8
-       </td>
-       <td>
-        parseTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       8
+      </td>
+      <td>
+       parseTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        9
-       </td>
-       <td>
-        dependencyParseTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       9
+      </td>
+      <td>
+       dependencyParseTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        10
-       </td>
-       <td>
-        tokenAnnotationTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       10
+      </td>
+      <td>
+       tokenAnnotationTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        11
-       </td>
-       <td>
-        entityMentionSetTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       11
+      </td>
+      <td>
+       entityMentionSetTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        12
-       </td>
-       <td>
-        entitySetTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       12
+      </td>
+      <td>
+       entitySetTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        13
-       </td>
-       <td>
-        situationMentionSetTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       13
+      </td>
+      <td>
+       situationMentionSetTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        14
-       </td>
-       <td>
-        situationSetTheoryList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       14
+      </td>
+      <td>
+       situationSetTheoryList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        15
-       </td>
-       <td>
-        communicationsList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       15
+      </td>
+      <td>
+       communicationsList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="uuid.html#Struct_UUID">
-           uuid.UUID
-          </a>
-         </code>
-         &gt;
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
         </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A struct that holds UUIDs for all theories that a particular
+        &gt;
+       </code>
+      </td>
+      <td>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A struct that holds UUIDs for all theories that a particular
 annotation was based upon (and presumably requires).
-
-Producers of TheoryDependencies should list all stages that they
+    <p>
+    </p>
+    Producers of TheoryDependencies should list all stages that they
 used in constructing their particular annotation. They do not,
 however, need to explicitly label *each* stage; they can label
 only the immediate stage before them.
-
-Examples:
-
-If you are producing a Tokenization, and only used the
+    <p>
+    </p>
+    Examples:
+    <p>
+    </p>
+    If you are producing a Tokenization, and only used the
 SentenceSegmentation in order to produce that Tokenization, list
 only the single SentenceSegmentation UUID in sentenceTheoryList.
-
-In this example, even though the SentenceSegmentation will have
+    <p>
+    </p>
+    In this example, even though the SentenceSegmentation will have
 a dependency on some SectionSegmentation, it is not necessary
 for the Tokenization to list the SectionSegmentation UUID as a
 dependency.
-
-If you are a producer of EntityMentions, and you use two
+    <p>
+    </p>
+    If you are a producer of EntityMentions, and you use two
 POSTokenTagging and one NERTokenTagging objects, add the UUIDs for
 the POSTokenTagging objects to posTagTheoryList, and the UUID of
 the NER TokenTagging to the nerTagTheoryList.
-
-In this example, because multiple annotations influenced the
+    <p>
+    </p>
+    In this example, because multiple annotations influenced the
 new annotation, they should all be listed as dependencies.
-     <br/>
-    </div>
+    <br/>
    </div>
   </div>
- </body>
-</html>
+ </div>
+</body>
 

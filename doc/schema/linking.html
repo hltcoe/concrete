@@ -11,354 +11,367 @@
       addConcreteNavigation();
     });
   </script>
-<html>
- <head>
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-  <link href="style.css" rel="stylesheet" type="text/css"/>
-  <title>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>
+ Thrift module: linking
+</title>
+<body>
+ <div class="container-fluid">
+  <h1>
    Thrift module: linking
-  </title>
- </head>
- <body>
-  <div class="container-fluid">
-   <h1>
-    Thrift module: linking
-   </h1>
-   <table class="table-bordered table-striped table-condensed">
-    <thead>
-     <th>
-      Module
-     </th>
-     <th>
-      Services
-     </th>
-     <th>
-      Data types
-     </th>
-     <th>
-      Constants
-     </th>
-    </thead>
-    <tr>
-     <td>
-      linking
-     </td>
-     <td>
-     </td>
-     <td>
-      <a href="#Struct_Link">
-       Link
-      </a>
-      <br/>
-      <a href="#Struct_LinkTarget">
-       LinkTarget
-      </a>
-      <br/>
-      <a href="#Struct_Linking">
-       Linking
-      </a>
-      <br/>
-     </td>
-     <td>
-     </td>
-    </tr>
-   </table>
-   <hr/>
-   <div id="Structs_div">
-    <h2 id="Structs">
-     Data structures
-    </h2>
-    <div class="definition">
-     <h3 id="Struct_Link">
-      Struct: Link
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        sourceId
-       </td>
-       <td>
+  </h1>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Module
+    </th>
+    <th>
+     Services
+    </th>
+    <th>
+     Data types
+    </th>
+    <th>
+     Constants
+    </th>
+   </thead>
+   <tr>
+    <td>
+     linking
+    </td>
+    <td>
+    </td>
+    <td>
+     <a href="#Struct_Link">
+      Link
+     </a>
+     <br/>
+     <a href="#Struct_LinkTarget">
+      LinkTarget
+     </a>
+     <br/>
+     <a href="#Struct_Linking">
+      Linking
+     </a>
+     <br/>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_Link">
+     Struct: Link
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       sourceId
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       The "root" of this Link; points to a EntityMention UUID, Entity UUID, etc.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       linkTargetList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
+         <a href="linking.html#Struct_LinkTarget">
+          LinkTarget
          </a>
         </code>
-       </td>
-       <td>
-        The "root" of this Link; points to a EntityMention UUID, Entity UUID, etc.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        linkTargetList
-       </td>
-       <td>
+        &gt;
+       </code>
+      </td>
+      <td>
+       A list of LinkTarget objects that this Link contains.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A structure that represents the origin of an entity linking annotation.
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_LinkTarget">
+     Struct: LinkTarget
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       confidence
+      </td>
+      <td>
+       <code>
+        double
+       </code>
+      </td>
+      <td>
+       Confidence of this LinkTarget object.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       targetId
+      </td>
+      <td>
+       <code>
+        <a href="uuid.html#Struct_UUID">
+         uuid.UUID
+        </a>
+       </code>
+      </td>
+      <td>
+       A UUID that represents the target of this LinkTarget. This
+       <br/>
+       UUID should exist in the Entity/Situation(Mention)Set that the
+       <br/>
+       Linking object is contained in.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       3
+      </td>
+      <td>
+       dbId
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       A database ID that represents the target of this linking.
+       <br/>
+       <br/>
+       This should be used if the target of the linking is not associated
+       <br/>
+       with an Entity|Situation(Mention)Set in Concrete, and therefore cannot be linked by
+       <br/>
+       a UUID internal to concrete.
+       <br/>
+       <br/>
+       If present, other optional field 'dbName' should also be populated.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       4
+      </td>
+      <td>
+       dbName
+      </td>
+      <td>
+       <code>
+        string
+       </code>
+      </td>
+      <td>
+       The name of the database that represents the target of this linking.
+       <br/>
+       <br/>
+       Together with the 'dbId', this can form a pointer to a target
+       <br/>
+       that is not represented inside concrete.
+       <br/>
+       <br/>
+       Should be populated alongside 'dbId'.
+       <br/>
+      </td>
+      <td>
+       optional
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A structure that represents the target of an entity linking annotation.
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_Linking">
+     Struct: Linking
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <th>
+       Key
+      </th>
+      <th>
+       Field
+      </th>
+      <th>
+       Type
+      </th>
+      <th>
+       Description
+      </th>
+      <th>
+       Requiredness
+      </th>
+      <th>
+       Default value
+      </th>
+     </thead>
+     <tr>
+      <td>
+       1
+      </td>
+      <td>
+       metadata
+      </td>
+      <td>
+       <code>
+        <a href="metadata.html#Struct_AnnotationMetadata">
+         metadata.AnnotationMetadata
+        </a>
+       </code>
+      </td>
+      <td>
+       Metadata related to this Linking object.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       2
+      </td>
+      <td>
+       linkList
+      </td>
+      <td>
+       <code>
+        list&lt;
         <code>
-         list&lt;
-         <code>
-          <a href="linking.html#Struct_LinkTarget">
-           LinkTarget
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        A list of LinkTarget objects that this Link contains.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A structure that represents the origin of an entity linking annotation.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_LinkTarget">
-      Struct: LinkTarget
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        confidence
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        Confidence of this LinkTarget object.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        targetId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
+         <a href="linking.html#Struct_Link">
+          Link
          </a>
         </code>
-       </td>
-       <td>
-        A UUID that represents the target of this LinkTarget. This
-UUID should exist in the Entity/Situation(Mention)Set that the
-Linking object is contained in.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        dbId
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        A database ID that represents the target of this linking.
-
-This should be used if the target of the linking is not associated
-with an Entity|Situation(Mention)Set in Concrete, and therefore cannot be linked by
-a UUID internal to concrete.
-
-If present, other optional field 'dbName' should also be populated.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        dbName
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The name of the database that represents the target of this linking.
-
-Together with the 'dbId', this can form a pointer to a target
-that is not represented inside concrete.
-
-Should be populated alongside 'dbId'.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A structure that represents the target of an entity linking annotation.
-     <br/>
-    </div>
-    <div class="definition">
-     <h3 id="Struct_Linking">
-      Struct: Linking
-     </h3>
-     <table class="table-bordered table-striped table-condensed">
-      <thead>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </thead>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        metadata
-       </td>
-       <td>
-        <code>
-         <a href="metadata.html#Struct_AnnotationMetadata">
-          metadata.AnnotationMetadata
-         </a>
-        </code>
-       </td>
-       <td>
-        Metadata related to this Linking object.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        linkList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="linking.html#Struct_Link">
-           Link
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        A list of Link objects that this Linking object contains.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-     </table>
-     <br/>
-     A structure that represents entity linking annotations.
-     <br/>
-    </div>
+        &gt;
+       </code>
+      </td>
+      <td>
+       A list of Link objects that this Linking object contains.
+       <br/>
+      </td>
+      <td>
+       required
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+    <br/>
+    A structure that represents entity linking annotations.
+    <br/>
    </div>
   </div>
- </body>
-</html>
+ </div>
+</body>
 
