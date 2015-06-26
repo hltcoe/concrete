@@ -138,7 +138,7 @@ struct CommunicationMetadata {
    * Extra information for communications where kind==TWEET:
    * Information about this tweet that is provided by the Twitter
    * API.  For information about the Twitter API, see:
-   * <https://dev.twitter.com/docs/platform-objects> 
+   * https://dev.twitter.com/docs/platform-objects
    */
   1: optional twitter.TweetInfo tweetInfo
 

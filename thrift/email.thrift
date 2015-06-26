@@ -14,7 +14,7 @@ namespace cpp concrete
  * values are typically extracted from strings such as:
  * <tt> "John Smith" &lt;john\@xyz.com&gt; </tt>.
  *
- * \see RFC2822 <http://tools.ietf.org/html/rfc2822>
+ * \see RFC2822 http://tools.ietf.org/html/rfc2822
  */
 struct EmailAddress {
   1: optional string address
