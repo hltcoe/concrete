@@ -145,6 +145,12 @@ struct EntityMention {
 
   /**
    * Pointer to sequence of tokens.
+   *
+   * Special note: In the case of PRO-drop, where there is no explicit
+   * mention, but an EntityMention is needed for downstream Entity
+   * analysis, this field should be set to a TokenRefSequence with an
+   * empty tokenIndexList and the anchorTokenIndex set to the head/only
+   * token of the verb/predicate from which the PRO was dropped.
    */
   2: required structure.TokenRefSequence tokens
   
