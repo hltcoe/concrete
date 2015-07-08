@@ -12,6 +12,7 @@ namespace cpp concrete
 include "metadata.thrift"
 include "spans.thrift"
 include "uuid.thrift"
+include "language.thrift"
 
 //===========================================================================
 // Tokens & Tokenizations
@@ -688,4 +689,18 @@ struct Section {
    * to get a start-to-finish enumeration of the Communication's content.
    */
   7: optional list<i32> numberList
+
+  /**
+   * An optional field to be used for multi-language documents.
+   *
+   * This field should be populated when a section is inside of
+   * a document that contains multiple languages.
+   *
+   * Minimally, each block of text in one language should be it's own
+   * section. For example, if a paragraph is in English and the
+   * paragraph afterwards is in French, these should be separated into
+   * two different sections, allowing language-specific analytics to
+   * run on appropriate sections.
+   */
+  8: optional list<language.LanguageIdentification> lidList
 }
