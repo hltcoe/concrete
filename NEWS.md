@@ -1,5 +1,10 @@
 # News
 
+### Concrete v4.7 - 2015-7-8
+* Added section-level `LanguageIdentification` field
+to allow language-specific analytics to run over meaningful
+content.
+
 ### Concrete v4.6 - 2015-6-26
 * Added new fields to [email.thrift](thrift/email.thrift) to better
 support/describe email messages.
