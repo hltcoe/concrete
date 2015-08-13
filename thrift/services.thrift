@@ -22,7 +22,7 @@ namespace py concrete.services
  * from any programming language.
  */
 service Annotator {
-  /*
+  /**
    * Main annotation method. Takes a commuication as input
    * and returns a new one as output.
    *
@@ -34,12 +34,22 @@ service Annotator {
    */
   communication.Communication annotate(1: communication.Communication original) throws (1: ex.ConcreteThriftException ex)
 
-  /*
+  /**
    * Return the tool's AnnotationMetadata.
    */
   metadata.AnnotationMetadata getMetadata()
 
-  /*
+  /**
+   * Return a detailed description of what the particular tool
+   * does, what inputs and outputs to expect, etc. 
+   *
+   * Developers whom are not familiar with the particular
+   * analytic should be able to read this string and
+   * understand the essential functions of the analytic.
+   */
+  string getDocumentation()
+
+  /**
    * Indicate to the server it should shut down.
    */
   oneway void shutdown()
