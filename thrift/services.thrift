@@ -23,7 +23,7 @@ namespace py concrete.services
  */
 service Annotator {
   /**
-   * Main annotation method. Takes a commuication as input
+   * Main annotation method. Takes a communication as input
    * and returns a new one as output.
    *
    * It is up to the implementing service to verify that
