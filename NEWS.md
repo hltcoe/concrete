@@ -1,5 +1,9 @@
 # News
 
+### Concrete v4.8 - 2015-8-18
+* Added service layer to Concrete. The .thrift file can be
+viewed [here](thrift/services.thrift).
+
 ### Concrete v4.7 - 2015-7-8
 * Added section-level `LanguageIdentification` field
 to allow language-specific analytics to run over meaningful
