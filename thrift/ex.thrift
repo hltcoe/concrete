@@ -3,7 +3,7 @@
  * See LICENSE in the project root directory.
  */
 namespace java edu.jhu.hlt.concrete.services
-namespace py concrete.services
+namespace py concrete.exceptions
 
 /**
  * An exception to be used with Concrete thrift
