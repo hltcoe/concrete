@@ -13,7 +13,7 @@ with the data using either Java or Python. The underlying
 representation is Apache Thrift, so other language bindings are easy,
 though we don't have public releases of them right now.
 
-# Concrete Terminology and Concepts
+## Concrete Terminology and Concepts
 
 TODO: Define these.
 
@@ -22,9 +22,6 @@ TODO: Define these.
 - Sentence vs. Tokenization
 - Quicklime
 
-# Why use Concrete?
-
-TODO
 
 # Viewing Concrete Communication files
 
@@ -37,6 +34,59 @@ https://github.com/hltcoe/quicklime
 
 (You can also visualize the data on the command line using
 concrete_inspect.py mentioned below.)
+
+## Example Output from Tools
+- concrete_inspect.py
+- concrete2json.py
+
+# Python
+
+## Installation
+
+If you're using Python, you can install the v.4.4.3 tag of the concrete-python GitHub repo. Instructions are in README.md.
+https://github.com/hltcoe/concrete-python
+
+## Read a Communication from a file
+
+To read in Communication object from a file  you'd do this:
+
+```python
+import concrete.inspect 
+import concrete.util
+comm = concrete.util.read_communication_from_file(args.communication_file)
+```
+
+## Write a Communication to a file
+
+TODO
+
+## Walk the Data Structures
+
+TODO: Replace the links to concrete_inspect.py with short code snippets.
+
+Then you can walk the object just as you would any other in
+Python. The [thrift
+spec](http://hltcoe.github.io/concrete/communication.html) defines the
+data structures. 
+
+### Iterate over sentences
+
+For example, you could [print the sentences and tags
+in CONLL format](https://github.com/hltcoe/concrete-python/blob/master/concrete/inspect.py#L11)
+
+### Print the entities and situations
+
+You could [print the entities](https://github.com/hltcoe/concrete-python/blob/master/concrete/inspect.py#L72),
+or [print the relations](https://github.com/hltcoe/concrete-python/blob/master/concrete/inspect.py#L165).
+
+## Printing parts of a Communication at the Command Line (concrete_inspect.py)
+
+As it happens, these rather tutorial-like examples above of how
+to walk the data structure can also be used at the command line from
+the concrete_inspect.py utility
+(https://github.com/hltcoe/concrete-python/tree/master/scripts) --
+another handy visualization tool.
+
 
 # Java
 
@@ -66,6 +116,10 @@ You can read in a Concrete file to a Communication object as follows.
 CompactCommunicationSerializer ser = new CompactCommunicationSerializer();
 Communication comm = ser.fromPathString(commFile.getAbsolutePath());
 ```
+
+## Write a Communication to a file
+
+TODO
 
 ## Walk the Data Structures
 
@@ -97,48 +151,3 @@ To get the entities and situations you'd do something like this:
         List<SituationMentionSet> cSmsList = comm.getSituationMentionSetList();
         SituationMentionSet cSms = cSmsList.get(0); // Since there's only one.
 ```
-
-# Python
-
-## Installation
-
-If you're using Python, you can install the v.4.4.3 tag of the concrete-python GitHub repo. Instructions are in README.md.
-https://github.com/hltcoe/concrete-python
-
-## Read a Communication from a file
-
-To read in Communication object from a file  you'd do this:
-
-```python
-import concrete.inspect 
-import concrete.util
-comm = concrete.util.read_communication_from_file(args.communication_file)
-```
-
-## Walk the Data Structures
-
-TODO: Replace the links to concrete_inspect.py with short code snippets.
-
-Then you can walk the object just as you would any other in
-Python. The [thrift
-spec](http://hltcoe.github.io/concrete/communication.html) defines the
-data structures. 
-
-### Iterate over sentences
-
-For example, you could [print the sentences and tags
-in CONLL format](https://github.com/hltcoe/concrete-python/blob/master/concrete/inspect.py#L11)
-
-### Print the entities and situations
-
-You could [print the entities](https://github.com/hltcoe/concrete-python/blob/master/concrete/inspect.py#L72),
-or [print the relations](https://github.com/hltcoe/concrete-python/blob/master/concrete/inspect.py#L165).
-
-## Printing parts of a Communication at the Command Line (concrete_inspect.py)
-
-As it happens, these rather tutorial-like examples above of how
-to walk the data structure can also be used at the command line from
-the concrete_inspect.py utility
-(https://github.com/hltcoe/concrete-python/tree/master/scripts) --
-another handy visualization tool.
-
