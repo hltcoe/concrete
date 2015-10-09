@@ -1,3 +1,5 @@
+TODO: Add a Table of Contents
+
 # What is Concrete?
 
 Concrete is a data serialization format for NLP. It replaces ad-hoc
