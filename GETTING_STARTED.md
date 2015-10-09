@@ -43,8 +43,30 @@ concrete_inspect.py mentioned below.)
 
 ## Installation
 
-If you're using Python, you can install the v.4.4.3 tag of the concrete-python GitHub repo. Instructions are in README.md.
-https://github.com/hltcoe/concrete-python
+If you're using Python, you can install version 4.4.3 of the concrete Python module via pip.  For a system-wide install:
+
+```
+sudo pip install concrete==4.4.3
+```
+
+or to install to your home folder:
+
+```
+pip install --user concrete==4.4.3
+```
+
+Alternatively, to install the latest version:
+
+```
+sudo pip install -U concrete
+```
+
+or, similarly,
+
+```
+pip install -U --user concrete
+```
+
 
 ## Read a Communication from a file
 
