@@ -117,6 +117,8 @@ comm = concrete.util.read_communication_from_file(args.communication_file)
 
 ## Walk the Data Structures
 
+TODO: Replace the links to concrete_inspect.py with short code snippets.
+
 Then you can walk the object just as you would any other in
 Python. The [thrift
 spec](http://hltcoe.github.io/concrete/communication.html) defines the
