@@ -200,7 +200,7 @@ Expected output:
               .               .               .               O              -1
 ```
 
-### Print the Entities
+### Print Entities
 
 Print information for all Entities and their EntityMentions (coreference
 resolution).
@@ -230,13 +230,14 @@ Entity 0 (John Smith , manager of ACME INC ,)
 
 Print SitationsMentions (relation extraction).
 
-Our previous example file doesn't have sitations annotated. So we'll need
+Our previous example file doesn't have sitations annotated, so we'll need
 another Concrete file to test our code with.
 
 ```
 $ wget 'https://github.com/hltcoe/quicklime/blob/master/serif_example.concrete?raw=true' -O serif_example.concrete
 ```
 
+This file has run BBN serif's relation and event extractor.
 
 ```python
 import concrete.util
@@ -255,7 +256,6 @@ else:
             print 'SituationMention %d-%d:' % (i, j)
             print '    text', situationMention.text
             print '    situationType', situationMention.situationType
-
             for k, arg in enumerate(situationMention.argumentList):
                 print '    Argument %d:' % k
                 print '      role', arg.role
@@ -302,9 +302,9 @@ SituationMention 1-0:
       entityMention He
 ```
 
-# Java
+## Java
 
-## Installation
+### Installation
 
 If you're using Java, you would use the following dependencies from Maven Central, which correspond to the v.4.4.4 tag of the concrete-java GitHub repo:
 https://github.com/hltcoe/concrete-java
@@ -322,7 +322,7 @@ https://github.com/hltcoe/concrete-java
     </dependency>
 ```
 
-## Read a Communication from a file
+### Read a Communication from a file
 
 You can read in a Concrete file to a Communication object as follows.
 
@@ -331,14 +331,12 @@ CompactCommunicationSerializer ser = new CompactCommunicationSerializer();
 Communication comm = ser.fromPathString(commFile.getAbsolutePath());
 ```
 
-## Walk the Data Structures
-
 ### Iterate over sentences
 
-From there, you can just walk the Communication object as you would
-any other in Java. The [thrift spec](http://hltcoe.github.io/concrete/communication.html) defines the data
-structures. For example, you could iterate through the sentences as
-follows.
+From there, you can just walk the Communication object as you would any other in
+Java. The [thrift spec](http://hltcoe.github.io/concrete/communication.html)
+defines the data structures. For example, you could iterate through the
+sentences as follows.
 
 ```java
         for (Section cSection : comm.getSectionList()) {
