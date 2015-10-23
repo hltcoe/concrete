@@ -25,12 +25,15 @@ on data release, see the Concrete homepage.
 
 ## Step 0: Install concrete-python
 
-    sudo pip install concrete==4.4.3
+```
+$ pip install concrete
+```
 
 ## Step 1: Get some data.
 
-    wget 'https://github.com/hltcoe/quicklime/blob/master/agiga_dog-bites-man.concrete?raw=true'
-    mv agiga_dog-bites-man.concrete example.concrete
+```
+wget 'https://github.com/hltcoe/quicklime/blob/master/agiga_dog-bites-man.concrete?raw=true' -O example.concrete
+```
 
 ## Step 2: What's in this file?
 
@@ -42,21 +45,33 @@ visualizes the data. The instructions for installation and starting the
 visualization are about three commands -- very simple. See the
 [README.md](https://github.com/hltcoe/quicklime) docs on the main page.
 
-    git clone git@github.com:hltcoe/quicklime.git
-    cd quicklime
-    pip install bottle
-    ./qlook.py example.concrete
+For now, quicklime must be installed from source.
 
-TODO: screenshot
+    $ git clone https://github.com/hltcoe/quicklime.git
+    $ cd quicklime
+    $ pip install bottle
+
+To view a Concrete file:
+
+    $ ./qlook.py <path-to>/example.concrete
+    Listening on http://localhost:8080/
+    Hit Ctrl-C to quit.
+
+Now, open your web browser and go to the link printed to the screen
+``http://localhost:8080/``. For more information about the quicklime project,
+check out the [quicklime github repo](https://github.com/hltcoe/quicklime) as
+well as the [Concrete homepage](http://hltcoe.github.io/).
 
 ### 2.2 Command-line tools
 
-In addition to quicklime, ``concrete_inspect.py`` is another handy tool for
-viewing the contents of Concrete files. Below is some example usage.
+In addition to quicklime, ``concrete_inspect.py`` is another tool for viewing
+the contents of Concrete files. This utility was made available when you
+installed ``concrete-python``, so you can use it in any directory. Below is some
+example usage. For further usage, use the script's ``--help`` option.
 
 #### 2.2.1 CoNLL-style output.
 
-    $ ./concrete_inspect.py example.concrete --pos --ner --lemmas --dependency
+    $ concrete_inspect.py example.concrete --pos --ner --lemmas --dependency
     INDEX TOKEN     LEMMA    POS NER    HEAD
     ----- -----     -----    --- ---    ----
     1     John      John     NNP PERSON 4
@@ -69,7 +84,7 @@ viewing the contents of Concrete files. Below is some example usage.
 
 #### 2.2.2 Parse tree
 
-    $ example.concrete --treebank
+    $ concrete_inspect.py example.concrete --treebank
     (ROOT
       (S (NP (NP (NNP John)
                  (POS ’s))
@@ -89,11 +104,10 @@ of this script for simplicity.
 
 ### Installation
 
-If you're using Python, you can install version ``4.4.3`` of the
-``concrete-python`` module via pip directly from the Python package index
-(PyPI).
+If you're using Python, you can install the latest release of the
+``concrete-python`` module via pip directly from the Python package index.
 
-    $ sudo pip install concrete==4.4.3
+    $ pip install concrete
 
 ### Read a Communication from a file
 
@@ -101,7 +115,7 @@ To read in Communication object from a file  you'd do this:
 
 ```python
 >>> import concrete.util
->>> comm = concrete.util.read_communication_from_file('example.comm')
+>>> comm = concrete.util.read_communication_from_file('example.concrete')
 ```
 
 ### Walk the Data Structures
@@ -125,24 +139,31 @@ for section in comm.sectionList:
         # Token text
         taggings.append([x.text for x in sentence.tokenization.tokenList.tokenList])
 
-        # Accumulate all token taggings.
-        for tagging in sentence.tokenization.tokenTaggingList:
-            taggings.append([x.tag for x in tagging.taggedTokenList])
+        if sentence.tokenization.tokenTaggingList is not None:
+            # Accumulate all token taggings.
+            for tagging in sentence.tokenization.tokenTaggingList:
+                taggings.append([x.tag for x in tagging.taggedTokenList])
 
-        # Read dependency arcs from dependency parse tree. (Deps start at zero.)
-        head = [-1]*len(sentence.tokenization.tokenList.tokenList)
-        for arc in sentence.tokenization.dependencyParseList[0].dependencyList:
-            head[arc.dep] = arc.gov
+        if sentence.tokenization.dependencyParseList is not None:
+            # Read dependency arcs from dependency parse tree. (Deps start at zero.)
+            head = [-1]*len(sentence.tokenization.tokenList.tokenList)
+            for arc in sentence.tokenization.dependencyParseList[0].dependencyList:
+                head[arc.dep] = arc.gov
 
-        # Add head index to taggings
-        taggings.append(head)
+            # Add head index to taggings
+            taggings.append(head)
 
         # Transpose the list. Format and print each row.
         for row in zip(*taggings):
             print '\t'.join('%15s' % x for x in row)
 
         print
+
 ```
+
+Note: It is good practice to check for ``None`` on each annotation layer because
+each layer is optional. When a layer is not available it is ``None``, when it is
+empty it's often an empty list.
 
 Expected output:
 ```
@@ -209,8 +230,77 @@ Entity 0 (John Smith , manager of ACME INC ,)
 
 Print SitationsMentions (relation extraction).
 
-TODO: Example file doesn't have sitations.
+Our previous example file doesn't have sitations annotated. So we'll need
+another Concrete file to test our code with.
 
+```
+$ wget 'https://github.com/hltcoe/quicklime/blob/master/serif_example.concrete?raw=true' -O serif_example.concrete
+```
+
+
+```python
+import concrete.util
+comm = concrete.util.read_communication_from_file('serif_example.concrete')
+
+if comm.situationMentionSetList is None:
+    print 'Situation mention annotations not available for this document.'
+
+else:
+    for i, situationMentionSet in enumerate(comm.situationMentionSetList):
+        if situationMentionSet.metadata:
+            print 'Situation Set %d (%s):' % (i, situationMentionSet.metadata.tool)
+        else:
+            print 'Situation Set %d:' % i
+        for j, situationMention in enumerate(situationMentionSet.mentionList):
+            print 'SituationMention %d-%d:' % (i, j)
+            print '    text', situationMention.text
+            print '    situationType', situationMention.situationType
+
+            for k, arg in enumerate(situationMention.argumentList):
+                print '    Argument %d:' % k
+                print '      role', arg.role
+                if arg.entityMention:
+                    print '      entityMention', arg.entityMention.text
+                if arg.situationMention:
+                    print '      situationMention:'
+                    print '        text', situationMention.text
+                    print '        situationType', situationMention.situationType
+            print
+        print
+```
+
+Expected output:
+```
+Situation Set 0 (Serif: relations):
+SituationMention 0-0:
+    text None
+    situationType ORG-AFF.Employment
+    Argument 0:
+      role Role.RELATION_SOURCE_ROLE
+      entityMention manager of ACME INC
+    Argument 1:
+      role Role.RELATION_TARGET_ROLE
+      entityMention ACME INC
+
+SituationMention 0-1:
+    text None
+    situationType PER-SOC.Family
+    Argument 0:
+      role Role.RELATION_SOURCE_ROLE
+      entityMention John
+    Argument 1:
+      role Role.RELATION_TARGET_ROLE
+      entityMention daughter
+
+
+Situation Set 1 (Serif: events):
+SituationMention 1-0:
+    text died
+    situationType Life.Die
+    Argument 0:
+      role Victim
+      entityMention He
+```
 
 # Java
 
