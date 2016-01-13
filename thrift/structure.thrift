@@ -634,7 +634,7 @@ struct Section {
   1: required uuid.UUID uuid
   
   /**
-   * Theories about how this section is divided into sentences.
+   * The sentences of this "section."
    */ 
   2: optional list<Sentence> sentenceList
   
