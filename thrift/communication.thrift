@@ -87,10 +87,14 @@ struct Communication {
   2: required uuid.UUID uuid
 
   /** 
-   * An enumeration used to indicate what type of communication this
-   * is. The optional fields named "<i>kind</i>Info" can be used to
-   * store extra fields that are specific to the communication
-   * type. 
+   * A short, corpus-specific term characterizing the nature of the
+   * communication; may change in a future version of concrete.
+   * Often used for filtering.  For example, Gigaword uses
+   * the type "story" to distinguish typical news articles from
+   * weekly summaries ("multi"), editorial advisories ("advis"), etc.
+   * At present, this value is typically a literal form from the
+   * originating corpus: as a result, a type marked 'other' may have
+   * different meanings across different corpora.
    */
   3: required string type
 
