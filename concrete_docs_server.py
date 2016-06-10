@@ -13,9 +13,12 @@ def main():
     parser.add_argument('--port', '-p', dest='port', action='store',
                         default = 8097, type=int,
                         help = 'Port on which to run server')
+    parser.add_argument('--host', dest='host', action='store',
+                        default = 'localhost', type=str,
+                        help = 'Host on which to listen on')
     args = parser.parse_args()
 
-    run(host='localhost', port=args.port)
+    run(host=args.host, port=args.port)
 
 
 @route('/')

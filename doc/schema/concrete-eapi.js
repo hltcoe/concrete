@@ -26,4 +26,7 @@ function addConcreteNavigation() {
         $('<h1>').html(left_pane_html))
       .append(concrete_filelist_ul));
   $('body div.container-fluid').addClass('rightPane');
+  $('body div#Structs_div').addClass('rightPane');
+  $('body div#Services_div').addClass('rightPane');
+  $('body div#Enumerations_div').addClass('rightPane');
 }

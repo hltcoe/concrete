@@ -26,7 +26,7 @@ def make_nice_lines():
                 yield ''.join(char_buff)
                 char_buff = []
             char_buff.append(char)
-            if char == '<':                
+            if char == '<':
                 looking_for_tag = True
             elif char == '/':
                 if looking_for_tag:
@@ -40,7 +40,7 @@ def make_nice_lines():
             else:
                 pass
     yield ''.join(char_buff)
-                
+
 
 def add_divs():
     added_html = []
@@ -83,16 +83,24 @@ def add_divs():
 
 def main():
     doc_with_divs = add_divs()
-    bs_doc = BeautifulSoup(''.join(doc_with_divs))
+    bs_doc = BeautifulSoup(''.join(doc_with_divs), 'html.parser')
     structs = bs_doc.select('#Structs_div .definition')
     sorted_structs = sorted(structs, key = lambda x : x.select('h3')[0].get_text().strip())
-    div_children = bs_doc.select('#Structs_div')[0].contents
+    sd_dv = bs_doc.select('#Structs_div')
+    if len(sd_dv) == 0:
+        page = bs_doc.select('title')
+        import sys
+        print >> sys.stderr , "Generated page ", page[0].get_text(), " has no struct definitions. This is probably okay, but you may want to verify."
+        print bs_doc.prettify()
+        return 0
+    div_children = sd_dv[0].contents
     if not(len(div_children) - 2 == len(sorted_structs)):
         raise Exception("length of div children (%s) != length of struct defs (%s)" % (len(div_children) - 2, len(sorted_structs)))
     for i in xrange(2, len(sorted_structs)+2):
         div_children[i] = sorted_structs[i-2]
     print bs_doc.prettify()
-    
+    return 0
+
 
 if __name__ == '__main__':
     main()
