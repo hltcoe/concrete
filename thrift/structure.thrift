@@ -669,7 +669,12 @@ struct Section {
   9: optional spans.AudioSpan audioSpan
 
   /**
-   * The type of this section.
+   * A short, sometimes corpus-specific term characterizing the nature
+   * of the section; may change in a future version of concrete.  This
+   * often acts as a coarse-grained descriptor that is used for
+   * filtering.  For example, Gigaword uses the section kind "passage"
+   * to distinguish content-bearing paragraphs in the body of an
+   * article from other paragraphs, such as the headline and dateline.
    */
   5: required string kind
   
