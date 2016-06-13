@@ -1,4 +1,10 @@
 # News
+### Concrete v4.9 - 2016-06-13
+The `4.9` release contains an additional service, `Sender`, that
+allows `Communication` objects to be sent from clients to an
+implementing server.
+
+See the stub [here](thrift/services.thrift#L66).
 
 ### Concrete v4.8 - 2015-8-18
 * Added service layer to Concrete. The .thrift file can be
