@@ -72,5 +72,5 @@ service Sender {
    * methods that unset annotations you feel the receiver would not
    * find useful in order to reduce network overhead.
    */
-  oneway void send(1. communication.Communication communication) throws (1. ex.ConcreteThriftexception)
+  oneway void send(1: communication.Communication communication)
 }
