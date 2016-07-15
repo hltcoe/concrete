@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+set -e
+
 STARTDIR=$(pwd)
 git remote add github git@github.com:hltcoe/concrete.git
 git fetch github
