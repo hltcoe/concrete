@@ -27,10 +27,10 @@ done
 # Create JavaScript file with Concrete information
 CONCRETE_INFO="schema/concrete_info.js"
 # version
-echo -n "var CONCRETE_VERSION = " > ${CONCRETE_INFO};
+echo -n "var CONCRETE_VERSION = '" > ${CONCRETE_INFO};
 CONCRETE_README_PATH="../README.md"
 echo -n $(grep -E 'Current version:\s*`' ${CONCRETE_README_PATH} | perl -pe 's/.*(\d+\.\d*).*/$1/') >> ${CONCRETE_INFO}
-echo ";" >> ${CONCRETE_INFO}
+echo "';" >> ${CONCRETE_INFO}
 # array of Thrift types
 echo "var CONCRETE_FILELIST = [" >> ${CONCRETE_INFO}
 for f in $(find "${THRIFT_FILES}" -type f -name '*.thrift' | sort); do
