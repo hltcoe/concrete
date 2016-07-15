@@ -14,8 +14,8 @@ fi
 THRIFT_EXEC="$1"
 THRIFT_FILES="../thrift"
 
-for f in $(find "${THRIFT_FILES}" -type f -name '*.thrift' ); do 
-    "${THRIFT_EXEC}" --gen html -r $f; 
+for f in $(find "${THRIFT_FILES}" -type f -name '*.thrift' ); do
+    "${THRIFT_EXEC}" --gen html -r $f;
 done
 rm gen-html/index.html
 
@@ -33,7 +33,7 @@ echo -n $(grep -E 'Current version:\s*`' ${CONCRETE_README_PATH} | perl -pe 's/.
 echo ";" >> ${CONCRETE_INFO}
 # array of Thrift types
 echo "var CONCRETE_FILELIST = [" >> ${CONCRETE_INFO}
-for f in $(find "${THRIFT_FILES}" -type f -name '*.thrift' | sort); do 
+for f in $(find "${THRIFT_FILES}" -type f -name '*.thrift' | sort); do
     filename=$(basename $f)
     filename_without_prefix="${filename%.*}"
     echo "'${filename_without_prefix}'," >> ${CONCRETE_INFO}

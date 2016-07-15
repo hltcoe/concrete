@@ -1,11 +1,11 @@
-Copyright 2012-2015 Johns Hopkins University HLTCOE. All rights
+Copyright 2012-2016 Johns Hopkins University HLTCOE. All rights
 reserved.  This software is released under the 2-clause BSD license.
 See LICENSE in the project root directory.
 
 Concrete
 ========
 
-Current version: `4.9`
+Current version: `4.10`
 
 Please consult `NEWS.md` for more information about changes between versions.
 

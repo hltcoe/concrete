@@ -1,4 +1,10 @@
 # News
+### Concrete v4.10 - 2016-07-15
+The `4.10` release removes the `Sender` service and deprecates
+the `Annotator` service. These new services now live in a project
+called `concrete-services`, a parallel set of thrift files
+based on `concrete`. See that project for more details.
+
 ### Concrete v4.9 - 2016-06-13
 The `4.9` release contains an additional service, `Sender`, that
 allows `Communication` objects to be sent from clients to an
