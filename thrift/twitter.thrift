@@ -140,4 +140,8 @@ struct TweetInfo {
   15: optional string inReplyToScreenName
   16: optional i64 inReplyToStatusId
   18: optional i64 inReplyToUserId
+
+  19: optional string retweetedScreenName
+  20: optional i64 retweetedStatusId
+  21: optional i64 retweetedUserId
 }
