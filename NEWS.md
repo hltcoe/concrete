@@ -1,4 +1,8 @@
 # News
+### Concrete v4.11 - 2016-10-26
+* Added retweeted status fields to the `TwitterInfo` structure,
+mirroring the fields representing replies.
+
 ### Concrete v4.10 - 2016-07-15
 The `4.10` release removes the `Sender` service and deprecates
 the `Annotator` service. These new services now live in a project
