@@ -6,7 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.metadata
-namespace cpp concrete
+namespace cpp concrete.metadata
 #@namespace scala edu.jhu.hlt.miser
 
 include "uuid.thrift"

@@ -6,7 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.email
-namespace cpp concrete
+namespace cpp concrete.email
 #@namespace scala edu.jhu.hlt.miser
 
 /** 

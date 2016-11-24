@@ -6,7 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.uuid
-namespace cpp concrete
+namespace cpp concrete.uuid
 #@namespace scala edu.jhu.hlt.miser
 
 struct UUID {

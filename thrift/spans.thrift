@@ -6,7 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.spans
-namespace cpp concrete
+namespace cpp concrete.spans
 #@namespace scala edu.jhu.hlt.miser
 
 //===========================================================================

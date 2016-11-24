@@ -6,7 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.twitter
-namespace cpp concrete
+namespace cpp concrete.twitter
 #@namespace scala edu.jhu.hlt.miser
 
 //===========================================================================
