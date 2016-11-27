@@ -8,7 +8,7 @@ include "ex.thrift"
 
 namespace java edu.jhu.hlt.concrete.services
 namespace py concrete.services
-namespace cpp concrete.legacy.services
+namespace cpp concrete
 
 /**
  * DEPRECATION NOTICE: This interface has been replaced by

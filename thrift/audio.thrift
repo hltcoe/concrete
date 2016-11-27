@@ -6,7 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete
 namespace py concrete.audio
-namespace cpp concrete.audio
+namespace cpp concrete
 #@namespace scala edu.jhu.hlt.miser
 
 //===========================================================================
