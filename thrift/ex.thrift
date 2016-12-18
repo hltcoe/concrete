@@ -4,6 +4,7 @@
  */
 namespace java edu.jhu.hlt.concrete.services
 namespace py concrete.exceptions
+namespace cpp concrete
 
 /**
  * An exception to be used with Concrete thrift
