@@ -1,57 +1,127 @@
 /*
- * Copyright 2012-2016 Johns Hopkins University HLTCOE. All rights reserved.
+ * Copyright 2016 Johns Hopkins University HLTCOE. All rights reserved.
+ * This software is released under the 2-clause BSD license.
  * See LICENSE in the project root directory.
  */
-include "metadata.thrift"
-include "communication.thrift"
-include "ex.thrift"
 
 namespace java edu.jhu.hlt.concrete.services
 namespace py concrete.services
-namespace cpp concrete
+namespace cpp concrete.services
+
+include "uuid.thrift"
 
 /**
- * DEPRECATION NOTICE: This interface has been replaced by
- * the ServiceAnnotation interface in the concrete-services
- * package. All new development based on thrift services
- * and concrete should be based on that repo. This is only
- * left for historical, yet-to-be-updated services: do not
- * implement new services with this interface.
- * 
- * Annotator service methods. For concrete analytics that
- * are to be stood up as independent services, accessible
- * from any programming language.
+ * An exception to be used with Concrete services.
  */
-service Annotator {
+exception ServicesException {
   /**
-   * Main annotation method. Takes a communication as input
-   * and returns a new one as output.
-   *
-   * It is up to the implementing service to verify that
-   * the input communication is valid.
-   *
-   * Can throw a ConcreteThriftException upon error
-   * (invalid input, analytic exception, etc.).
+   * The explanation (why the exception occurred)
    */
-  communication.Communication annotate(1: communication.Communication original) throws (1: ex.ConcreteThriftException ex)
+  1: required string message
 
   /**
-   * Return the tool's AnnotationMetadata.
+   * The serialized exception
    */
-  metadata.AnnotationMetadata getMetadata()
+  2: optional binary serEx
+}
+
+/**
+ * An exception to be used when an invoked method has
+ * not been implemented by the service.
+ */
+exception NotImplementedException {
+  /**
+   * The explanation (why the exception occurred)
+   */
+  1: required string message
 
   /**
-   * Return a detailed description of what the particular tool
-   * does, what inputs and outputs to expect, etc. 
-   *
-   * Developers whom are not familiar with the particular
-   * analytic should be able to read this string and
-   * understand the essential functions of the analytic.
+   * The serialized exception
    */
-  string getDocumentation()
+  2: optional binary serEx
+}
+
+/**
+ * Contact information for the asynchronous communications.
+ * When a client contacts a server for a job that takes a significant amount of time,
+ * it is often best to implement this asynchronously.
+ * We do this by having the client stand up a server to accept the results and 
+ * passing that information to the original server.
+ * The server may want to create a new thrift client on every request or maintain
+ * a pool of clients for reuse.
+ */
+struct AsyncContactInfo {
+  1: required string host
+  2: required i32 port
+}
+
+/**
+ * Annotation Tasks Types
+ */
+enum AnnotationTaskType {
+  TRANSLATION = 1
+  NER = 2
+}
+
+/**
+ * An annotation unit is the part of the communication to be annotated.
+ */
+enum AnnotationUnitType {
+  COMMUNICATION = 1
+  SENTENCE = 2
+}
+
+/**
+ * An annotation unit is the part of the communication to be annotated.
+ * It can be the entire communication or a particular sentence in the communication.
+ * If the sentenceID is null, the unit is the entire communication
+ */
+struct AnnotationUnitIdentifier {
+  /**
+   * Communication identifier for loading data
+   */
+  1: required string communicationId
 
   /**
-   * Indicate to the server it should shut down.
+   * Sentence identifer if annotating sentences
    */
-  oneway void shutdown()
+  2: optional uuid.UUID sentenceId
+}
+
+/**
+ * Each service is described by this info struct.
+ * It is for human consumption and for records of versions in deployments.
+ */
+struct ServiceInfo {
+  /**
+   * Name of the service
+   */
+  1: required string name
+
+  /**
+   * Version string of the service.
+   * It is preferred that the services implement semantic versioning: http://semver.org/ 
+   * with version strings like x.y.z
+   */
+  2: required string version
+
+  /**
+   * Description of the service
+   */
+  3: optional string description
+}
+
+/**
+ * Base service that all other services should inherit from
+ */
+service Service {
+  /**
+   * Get information about the service
+   */
+  ServiceInfo about()
+
+  /**
+   * Is the service alive?
+   */
+  bool alive();
 }
