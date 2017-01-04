@@ -6,7 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete.learn
 namespace py concrete.learn
-namespace cpp concrete.learn
+namespace cpp concrete
 
 include "services.thrift"
 include "uuid.thrift"

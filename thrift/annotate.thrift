@@ -15,6 +15,7 @@ include "communication.thrift"
 
 namespace java edu.jhu.hlt.concrete.annotate
 namespace py concrete.annotate
+namespace cpp concrete
 
 /**
  * Annotator service methods. For concrete analytics that

@@ -6,7 +6,7 @@
 
 namespace java edu.jhu.hlt.concrete.services
 namespace py concrete.services
-namespace cpp concrete.services
+namespace cpp concrete
 
 include "uuid.thrift"
 
