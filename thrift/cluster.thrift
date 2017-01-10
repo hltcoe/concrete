@@ -13,59 +13,62 @@ include "uuid.thrift"
 include "metadata.thrift"
 
 /**
- * A member of a 'cluster'. 
- * 
- * Contains a communication ID, an Entity|Situation(Mention)Set ID,
- * and an element ID that identifies the specific
- * Entity|Situation(Mention) associated with this object.
+ * An item being clustered. Does not designate cluster _membership_, as in
+ * "item x belongs to cluster C", but rather just the item ("x" in this
+ * example). Membership is indicated through Cluster objects.  An item may be a
+ * Entity, EntityMention, Situation, SituationMention, or technically anything
+ * with a UUID.
  */ 
 struct ClusterMember {
   /**
-   * The UUID of the Communication this ClusterMember is associated with.
+   * UUID of the Communication which contains the item specified by 'elementId'.
+   * This is ancillary info assuming UUIDs are indeed universally unique.
    */
   1: required uuid.UUID communicationId
 
   /**
-   * The UUID of the Entity|Situation(Mention)Set this ClusterMember
-   * is associated with.
+   * UUID of the Entity|Situation(Mention)Set which contains the item specified by 'elementId'.
+   * This is ancillary info assuming UUIDs are indeed universally unique.
    */
   2: required uuid.UUID setId
 
   /**
-   * The UUID of the specific EntityMention, Entity, SituationMention,
-   * or Situation that this ClusterMember is tied to.
+   * UUID of the EntityMention, Entity, SituationMention, or Situation that
+   * this item represents. This is the characteristic field.
    */
   3: required uuid.UUID elementId
 }
 
 /**
- * A structure that represents a cluster of Communications.
- * 
- * This structure allows for  specific grouping of ClusterMembers, 
- * as well as other Clusters that this Cluster object considers children.
+ * A set of items which are alike in some way.  Has an implicit id which is the
+ * index of this Cluster in its parent Clustering's 'clusterList'.
  */
 struct Cluster {
   /**
-   * A list of integers that represent indices into a list of ClusterMember
-   * objects (likely represented in a Clustering object).
+   * The items in this cluster.  Values are indices into the
+   * 'clusterMemberList' of the Clustering which contains this Cluster.
    */
   1: optional list<i32> clusterMemberIndexList
   
   /**
-   * Confidence values for members of 'memberIndexList' field. 
+   * Co-indexed with 'clusterMemberIndexList'. The i^{th} value represents the
+   * confidence that mention clusterMemberIndexList[i] belongs to this cluster.
    */ 
   2: optional list<double> confidenceList
 
   /**
-   * A list of integers that represent indices into a list of Cluster objects,
-   * used to represent child Clusters associated with this particular Cluster.
+   * A set of clusters (implicit ids/indices) from which this cluster was
+   * created. This cluster should represent the union of all the items in all
+   * of the child clusters.  (For hierarchical clustering only).
    */
   3: optional list<i32> childIndexList
 }
 
 /**
- * A structure that represents a "clustering" of Communications, to support
- * cross-document coreference tasks. 
+ * An (optionally) hierarchical clustering of items appearing across a set of
+ * Communications (intra-Communication clusterings are encoded by Entities and
+ * Situations).  An item may be a Entity, EntityMention, Situation,
+ * SituationMention, or technically anything with a UUID.
  */ 
 struct Clustering {
   
@@ -80,18 +83,22 @@ struct Clustering {
   2: required metadata.AnnotationMetadata metadata
   
   /**
-   * A complete list of ClusterMember objects that this Clustering holds.
+   * The set of items being clustered.
    */
   3: optional list<ClusterMember> clusterMemberList
 
   /**
-   * A complete list of Cluster objects that this Clustering holds.
+   * Clusters of items. If this is a hierarchical clustering, this may contain
+   * clusters which are the set of smaller clusters.
+   * Clusters may not "overlap", meaning (for all clusters X,Y):
+   *   X \cap Y \neq \emptyset \implies X \subset Y \vee Y \subset X
    */
   4: optional list<Cluster> clusterList
 
   /**
-   * A list of integers that represent root Clusters. These integers should be
-   * indices into the 'clusterList' object.
+   * A set of disjoint clusters (indices in 'clusterList') which cover all
+   * items in 'clusterMemberList'. This list must be specified for hierarchical
+   * clusterings and should not be specified for flat clusterings.
    */
   5: optional list<i32> rootClusterIndexList
 }
