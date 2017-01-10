@@ -120,6 +120,11 @@ struct SearchQuery {
    * An identifier of the corpus that the search is to be performed over.
    */
   12: optional string corpus
+
+  /**
+   * The maximum number of candidates the search service should return.
+   */
+  13: optional i32 k
 }
 
 /**
