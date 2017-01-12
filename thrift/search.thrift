@@ -8,6 +8,7 @@ namespace java edu.jhu.hlt.concrete.search
 namespace py concrete.search
 namespace cpp concrete
 
+include "communication.thrift"
 include "services.thrift"
 include "structure.thrift"
 include "uuid.thrift"
