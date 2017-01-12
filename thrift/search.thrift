@@ -125,6 +125,11 @@ struct SearchQuery {
    * The maximum number of candidates the search service should return.
    */
   13: optional i32 k
+
+  /**
+   * An optional communication used for arbitrary context. 
+   */
+  14: optional communication.Communication communication
 }
 
 /**
