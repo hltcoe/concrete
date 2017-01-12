@@ -125,6 +125,13 @@ struct SearchQuery {
    * The maximum number of candidates the search service should return.
    */
   13: optional i32 k
+
+  /**
+   * An optional communication used as context for the query.
+   * If both this field and communicationId is populated, then it is
+   * assumed the ID of the communication is the same as communicationId.
+   */
+  14: optional communication.Communication communication
 }
 
 /**
