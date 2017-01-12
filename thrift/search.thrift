@@ -127,7 +127,9 @@ struct SearchQuery {
   13: optional i32 k
 
   /**
-   * An optional communication used for arbitrary context. 
+   * An optional communication used as context for the query.
+   * If both this field and communicationId is populated, then it is
+   * assumed the ID of the communication is the same as communicationId.
    */
   14: optional communication.Communication communication
 }
