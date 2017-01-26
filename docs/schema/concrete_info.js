@@ -1,5 +1,7 @@
-var CONCRETE_VERSION = 4.8;
+var CONCRETE_VERSION = '4.12';
 var CONCRETE_FILELIST = [
+'access',
+'annotate',
 'audio',
 'cluster',
 'communication',
@@ -7,9 +9,12 @@ var CONCRETE_FILELIST = [
 'entities',
 'ex',
 'language',
+'learn',
 'linking',
 'metadata',
 'nitf',
+'results',
+'search',
 'services',
 'situations',
 'spans',
