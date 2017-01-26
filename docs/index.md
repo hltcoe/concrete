@@ -80,14 +80,14 @@ well as the [Concrete homepage](http://hltcoe.github.io/).
 
 ### 2.2 Command-line tools
 
-In addition to quicklime, ``concrete_inspect.py`` is another tool for viewing
+In addition to quicklime, ``concrete-inspect.py`` is another tool for viewing
 the contents of Concrete files. This utility was made available when you
 installed ``concrete-python``, so you can use it in any directory. Below is some
 example usage. For further usage, use the script's ``--help`` option.
 
 #### 2.2.1 CoNLL-style output.
 
-    $ concrete_inspect.py example.concrete --pos --ner --lemmas --dependency
+    $ concrete-inspect.py example.concrete --pos --ner --lemmas --dependency
     INDEX TOKEN     LEMMA    POS NER    HEAD
     ----- -----     -----    --- ---    ----
     1     John      John     NNP PERSON 4
@@ -100,7 +100,7 @@ example usage. For further usage, use the script's ``--help`` option.
 
 #### 2.2.2 Parse tree
 
-    $ concrete_inspect.py example.concrete --treebank
+    $ concrete-inspect.py example.concrete --treebank
     (ROOT
       (S (NP (NP (NNP John)
                  (POS ’s))
@@ -117,7 +117,7 @@ Below we describe the specifics for using Concrete from [Python](#python) or [Ja
 ## Python
 
 As it happens, a good introductory example usage of Concrete is our handy
-``concrete_inspect.py`` script. Below, we'll walk through stripped down version
+``concrete-inspect.py`` script. Below, we'll walk through stripped down version
 of this script for simplicity.
 
 ### Installation
@@ -145,7 +145,7 @@ data structures.
 ### Iterate over sentences and print taggings
 
 The following code prints sentences and tags in CoNLL format, similar
-``concrete_inspect.py``.
+``concrete-inspect.py``.
 
 ```python
 for section in comm.sectionList:
