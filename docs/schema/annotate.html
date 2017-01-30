@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="concrete-eapi.css"/>
+  <script type="text/javascript" src="concrete_info.js"></script>
+  <script type="text/javascript" src="concrete-eapi.js"></script>
+  <script type="text/javascript" src="tablesorter/jquery-latest.js"></script>
+  <script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      addConcreteNavigation();
+    });
+  </script>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>
+ Thrift module: annotate
+</title>
+<body>
+ <div class="container-fluid">
+  <h1>
+   Thrift module: annotate
+  </h1>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Module
+    </th>
+    <th>
+     Services
+    </th>
+    <th>
+     Data types
+    </th>
+    <th>
+     Constants
+    </th>
+   </thead>
+   <tr>
+    <td>
+     annotate
+    </td>
+    <td>
+     <a href="#Svc_AnnotateCommunicationService">
+      AnnotateCommunicationService
+     </a>
+     <br/>
+     <ul>
+      <li>
+       <a href="#Fn_AnnotateCommunicationService_annotate">
+        annotate
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_AnnotateCommunicationService_getDocumentation">
+        getDocumentation
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_AnnotateCommunicationService_getMetadata">
+        getMetadata
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_AnnotateCommunicationService_shutdown">
+        shutdown
+       </a>
+      </li>
+     </ul>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+ </div>
+</body>
+<hr/>
+<div id="Services_div">
+ <h2 id="Services">
+  Services
+ </h2>
+ <h3 id="Svc_AnnotateCommunicationService">
+  Service: AnnotateCommunicationService
+ </h3>
+ Annotator service methods. For concrete analytics that
+are to be stood up as independent services, accessible
+from any programming language.
+ <br/>
+ <div class="definition">
+  <h4 id="Fn_AnnotateCommunicationService_annotate">
+   Function: AnnotateCommunicationService.annotate
+  </h4>
+  <pre><code><a href="communication.html#Struct_Communication">communication.Communication</a></code> annotate(<code><a href="communication.html#Struct_Communication">communication.Communication</a></code> original)
+    throws <code><a href="ex.html#Struct_ConcreteThriftException">ex.ConcreteThriftException</a></code>
+</pre>
+  Main annotation method. Takes a communication as input
+and returns a new one as output.
+
+It is up to the implementing service to verify that
+the input communication is valid.
+
+Can throw a ConcreteThriftException upon error
+(invalid input, analytic exception, etc.).
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_AnnotateCommunicationService_getMetadata">
+   Function: AnnotateCommunicationService.getMetadata
+  </h4>
+  <pre><code><a href="metadata.html#Struct_AnnotationMetadata">metadata.AnnotationMetadata</a></code> getMetadata()
+</pre>
+  Return the tool's AnnotationMetadata.
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_AnnotateCommunicationService_getDocumentation">
+   Function: AnnotateCommunicationService.getDocumentation
+  </h4>
+  <pre><code>string</code> getDocumentation()
+</pre>
+  Return a detailed description of what the particular tool
+does, what inputs and outputs to expect, etc.
+
+Developers whom are not familiar with the particular
+analytic should be able to read this string and
+understand the essential functions of the analytic.
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_AnnotateCommunicationService_shutdown">
+   Function: AnnotateCommunicationService.shutdown
+  </h4>
+  <pre><code>void</code> shutdown()
+</pre>
+  Indicate to the server it should shut down.
+  <br/>
+ </div>
+</div>
+
