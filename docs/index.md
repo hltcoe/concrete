@@ -17,9 +17,7 @@ Javascript, C++, Java, and Python. To learn more about design considerations and
 motivation, have a look at the white paper,
 [Ferraro et al. (2014)](http://cs.jhu.edu/~ferraro/papers/ferraro-concrete-2014.pdf). The
 details of the data format (schema) are described
-[here](http://hltcoe.github.io/concrete/). Also, the
-[Concrete homepage](http://hltcoe.github.io/) is a pointer to additional
-documentation and resources.
+[here](http://hltcoe.github.io/concrete/schema/).
 
 In addition to data serialization, we provide Concretely annotated data! We've
 done the hard work of running a variety of tools, such as, Stanford's NLP
@@ -75,8 +73,7 @@ To view a Concrete file:
 
 Now, open your web browser and go to the link printed to the screen
 ``http://localhost:8080/``. For more information about the quicklime project,
-check out the [quicklime github repo](https://github.com/hltcoe/quicklime) as
-well as the [Concrete homepage](http://hltcoe.github.io/).
+check out the [quicklime github repo](https://github.com/hltcoe/quicklime).
 
 ### 2.2 Command-line tools
 
@@ -139,7 +136,7 @@ To read in Communication object from a file  you'd do this:
 ### Walk the Data Structures
 
 Then you can walk the object just as you would any other in Python. The
-[thrift spec](http://hltcoe.github.io/concrete/communication.html) defines the
+[thrift spec](http://hltcoe.github.io/concrete/schema/communication.html) defines the
 data structures.
 
 ### Iterate over sentences and print taggings
@@ -352,7 +349,7 @@ Communication comm = ser.fromPathString(commFile.getAbsolutePath());
 ### Iterate over sentences
 
 From there, you can just walk the Communication object as you would any other in
-Java. The [thrift spec](http://hltcoe.github.io/concrete/communication.html)
+Java. The [thrift spec](http://hltcoe.github.io/concrete/schema/communication.html)
 defines the data structures. For example, you could iterate through the
 sentences as follows.
 
