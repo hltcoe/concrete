@@ -181,6 +181,7 @@ each layer is optional. When a layer is not available it is ``None``, when it is
 empty it's often an empty list.
 
 Expected output:
+
 ```
            John            John             NNP          PERSON               1
           Smith           Smith             NNP          PERSON               9
@@ -231,6 +232,7 @@ for entitySet in comm.entitySetList:
 ```
 
 Expected output:
+
 ```
 Entity 0 (John Smith , manager of ACME INC ,)
   Mention 0: John Smith , manager of ACME INC ,
@@ -241,11 +243,11 @@ Entity 0 (John Smith , manager of ACME INC ,)
 ```
 
 
-### Print SitationMentions
+### Print SituationMentions
 
-Print SitationsMentions (relation extraction).
+Print SituationMentions (relation extraction).
 
-Our previous example file doesn't have sitations annotated, so we'll need
+Our previous example file doesn't have situations annotated, so we'll need
 another Concrete file to test our code with.
 
 ```
@@ -285,6 +287,7 @@ else:
 ```
 
 Expected output:
+
 ```
 Situation Set 0 (Serif: relations):
 SituationMention 0-0:
