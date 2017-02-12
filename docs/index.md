@@ -55,29 +55,25 @@ wget 'https://github.com/hltcoe/quicklime/blob/master/agiga_dog-bites-man.concre
 
 Regardless of how you're ingesting the data, it's probably a good idea to view
 the contents of a .comm file using Quicklime. It stands up a mini-webserver that
-visualizes the data. The instructions for installation and starting the
-visualization are about three commands -- very simple. See the
-[README.md](https://github.com/hltcoe/quicklime) docs on the main page.
+visualizes the data. Install Quicklime using:
 
-For now, quicklime must be installed from source.
-
-    $ git clone https://github.com/hltcoe/quicklime.git
-    $ cd quicklime
-    $ pip install bottle
+```
+pip install quicklime
+```
 
 To view a Concrete file:
 
-    $ ./qlook.py <path-to>/example.concrete
+    $ qlook.py <path-to>/example.concrete
     Listening on http://localhost:8080/
     Hit Ctrl-C to quit.
 
 Now, open your web browser and go to the link printed to the screen
-``http://localhost:8080/``. For more information about the quicklime project,
-check out the [quicklime github repo](https://github.com/hltcoe/quicklime).
+``http://localhost:8080/``. For more information about the Quicklime project,
+check out the [Quicklime GitHub repo](https://github.com/hltcoe/quicklime).
 
 ### 2.2 Command-line tools
 
-In addition to quicklime, ``concrete-inspect.py`` is another tool for viewing
+In addition to Quicklime, ``concrete-inspect.py`` is another tool for viewing
 the contents of Concrete files. This utility was made available when you
 installed ``concrete-python``, so you can use it in any directory. Below is some
 example usage. For further usage, use the script's ``--help`` option.
