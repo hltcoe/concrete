@@ -61,6 +61,7 @@ struct AsyncContactInfo {
 enum AnnotationTaskType {
   TRANSLATION = 1
   NER = 2
+  TopicId = 3
 }
 
 /**
