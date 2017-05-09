@@ -1,4 +1,9 @@
 # News
+### Concrete v4.12 - 2017-01-10
+* Merged `concrete-services` with the main repository.
+* Added a `k` field to the class `SearchQuery`.
+* Added a `communication` field to the class `SearchQuery`.
+
 ### Concrete v4.11 - 2016-10-26
 * Added retweeted status fields to the `TwitterInfo` structure,
 mirroring the fields representing replies.

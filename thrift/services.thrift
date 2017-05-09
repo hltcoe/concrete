@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Johns Hopkins University HLTCOE. All rights reserved.
+ * Copyright 2016-2017 Johns Hopkins University HLTCOE. All rights reserved.
  * This software is released under the 2-clause BSD license.
  * See LICENSE in the project root directory.
  */
@@ -61,6 +61,7 @@ struct AsyncContactInfo {
 enum AnnotationTaskType {
   TRANSLATION = 1
   NER = 2
+  TOPICID = 3
 }
 
 /**

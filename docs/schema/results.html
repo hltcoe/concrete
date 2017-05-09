@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="concrete-eapi.css"/>
+  <script type="text/javascript" src="concrete_info.js"></script>
+  <script type="text/javascript" src="concrete-eapi.js"></script>
+  <script type="text/javascript" src="tablesorter/jquery-latest.js"></script>
+  <script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      addConcreteNavigation();
+    });
+  </script>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>
+ Thrift module: results
+</title>
+<body>
+ <div class="container-fluid">
+  <h1>
+   Thrift module: results
+  </h1>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Module
+    </th>
+    <th>
+     Services
+    </th>
+    <th>
+     Data types
+    </th>
+    <th>
+     Constants
+    </th>
+   </thead>
+   <tr>
+    <td>
+     results
+    </td>
+    <td>
+     <a href="#Svc_ResultsServerService">
+      ResultsServerService
+     </a>
+     <br/>
+     <ul>
+      <li>
+       <a href="#Fn_ResultsServerService_getLatestSearchResult">
+        getLatestSearchResult
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_ResultsServerService_getNextChunk">
+        getNextChunk
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_ResultsServerService_getSearchResult">
+        getSearchResult
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_ResultsServerService_getSearchResults">
+        getSearchResults
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_ResultsServerService_getSearchResultsByUser">
+        getSearchResultsByUser
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_ResultsServerService_registerSearchResult">
+        registerSearchResult
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_ResultsServerService_startSession">
+        startSession
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_ResultsServerService_stopSession">
+        stopSession
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_ResultsServerService_submitAnnotation">
+        submitAnnotation
+       </a>
+      </li>
+     </ul>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+ </div>
+</body>
+<hr/>
+<div id="Services_div">
+ <h2 id="Services">
+  Services
+ </h2>
+ <h3 id="Svc_ResultsServerService">
+  Service: ResultsServerService
+ </h3>
+ <div class="extends">
+  <em>
+   extends
+  </em>
+  <code>
+   <a href="services.html#Svc_Service">
+    services.Service
+   </a>
+  </code>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_ResultsServerService_registerSearchResult">
+   Function: ResultsServerService.registerSearchResult
+  </h4>
+  <pre><code>void</code> registerSearchResult(<code><a href="search.html#Struct_SearchResult">search.SearchResult</a></code> result,
+                          <code><a href="services.html#Enum_AnnotationTaskType">services.AnnotationTaskType</a></code> taskType)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Register the specified search result for annotation.
+
+If a name has not been assigned to the search query, one will be generated.
+This service also requires that the user_id field be populated in the SearchQuery.
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_ResultsServerService_getSearchResults">
+   Function: ResultsServerService.getSearchResults
+  </h4>
+  <pre><code>list&lt;<code><a href="search.html#Struct_SearchResult">search.SearchResult</a></code>&gt;</code> getSearchResults(<code><a href="services.html#Enum_AnnotationTaskType">services.AnnotationTaskType</a></code> taskType,
+                                           <code>i32</code> limit)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get a list of search results for a particular annotation task
+Set the limit to 0 to get all relevant search results
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_ResultsServerService_getSearchResultsByUser">
+   Function: ResultsServerService.getSearchResultsByUser
+  </h4>
+  <pre><code>list&lt;<code><a href="search.html#Struct_SearchResult">search.SearchResult</a></code>&gt;</code> getSearchResultsByUser(<code><a href="services.html#Enum_AnnotationTaskType">services.AnnotationTaskType</a></code> taskType,
+                                                 <code>string</code> userId,
+                                                 <code>i32</code> limit)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get a list of search results for a particular annotation task filtered by a user id
+Set the limit to 0 to get all relevant search results
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_ResultsServerService_getLatestSearchResult">
+   Function: ResultsServerService.getLatestSearchResult
+  </h4>
+  <pre><code><a href="search.html#Struct_SearchResult">search.SearchResult</a></code> getLatestSearchResult(<code>string</code> userId)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get the most recent search results for a user
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_ResultsServerService_getSearchResult">
+   Function: ResultsServerService.getSearchResult
+  </h4>
+  <pre><code><a href="search.html#Struct_SearchResult">search.SearchResult</a></code> getSearchResult(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> searchResultId)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get a search result object
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_ResultsServerService_startSession">
+   Function: ResultsServerService.startSession
+  </h4>
+  <pre><code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> startSession(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> searchResultId,
+                       <code><a href="services.html#Enum_AnnotationTaskType">services.AnnotationTaskType</a></code> taskType)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Start an annotation session
+Returns a session id used in future session calls
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_ResultsServerService_stopSession">
+   Function: ResultsServerService.stopSession
+  </h4>
+  <pre><code>void</code> stopSession(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> sessionId)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Stops an annotation session
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_ResultsServerService_getNextChunk">
+   Function: ResultsServerService.getNextChunk
+  </h4>
+  <pre><code>list&lt;<code><a href="services.html#Struct_AnnotationUnitIdentifier">services.AnnotationUnitIdentifier</a></code>&gt;</code> getNextChunk(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> sessionId)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get next chunk of data to annotate
+The client should use the Retriever service to access the data
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_ResultsServerService_submitAnnotation">
+   Function: ResultsServerService.submitAnnotation
+  </h4>
+  <pre><code>void</code> submitAnnotation(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> sessionId,
+                      <code><a href="services.html#Struct_AnnotationUnitIdentifier">services.AnnotationUnitIdentifier</a></code> unitId,
+                      <code><a href="communication.html#Struct_Communication">communication.Communication</a></code> communication)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Submit an annotation for a session
+  <br/>
+ </div>
+</div>
+

@@ -1,11 +1,11 @@
-Copyright 2012-2016 Johns Hopkins University HLTCOE. All rights
+Copyright 2012-2017 Johns Hopkins University HLTCOE. All rights
 reserved.  This software is released under the 2-clause BSD license.
 See LICENSE in the project root directory.
 
 Concrete
 ========
 
-Current version: `4.11`
+Current version: `4.12`
 
 Please consult `NEWS.md` for more information about changes between versions.
 
@@ -31,7 +31,7 @@ relations between different Concrete data structures.
 
 To view the HTML documentation, open the file:
 
-    concrete/doc/schema/index.html
+    concrete/docs/schema/index.html
 
 in your favorite web browser.
 
@@ -69,7 +69,7 @@ library [beautifulsoup4](https://pypi.python.org/pypi/beautifulsoup4).
 You can regenerate the documentation by running the
 ```regenerate_docs.sh``` script:
 
-    cd doc
+    cd docs
     ./regenerate_docs.sh path_to_thrift_compiler
 
 This script will call ```thrift --gen html``` to generate HTML files

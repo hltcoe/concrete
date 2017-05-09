@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="concrete-eapi.css"/>
+  <script type="text/javascript" src="concrete_info.js"></script>
+  <script type="text/javascript" src="concrete-eapi.js"></script>
+  <script type="text/javascript" src="tablesorter/jquery-latest.js"></script>
+  <script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      addConcreteNavigation();
+    });
+  </script>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>
+ Thrift module: search
+</title>
+<body>
+ <div class="container-fluid">
+  <h1>
+   Thrift module: search
+  </h1>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Module
+    </th>
+    <th>
+     Services
+    </th>
+    <th>
+     Data types
+    </th>
+    <th>
+     Constants
+    </th>
+   </thead>
+   <tr>
+    <td>
+     search
+    </td>
+    <td>
+     <a href="#Svc_SearchService">
+      SearchService
+     </a>
+     <br/>
+     <ul>
+      <li>
+       <a href="#Fn_SearchService_getCapabilities">
+        getCapabilities
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_SearchService_getCorpora">
+        getCorpora
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_SearchService_search">
+        search
+       </a>
+      </li>
+     </ul>
+     <a href="#Svc_SearchProxyService">
+      SearchProxyService
+     </a>
+     <br/>
+     <ul>
+      <li>
+       <a href="#Fn_SearchProxyService_getCapabilities">
+        getCapabilities
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_SearchProxyService_getCorpora">
+        getCorpora
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_SearchProxyService_getProviders">
+        getProviders
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_SearchProxyService_search">
+        search
+       </a>
+      </li>
+     </ul>
+     <a href="#Svc_FeedbackService">
+      FeedbackService
+     </a>
+     <br/>
+     <ul>
+      <li>
+       <a href="#Fn_FeedbackService_addCommunicationFeedback">
+        addCommunicationFeedback
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_FeedbackService_addSentenceFeedback">
+        addSentenceFeedback
+       </a>
+      </li>
+      <li>
+       <a href="#Fn_FeedbackService_startFeedback">
+        startFeedback
+       </a>
+      </li>
+     </ul>
+    </td>
+    <td>
+     <a href="#Struct_SearchCapability">
+      SearchCapability
+     </a>
+     <br/>
+     <a href="#Enum_SearchFeedback">
+      SearchFeedback
+     </a>
+     <br/>
+     <a href="#Struct_SearchQuery">
+      SearchQuery
+     </a>
+     <br/>
+     <a href="#Struct_SearchResult">
+      SearchResult
+     </a>
+     <br/>
+     <a href="#Struct_SearchResultItem">
+      SearchResultItem
+     </a>
+     <br/>
+     <a href="#Enum_SearchType">
+      SearchType
+     </a>
+     <br/>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+ </div>
+</body>
+<hr/>
+<div id="Enumerations_div">
+ <h2 id="Enumerations">
+  Enumerations
+ </h2>
+ <div class="definition">
+  <h3 id="Enum_SearchType">
+   Enumeration: SearchType
+  </h3>
+  What are we searching over
+  <br/>
+  <br/>
+  <table class="table-bordered table-striped table-condensed">
+   <tr>
+    <td>
+     <code>
+      COMMUNICATIONS
+     </code>
+    </td>
+    <td>
+     <code>
+      0
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <code>
+      SECTIONS
+     </code>
+    </td>
+    <td>
+     <code>
+      1
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <code>
+      SENTENCES
+     </code>
+    </td>
+    <td>
+     <code>
+      2
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <code>
+      ENTITIES
+     </code>
+    </td>
+    <td>
+     <code>
+      3
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <code>
+      ENTITY_MENTIONS
+     </code>
+    </td>
+    <td>
+     <code>
+      4
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <code>
+      SITUATIONS
+     </code>
+    </td>
+    <td>
+     <code>
+      5
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <code>
+      SITUATION_MENTIONS
+     </code>
+    </td>
+    <td>
+     <code>
+      6
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+ </div>
+ <div class="definition">
+  <h3 id="Enum_SearchFeedback">
+   Enumeration: SearchFeedback
+  </h3>
+  Feedback values
+  <br/>
+  <br/>
+  <table class="table-bordered table-striped table-condensed">
+   <tr>
+    <td>
+     <code>
+      NEGATIVE
+     </code>
+    </td>
+    <td>
+     <code>
+      -1
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <code>
+      NONE
+     </code>
+    </td>
+    <td>
+     <code>
+      0
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <code>
+      POSITIVE
+     </code>
+    </td>
+    <td>
+     <code>
+      1
+     </code>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>
+<hr/>
+<div id="Structs_div">
+ <h2 id="Structs">
+  Data structures
+ </h2>
+ <div class="definition">
+  <h3 id="Struct_SearchCapability">
+   Struct: SearchCapability
+  </h3>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Key
+    </th>
+    <th>
+     Field
+    </th>
+    <th>
+     Type
+    </th>
+    <th>
+     Description
+    </th>
+    <th>
+     Requiredness
+    </th>
+    <th>
+     Default value
+    </th>
+   </thead>
+   <tr>
+    <td>
+     1
+    </td>
+    <td>
+     type
+    </td>
+    <td>
+     <code>
+      <a href="#Enum_SearchType">
+       SearchType
+      </a>
+     </code>
+    </td>
+    <td>
+     A type of search supported by the search provider
+    </td>
+    <td>
+     required
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2
+    </td>
+    <td>
+     lang
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     Language that the search provider supports.
+Use ISO 639-2/T three letter codes.
+    </td>
+    <td>
+     required
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+  <br/>
+  A search provider describes its capabilities with a list of search type and language pairs.
+  <br/>
+ </div>
+ <div class="definition">
+  <h3 id="Struct_SearchQuery">
+   Struct: SearchQuery
+  </h3>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Key
+    </th>
+    <th>
+     Field
+    </th>
+    <th>
+     Type
+    </th>
+    <th>
+     Description
+    </th>
+    <th>
+     Requiredness
+    </th>
+    <th>
+     Default value
+    </th>
+   </thead>
+   <tr>
+    <td>
+     1
+    </td>
+    <td>
+     terms
+    </td>
+    <td>
+     <code>
+      list&lt;
+      <code>
+       string
+      </code>
+      &gt;
+     </code>
+    </td>
+    <td>
+     Individual words, or multiword phrases, e.g., 'dog', 'blue
+cheese'.  It is the responsibility of the implementation of
+Search* to tokenize multiword phrases, if so-desired.  Further,
+an implementation may choose to support advanced features such as
+wildcards, e.g.: 'blue*'.  This specification makes no
+committment as to the internal structure of keywords and their
+semantics: that is the responsibility of the individual
+implementation.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2
+    </td>
+    <td>
+     questions
+    </td>
+    <td>
+     <code>
+      list&lt;
+      <code>
+       string
+      </code>
+      &gt;
+     </code>
+    </td>
+    <td>
+     e.g., "what is the capital of spain?"
+
+questions is a list in order that possibly different phrasings of
+the question can be included, e.g.: "what is the name of spain's
+capital?"
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     3
+    </td>
+    <td>
+     communicationId
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     Refers to an optional communication that can provide context for the query.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     4
+    </td>
+    <td>
+     tokens
+    </td>
+    <td>
+     <code>
+      <a href="structure.html#Struct_TokenRefSequence">
+       structure.TokenRefSequence
+      </a>
+     </code>
+    </td>
+    <td>
+     Refers to a sequence of tokens in the communication referenced by communicationId.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     5
+    </td>
+    <td>
+     rawQuery
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     The input from the user provided in the search box, unmodified
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     6
+    </td>
+    <td>
+     auths
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     optional authorization mechanism
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     7
+    </td>
+    <td>
+     userId
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     Identifies the user who submitted the search query
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     8
+    </td>
+    <td>
+     name
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     Human readable name of the query.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     9
+    </td>
+    <td>
+     labels
+    </td>
+    <td>
+     <code>
+      list&lt;
+      <code>
+       string
+      </code>
+      &gt;
+     </code>
+    </td>
+    <td>
+     Properties of the query or user.
+These labels can be used to group queries and results by a domain or group of
+users for training. An example usage would be assigning the geographical region
+as a label ("spain"). User labels could be based on organizational units ("hltcoe").
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     10
+    </td>
+    <td>
+     type
+    </td>
+    <td>
+     <code>
+      <a href="#Enum_SearchType">
+       SearchType
+      </a>
+     </code>
+    </td>
+    <td>
+     This search is over this type of data (communications, sentences, entities)
+    </td>
+    <td>
+     required
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     11
+    </td>
+    <td>
+     lang
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     The language of the corpus that the user wants to search.
+Use ISO 639-2/T three letter codes.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     12
+    </td>
+    <td>
+     corpus
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     An identifier of the corpus that the search is to be performed over.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     13
+    </td>
+    <td>
+     k
+    </td>
+    <td>
+     <code>
+      i32
+     </code>
+    </td>
+    <td>
+     The maximum number of candidates the search service should return.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     14
+    </td>
+    <td>
+     communication
+    </td>
+    <td>
+     <code>
+      <a href="communication.html#Struct_Communication">
+       communication.Communication
+      </a>
+     </code>
+    </td>
+    <td>
+     An optional communication used as context for the query.
+If both this field and communicationId is populated, then it is
+assumed the ID of the communication is the same as communicationId.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+  <br/>
+  Wrapper for information relevant to a (possibly structured) search.
+  <br/>
+ </div>
+ <div class="definition">
+  <h3 id="Struct_SearchResult">
+   Struct: SearchResult
+  </h3>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Key
+    </th>
+    <th>
+     Field
+    </th>
+    <th>
+     Type
+    </th>
+    <th>
+     Description
+    </th>
+    <th>
+     Requiredness
+    </th>
+    <th>
+     Default value
+    </th>
+   </thead>
+   <tr>
+    <td>
+     1
+    </td>
+    <td>
+     uuid
+    </td>
+    <td>
+     <code>
+      <a href="uuid.html#Struct_UUID">
+       uuid.UUID
+      </a>
+     </code>
+    </td>
+    <td>
+     Unique identifier for the results of this search.
+    </td>
+    <td>
+     required
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2
+    </td>
+    <td>
+     searchQuery
+    </td>
+    <td>
+     <code>
+      <a href="#Struct_SearchQuery">
+       SearchQuery
+      </a>
+     </code>
+    </td>
+    <td>
+     The query that led to this result.
+Useful for capturing feedback or building training data.
+    </td>
+    <td>
+     required
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     3
+    </td>
+    <td>
+     searchResultItems
+    </td>
+    <td>
+     <code>
+      list&lt;
+      <code>
+       <a href="#Struct_SearchResultItem">
+        SearchResultItem
+       </a>
+      </code>
+      &gt;
+     </code>
+    </td>
+    <td>
+     The list is assumed sorted best to worst, which should be
+reflected by the values contained in the score field of each
+SearchResult, if that field is populated.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     4
+    </td>
+    <td>
+     metadata
+    </td>
+    <td>
+     <code>
+      <a href="metadata.html#Struct_AnnotationMetadata">
+       metadata.AnnotationMetadata
+      </a>
+     </code>
+    </td>
+    <td>
+     The system that provided the response: likely use case for
+populating this field is for building training data.  Presumably
+a system will not need/want to return this object in live use.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     5
+    </td>
+    <td>
+     lang
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     The dominant language of the search results.
+Use ISO 639-2/T three letter codes.
+Search providers should set this when possible to support downstream processing.
+Do not set if it is not known.
+If multilingual, use the string "multilingual".
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+  <br/>
+  Single wrapper for results from all the various Search* services.
+  <br/>
+ </div> <div class="definition">
+  <h3 id="Struct_SearchResultItem">
+   Struct: SearchResultItem
+  </h3>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <th>
+     Key
+    </th>
+    <th>
+     Field
+    </th>
+    <th>
+     Type
+    </th>
+    <th>
+     Description
+    </th>
+    <th>
+     Requiredness
+    </th>
+    <th>
+     Default value
+    </th>
+   </thead>
+   <tr>
+    <td>
+     1
+    </td>
+    <td>
+     communicationId
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2
+    </td>
+    <td>
+     sentenceId
+    </td>
+    <td>
+     <code>
+      <a href="uuid.html#Struct_UUID">
+       uuid.UUID
+      </a>
+     </code>
+    </td>
+    <td>
+     The UUID of the returned sentence, which appears in the
+communication referenced by communicationId.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     3
+    </td>
+    <td>
+     score
+    </td>
+    <td>
+     <code>
+      double
+     </code>
+    </td>
+    <td>
+     Values are not restricted in range (e.g., do not have to be
+within [0,1]).  Higher is better.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     4
+    </td>
+    <td>
+     tokens
+    </td>
+    <td>
+     <code>
+      <a href="structure.html#Struct_TokenRefSequence">
+       structure.TokenRefSequence
+      </a>
+     </code>
+    </td>
+    <td>
+     If the Search is meant to result in a tokenRefSequence, this is
+that result.  Otherwise, this field may be optionally populated
+in order to provide a hint to the client as to where to center a
+visualization, or the extraction of context, etc.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+  </table>
+  <br/>
+  An individual element returned from a search.  Most/all methods
+will return a communicationId, possibly with an associated score.
+For example if the target element type of the search is Sentence
+then the sentenceId field should be populated.
+  <br/>
+ </div>
+</div>
+<hr/>
+<div id="Services_div">
+ <h2 id="Services">
+  Services
+ </h2>
+ <h3 id="Svc_SearchService">
+  Service: SearchService
+ </h3>
+ <div class="extends">
+  <em>
+   extends
+  </em>
+  <code>
+   <a href="services.html#Svc_Service">
+    services.Service
+   </a>
+  </code>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_SearchService_search">
+   Function: SearchService.search
+  </h4>
+  <pre><code><a href="#Struct_SearchResult">SearchResult</a></code> search(<code><a href="#Struct_SearchQuery">SearchQuery</a></code> query)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Perform a search specified by the query
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_SearchService_getCapabilities">
+   Function: SearchService.getCapabilities
+  </h4>
+  <pre><code>list&lt;<code><a href="#Struct_SearchCapability">SearchCapability</a></code>&gt;</code> getCapabilities()
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get a list of search type-language pairs
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_SearchService_getCorpora">
+   Function: SearchService.getCorpora
+  </h4>
+  <pre><code>list&lt;<code>string</code>&gt;</code> getCorpora()
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get a corpus list from the search provider
+  <br/>
+ </div>
+ <h3 id="Svc_SearchProxyService">
+  Service: SearchProxyService
+ </h3>
+ <div class="extends">
+  <em>
+   extends
+  </em>
+  <code>
+   <a href="services.html#Svc_Service">
+    services.Service
+   </a>
+  </code>
+ </div>
+ The search proxy service provides a single interface to multiple search providers
+ <br/>
+ <div class="definition">
+  <h4 id="Fn_SearchProxyService_search">
+   Function: SearchProxyService.search
+  </h4>
+  <pre><code><a href="#Struct_SearchResult">SearchResult</a></code> search(<code><a href="#Struct_SearchQuery">SearchQuery</a></code> query,
+                    <code>string</code> provider)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Specify the search provider when performing a search
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_SearchProxyService_getProviders">
+   Function: SearchProxyService.getProviders
+  </h4>
+  <pre><code>list&lt;<code>string</code>&gt;</code> getProviders()
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get a list of search providers behind the proxy
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_SearchProxyService_getCapabilities">
+   Function: SearchProxyService.getCapabilities
+  </h4>
+  <pre><code>list&lt;<code><a href="#Struct_SearchCapability">SearchCapability</a></code>&gt;</code> getCapabilities(<code>string</code> provider)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get a list of search type and language pairs for a search provider
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_SearchProxyService_getCorpora">
+   Function: SearchProxyService.getCorpora
+  </h4>
+  <pre><code>list&lt;<code>string</code>&gt;</code> getCorpora(<code>string</code> provider)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Get a corpus list for a search provider
+  <br/>
+ </div>
+ <h3 id="Svc_FeedbackService">
+  Service: FeedbackService
+ </h3>
+ <div class="extends">
+  <em>
+   extends
+  </em>
+  <code>
+   <a href="services.html#Svc_Service">
+    services.Service
+   </a>
+  </code>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_FeedbackService_startFeedback">
+   Function: FeedbackService.startFeedback
+  </h4>
+  <pre><code>void</code> startFeedback(<code><a href="#Struct_SearchResult">SearchResult</a></code> results)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Start providing feedback for the specified SearchResults.
+This causes the search and its results to be persisted.
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_FeedbackService_addCommunicationFeedback">
+   Function: FeedbackService.addCommunicationFeedback
+  </h4>
+  <pre><code>void</code> addCommunicationFeedback(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> searchResultsId,
+                              <code>string</code> communicationId,
+                              <code><a href="#Enum_SearchFeedback">SearchFeedback</a></code> feedback)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Provide feedback on the relevance of a particular communication to a search
+  <br/>
+ </div>
+ <div class="definition">
+  <h4 id="Fn_FeedbackService_addSentenceFeedback">
+   Function: FeedbackService.addSentenceFeedback
+  </h4>
+  <pre><code>void</code> addSentenceFeedback(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> searchResultsId,
+                         <code>string</code> communicationId,
+                         <code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> sentenceId,
+                         <code><a href="#Enum_SearchFeedback">SearchFeedback</a></code> feedback)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+  Provide feedback on the relevance of a particular sentence to a search
+  <br/>
+ </div>
+</div>
+

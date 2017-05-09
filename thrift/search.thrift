@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Johns Hopkins University HLTCOE. All rights reserved.
+ * Copyright 2016-2017 Johns Hopkins University HLTCOE. All rights reserved.
  * This software is released under the 2-clause BSD license.
  * See LICENSE in the project root directory.
  */
@@ -8,6 +8,7 @@ namespace java edu.jhu.hlt.concrete.search
 namespace py concrete.search
 namespace cpp concrete
 
+include "communication.thrift"
 include "services.thrift"
 include "structure.thrift"
 include "uuid.thrift"
@@ -121,6 +122,18 @@ struct SearchQuery {
    * An identifier of the corpus that the search is to be performed over.
    */
   12: optional string corpus
+
+  /**
+   * The maximum number of candidates the search service should return.
+   */
+  13: optional i32 k
+
+  /**
+   * An optional communication used as context for the query.
+   * If both this field and communicationId is populated, then it is
+   * assumed the ID of the communication is the same as communicationId.
+   */
+  14: optional communication.Communication communication
 }
 
 /**

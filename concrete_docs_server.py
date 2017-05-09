@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Webserver that serves static files in 'doc/' directory"""
+"""Webserver that serves static files in 'docs/schema/' directory"""
 
 import argparse
 import os
@@ -23,11 +23,11 @@ def main():
 
 @route('/')
 def index():
-    return static_file('index.html', root=os.path.join(os.path.dirname(os.path.abspath(__file__)), "doc/schema"))
+    return static_file('index.html', root=os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs/schema"))
 
 @route('<filepath:path>')
 def default_route(filepath):
-    return static_file(filepath, root=os.path.join(os.path.dirname(os.path.abspath(__file__)), "doc/schema"))
+    return static_file(filepath, root=os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs/schema"))
 
 
 if __name__ == "__main__":
