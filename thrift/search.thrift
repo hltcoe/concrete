@@ -13,6 +13,7 @@ include "services.thrift"
 include "structure.thrift"
 include "uuid.thrift"
 include "metadata.thrift"
+include "entities.thrift"
 
 /**
  * What are we searching over
@@ -153,6 +154,12 @@ struct SearchResultItem {
    * visualization, or the extraction of context, etc.
    */
   4: optional structure.TokenRefSequence tokens
+
+  /**
+   * If SearchType=ENTITIES or SearchType=ENTITY_MENTIONS
+   * then this field should be populated.
+   */
+  5: optional entities.Entity entity
 }
 
 /**
