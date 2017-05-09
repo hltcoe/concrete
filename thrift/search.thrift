@@ -8,7 +8,6 @@ namespace java edu.jhu.hlt.concrete.search
 namespace py concrete.search
 namespace cpp concrete
 
-include "communication.thrift"
 include "services.thrift"
 include "structure.thrift"
 include "uuid.thrift"
@@ -183,17 +182,6 @@ struct SearchResult {
    * SearchResult, if that field is populated.
    */
   3: optional list<SearchResultItem> searchResultItems
-
-  /**
-   * A list of Communications which are referenced by UUID
-   * in searchResultItems, in no particular order. If this
-   * field is populated a best effor should be made to include
-   * all of the Communications referenced rather than a subset.
-   * All of the Communications in this list should be distinct
-   * (e.g. if two results are from the same Communication, then
-   * it should appear only once in this list).
-   */
-  6: optional list<communication.Communication> searchResultSources;
 
   /**
    * The system that provided the response: likely use case for
