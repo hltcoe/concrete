@@ -30,7 +30,7 @@ struct SummarizationRequest {
   2: optional i32 maximumTokens
 
   /**
-   * Limit on how long the returned summary can be in tokens.
+   * Limit on how long the returned summary can be in characters.
    */
   3: optional i32 maximumCharacters
 
