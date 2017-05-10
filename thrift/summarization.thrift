@@ -36,11 +36,15 @@ struct SummarizationRequest {
 
   /**
    * Source sentences to summarize.
+   * The SummarizationService is responsible for dereferencing the UUID
+   * and must share a UUID->object store with the requester.
    */
   4: optional list<uuid.UUID> sourceTokenizationUuids
 
   /**
    * Source communications to summarize.
+   * The SummarizationService is responsible for dereferencing the UUID
+   * and must share a UUID->object store with the requester.
    */
   5: optional list<uuid.UUID> sourceCommunicationUuids
 
@@ -48,6 +52,13 @@ struct SummarizationRequest {
    * Source communication to summarize.
    */
   6: optional communication.Communication sourceCommunication
+
+  /**
+   * UUID of a source Entity to summarize.
+   * The SummarizationService is responsible for dereferencing the UUID
+   * and must share a UUID->object store with the requester.
+   */
+  7: optional uuid.UUID sourceEntityId
 }
 
 /**
