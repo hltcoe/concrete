@@ -55,18 +55,19 @@ struct Entity {
    * A corpus-specific and stable id such as a Freebase mid
    * or a DBpedia id.
    */
-  6: required String id
+  6: optional String id
   
   /**
    * An list of pointers to all of the mentions of this Entity's
    * referent.  (type=EntityMention) 
    */
   2: required list<uuid.UUID> mentionIdList
+
   /**
    * An list of pointers to all of the sentences which contain a
-   * mention of this Entity.  (type=Tokenization)
+   * mention of this Entity.
    */
-  7: optional list<uuid.UUID> tokenizationIdList
+  7: optional list<structure.TokenRefSequence> rawMentionList
 
   /**
    * The basic type of this entity's referent. 
