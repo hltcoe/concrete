@@ -13,8 +13,24 @@ include "services.thrift"
 include "structure.thrift"
 include "uuid.thrift"
 
+enum SummarySourceType {
+  /**
+   * Specifies that sourceIds is a list of Communication.UUIDs.
+   * This can be used for single or multi-document summarization.
+   */
+  DOCUMENT
+  /**
+   * Specifies that sourceIds is a list of Tokenization.UUIDs.
+   */
+  TOKENIZATION
+  /** Specifies that sourceIds is a list of Entity.UUIDs */
+  ENTITY
+}
+
 /**
- * Only one of the source* fields should be populated.
+ * A request to summarize which specifies the length of the desired
+ * summary and the text data to be summarized.
+ * Either set sourceCommunication or sourceType and sourceIds.
  */
 struct SummarizationRequest {
   /**
@@ -35,30 +51,22 @@ struct SummarizationRequest {
   3: optional i32 maximumCharacters
 
   /**
-   * Source sentences to summarize.
-   * The SummarizationService is responsible for dereferencing the UUID
-   * and must share a UUID->object store with the requester.
+   * How to interpret the ids in sourceIds.
+   * May be null is sourceIds is null, otherwise must be populated.
    */
-  4: optional list<uuid.UUID> sourceTokenizationUuids
+  4: optional SummarySourceType sourceType
 
   /**
-   * Source communications to summarize.
-   * The SummarizationService is responsible for dereferencing the UUID
-   * and must share a UUID->object store with the requester.
+   * A list of concrete object ids which serve as the material
+   * to summarize.
    */
-  5: optional list<uuid.UUID> sourceCommunicationUuids
+  5: optional list<uuid.UUID> sourceIds
 
   /**
-   * Source communication to summarize.
+   * Alternative to sourceIds+sourceType: provide a Communication
+   * of text to summarize.
    */
   6: optional communication.Communication sourceCommunication
-
-  /**
-   * UUID of a source Entity to summarize.
-   * The SummarizationService is responsible for dereferencing the UUID
-   * and must share a UUID->object store with the requester.
-   */
-  7: optional uuid.UUID sourceEntityId
 }
 
 /**
@@ -91,7 +99,13 @@ struct SummaryConcept {
   3: optional double confidence = 1
 }
 
+struct SummarizationCapability {
+  1: required SummarySourceType type
+  2: required string lang
+}
+
 service SummarizationService extends services.Service {
   Summary summarize(1: SummarizationRequest query) throws (1: services.ServicesException ex)
+  list<SummarizationCapability>  getCapabilities() throws (1: services.ServicesException ex)
 }
 
