@@ -66,7 +66,7 @@ struct Entity {
    * An list of pointers to all of the sentences which contain a
    * mention of this Entity.  (type=Tokenization)
    */
-  7: optional list<uuid.UUID> tokenizationUuidList
+  7: optional list<uuid.UUID> tokenizationIdList
 
   /**
    * The basic type of this entity's referent. 
