@@ -10,6 +10,7 @@ namespace cpp concrete
 
 include "communication.thrift"
 include "services.thrift"
+include "structure.thrift"
 include "uuid.thrift"
 
 /**
@@ -22,38 +23,61 @@ struct SummarizationRequest {
    * no a priori beliefs about what is important to summarize.
    */
   1: optional list<string> queryTerms
+
+  /**
+   * Limit on how long the returned summary can be in tokens.
+   */
+  2: optional i32 maximumTokens
+
+  /**
+   * Limit on how long the returned summary can be in tokens.
+   */
+  3: optional i32 maximumCharacters
+
   /**
    * Source sentences to summarize.
    */
-  3: optional list<uuid.UUID> sourceTokenizationUuids
+  4: optional list<uuid.UUID> sourceTokenizationUuids
+
   /**
    * Source communications to summarize.
    */
-  2: optional list<uuid.UUID> sourceCommunicationUuids
+  5: optional list<uuid.UUID> sourceCommunicationUuids
+
   /**
    * Source communication to summarize.
    */
-  4: optional communication.Communication sourceCommunication
+  6: optional communication.Communication sourceCommunication
 }
 
 /**
- * Only one of the summary* fields should be populated.
+ * A shortened version of some text, possibly with some concepts
+ * annotated as justifications for why particular pieces of the
+ * summary were kept.
  */
 struct Summary {
   /**
-   * Pre-formatted text.
+   * Contains the text of the generated summary.
    */
-  1: optional string summaryText
+  1: optional communication.Communication summaryCommunication
 
   /**
-   * Tokenized text with no annotations.
+   * Concepts mentioned in the summary which are believed to be
+   * interesting and/or worth highlighting.
    */
-  2: optional list<string> summaryTokens
+  2: optional list<SummaryConcept> concepts
+}
 
-  /**
-   * Annotated summary text.
-   */
-  3: optional communication.Communication summaryCommunication
+/**
+ * A mention of a concept described in a summary which is thought
+ * to be informative. Concepts might be named entities, facts, or
+ * events which were determined to be salient in the text being
+ * summarized.
+ */
+struct SummaryConcept {
+  1: optional structure.TokenRefSequence tokens
+  2: optional string concept
+  3: optional double confidence = 1
 }
 
 service SummarizationService extends services.Service {
