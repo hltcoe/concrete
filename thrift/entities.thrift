@@ -55,7 +55,7 @@ struct Entity {
    * A corpus-specific and stable id such as a Freebase mid
    * or a DBpedia id.
    */
-  6: optional String id
+  6: optional string id
   
   /**
    * An list of pointers to all of the mentions of this Entity's
