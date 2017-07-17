@@ -121,6 +121,28 @@
    </tr>
    <tr>
     <td>
+     6
+    </td>
+    <td>
+     id
+    </td>
+    <td>
+     <code>
+      string
+     </code>
+    </td>
+    <td>
+     A corpus-specific and stable id such as a Freebase mid
+or a DBpedia id.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
      2
     </td>
     <td>
@@ -143,6 +165,34 @@ referent.  (type=EntityMention)
     </td>
     <td>
      required
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     7
+    </td>
+    <td>
+     rawMentionList
+    </td>
+    <td>
+     <code>
+      list&lt;
+      <code>
+       <a href="structure.html#Struct_TokenRefSequence">
+        structure.TokenRefSequence
+       </a>
+      </code>
+      &gt;
+     </code>
+    </td>
+    <td>
+     An list of pointers to all of the sentences which contain a
+mention of this Entity.
+    </td>
+    <td>
+     optional
     </td>
     <td>
     </td>

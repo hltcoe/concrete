@@ -1,4 +1,4 @@
-var CONCRETE_VERSION = '4.12';
+var CONCRETE_VERSION = '4.13';
 var CONCRETE_FILELIST = [
 'access',
 'annotate',
@@ -19,6 +19,7 @@ var CONCRETE_FILELIST = [
 'situations',
 'spans',
 'structure',
+'summarization',
 'twitter',
 'uuid',
 ];
