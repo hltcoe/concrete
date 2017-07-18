@@ -1,4 +1,14 @@
 # News
+### Concrete v4.13 - 2017-05-10
+* Added the `summarization` package, which includes the enumeration
+`SummarySourceType`, the structs `SummarizationRequest`,
+`SummaryConcept`, `Summary`, and `SummarizationCapability`, and the
+service `SummarizationService`.
+* Added an `id` field to the class `Entity`.
+* Added a `rawMentionList` field to the class `Entity`.
+* Added an `entity` field to `SearchResultItem`.
+* Added `TOPICID` to the `AnnotationTaskType` enumeration
+
 ### Concrete v4.12 - 2017-01-10
 * Merged `concrete-services` with the main repository.
 * Added a `k` field to the class `SearchQuery`.
