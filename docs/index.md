@@ -1,6 +1,3 @@
-[Concrete Schema documentation](http://hltcoe.github.io/concrete/schema/)
-=========================================================================
-
 # Getting started
 
 In this document, we'll work toward getting users started with Concrete. This
@@ -109,14 +106,18 @@ Below we describe the specifics for using Concrete from [Python](#python) or [Ja
 
 ## Python
 
-As it happens, a good introductory example usage of Concrete is our handy
-``concrete-inspect.py`` script. Below, we'll walk through stripped down version
+We provide a brief introduction to concrete-python here; for more information
+see
+[the online documentation](http://concrete-python.readthedocs.io/en/latest/).
+
+One place to look for example code is the handy
+``concrete-inspect.py`` script. Below, we'll walk through a simplified version
 of this script for simplicity.
 
 ### Installation
 
-If you're using Python, you can install the latest release of the
-``concrete-python`` module via pip directly from the Python package index.
+If you're using Python, you can install the latest release of
+concrete-python (which provides the Python package ``concrete``) via pip:
 
     $ pip install concrete
 
