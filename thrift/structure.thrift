@@ -230,7 +230,7 @@ struct TokenTagging {
   /** 
    * Information about where the annotation came from.
    * This should be used to tell between gold-standard annotations
-   * and automatically-generated theories about the data 
+   * and automatically generated theories about the data 
    */
   2: required metadata.AnnotationMetadata metadata
 
