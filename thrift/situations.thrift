@@ -276,8 +276,9 @@ struct MentionArgument {
 
   /**
    * An alternative way to specify the same thing as tokens.
+   * DEPRECATED: Now a part of TokenRefSequence
    */
-  7: optional structure.ConstituentRef constituent
+  //7: optional structure.ConstituentRef constituent
 
   /**
    * Confidence of this argument belonging to its SituationMention
@@ -379,8 +380,9 @@ struct SituationMention {
 
   /**
    * An alternative way to specify the same thing as tokens.
+   * DEPRECATED: Now a part of TokenRefSequence
    */
-  151: optional structure.ConstituentRef constituent
+  //151: optional structure.ConstituentRef constituent
 
   /** 
    * A confidence score for this individual situation mention. You
