@@ -2358,6 +2358,58 @@ effort at such a representation.
     <td>
     </td>
    </tr>
+   <tr>
+    <td>
+     7
+    </td>
+    <td>
+     dependencies
+    </td>
+    <td>
+     <code>
+      list&lt;
+      <code>
+       <a href="#Typedef_Dependency">
+        Dependency
+       </a>
+      </code>
+      &gt;
+     </code>
+    </td>
+    <td>
+     Use this field to reference a dependency tree fragment
+such as a shortest path or all the dependents in a constituent.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     8
+    </td>
+    <td>
+     constituent
+    </td>
+    <td>
+     <code>
+      <a href="#Struct_ConstituentRef">
+       ConstituentRef
+      </a>
+     </code>
+    </td>
+    <td>
+     Use this field to specify an entire constituent in a parse tree.
+Prefer textSpan over this field unless a node in a tree is needed.
+    </td>
+    <td>
+     optional
+    </td>
+    <td>
+    </td>
+   </tr>
   </table>
   <br/>
   A list of pointers to tokens that all belong to the same
