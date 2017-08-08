@@ -161,6 +161,18 @@ struct TokenRefSequence {
    * effort at such a representation.    
    */
   6: optional spans.AudioSpan audioSpan
+
+  /**
+   * Use this field to reference a dependency tree fragment
+   * such as a shortest path or all the dependents in a constituent.
+   */
+  7: optional list<Dependency> dependencies
+
+  /**
+   * Use this field to specify an entire constituent in a parse tree.
+   * Prefer textSpan over this field unless a node in a tree is needed.
+   */
+  8: optional ConstituentRef constituent
 }
 
 struct TaggedToken {

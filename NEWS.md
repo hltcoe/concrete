@@ -1,4 +1,9 @@
 # News
+### Concrete v4.14 - 2017-08-08
+* Removed `constituent` field from `MentionArgument` and
+`SituationMention`.
+* Added `dependencies` and `constituent` fields to `TokenRefSequence`
+
 ### Concrete v4.13 - 2017-05-10
 * Added the `summarization` package, which includes the enumeration
 `SummarySourceType`, the structs `SummarizationRequest`,
