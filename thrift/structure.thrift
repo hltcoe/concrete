@@ -15,6 +15,146 @@ include "uuid.thrift"
 include "language.thrift"
 
 //===========================================================================
+// Parse Trees
+//===========================================================================
+
+/** 
+ * A single parse constituent (or "phrase"). 
+ */
+struct Constituent {
+  /** 
+   * A parse-relative identifier for this consistuent. Together
+   * with the UUID for a Parse, this can be used to define
+   * pointers to specific constituents. 
+   */
+  1: required i32 id
+  
+  /**
+   * A description of this constituency node, e.g. the category "NP".
+   * For leaf nodes, this should be a word and for pre-terminal nodes
+   * this should be a POS tag.
+   */
+  2: optional string tag
+
+  /*
+   * The list of parse constituents that are directly dominated by
+   * this constituent. This will be an empty list for leaf nodes.
+   */
+  3: required list<i32> childList
+
+  /** 
+   * The index of the head child of this constituent. I.e., the
+   * head child of constituent <tt>c</tt> is
+   * <tt>c.children[c.head_child_index]</tt>. A value of -1
+   * indicates that no child head was identified. 
+   */
+  4: optional i32 headChildIndex = -1
+
+  /**
+   * The first token (inclusive) of this constituent in the
+   * parent Tokenization. Almost certainly should be populated.
+   */
+  5: optional i32 start
+
+  /**
+   * The last token (exclusive) of this constituent in the
+   * parent Tokenization. Almost certainly should be populated.
+   */
+  6: optional i32 ending
+}
+
+/** 
+ * A theory about the syntactic parse of a sentence.
+ *
+ * \note If we add support for parse forests in the future, then it
+ * will most likely be done by adding a new field (e.g.
+ * "<tt>forest_root</tt>") that uses a new struct type to encode the
+ * forest. A "<tt>kind</tt>" field might also be added (analogous to
+ * <tt>Tokenization.kind</tt>) to indicate whether a parse is encoded
+ * using a simple tree or a parse forest.
+ */
+struct Parse {
+  1: required uuid.UUID uuid
+  2: required metadata.AnnotationMetadata metadata
+  3: required list<Constituent> constituentList
+}
+
+/**
+ * A reference to a Constituent within a Parse.
+ */
+struct ConstituentRef {
+  /**
+   * The UUID of the Parse that this Constituent belongs to.
+   */
+  1: required uuid.UUID parseId
+
+  /**
+   * The index in the constituent list of this Constituent.
+   */
+  2: required i32 constituentIndex
+}
+
+/**
+ * A syntactic edge between two tokens in a tokenized sentence.
+ */
+struct Dependency {
+  /**
+   * The governor or the head token. 0 indexed.
+   */
+  1: optional i32 gov = -1  // can be omitted when dep is the root token
+
+  /**
+   * The dependent token. 0 indexed.
+   */
+  2: required i32 dep
+
+  /**
+   * The relation that holds between gov and dep.
+   */
+  3: optional string edgeType
+}
+
+/**
+ * Information about the structure of a dependency parse.
+ * This information is computable from the list of dependencies,
+ * but this allows the consumer to make (verified) assumptions
+ * about the dependencies being processed.
+ */
+struct DependencyParseStructure {
+  /**
+   * True iff there are no cycles in the dependency graph.
+   */
+  1: required bool isAcyclic
+
+  /**
+   * True iff the dependency graph forms a single connected component.
+   */
+  2: required bool isConnected
+
+  /**
+   * True iff every node in the dependency parse has at most
+   * one head/parent/governor.
+   */
+  3: required bool isSingleHeaded
+
+  /**
+   * True iff there are no crossing edges in the dependency parse.
+   */
+  4: required bool isProjective
+}
+
+/**
+ * Represents a dependency parse with typed edges.
+ */
+struct DependencyParse {
+  1: required uuid.UUID uuid
+  2: required metadata.AnnotationMetadata metadata
+  3: required list<Dependency> dependencyList
+  4: optional DependencyParseStructure structureInformation
+}
+
+
+//===========================================================================
 // Tokens & Tokenizations
 //===========================================================================
 
@@ -84,21 +224,6 @@ struct Token {
    * effort at such a representation.    
    */
   5: optional spans.AudioSpan audioSpan
-}
-
-/**
- * A reference to a Constituent within a Parse.
- */
-struct ConstituentRef {
-  /**
-   * The UUID of the Parse that this Constituent belongs to.
-   */
-  1: required uuid.UUID parseId
-
-  /**
-   * The index in the constituent list of this Constituent.
-   */
-  2: required i32 constituentIndex
 }
 
 /** 
@@ -258,130 +383,6 @@ struct TokenTagging {
    * produces.
    */ 
   4: optional string taggingType
-}
-
-/**
- * A syntactic edge between two tokens in a tokenized sentence.
- */
-struct Dependency {
-  /**
-   * The governor or the head token. 0 indexed.
-   */
-  1: optional i32 gov = -1  // can be omitted when dep is the root token
-
-  /**
-   * The dependent token. 0 indexed.
-   */
-  2: required i32 dep
-
-  /**
-   * The relation that holds between gov and dep.
-   */
-  3: optional string edgeType
-}
-
-/**
- * Information about the structure of a dependency parse.
- * This information is computable from the list of dependencies,
- * but this allows the consumer to make (verified) assumptions
- * about the dependencies being processed.
- */
-struct DependencyParseStructure {
-  /**
-   * True iff there are no cycles in the dependency graph.
-   */
-  1: required bool isAcyclic
-
-  /**
-   * True iff the dependency graph forms a single connected component.
-   */
-  2: required bool isConnected
-
-  /**
-   * True iff every node in the dependency parse has at most
-   * one head/parent/governor.
-   */
-  3: required bool isSingleHeaded
-
-  /**
-   * True iff there are no crossing edges in the dependency parse.
-   */
-  4: required bool isProjective
-}
-
-/**
- * Represents a dependency parse with typed edges.
- */
-struct DependencyParse {
-  1: required uuid.UUID uuid
-  2: required metadata.AnnotationMetadata metadata
-  3: required list<Dependency> dependencyList
-  4: optional DependencyParseStructure structureInformation
-}
-
-//===========================================================================
-// Parse Trees
-//===========================================================================
-
-/** 
- * A single parse constituent (or "phrase"). 
- */
-struct Constituent {
-  /** 
-   * A parse-relative identifier for this consistuent. Together
-   * with the UUID for a Parse, this can be used to define
-   * pointers to specific constituents. 
-   */
-  1: required i32 id
-  
-  /**
-   * A description of this constituency node, e.g. the category "NP".
-   * For leaf nodes, this should be a word and for pre-terminal nodes
-   * this should be a POS tag.
-   */
-  2: optional string tag
-
-  /*
-   * The list of parse constituents that are directly dominated by
-   * this constituent. This will be an empty list for leaf nodes.
-   */
-  3: required list<i32> childList
-
-  /** 
-   * The index of the head child of this constituent. I.e., the
-   * head child of constituent <tt>c</tt> is
-   * <tt>c.children[c.head_child_index]</tt>. A value of -1
-   * indicates that no child head was identified. 
-   */
-  4: optional i32 headChildIndex = -1
-
-  /**
-   * The first token (inclusive) of this constituent in the
-   * parent Tokenization. Almost certainly should be populated.
-   */
-  5: optional i32 start
-
-  /**
-   * The last token (exclusive) of this constituent in the
-   * parent Tokenization. Almost certainly should be populated.
-   */
-  6: optional i32 ending
-}
-
-/** 
- * A theory about the syntactic parse of a sentence.
- *
- * \note If we add support for parse forests in the future, then it
- * will most likely be done by adding a new field (e.g.
- * "<tt>forest_root</tt>") that uses a new struct type to encode the
- * forest. A "<tt>kind</tt>" field might also be added (analogous to
- * <tt>Tokenization.kind</tt>) to indicate whether a parse is encoded
- * using a simple tree or a parse forest.
- */
-struct Parse {
-  1: required uuid.UUID uuid
-  2: required metadata.AnnotationMetadata metadata
-  3: required list<Constituent> constituentList
 }
 
 struct LatticePath {
