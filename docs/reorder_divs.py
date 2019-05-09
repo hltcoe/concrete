@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 
 # This file reads in "HTML" from a call to
 #   thrift --gen html ....
@@ -90,15 +90,17 @@ def main():
     if len(sd_dv) == 0:
         page = bs_doc.select('title')
         import sys
-        print >> sys.stderr , "Generated page ", page[0].get_text(), " has no struct definitions. This is probably okay, but you may want to verify."
-        print bs_doc.prettify()
+        print ("Generated page", page[0].get_text(),
+               "has no struct definitions. This is probably okay, but you may want to verify.",
+               file=sys.stderr)
+        print (bs_doc.prettify())
         return 0
     div_children = sd_dv[0].contents
     if not(len(div_children) - 2 == len(sorted_structs)):
         raise Exception("length of div children (%s) != length of struct defs (%s)" % (len(div_children) - 2, len(sorted_structs)))
-    for i in xrange(2, len(sorted_structs)+2):
+    for i in range(2, len(sorted_structs)+2):
         div_children[i] = sorted_structs[i-2]
-    print bs_doc.prettify()
+    print (bs_doc.prettify())
     return 0
 
 
