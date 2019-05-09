@@ -151,7 +151,8 @@
   <h3 id="Enum_SearchType">
    Enumeration: SearchType
   </h3>
-  What are we searching over
+  <pre>What are we searching over
+</pre>
   <br/>
   <br/>
   <table class="table-bordered table-striped table-condensed">
@@ -259,7 +260,8 @@
   <h3 id="Enum_SearchFeedback">
    Enumeration: SearchFeedback
   </h3>
-  Feedback values
+  <pre>Feedback values
+</pre>
   <br/>
   <br/>
   <table class="table-bordered table-striped table-condensed">
@@ -385,7 +387,8 @@ Use ISO 639-2/T three letter codes.
    </tr>
   </table>
   <br/>
-  A search provider describes its capabilities with a list of search type and language pairs.
+  <pre>A search provider describes its capabilities with a list of search type and language pairs.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -744,7 +747,8 @@ assumed the ID of the communication is the same as communicationId.
    </tr>
   </table>
   <br/>
-  Wrapper for information relevant to a (possibly structured) search.
+  <pre>Wrapper for information relevant to a (possibly structured) search.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -900,7 +904,8 @@ If multilingual, use the string "multilingual".
    </tr>
   </table>
   <br/>
-  Single wrapper for results from all the various Search* services.
+  <pre>Single wrapper for results from all the various Search* services.
+</pre>
   <br/>
  </div> <div class="definition">
   <h3 id="Struct_SearchResultItem">
@@ -1044,10 +1049,11 @@ visualization, or the extraction of context, etc.
    </tr>
   </table>
   <br/>
-  An individual element returned from a search.  Most/all methods
+  <pre>An individual element returned from a search.  Most/all methods
 will return a communicationId, possibly with an associated score.
 For example if the target element type of the search is Sentence
 then the sentenceId field should be populated.
+</pre>
   <br/>
  </div>
 </div>
@@ -1076,7 +1082,8 @@ then the sentenceId field should be populated.
   <pre><code><a href="#Struct_SearchResult">SearchResult</a></code> search(<code><a href="#Struct_SearchQuery">SearchQuery</a></code> query)
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Perform a search specified by the query
+  <pre>Perform a search specified by the query
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1086,7 +1093,8 @@ then the sentenceId field should be populated.
   <pre><code>list&lt;<code><a href="#Struct_SearchCapability">SearchCapability</a></code>&gt;</code> getCapabilities()
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Get a list of search type-language pairs
+  <pre>Get a list of search type-language pairs
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1096,7 +1104,8 @@ then the sentenceId field should be populated.
   <pre><code>list&lt;<code>string</code>&gt;</code> getCorpora()
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Get a corpus list from the search provider
+  <pre>Get a corpus list from the search provider
+</pre>
   <br/>
  </div>
  <h3 id="Svc_SearchProxyService">
@@ -1112,7 +1121,8 @@ then the sentenceId field should be populated.
    </a>
   </code>
  </div>
- The search proxy service provides a single interface to multiple search providers
+ <pre>The search proxy service provides a single interface to multiple search providers
+</pre>
  <br/>
  <div class="definition">
   <h4 id="Fn_SearchProxyService_search">
@@ -1122,7 +1132,8 @@ then the sentenceId field should be populated.
                     <code>string</code> provider)
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Specify the search provider when performing a search
+  <pre>Specify the search provider when performing a search
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1132,7 +1143,8 @@ then the sentenceId field should be populated.
   <pre><code>list&lt;<code>string</code>&gt;</code> getProviders()
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Get a list of search providers behind the proxy
+  <pre>Get a list of search providers behind the proxy
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1142,7 +1154,8 @@ then the sentenceId field should be populated.
   <pre><code>list&lt;<code><a href="#Struct_SearchCapability">SearchCapability</a></code>&gt;</code> getCapabilities(<code>string</code> provider)
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Get a list of search type and language pairs for a search provider
+  <pre>Get a list of search type and language pairs for a search provider
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1152,7 +1165,8 @@ then the sentenceId field should be populated.
   <pre><code>list&lt;<code>string</code>&gt;</code> getCorpora(<code>string</code> provider)
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Get a corpus list for a search provider
+  <pre>Get a corpus list for a search provider
+</pre>
   <br/>
  </div>
  <h3 id="Svc_FeedbackService">
@@ -1175,8 +1189,9 @@ then the sentenceId field should be populated.
   <pre><code>void</code> startFeedback(<code><a href="#Struct_SearchResult">SearchResult</a></code> results)
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Start providing feedback for the specified SearchResults.
+  <pre>Start providing feedback for the specified SearchResults.
 This causes the search and its results to be persisted.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1188,7 +1203,8 @@ This causes the search and its results to be persisted.
                               <code><a href="#Enum_SearchFeedback">SearchFeedback</a></code> feedback)
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Provide feedback on the relevance of a particular communication to a search
+  <pre>Provide feedback on the relevance of a particular communication to a search
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1201,7 +1217,8 @@ This causes the search and its results to be persisted.
                          <code><a href="#Enum_SearchFeedback">SearchFeedback</a></code> feedback)
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
-  Provide feedback on the relevance of a particular sentence to a search
+  <pre>Provide feedback on the relevance of a particular sentence to a search
+</pre>
   <br/>
  </div>
 </div>

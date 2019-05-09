@@ -218,8 +218,9 @@ participant. A list of these properties can be stored in this field.
    </tr>
   </table>
   <br/>
-  A situation argument, consisting of an argument role and a value.
+  <pre>A situation argument, consisting of an argument role and a value.
 Argument values may be Entities or Situations.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -501,8 +502,9 @@ participant. A list of these properties can be stored in this field.
    </tr>
   </table>
   <br/>
-  A "concrete" argument, that may be used by SituationMentions or EntityMentions
+  <pre>A "concrete" argument, that may be used by SituationMentions or EntityMentions
 to avoid conflicts where abstract Arguments were being used to support concrete Mentions.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -600,9 +602,10 @@ highly confident that the value is underspecified, via a value of
    </tr>
   </table>
   <br/>
-  Attached to Arguments to support situations where
+  <pre>Attached to Arguments to support situations where
 a 'participant' has more than one 'property' (in BinarySRL terms),
 whereas Arguments notionally only support one Role.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -892,7 +895,7 @@ SituationSet's metadata.
    </tr>
   </table>
   <br/>
-  A single situation, along with pointers to situation mentions that
+  <pre>A single situation, along with pointers to situation mentions that
 provide evidence for the situation. "Situations" include events,
 relations, facts, sentiments, and beliefs. Each situation has a
 core type (such as EVENT or SENTIMENT), along with an optional
@@ -903,6 +906,7 @@ This struct may be used for a variety of "processed" Situations such
 as (but not limited to):
 - SituationMentions which have been collapsed into a coreferential cluster
 - Situations which are inferred and not directly supported by a textual mention
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1161,7 +1165,7 @@ using the SituationMentionSet's metadata.
    </tr>
   </table>
   <br/>
-  A concrete mention of a situation, where "situations" include
+  <pre>A concrete mention of a situation, where "situations" include
 events, relations, facts, sentiments, and beliefs. Each situation
 has a core type (such as EVENT or SENTIMENT), along with an
 optional subtype based on its core type (e.g.,
@@ -1170,6 +1174,7 @@ arguments.
 
 This struct should be used for most types of SRL labelings
 (e.g. Propbank and FrameNet) because they are grounded in text.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1299,8 +1304,9 @@ This struct should be used for most types of SRL labelings
    </tr>
   </table>
   <br/>
-  A theory about the set of situation mentions that are present in a
+  <pre>A theory about the set of situation mentions that are present in a
 message. See also: SituationMention
+</pre>
   <br/>
  </div> <div class="definition">
   <h3 id="Struct_SituationSet">
@@ -1429,8 +1435,9 @@ message. See also: SituationMention
    </tr>
   </table>
   <br/>
-  A theory about the set of situations that are present in a
+  <pre>A theory about the set of situations that are present in a
 message. See also: Situation
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1523,7 +1530,8 @@ message. See also: Situation
    </tr>
   </table>
   <br/>
-  A wrapper for various TimeML annotations.
+  <pre>A wrapper for various TimeML annotations.
+</pre>
   <br/>
  </div>
 </div>

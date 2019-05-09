@@ -37,7 +37,7 @@ struct FetchRequest {
 
 /**
  * Service to fetch particular communications.
- */ 
+ */
 service FetchCommunicationService extends services.Service {
   FetchResult fetch(1: FetchRequest request) throws (1: services.ServicesException ex)
 
@@ -46,7 +46,7 @@ service FetchCommunicationService extends services.Service {
    * that do not provide this should throw an exception.
    */
   list<string> getCommunicationIDs(1: i64 offset, 2: i64 count) throws (1: services.NotImplementedException ex)
-  
+
   /**
    * Get the number of Communications this service searches over.  Implementations
    * that do not provide this should throw an exception.

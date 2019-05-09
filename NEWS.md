@@ -1,4 +1,10 @@
 # News
+
+### Concrete v4.15 - 2019-05-09
+* Added `Context` structure and `AnnotateWithContextService` service.
+  `Context`s are intended to be used to convey additional information
+  alongside a `Communication` to be annotated.
+
 ### Concrete v4.14 - 2017-08-08
 * Removed `constituent` field from `MentionArgument` and
 `SituationMention`.

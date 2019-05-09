@@ -169,7 +169,8 @@ The location of the annotation depends on the annotation unit identifier
    </tr>
   </table>
   <br/>
-  Annotation on a communication.
+  <pre>Annotation on a communication.
+</pre>
   <br/>
  </div> <div class="definition">
   <h3 id="Struct_AnnotationTask">
@@ -292,7 +293,8 @@ The location of the annotation depends on the annotation unit identifier
    </tr>
   </table>
   <br/>
-  Annotation task including information for pulling data.
+  <pre>Annotation task including information for pulling data.
+</pre>
   <br/>
  </div>
 </div>
@@ -314,7 +316,7 @@ The location of the annotation depends on the annotation unit identifier
    </a>
   </code>
  </div>
- The active learning server is responsible for sorting a list of communications.
+ <pre>The active learning server is responsible for sorting a list of communications.
 Users annotate communications based on the sort.
 
 Active learning is an asynchronous process.
@@ -324,6 +326,7 @@ When the server is done with a sort of the data, it calls submitSort() on the cl
 The server can perform additional sorts until stop() is called.
 
 The server must be preconfigured with the details of the data source to pull communications.
+</pre>
  <br/>
  <div class="definition">
   <h4 id="Fn_ActiveLearnerServerService_start">
@@ -333,7 +336,8 @@ The server must be preconfigured with the details of the data source to pull com
            <code><a href="#Struct_AnnotationTask">AnnotationTask</a></code> task,
            <code><a href="services.html#Struct_AsyncContactInfo">services.AsyncContactInfo</a></code> contact)
 </pre>
-  Start an active learning session on these communications
+  <pre>Start an active learning session on these communications
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -342,7 +346,8 @@ The server must be preconfigured with the details of the data source to pull com
   </h4>
   <pre><code>void</code> stop(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> sessionId)
 </pre>
-  Stop the learning session
+  <pre>Stop the learning session
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -352,7 +357,8 @@ The server must be preconfigured with the details of the data source to pull com
   <pre><code>void</code> addAnnotations(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> sessionId,
                     <code>list&lt;<code><a href="#Struct_Annotation">Annotation</a></code>&gt;</code> annotations)
 </pre>
-  Add annotations from the user to the learning process
+  <pre>Add annotations from the user to the learning process
+</pre>
   <br/>
  </div>
  <h3 id="Svc_ActiveLearnerClientService">
@@ -368,7 +374,8 @@ The server must be preconfigured with the details of the data source to pull com
    </a>
   </code>
  </div>
- The active learner client implements a method to accept new sorts of the annotation units
+ <pre>The active learner client implements a method to accept new sorts of the annotation units
+</pre>
  <br/>
  <div class="definition">
   <h4 id="Fn_ActiveLearnerClientService_submitSort">
@@ -377,7 +384,8 @@ The server must be preconfigured with the details of the data source to pull com
   <pre><code>void</code> submitSort(<code><a href="uuid.html#Struct_UUID">uuid.UUID</a></code> sessionId,
                 <code>list&lt;<code><a href="services.html#Struct_AnnotationUnitIdentifier">services.AnnotationUnitIdentifier</a></code>&gt;</code> unitIds)
 </pre>
-  Submit a new sort of communications to the broker
+  <pre>Submit a new sort of communications to the broker
+</pre>
   <br/>
  </div>
 </div>
