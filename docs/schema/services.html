@@ -103,7 +103,8 @@
   <h3 id="Enum_AnnotationTaskType">
    Enumeration: AnnotationTaskType
   </h3>
-  Annotation Tasks Types
+  <pre>Annotation Tasks Types
+</pre>
   <br/>
   <br/>
   <table class="table-bordered table-striped table-condensed">
@@ -155,7 +156,8 @@
   <h3 id="Enum_AnnotationUnitType">
    Enumeration: AnnotationUnitType
   </h3>
-  An annotation unit is the part of the communication to be annotated.
+  <pre>An annotation unit is the part of the communication to be annotated.
+</pre>
   <br/>
   <br/>
   <table class="table-bordered table-striped table-condensed">
@@ -264,8 +266,9 @@
    </tr>
   </table>
   <br/>
-  An exception to be used when an invoked method has
+  <pre>An exception to be used when an invoked method has
 not been implemented by the service.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -337,7 +340,8 @@ not been implemented by the service.
    </tr>
   </table>
   <br/>
-  An exception to be used with Concrete services.
+  <pre>An exception to be used with Concrete services.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -411,9 +415,10 @@ not been implemented by the service.
    </tr>
   </table>
   <br/>
-  An annotation unit is the part of the communication to be annotated.
+  <pre>An annotation unit is the part of the communication to be annotated.
 It can be the entire communication or a particular sentence in the communication.
 If the sentenceID is null, the unit is the entire communication
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -483,13 +488,14 @@ If the sentenceID is null, the unit is the entire communication
    </tr>
   </table>
   <br/>
-  Contact information for the asynchronous communications.
+  <pre>Contact information for the asynchronous communications.
 When a client contacts a server for a job that takes a significant amount of time,
 it is often best to implement this asynchronously.
 We do this by having the client stand up a server to accept the results and
 passing that information to the original server.
 The server may want to create a new thrift client on every request or maintain
 a pool of clients for reuse.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -584,8 +590,9 @@ with version strings like x.y.z
    </tr>
   </table>
   <br/>
-  Each service is described by this info struct.
+  <pre>Each service is described by this info struct.
 It is for human consumption and for records of versions in deployments.
+</pre>
   <br/>
  </div>
 </div>
@@ -597,7 +604,8 @@ It is for human consumption and for records of versions in deployments.
  <h3 id="Svc_Service">
   Service: Service
  </h3>
- Base service that all other services should inherit from
+ <pre>Base service that all other services should inherit from
+</pre>
  <br/>
  <div class="definition">
   <h4 id="Fn_Service_about">
@@ -605,7 +613,8 @@ It is for human consumption and for records of versions in deployments.
   </h4>
   <pre><code><a href="#Struct_ServiceInfo">ServiceInfo</a></code> about()
 </pre>
-  Get information about the service
+  <pre>Get information about the service
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -614,7 +623,8 @@ It is for human consumption and for records of versions in deployments.
   </h4>
   <pre><code>bool</code> alive()
 </pre>
-  Is the service alive?
+  <pre>Is the service alive?
+</pre>
   <br/>
  </div>
 </div>

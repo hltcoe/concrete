@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 # This file reads in "HTML" from a call to
 #   thrift --gen html ....

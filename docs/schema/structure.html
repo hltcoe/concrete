@@ -135,7 +135,8 @@
   <h3 id="Enum_TokenizationKind">
    Enumeration: TokenizationKind
   </h3>
-  Enumerated types of Tokenizations
+  <pre>Enumerated types of Tokenizations
+</pre>
   <br/>
   <br/>
   <table class="table-bordered table-striped table-condensed">
@@ -284,7 +285,8 @@
    </tr>
   </table>
   <br/>
-  Type for arcs. For epsilon edges, leave 'token' blank.
+  <pre>Type for arcs. For epsilon edges, leave 'token' blank.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -462,7 +464,8 @@ parent Tokenization. Almost certainly should be populated.
    </tr>
   </table>
   <br/>
-  A single parse constituent (or "phrase").
+  <pre>A single parse constituent (or "phrase").
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -536,7 +539,8 @@ parent Tokenization. Almost certainly should be populated.
    </tr>
   </table>
   <br/>
-  A reference to a Constituent within a Parse.
+  <pre>A reference to a Constituent within a Parse.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -632,7 +636,8 @@ parent Tokenization. Almost certainly should be populated.
    </tr>
   </table>
   <br/>
-  A syntactic edge between two tokens in a tokenized sentence.
+  <pre>A syntactic edge between two tokens in a tokenized sentence.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -754,7 +759,8 @@ parent Tokenization. Almost certainly should be populated.
    </tr>
   </table>
   <br/>
-  Represents a dependency parse with typed edges.
+  <pre>Represents a dependency parse with typed edges.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -869,10 +875,11 @@ one head/parent/governor.
    </tr>
   </table>
   <br/>
-  Information about the structure of a dependency parse.
+  <pre>Information about the structure of a dependency parse.
 This information is computable from the list of dependencies,
 but this allows the consumer to make (verified) assumptions
 about the dependencies being processed.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1046,25 +1053,15 @@ about the dependencies being processed.
    </tr>
   </table>
   <br/>
-  A theory about the syntactic parse of a sentence.
+  <pre>A theory about the syntactic parse of a sentence.
 
 \note If we add support for parse forests in the future, then it
 will most likely be done by adding a new field (e.g.
-"
-  <tt>
-   forest_root
-  </tt>
-  ") that uses a new struct type to encode the
-forest. A "
-  <tt>
-   kind
-  </tt>
-  " field might also be added (analogous to
-  <tt>
-   Tokenization.kind
-  </tt>
-  ) to indicate whether a parse is encoded
+"<tt>forest_root</tt>") that uses a new struct type to encode the
+forest. A "<tt>kind</tt>" field might also be added (analogous to
+<tt>Tokenization.kind</tt>) to indicate whether a parse is encoded
 using a simple tree or a parse forest.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1343,9 +1340,10 @@ run on appropriate sections.
    </tr>
   </table>
   <br/>
-  A single "section" of a communication, such as a paragraph. Each
+  <pre>A single "section" of a communication, such as a paragraph. Each
 section is defined using a text or audio span, and can optionally
 contain a list of sentences.
+</pre>
   <br/>
  </div> <div class="definition">
   <h3 id="Struct_Sentence">
@@ -1510,7 +1508,8 @@ effort at such a representation.
    </tr>
   </table>
   <br/>
-  A single sentence or utterance in a communication.
+  <pre>A single sentence or utterance in a communication.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1625,11 +1624,12 @@ effort at such a representation.
    </tr>
   </table>
   <br/>
-  A collection of tokens that represent a link to another resource.
+  <pre>A collection of tokens that represent a link to another resource.
 This resource might be another Concrete object (e.g., another
 Concrete Communication), represented with the 'concreteTarget'
 field, or it could link to a resource outside of Concrete via the
 'externalTarget' field.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -1957,11 +1957,12 @@ effort at such a representation.
    </tr>
   </table>
   <br/>
-  A single token (typically a word) in a communication. The exact
+  <pre>A single token (typically a word) in a communication. The exact
 definition of what counts as a token is left up to the tools that
 generate token sequences.
 
 Usually, each token will include at least a text string.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -2085,7 +2086,7 @@ Usually, each token will include at least a text string.
    </tr>
   </table>
   <br/>
-  A lattice structure that assigns scores to a set of token
+  <pre>A lattice structure that assigns scores to a set of token
 sequences.  The lattice is encoded as an FSA, where states are
 identified by integers, and each arc is annotated with an
 optional tokens and a weight.  (Arcs with no tokens are
@@ -2108,6 +2109,7 @@ outputs.
 TokenLattices should never contain any paths with cycles.  Every
 arc in the lattice should be included in some path from the start
 state to the end state.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -2163,7 +2165,8 @@ state to the end state.
    </tr>
   </table>
   <br/>
-  A wrapper around a list of tokens.
+  <pre>A wrapper around a list of tokens.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -2412,8 +2415,9 @@ Prefer textSpan over this field unless a node in a tree is needed.
    </tr>
   </table>
   <br/>
-  A list of pointers to tokens that all belong to the same
+  <pre>A list of pointers to tokens that all belong to the same
 tokenization.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -2542,7 +2546,7 @@ produces.
    </tr>
   </table>
   <br/>
-  A theory about some token-level annotation.
+  <pre>A theory about some token-level annotation.
 The TokenTagging consists of a mapping from tokens
 (using token ids) to string tags (e.g. part-of-speech tags or lemmas).
 
@@ -2559,6 +2563,7 @@ tokens that are not part of the path unlabeled.
 Currently, we use strings to encode annotations. In
 the future, we may add fields for encoding specific tag sets
 (eg treebank tags), or for adding compound tags.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -2812,7 +2817,7 @@ implemented using an n-best list or a lattice.
    </tr>
   </table>
   <br/>
-  A theory (or set of alternative theories) about the sequence of
+  <pre>A theory (or set of alternative theories) about the sequence of
 tokens that make up a sentence.
 
 This message type is used to record the output of not just for
@@ -2829,19 +2834,18 @@ a list of tokens or a TokenLattice.
 The confidence value for each sequence is determined by combining
 the confidence from the "metadata" field with confidence
 information from individual token sequences as follows:
-  <ul>
-   <li>
-    For n-best lists:
-metadata.confidence
-   </li>
-   <li>
-    For lattices:
-metadata.confidence * exp(-sum(arc.weight))
-   </li>
-  </ul>
-  Note: in some cases (such as the output of a machine translation
+
+<ul>
+<li> For n-best lists:
+metadata.confidence </li>
+<li> For lattices:
+metadata.confidence * exp(-sum(arc.weight)) </li>
+</ul>
+
+Note: in some cases (such as the output of a machine translation
 tool), the order of the tokens in a token sequence may not
 correspond with the order of their original text span offsets.
+</pre>
   <br/>
  </div>
 </div>

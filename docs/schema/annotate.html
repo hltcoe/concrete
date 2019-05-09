@@ -67,6 +67,17 @@
        </a>
       </li>
      </ul>
+     <a href="#Svc_AnnotateWithContextService">
+      AnnotateWithContextService
+     </a>
+     <br/>
+     <ul>
+      <li>
+       <a href="#Fn_AnnotateWithContextService_annotate">
+        annotate
+       </a>
+      </li>
+     </ul>
     </td>
     <td>
     </td>
@@ -84,9 +95,10 @@
  <h3 id="Svc_AnnotateCommunicationService">
   Service: AnnotateCommunicationService
  </h3>
- Annotator service methods. For concrete analytics that
+ <pre>Annotator service methods. For concrete analytics that
 are to be stood up as independent services, accessible
 from any programming language.
+</pre>
  <br/>
  <div class="definition">
   <h4 id="Fn_AnnotateCommunicationService_annotate">
@@ -95,7 +107,7 @@ from any programming language.
   <pre><code><a href="communication.html#Struct_Communication">communication.Communication</a></code> annotate(<code><a href="communication.html#Struct_Communication">communication.Communication</a></code> original)
     throws <code><a href="ex.html#Struct_ConcreteThriftException">ex.ConcreteThriftException</a></code>
 </pre>
-  Main annotation method. Takes a communication as input
+  <pre>Main annotation method. Takes a communication as input
 and returns a new one as output.
 
 It is up to the implementing service to verify that
@@ -103,6 +115,7 @@ the input communication is valid.
 
 Can throw a ConcreteThriftException upon error
 (invalid input, analytic exception, etc.).
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -111,7 +124,8 @@ Can throw a ConcreteThriftException upon error
   </h4>
   <pre><code><a href="metadata.html#Struct_AnnotationMetadata">metadata.AnnotationMetadata</a></code> getMetadata()
 </pre>
-  Return the tool's AnnotationMetadata.
+  <pre>Return the tool's AnnotationMetadata.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -120,12 +134,13 @@ Can throw a ConcreteThriftException upon error
   </h4>
   <pre><code>string</code> getDocumentation()
 </pre>
-  Return a detailed description of what the particular tool
+  <pre>Return a detailed description of what the particular tool
 does, what inputs and outputs to expect, etc.
 
 Developers whom are not familiar with the particular
 analytic should be able to read this string and
 understand the essential functions of the analytic.
+</pre>
   <br/>
  </div>
  <div class="definition">
@@ -134,7 +149,47 @@ understand the essential functions of the analytic.
   </h4>
   <pre><code>void</code> shutdown()
 </pre>
-  Indicate to the server it should shut down.
+  <pre>Indicate to the server it should shut down.
+</pre>
+  <br/>
+ </div>
+ <h3 id="Svc_AnnotateWithContextService">
+  Service: AnnotateWithContextService
+ </h3>
+ <div class="extends">
+  <em>
+   extends
+  </em>
+  <code>
+   <a href="services.html#Svc_Service">
+    services.Service
+   </a>
+  </code>
+ </div>
+ <pre>A service that provides an alternative to Annotate,
+with the ability to pass along an additional Context
+parameter that conveys additional information about the
+Communication.
+</pre>
+ <br/>
+ <div class="definition">
+  <h4 id="Fn_AnnotateWithContextService_annotate">
+   Function: AnnotateWithContextService.annotate
+  </h4>
+  <pre><code><a href="communication.html#Struct_Communication">communication.Communication</a></code> annotate(<code><a href="communication.html#Struct_Communication">communication.Communication</a></code> original,
+                                     <code><a href="context.html#Struct_Context">context.Context</a></code> context)
+    throws <code><a href="ex.html#Struct_ConcreteThriftException">ex.ConcreteThriftException</a></code>
+</pre>
+  <pre>Takes a Communication and a Context as input
+and returns a new one as output.
+
+It is up to the implementing service to verify that
+the input communication is valid, as well as interpret
+the Context in an appropriate manner.
+
+Can throw a ConcreteThriftException upon error
+(invalid input, analytic exception, etc.).
+</pre>
   <br/>
  </div>
 </div>

@@ -13,6 +13,7 @@ include "email.thrift"
 include "twitter.thrift"
 include "audio.thrift"
 include "communication.thrift"
+include "services.thrift"
 
 namespace java edu.jhu.hlt.concrete.annotate
 namespace py concrete.annotate
