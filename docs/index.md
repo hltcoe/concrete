@@ -1,6 +1,6 @@
 # Getting started
 
-In this document, we'll work toward getting users started with Concrete. This
+On this page, we'll work toward getting users started with Concrete. This
 document is not intended to be comprehensive tutorial, but rather a starting
 point for exploration.
 
@@ -12,14 +12,14 @@ sentence- level annotations. Concrete is based on Apache Thrift and thus works
 cross-platform and in almost all popular programming languages, including
 Javascript, C++, Java, and Python. To learn more about design considerations and
 motivation, have a look at the white paper,
-[Ferraro et al. (2014)](http://cs.jhu.edu/~ferraro/papers/ferraro-concrete-2014.pdf). The
-details of the data format (schema) are described
-[here](http://hltcoe.github.io/concrete/schema/).
+Ferraro et al., 2014: [Concretely Annotated Corpora](http://www.akbc.ws/2014/submissions/akbc2014_submission_18.pdf).
+For details about the Concrete data format, see
+[the Concrete schema](http://hltcoe.github.io/concrete/schema/).
 
 In addition to data serialization, we provide Concretely annotated data! We've
 done the hard work of running a variety of tools, such as, Stanford's NLP
-pipeline and HLTCOE/JHU NLP tools, on an abundance of data. For more information
-on data release, see the Concrete homepage.
+pipeline and HLTCOE/JHU NLP tools, on an abundance of data. For more information,
+See [the Excellent HLT website](http://hltcoe.github.io/).
 
 ## Table of Contents
 
