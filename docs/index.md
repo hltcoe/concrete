@@ -24,13 +24,12 @@ See [the Excellent HLT website](http://hltcoe.github.io/).
 ## Table of Contents
 
 * [Getting started](#getting-started)
-  * [What is Concrete?](#what-is-concrete?)
+  * [What is Concrete?](#what-is-concrete)
   * [Data Format](#data-format)
   * [Table of Contents](#table-of-contents)
   * [Quick Start](#quick-start)
-    * [Step 0: Install concrete-python](#step-0-install-concrete-python)
-    * [Step 1: Get some data](#step-1-get-some-data)
-    * [Step 2: What's in this file?](#step-2-what's-in-this-file?)
+    * [Get some data](#get-some-data)
+    * [What's in this file?](#whats-in-this-file)
 * [Programming with Concrete](#programming-with-concrete)
   * [Python](#python)
   * [Java](#java)
@@ -91,31 +90,18 @@ or
 
 Now we're going to step through how to look at some Concrete
 data. This is meant to get our feet wet. It will not cover the all of
-the annotation types listed above in [Data Format](#data-format). It
-relies on the `concrete-python` utility library, which also has a
-number of useful utility (command line) scripts.
+the annotation types listed above in [Data Format](#data-format).
 
 
-### Step 0: Install concrete-python
-
-First step, install the Python utility library, either directly to your machine
-
-
-```
-$ pip install concrete
-```
-
-or by running the Docker image, as above.
-
-### Step 1: Get some data
+### Get some data
 
 ```
 wget 'https://github.com/hltcoe/quicklime/blob/master/agiga_dog-bites-man.concrete?raw=true' -O example.concrete
 ```
 
-### Step 2: What's in this file?
+### What's in this file?
 
-#### 2.1 Quicklime Communication viewer
+#### Using the Quicklime Communication viewer
 
 Regardless of how you're ingesting the data, it's probably a good idea to view
 the contents of a .comm file using Quicklime. It stands up a mini-webserver that
@@ -127,19 +113,27 @@ pip install quicklime
 
 To view a Concrete file:
 
-    $ qlook.py <path-to>/example.concrete
-    Listening on http://localhost:8080/
-    Hit Ctrl-C to quit.
+```
+qlook.py ./example.concrete
+```
 
-Now, open your web browser and go to the link printed to the screen
-``http://localhost:8080/``. For more information about the Quicklime project,
-check out the [Quicklime GitHub repo](https://github.com/hltcoe/quicklime).
+Now, open your web browser and go to the link printed to the console,
+`http://localhost:8080/`. For more information about the Quicklime project,
+check out the [Quicklime GitHub repository](https://github.com/hltcoe/quicklime).
 
-#### 2.2 Command-line tools
+#### Using Concrete Python on the command line
 
-In addition to Quicklime, ``concrete-inspect.py`` is another tool for viewing
-the contents of Concrete files. This utility was made available when you
-installed ``concrete-python``, so you can use it in any directory. Below is some
+To access communications programmatically or on the command line, you can use the
+Concrete Python utility library.  Install Concrete Python using:
+
+```
+pip install concrete
+```
+
+In addition to providing an API for working with Concrete objects, Concrete Python
+provides tools like ``concrete-inspect.py``, which facilitates viewing the contents
+of Concrete files. This tool was installed as a Python script when you
+installed ``concrete-python``, so you can use it from any directory. Below is some
 example usage. For further usage, use the script's ``--help`` option.
 
 ##### 2.2.1 CoNLL-style output
@@ -272,12 +266,14 @@ SituationMentionSet cSms = cSmsList.get(0); // Since there's only one.
 
 # Docker
 
-We've also provided a Docker image containing the latest concrete, and
+We provide a Docker image containing the latest concrete, and
 Java and Python libraries. This can be found on
 [Dockerhub](https://hub.docker.com/r/hltcoe/concrete/):
 
 ```
-$ docker pull hltcoe/concrete
-$ docker run -i -t hltcoe/concrete:latest /bin/bash
-#
+docker pull hltcoe/concrete
+docker run --rm -it hltcoe/concrete:latest /bin/bash
 ```
+
+The second command launches a concrete container with an interactive
+bash shell.  Type `exit` to exit the shell and stop the container.
