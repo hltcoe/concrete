@@ -32,6 +32,7 @@ See [the Excellent HLT website](http://hltcoe.github.io/).
     * [Step 1: Get some data.](#step-1-get-some-data.)
     * [Step 2: What's in this file?](#step-2-what's-in-this-file?)
 * [Programming with Concrete](#programming-with-concrete)
+  * [Python](#python)
   * [Java](#java)
 
 ## Data Format
