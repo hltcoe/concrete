@@ -181,19 +181,18 @@ example usage. For further usage, use the script's ``--help`` option.
 
 ### Installation
 
-If you're using Java, you would use the following dependencies from Maven Central, which correspond to the v.4.4.4 tag of the concrete-java GitHub repo:
-https://github.com/hltcoe/concrete-java
+If you're using Java, you would use the following dependencies from Maven Central, which correspond to [the v4.15.0 tag of the concrete-java GitHub repository](https://github.com/hltcoe/concrete-java/tree/v4.15.0):
 
 ```xml
 <dependency>
   <groupId>edu.jhu.hlt</groupId>
   <artifactId>concrete-core</artifactId>
-  <version>4.4</version>
+  <version>4.15.0</version>
 </dependency>
 <dependency>
   <groupId>edu.jhu.hlt</groupId>
   <artifactId>concrete-util</artifactId>
-  <version>4.4.4</version>
+  <version>4.15.0</version>
 </dependency>
 ```
 
