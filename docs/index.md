@@ -29,7 +29,7 @@ See [the Excellent HLT website](http://hltcoe.github.io/).
   * [Table of Contents](#table-of-contents)
   * [Quick Start](#quick-start)
     * [Step 0: Install concrete-python](#step-0-install-concrete-python)
-    * [Step 1: Get some data.](#step-1-get-some-data.)
+    * [Step 1: Get some data](#step-1-get-some-data)
     * [Step 2: What's in this file?](#step-2-what's-in-this-file?)
 * [Programming with Concrete](#programming-with-concrete)
   * [Python](#python)
@@ -116,7 +116,7 @@ $ pip install concrete
 
 or by running the Docker image, as above.
 
-### Step 1: Get some data.
+### Step 1: Get some data
 
 ```
 wget 'https://github.com/hltcoe/quicklime/blob/master/agiga_dog-bites-man.concrete?raw=true' -O example.concrete
@@ -151,7 +151,7 @@ the contents of Concrete files. This utility was made available when you
 installed ``concrete-python``, so you can use it in any directory. Below is some
 example usage. For further usage, use the script's ``--help`` option.
 
-##### 2.2.1 CoNLL-style output.
+##### 2.2.1 CoNLL-style output
 
     $ concrete-inspect.py example.concrete --pos --ner --lemmas --dependency
     INDEX TOKEN     LEMMA    POS NER    HEAD
