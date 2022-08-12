@@ -177,6 +177,48 @@ example usage. For further usage, use the script's ``--help`` option.
 
 # Programming with Concrete
 
+## Python
+
+To install the Python library for concrete, use pip, as described previously:
+
+```
+pip install concrete
+```
+
+### Read a Communication from a file
+
+You can read a Concrete Communication object from a file as follows.
+
+```python
+from concrete.util import read_communication_from_file
+comm = read_communication_from_file('/path/to/communication.concrete')
+```
+
+### Iterate over sentences
+
+The sections and sentences of a communication are represented as lists and can be traversed accordingly:
+
+```python
+for section in comm.sectionList:
+    for sentence in section.sentenceList:
+        tokenization = sentence.tokenization
+        # do something with sentence tokenization...
+```
+
+### Get entity mentions
+
+By default, concrete-python also adds convenience attributes to several data types when deserializing them.  So, for example, you can access an entity's mentions directly from the entity object using the `mentionList` attribute, even though there is no such field in the Concrete schema itself:
+
+```python
+for entitySet in comm.entitySetList:
+    for entity in entitySet.entityList:
+        print(f'Entity: {entity.canonicalName}')
+        for mention in entity.mentionList:
+            print(f'* Mention: {mention.text}')
+```
+
+See [add_references_to_communication](https://concrete-python.readthedocs.io/en/stable/concrete.util.references.html#concrete.util.references.add_references_to_communication) for more information about convenience attributes added during deserialization.
+
 ## Java
 
 ### Installation
@@ -202,7 +244,7 @@ You can read in a Concrete file to a Communication object as follows.
 
 ```java
 CompactCommunicationSerializer ser = new CompactCommunicationSerializer();
-Communication comm = ser.fromPathString(commFile.getAbsolutePath());
+Communication comm = ser.fromPathString("/path/to/communication.concrete");
 ```
 
 ### Iterate over sentences
