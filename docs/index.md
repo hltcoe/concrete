@@ -34,6 +34,7 @@ See [the Excellent HLT website](http://hltcoe.github.io/).
 * [Programming with Concrete](#programming-with-concrete)
   * [Python](#python)
   * [Java](#java)
+* [Docker](#docker)
 
 ## Data Format
 
@@ -93,16 +94,6 @@ data. This is meant to get our feet wet. It will not cover the all of
 the annotation types listed above in [Data Format](#data-format). It
 relies on the `concrete-python` utility library, which also has a
 number of useful utility (command line) scripts.
-
-We've also provided a Docker image containing the latest concrete, and
-Java and Python libraries. This can be found on
-[Dockerhub](https://hub.docker.com/r/hltcoe/concrete/):
-
-```
-$ docker pull hltcoe/concrete
-$ docker run -i -t hltcoe/concrete:latest /bin/bash
-#
-```
 
 
 ### Step 0: Install concrete-python
@@ -179,6 +170,8 @@ example usage. For further usage, use the script's ``--help`` option.
 # Programming with Concrete
 
 ## Python
+
+### Installation
 
 To install the Python library for concrete, use pip, as described previously:
 
@@ -275,4 +268,16 @@ EntityMentionSet cEms = cEmsList.get(0); // Since there's only one.
 // Get the relations.
 List<SituationMentionSet> cSmsList = comm.getSituationMentionSetList();
 SituationMentionSet cSms = cSmsList.get(0); // Since there's only one.
+```
+
+# Docker
+
+We've also provided a Docker image containing the latest concrete, and
+Java and Python libraries. This can be found on
+[Dockerhub](https://hub.docker.com/r/hltcoe/concrete/):
+
+```
+$ docker pull hltcoe/concrete
+$ docker run -i -t hltcoe/concrete:latest /bin/bash
+#
 ```
