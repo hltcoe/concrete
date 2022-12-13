@@ -156,6 +156,12 @@ struct EntityMention {
   1: required uuid.UUID uuid
 
   /**
+   * A corpus-specific and stable id akin to a Freebase mid
+   * or a DBpedia id.
+   */
+  8: optional string id
+
+  /**
    * Pointer to sequence of tokens.
    *
    * Special note: In the case of PRO-drop, where there is no explicit
