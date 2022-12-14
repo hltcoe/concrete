@@ -11,7 +11,6 @@
       addConcreteNavigation();
     });
   </script>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
 <link href="style.css" rel="stylesheet" type="text/css"/>
 <title>
  Thrift module: cluster
@@ -23,431 +22,447 @@
   </h1>
   <table class="table-bordered table-striped table-condensed">
    <thead>
-    <th>
-     Module
-    </th>
-    <th>
-     Services
-    </th>
-    <th>
-     Data types
-    </th>
-    <th>
-     Constants
-    </th>
+    <tr>
+     <th>
+      Module
+     </th>
+     <th>
+      Services
+     </th>
+     <th>
+      Data types
+     </th>
+     <th>
+      Constants
+     </th>
+    </tr>
    </thead>
-   <tr>
-    <td>
-     cluster
-    </td>
-    <td>
-    </td>
-    <td>
-     <a href="#Struct_Cluster">
-      Cluster
-     </a>
-     <br/>
-     <a href="#Struct_ClusterMember">
-      ClusterMember
-     </a>
-     <br/>
-     <a href="#Struct_Clustering">
-      Clustering
-     </a>
-     <br/>
-    </td>
-    <td>
-    </td>
-   </tr>
+   <tbody>
+    <tr>
+     <td>
+      cluster
+     </td>
+     <td>
+     </td>
+     <td>
+      <a href="#Struct_Cluster">
+       Cluster
+      </a>
+      <br/>
+      <a href="#Struct_ClusterMember">
+       ClusterMember
+      </a>
+      <br/>
+      <a href="#Struct_Clustering">
+       Clustering
+      </a>
+      <br/>
+     </td>
+     <td>
+     </td>
+    </tr>
+   </tbody>
   </table>
- </div>
-</body>
-<hr/>
-<div id="Structs_div">
- <h2 id="Structs">
-  Data structures
- </h2>
- <div class="definition">
-  <h3 id="Struct_Cluster">
-   Struct: Cluster
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     clusterMemberIndexList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       i32
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     The items in this cluster.  Values are indices into the
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_Cluster">
+     Struct: Cluster
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        clusterMemberIndexList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          i32
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        The items in this cluster.  Values are indices into the
 'clusterMemberList' of the Clustering which contains this Cluster.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     confidenceList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       double
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Co-indexed with 'clusterMemberIndexList'. The i^{th} value represents the
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        confidenceList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          double
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Co-indexed with 'clusterMemberIndexList'. The i^{th} value represents the
 confidence that mention clusterMemberIndexList[i] belongs to this cluster.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     childIndexList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       i32
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A set of clusters (implicit ids/indices) from which this cluster was
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        childIndexList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          i32
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A set of clusters (implicit ids/indices) from which this cluster was
 created. This cluster should represent the union of all the items in all
 of the child clusters.  (For hierarchical clustering only).
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>A set of items which are alike in some way.  Has an implicit id which is the
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A set of items which are alike in some way.  Has an implicit id which is the
 index of this Cluster in its parent Clustering's 'clusterList'.
 </pre>
-  <br/>
- </div>
- <div class="definition">
-  <h3 id="Struct_ClusterMember">
-   Struct: ClusterMember
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     communicationId
-    </td>
-    <td>
-     <code>
-      <a href="uuid.html#Struct_UUID">
-       uuid.UUID
-      </a>
-     </code>
-    </td>
-    <td>
-     UUID of the Communication which contains the item specified by 'elementId'.
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_ClusterMember">
+     Struct: ClusterMember
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        communicationId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        UUID of the Communication which contains the item specified by 'elementId'.
 This is ancillary info assuming UUIDs are indeed universally unique.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     setId
-    </td>
-    <td>
-     <code>
-      <a href="uuid.html#Struct_UUID">
-       uuid.UUID
-      </a>
-     </code>
-    </td>
-    <td>
-     UUID of the Entity|Situation(Mention)Set which contains the item specified by 'elementId'.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        setId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        UUID of the Entity|Situation(Mention)Set which contains the item specified by 'elementId'.
 This is ancillary info assuming UUIDs are indeed universally unique.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     elementId
-    </td>
-    <td>
-     <code>
-      <a href="uuid.html#Struct_UUID">
-       uuid.UUID
-      </a>
-     </code>
-    </td>
-    <td>
-     UUID of the EntityMention, Entity, SituationMention, or Situation that
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        elementId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        UUID of the EntityMention, Entity, SituationMention, or Situation that
 this item represents. This is the characteristic field.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>An item being clustered. Does not designate cluster _membership_, as in
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>An item being clustered. Does not designate cluster _membership_, as in
 "item x belongs to cluster C", but rather just the item ("x" in this
 example). Membership is indicated through Cluster objects.  An item may be a
 Entity, EntityMention, Situation, SituationMention, or technically anything
 with a UUID.
 </pre>
-  <br/>
- </div>
- <div class="definition">
-  <h3 id="Struct_Clustering">
-   Struct: Clustering
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     uuid
-    </td>
-    <td>
-     <code>
-      <a href="uuid.html#Struct_UUID">
-       uuid.UUID
-      </a>
-     </code>
-    </td>
-    <td>
-     UUID for this Clustering object.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     metadata
-    </td>
-    <td>
-     <code>
-      <a href="metadata.html#Struct_AnnotationMetadata">
-       metadata.AnnotationMetadata
-      </a>
-     </code>
-    </td>
-    <td>
-     Metadata for this Clustering object.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     clusterMemberList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="#Struct_ClusterMember">
-        ClusterMember
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     The set of items being clustered.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     4
-    </td>
-    <td>
-     clusterList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="#Struct_Cluster">
-        Cluster
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Clusters of items. If this is a hierarchical clustering, this may contain
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_Clustering">
+     Struct: Clustering
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        uuid
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        UUID for this Clustering object.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        metadata
+       </td>
+       <td>
+        <code>
+         <a href="metadata.html#Struct_AnnotationMetadata">
+          metadata.AnnotationMetadata
+         </a>
+        </code>
+       </td>
+       <td>
+        Metadata for this Clustering object.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        clusterMemberList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="#Struct_ClusterMember">
+           ClusterMember
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        The set of items being clustered.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        clusterList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="#Struct_Cluster">
+           Cluster
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Clusters of items. If this is a hierarchical clustering, this may contain
 clusters which are the set of smaller clusters.
 Clusters may not "overlap", meaning (for all clusters X,Y):
   X \cap Y \neq \emptyset \implies X \subset Y \vee Y \subset X
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     5
-    </td>
-    <td>
-     rootClusterIndexList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       i32
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A set of disjoint clusters (indices in 'clusterList') which cover all
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        rootClusterIndexList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          i32
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A set of disjoint clusters (indices in 'clusterList') which cover all
 items in 'clusterMemberList'. This list must be specified for hierarchical
 clusterings and should not be specified for flat clusterings.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>An (optionally) hierarchical clustering of items appearing across a set of
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>An (optionally) hierarchical clustering of items appearing across a set of
 Communications (intra-Communication clusterings are encoded by Entities and
 Situations).  An item may be a Entity, EntityMention, Situation,
 SituationMention, or technically anything with a UUID.
 </pre>
-  <br/>
+    <br/>
+   </div>
+  </div>
  </div>
-</div>
+</body>
 

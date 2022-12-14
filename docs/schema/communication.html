@@ -11,7 +11,6 @@
       addConcreteNavigation();
     });
   </script>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
 <link href="style.css" rel="stylesheet" type="text/css"/>
 <title>
  Thrift module: communication
@@ -23,137 +22,142 @@
   </h1>
   <table class="table-bordered table-striped table-condensed">
    <thead>
-    <th>
-     Module
-    </th>
-    <th>
-     Services
-    </th>
-    <th>
-     Data types
-    </th>
-    <th>
-     Constants
-    </th>
+    <tr>
+     <th>
+      Module
+     </th>
+     <th>
+      Services
+     </th>
+     <th>
+      Data types
+     </th>
+     <th>
+      Constants
+     </th>
+    </tr>
    </thead>
-   <tr>
-    <td>
-     communication
-    </td>
-    <td>
-    </td>
-    <td>
-     <a href="#Struct_Communication">
-      Communication
-     </a>
-     <br/>
-     <a href="#Struct_CommunicationSet">
-      CommunicationSet
-     </a>
-     <br/>
-     <a href="#Struct_CommunicationTagging">
-      CommunicationTagging
-     </a>
-     <br/>
-    </td>
-    <td>
-    </td>
-   </tr>
+   <tbody>
+    <tr>
+     <td>
+      communication
+     </td>
+     <td>
+     </td>
+     <td>
+      <a href="#Struct_Communication">
+       Communication
+      </a>
+      <br/>
+      <a href="#Struct_CommunicationSet">
+       CommunicationSet
+      </a>
+      <br/>
+      <a href="#Struct_CommunicationTagging">
+       CommunicationTagging
+      </a>
+      <br/>
+     </td>
+     <td>
+     </td>
+    </tr>
+   </tbody>
   </table>
- </div>
-</body>
-<hr/>
-<div id="Structs_div">
- <h2 id="Structs">
-  Data structures
- </h2>
- <div class="definition">
-  <h3 id="Struct_Communication">
-   Struct: Communication
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     id
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     Stable identifier for this communication, identifying both the
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_Communication">
+     Struct: Communication
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        id
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        Stable identifier for this communication, identifying both the
 name of the source corpus and the document that it corresponds to
 in that corpus.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     uuid
-    </td>
-    <td>
-     <code>
-      <a href="uuid.html#Struct_UUID">
-       uuid.UUID
-      </a>
-     </code>
-    </td>
-    <td>
-     Universally unique identifier for this communication instance.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        uuid
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        Universally unique identifier for this communication instance.
 This is generated randomly, and can *not* be mapped back to the
 source corpus. It is used as a target for symbolic "pointers".
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     type
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     A short, corpus-specific term characterizing the nature of the
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        type
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        A short, corpus-specific term characterizing the nature of the
 communication; may change in a future version of concrete.
 Often used for filtering.  For example, Gigaword uses
 the type "story" to distinguish typical news articles from
@@ -161,346 +165,346 @@ weekly summaries ("multi"), editorial advisories ("advis"), etc.
 At present, this value is typically a literal form from the
 originating corpus: as a result, a type marked 'other' may have
 different meanings across different corpora.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     4
-    </td>
-    <td>
-     text
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     The full text contents of this communication in its original
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        text
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        The full text contents of this communication in its original
 form, or in the least-processed form available, if the original
 is not available.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     5
-    </td>
-    <td>
-     startTime
-    </td>
-    <td>
-     <code>
-      i64
-     </code>
-    </td>
-    <td>
-     The time when this communication started (in unix time UTC --
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        startTime
+       </td>
+       <td>
+        <code>
+         i64
+        </code>
+       </td>
+       <td>
+        The time when this communication started (in unix time UTC --
 i.e., seconds since January 1, 1970).
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     6
-    </td>
-    <td>
-     endTime
-    </td>
-    <td>
-     <code>
-      i64
-     </code>
-    </td>
-    <td>
-     The time when this communication ended (in unix time UTC --
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        6
+       </td>
+       <td>
+        endTime
+       </td>
+       <td>
+        <code>
+         i64
+        </code>
+       </td>
+       <td>
+        The time when this communication ended (in unix time UTC --
 i.e., seconds since January 1, 1970).
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     7
-    </td>
-    <td>
-     communicationTaggingList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="#Struct_CommunicationTagging">
-        CommunicationTagging
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list of CommunicationTagging objects that can support this
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        7
+       </td>
+       <td>
+        communicationTaggingList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="#Struct_CommunicationTagging">
+           CommunicationTagging
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of CommunicationTagging objects that can support this
 Communication. CommunicationTagging objects can be used to
 annotate Communications with topics, gender identification, etc.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     8
-    </td>
-    <td>
-     metadata
-    </td>
-    <td>
-     <code>
-      <a href="metadata.html#Struct_AnnotationMetadata">
-       metadata.AnnotationMetadata
-      </a>
-     </code>
-    </td>
-    <td>
-     metadata.AnnotationMetadata to support this particular communication.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        8
+       </td>
+       <td>
+        metadata
+       </td>
+       <td>
+        <code>
+         <a href="metadata.html#Struct_AnnotationMetadata">
+          metadata.AnnotationMetadata
+         </a>
+        </code>
+       </td>
+       <td>
+        metadata.AnnotationMetadata to support this particular communication.
 
 Communications derived from other communications should
 indicate in this metadata object their dependency
 to the original communication ID.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     9
-    </td>
-    <td>
-     keyValueMap
-    </td>
-    <td>
-     <code>
-      map&lt;
-      <code>
-       string
-      </code>
-      ,
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A catch-all store of keys and values. Use sparingly!
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     10
-    </td>
-    <td>
-     lidList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="language.html#Struct_LanguageIdentification">
-        language.LanguageIdentification
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Theories about the languages that are present in this
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        9
+       </td>
+       <td>
+        keyValueMap
+       </td>
+       <td>
+        <code>
+         map&lt;
+         <code>
+          string
+         </code>
+         ,
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A catch-all store of keys and values. Use sparingly!
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        10
+       </td>
+       <td>
+        lidList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="language.html#Struct_LanguageIdentification">
+           language.LanguageIdentification
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Theories about the languages that are present in this
 communication.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     11
-    </td>
-    <td>
-     sectionList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="structure.html#Struct_Section">
-        structure.Section
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Theory about the block structure of this communication.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     12
-    </td>
-    <td>
-     entityMentionSetList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="entities.html#Struct_EntityMentionSet">
-        entities.EntityMentionSet
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Theories about which spans of text are used to mention entities
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        11
+       </td>
+       <td>
+        sectionList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="structure.html#Struct_Section">
+           structure.Section
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Theory about the block structure of this communication.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        12
+       </td>
+       <td>
+        entityMentionSetList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="entities.html#Struct_EntityMentionSet">
+           entities.EntityMentionSet
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Theories about which spans of text are used to mention entities
 in this communication.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     13
-    </td>
-    <td>
-     entitySetList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="entities.html#Struct_EntitySet">
-        entities.EntitySet
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Theories about what entities are discussed in this
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        13
+       </td>
+       <td>
+        entitySetList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="entities.html#Struct_EntitySet">
+           entities.EntitySet
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Theories about what entities are discussed in this
 communication, with pointers to individual mentions.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     14
-    </td>
-    <td>
-     situationMentionSetList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="situations.html#Struct_SituationMentionSet">
-        situations.SituationMentionSet
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Theories about what situations are explicitly mentioned in this
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        14
+       </td>
+       <td>
+        situationMentionSetList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="situations.html#Struct_SituationMentionSet">
+           situations.SituationMentionSet
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Theories about what situations are explicitly mentioned in this
 communication.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     15
-    </td>
-    <td>
-     situationSetList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="situations.html#Struct_SituationSet">
-        situations.SituationSet
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Theories about what situations are asserted in this
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        15
+       </td>
+       <td>
+        situationSetList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="situations.html#Struct_SituationSet">
+           situations.SituationSet
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Theories about what situations are asserted in this
 communication.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     16
-    </td>
-    <td>
-     originalText
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     Optional original text field that points back to an original
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        16
+       </td>
+       <td>
+        originalText
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        Optional original text field that points back to an original
 communication.
 
 This field can be populated for sake of convenience when creating
@@ -508,66 +512,67 @@ This field can be populated for sake of convenience when creating
 highly destructive changes to an original communication [e.g.,
 via MT]). This allows developers to quickly access the original
 text that this perspective communication is based off of.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     20
-    </td>
-    <td>
-     sound
-    </td>
-    <td>
-     <code>
-      <a href="audio.html#Struct_Sound">
-       audio.Sound
-      </a>
-     </code>
-    </td>
-    <td>
-     The full audio contents of this communication in its original
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        20
+       </td>
+       <td>
+        sound
+       </td>
+       <td>
+        <code>
+         <a href="audio.html#Struct_Sound">
+          audio.Sound
+         </a>
+        </code>
+       </td>
+       <td>
+        The full audio contents of this communication in its original
 form, or in the least-processed form available, if the original
 is not available.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     21
-    </td>
-    <td>
-     communicationMetadata
-    </td>
-    <td>
-     <code>
-      <a href="metadata.html#Struct_CommunicationMetadata">
-       metadata.CommunicationMetadata
-      </a>
-     </code>
-    </td>
-    <td>
-     Metadata about this specific Communication, such as information
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        21
+       </td>
+       <td>
+        communicationMetadata
+       </td>
+       <td>
+        <code>
+         <a href="metadata.html#Struct_CommunicationMetadata">
+          metadata.CommunicationMetadata
+         </a>
+        </code>
+       </td>
+       <td>
+        Metadata about this specific Communication, such as information
 about its author, information specific to this Communication
 or Communications like it (info from an API, for example), etc.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>A single communication instance, containing linguistic content
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A single communication instance, containing linguistic content
 generated by a single speaker or author.  This type is used for
 both inter-personal communications (such as phone calls or
 conversations) and third-party communications (such as news
@@ -580,365 +585,375 @@ audio communications).  If the communication is not available in
 its original form, then these fields should store the
 communication in the least-processed form available.
 </pre>
-  <br/>
- </div>
- <div class="definition">
-  <h3 id="Struct_CommunicationSet">
-   Struct: CommunicationSet
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     communicationIdList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="uuid.html#Struct_UUID">
-        uuid.UUID
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list of Communication UUIDs that this CommunicationSet
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_CommunicationSet">
+     Struct: CommunicationSet
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        communicationIdList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="uuid.html#Struct_UUID">
+           uuid.UUID
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of Communication UUIDs that this CommunicationSet
 represents.
 
 This field may be absent if this CommunicationSet represents
 a large corpus. If absent, 'corpus' field should be present.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     corpus
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     The name of a corpus or other document body that this
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        corpus
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        The name of a corpus or other document body that this
 CommunicationSet represents.
 
 Should be present if 'communicationIdList' is absent.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     entityMentionClusterList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="cluster.html#Struct_Clustering">
-        cluster.Clustering
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list of Clustering objects that represent a
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        entityMentionClusterList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="cluster.html#Struct_Clustering">
+           cluster.Clustering
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of Clustering objects that represent a
 group of EntityMentions that are a part of this
 CommunicationSet.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     4
-    </td>
-    <td>
-     entityClusterList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="cluster.html#Struct_Clustering">
-        cluster.Clustering
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list of Clustering objects that represent a
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        entityClusterList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="cluster.html#Struct_Clustering">
+           cluster.Clustering
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of Clustering objects that represent a
 group of Entities that are a part of this
 CommunicationSet.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     5
-    </td>
-    <td>
-     situationMentionClusterList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="cluster.html#Struct_Clustering">
-        cluster.Clustering
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list of Clustering objects that represent a
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        situationMentionClusterList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="cluster.html#Struct_Clustering">
+           cluster.Clustering
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of Clustering objects that represent a
 group of SituationMentions that are a part of this
 CommunicationSet.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     6
-    </td>
-    <td>
-     situationClusterList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="cluster.html#Struct_Clustering">
-        cluster.Clustering
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list of Clustering objects that represent a
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        6
+       </td>
+       <td>
+        situationClusterList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="cluster.html#Struct_Clustering">
+           cluster.Clustering
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of Clustering objects that represent a
 group of Situations that are a part of this
 CommunicationSet.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>A structure that represents a collection of Communications.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A structure that represents a collection of Communications.
 </pre>
-  <br/>
- </div> <div class="definition">
-  <h3 id="Struct_CommunicationTagging">
-   Struct: CommunicationTagging
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     uuid
-    </td>
-    <td>
-     <code>
-      <a href="uuid.html#Struct_UUID">
-       uuid.UUID
-      </a>
-     </code>
-    </td>
-    <td>
-     A unique identifier for this CommunicationTagging object.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     metadata
-    </td>
-    <td>
-     <code>
-      <a href="metadata.html#Struct_AnnotationMetadata">
-       metadata.AnnotationMetadata
-      </a>
-     </code>
-    </td>
-    <td>
-     AnnotationMetadata to support this CommunicationTagging object.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     taggingType
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     A string that captures the type of this CommunicationTagging
+    <br/>
+   </div>   <div class="definition">
+    <h3 id="Struct_CommunicationTagging">
+     Struct: CommunicationTagging
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        uuid
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        A unique identifier for this CommunicationTagging object.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        metadata
+       </td>
+       <td>
+        <code>
+         <a href="metadata.html#Struct_AnnotationMetadata">
+          metadata.AnnotationMetadata
+         </a>
+        </code>
+       </td>
+       <td>
+        AnnotationMetadata to support this CommunicationTagging object.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        taggingType
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        A string that captures the type of this CommunicationTagging
 object. For example: 'topic' or 'gender'.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     4
-    </td>
-    <td>
-     tagList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list of strings that represent different tags related to the taggingType.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        tagList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of strings that represent different tags related to the taggingType.
 For example, if the taggingType is 'topic', some example tags might be
 'politics', 'science', etc.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     5
-    </td>
-    <td>
-     confidenceList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       double
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list of doubles, parallel to the list of strings in tagList,
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        confidenceList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          double
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of doubles, parallel to the list of strings in tagList,
 that indicate the confidences of each tag.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>A structure that represents a 'tagging' of a Communication. These
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A structure that represents a 'tagging' of a Communication. These
 might be labels or annotations on a particular communcation.
 
 For example, this structure might be used to describe the topics
 discussed in a Communication. The taggingType might be 'topic', and
 the tagList might include 'politics' and 'science'.
 </pre>
-  <br/>
+    <br/>
+   </div>
+  </div>
  </div>
-</div>
+</body>
 

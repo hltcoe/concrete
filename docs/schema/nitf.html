@@ -11,7 +11,6 @@
       addConcreteNavigation();
     });
   </script>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
 <link href="style.css" rel="stylesheet" type="text/css"/>
 <title>
  Thrift module: nitf
@@ -23,1385 +22,1393 @@
   </h1>
   <table class="table-bordered table-striped table-condensed">
    <thead>
-    <th>
-     Module
-    </th>
-    <th>
-     Services
-    </th>
-    <th>
-     Data types
-    </th>
-    <th>
-     Constants
-    </th>
+    <tr>
+     <th>
+      Module
+     </th>
+     <th>
+      Services
+     </th>
+     <th>
+      Data types
+     </th>
+     <th>
+      Constants
+     </th>
+    </tr>
    </thead>
-   <tr>
-    <td>
-     nitf
-    </td>
-    <td>
-    </td>
-    <td>
-     <a href="#Struct_NITFInfo">
-      NITFInfo
-     </a>
-     <br/>
-    </td>
-    <td>
-    </td>
-   </tr>
+   <tbody>
+    <tr>
+     <td>
+      nitf
+     </td>
+     <td>
+     </td>
+     <td>
+      <a href="#Struct_NITFInfo">
+       NITFInfo
+      </a>
+      <br/>
+     </td>
+     <td>
+     </td>
+    </tr>
+   </tbody>
   </table>
- </div>
-</body>
-<hr/>
-<div id="Structs_div">
- <h2 id="Structs">
-  Data structures
- </h2>
- <div class="definition">
-  <h3 id="Struct_NITFInfo">
-   Struct: NITFInfo
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     alternateURL
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field specifies the URL of the article, if published online. In some
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_NITFInfo">
+     Struct: NITFInfo
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        alternateURL
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field specifies the URL of the article, if published online. In some
 cases, such as with the New York Times, when this field is present,
 the URL is preferred to the URL field on articles published on
 or after April 02, 2006, as the linked page will have richer content.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     articleAbstract
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field is a summary of the article, possibly written by
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        articleAbstract
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field is a summary of the article, possibly written by
 an indexing service.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     authorBiography
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field specifies the biography of the author of the article.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        authorBiography
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field specifies the biography of the author of the article.
 Generally, this field is specified for guest authors, and not for
 regular reporters, except to provide the author's email address.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     4
-    </td>
-    <td>
-     banner
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     The banner field is used to indicate if there has been additional
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        banner
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        The banner field is used to indicate if there has been additional
 information appended to the articles since its publication. Examples of
 banners include ('Correction Appended' and 'Editor's Note Appended').
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     5
-    </td>
-    <td>
-     biographicalCategoryList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     When present, the biographical category field generally indicates that a
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        biographicalCategoryList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        When present, the biographical category field generally indicates that a
 document focuses on a particular individual. The value of the field
 indicates the area or category in which this individual is best known.
 This field is most often defined for Obituaries and Book Reviews.
-     <ol>
-      <li>
-       Politics and Government (U.S.)
-      </li>
-      <li>
-       Books and Magazines
-       <li>
-        Royalty
-       </li>
-      </li>
-     </ol>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     6
-    </td>
-    <td>
-     columnName
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     If the article is part of a regular column, this field specifies the name
+        <ol>
+         <li>
+          Politics and Government (U.S.)
+         </li>
+         <li>
+          Books and Magazines
+          <li>
+           Royalty
+          </li>
+         </li>
+        </ol>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        6
+       </td>
+       <td>
+        columnName
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        If the article is part of a regular column, this field specifies the name
 of that column.
-     <br>
-      Sample Column Names:
-      <br>
-       <ol>
-        <li>
-         World News Briefs
-        </li>
-        <li>
-         WEDDINGS
-        </li>
-        <li>
-         The Accessories Channel
-        </li>
-       </ol>
-      </br>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     7
-    </td>
-    <td>
-     columnNumber
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-     This field specifies the column in which the article starts in the print
+        <br>
+         Sample Column Names:
+         <br>
+          <ol>
+           <li>
+            World News Briefs
+           </li>
+           <li>
+            WEDDINGS
+           </li>
+           <li>
+            The Accessories Channel
+           </li>
+          </ol>
+         </br>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        7
+       </td>
+       <td>
+        columnNumber
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+        This field specifies the column in which the article starts in the print
 paper. A typical printed page in the paper has six columns numbered from
 right to left. As a consequence most, but not all, of the values for this
 field fall in the range 1-6.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     8
-    </td>
-    <td>
-     correctionDate
-    </td>
-    <td>
-     <code>
-      i64
-     </code>
-    </td>
-    <td>
-     This field specifies the date on which a correction was made to the
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        8
+       </td>
+       <td>
+        correctionDate
+       </td>
+       <td>
+        <code>
+         i64
+        </code>
+       </td>
+       <td>
+        This field specifies the date on which a correction was made to the
 article. Generally, if the correction date is specified, the correction
 text will also be specified (and vice versa).
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     9
-    </td>
-    <td>
-     correctionText
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     For articles corrected following publication, this field specifies the
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        9
+       </td>
+       <td>
+        correctionText
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        For articles corrected following publication, this field specifies the
 correction. Generally, if the correction text is specified, the
 correction date will also be specified (and vice versa).
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     10
-    </td>
-    <td>
-     credit
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field indicates the entity that produced the editorial content of
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        10
+       </td>
+       <td>
+        credit
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field indicates the entity that produced the editorial content of
 this document.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     11
-    </td>
-    <td>
-     dayOfWeek
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field specifies the day of week on which the article was published.
-     <ul>
-      <li>
-       Monday
-      </li>
-      <li>
-       Tuesday
-      </li>
-      <li>
-       Wednesday
-      </li>
-      <li>
-       Thursday
-      </li>
-      <li>
-       Friday
-      </li>
-      <li>
-       Saturday
-      </li>
-      <li>
-       Sunday
-      </li>
-     </ul>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     12
-    </td>
-    <td>
-     descriptorList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     The "descriptors" field specifies a list of descriptive terms drawn from
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        11
+       </td>
+       <td>
+        dayOfWeek
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field specifies the day of week on which the article was published.
+        <ul>
+         <li>
+          Monday
+         </li>
+         <li>
+          Tuesday
+         </li>
+         <li>
+          Wednesday
+         </li>
+         <li>
+          Thursday
+         </li>
+         <li>
+          Friday
+         </li>
+         <li>
+          Saturday
+         </li>
+         <li>
+          Sunday
+         </li>
+        </ul>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        12
+       </td>
+       <td>
+        descriptorList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        The "descriptors" field specifies a list of descriptive terms drawn from
 a normalized controlled vocabulary corresponding to subjects mentioned in
 the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        ECONOMIC CONDITIONS AND TRENDS
-       </li>
-       <li>
-        AIRPLANES
-       </li>
-       <li>
-        VIOLINS
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     13
-    </td>
-    <td>
-     featurePage
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     The feature page containing this article, such as
-     <ul>
-      <li>
-       Education Page
-      </li>
-      <li>
-       Fashion Page
-      </li>
-     </ul>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     14
-    </td>
-    <td>
-     generalOnlineDescriptorList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     The "general online descriptors" field specifies a list of descriptors
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           ECONOMIC CONDITIONS AND TRENDS
+          </li>
+          <li>
+           AIRPLANES
+          </li>
+          <li>
+           VIOLINS
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        13
+       </td>
+       <td>
+        featurePage
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        The feature page containing this article, such as
+        <ul>
+         <li>
+          Education Page
+         </li>
+         <li>
+          Fashion Page
+         </li>
+        </ul>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        14
+       </td>
+       <td>
+        generalOnlineDescriptorList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        The "general online descriptors" field specifies a list of descriptors
 that are at a higher level of generality than the other tags associated
 with the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Surfing
-       </li>
-       <li>
-        Venice Biennale
-       </li>
-       <li>
-        Ranches
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     15
-    </td>
-    <td>
-     guid
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-     The GUID field specifies an integer that is guaranteed to be unique for
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Surfing
+          </li>
+          <li>
+           Venice Biennale
+          </li>
+          <li>
+           Ranches
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        15
+       </td>
+       <td>
+        guid
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+        The GUID field specifies an integer that is guaranteed to be unique for
 every document in the corpus.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     16
-    </td>
-    <td>
-     kicker
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     The kicker is an additional piece of information printed as an
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        16
+       </td>
+       <td>
+        kicker
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        The kicker is an additional piece of information printed as an
 accompaniment to a news headline.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     17
-    </td>
-    <td>
-     leadParagraphList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     The "lead Paragraph" field is the lead paragraph of the article.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        17
+       </td>
+       <td>
+        leadParagraphList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        The "lead Paragraph" field is the lead paragraph of the article.
 Generally this field is populated with the first two paragraphs from the
 article.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     18
-    </td>
-    <td>
-     locationList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     The "locations" field specifies a list of geographic descriptors drawn
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        18
+       </td>
+       <td>
+        locationList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        The "locations" field specifies a list of geographic descriptors drawn
 from a normalized controlled vocabulary that correspond to places
 mentioned in the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Wellsboro (Pa)
-       </li>
-       <li>
-        Kansas City (Kan)
-       </li>
-       <li>
-        Park Slope (NYC)
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     19
-    </td>
-    <td>
-     nameList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     The "names" field specifies a list of names mentioned in the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Azza Fahmy
-       </li>
-       <li>
-        George C. Izenour
-       </li>
-       <li>
-        Chris Schenkel
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     20
-    </td>
-    <td>
-     newsDesk
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field specifies the desk in the newsroom that
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Wellsboro (Pa)
+          </li>
+          <li>
+           Kansas City (Kan)
+          </li>
+          <li>
+           Park Slope (NYC)
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        19
+       </td>
+       <td>
+        nameList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        The "names" field specifies a list of names mentioned in the article.
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Azza Fahmy
+          </li>
+          <li>
+           George C. Izenour
+          </li>
+          <li>
+           Chris Schenkel
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        20
+       </td>
+       <td>
+        newsDesk
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field specifies the desk in the newsroom that
 produced the article. The desk is related to, but is not the same as the
 section in which the article appears.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     21
-    </td>
-    <td>
-     normalizedByline
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     The Normalized Byline field is the byline normalized to the form (last
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        21
+       </td>
+       <td>
+        normalizedByline
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        The Normalized Byline field is the byline normalized to the form (last
 name, first name).
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     22
-    </td>
-    <td>
-     onlineDescriptorList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a list of descriptors from a normalized controlled
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        22
+       </td>
+       <td>
+        onlineDescriptorList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a list of descriptors from a normalized controlled
 vocabulary that correspond to topics mentioned in the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Marriages
-       </li>
-       <li>
-        Parks and Other Recreation Areas
-       </li>
-       <li>
-        Cooking and Cookbooks
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     23
-    </td>
-    <td>
-     onlineHeadline
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field specifies the headline displayed with the article
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Marriages
+          </li>
+          <li>
+           Parks and Other Recreation Areas
+          </li>
+          <li>
+           Cooking and Cookbooks
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        23
+       </td>
+       <td>
+        onlineHeadline
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field specifies the headline displayed with the article
 online. Often this differs from the headline used in print.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     24
-    </td>
-    <td>
-     onlineLeadParagraph
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field specifies the lead paragraph for the online version.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     25
-    </td>
-    <td>
-     onlineLocationList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a list of place names that correspond to geographic
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        24
+       </td>
+       <td>
+        onlineLeadParagraph
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field specifies the lead paragraph for the online version.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        25
+       </td>
+       <td>
+        onlineLocationList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a list of place names that correspond to geographic
 locations mentioned in the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Hollywood
-       </li>
-       <li>
-        Los Angeles
-       </li>
-       <li>
-        Arcadia
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     26
-    </td>
-    <td>
-     onlineOrganizationList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a list of organizations that correspond to
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Hollywood
+          </li>
+          <li>
+           Los Angeles
+          </li>
+          <li>
+           Arcadia
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        26
+       </td>
+       <td>
+        onlineOrganizationList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a list of organizations that correspond to
 organizations mentioned in the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Nintendo Company Limited
-       </li>
-       <li>
-        Yeshiva University
-       </li>
-       <li>
-        Rose Center
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     27
-    </td>
-    <td>
-     onlinePeople
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a list of people that correspond to individuals
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Nintendo Company Limited
+          </li>
+          <li>
+           Yeshiva University
+          </li>
+          <li>
+           Rose Center
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        27
+       </td>
+       <td>
+        onlinePeople
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a list of people that correspond to individuals
 mentioned in the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Lopez, Jennifer
-       </li>
-       <li>
-        Joyce, James
-       </li>
-       <li>
-        Robinson, Jackie
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     28
-    </td>
-    <td>
-     onlineSectionList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies the section(s) in which the online version of the article
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Lopez, Jennifer
+          </li>
+          <li>
+           Joyce, James
+          </li>
+          <li>
+           Robinson, Jackie
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        28
+       </td>
+       <td>
+        onlineSectionList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies the section(s) in which the online version of the article
 is placed. This may typically be populated from a semicolon (;) delineated list.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     29
-    </td>
-    <td>
-     onlineTitleList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a list of authored works mentioned in the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Matchstick Men (Movie)
-       </li>
-       <li>
-        Blades of Glory (Movie)
-       </li>
-       <li>
-        Bridge and Tunnel (Play)
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     30
-    </td>
-    <td>
-     organizationList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a list of organization names drawn from a normalized
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        29
+       </td>
+       <td>
+        onlineTitleList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a list of authored works mentioned in the article.
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Matchstick Men (Movie)
+          </li>
+          <li>
+           Blades of Glory (Movie)
+          </li>
+          <li>
+           Bridge and Tunnel (Play)
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        30
+       </td>
+       <td>
+        organizationList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a list of organization names drawn from a normalized
 controlled vocabulary that correspond to organizations mentioned in the
 article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Circuit City Stores Inc
-       </li>
-       <li>
-        Delaware County Community College (Pa)
-       </li>
-       <li>
-        CONNECTICUT GRAND OPERA
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     31
-    </td>
-    <td>
-     page
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-     This field specifies the page of the section in the paper in which the
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Circuit City Stores Inc
+          </li>
+          <li>
+           Delaware County Community College (Pa)
+          </li>
+          <li>
+           CONNECTICUT GRAND OPERA
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        31
+       </td>
+       <td>
+        page
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+        This field specifies the page of the section in the paper in which the
 article appears. This is not an absolute pagination. An article that
 appears on page 3 in section A occurs in the physical paper before an
 article that occurs on page 1 of section F. The section is encoded in
 the &lt;strong&gt;section&lt;/strong&gt; field.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     32
-    </td>
-    <td>
-     peopleList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a list of people from a normalized controlled
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        32
+       </td>
+       <td>
+        peopleList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a list of people from a normalized controlled
 vocabulary that correspond to individuals mentioned in the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        REAGAN, RONALD WILSON (PRES)
-       </li>
-       <li>
-        BEGIN, MENACHEM (PRIME MIN)
-       </li>
-       <li>
-        COLLINS, GLENN
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     33
-    </td>
-    <td>
-     publicationDate
-    </td>
-    <td>
-     <code>
-      i64
-     </code>
-    </td>
-    <td>
-     This field specifies the date of the article's publication.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     34
-    </td>
-    <td>
-     publicationDayOfMonth
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-     This field specifies the day of the month on which the article was
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           REAGAN, RONALD WILSON (PRES)
+          </li>
+          <li>
+           BEGIN, MENACHEM (PRIME MIN)
+          </li>
+          <li>
+           COLLINS, GLENN
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        33
+       </td>
+       <td>
+        publicationDate
+       </td>
+       <td>
+        <code>
+         i64
+        </code>
+       </td>
+       <td>
+        This field specifies the date of the article's publication.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        34
+       </td>
+       <td>
+        publicationDayOfMonth
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+        This field specifies the day of the month on which the article was
 published, always in the range 1-31.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     35
-    </td>
-    <td>
-     publicationMonth
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-     This field specifies the month on which the article was published in the
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        35
+       </td>
+       <td>
+        publicationMonth
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+        This field specifies the month on which the article was published in the
 range 1-12 where 1 is January 2 is February etc.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     36
-    </td>
-    <td>
-     publicationYear
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-     This field specifies the year in which the article was published. This
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        36
+       </td>
+       <td>
+        publicationYear
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+        This field specifies the year in which the article was published. This
 value is in the range 1987-2007 for this collection.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     37
-    </td>
-    <td>
-     section
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field specifies the section of the paper in which the article
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        37
+       </td>
+       <td>
+        section
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field specifies the section of the paper in which the article
 appears. This is not the name of the section, but rather a letter or
 number that indicates the section.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     38
-    </td>
-    <td>
-     seriesName
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     If the article is part of a regular series, this field specifies the name
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        38
+       </td>
+       <td>
+        seriesName
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        If the article is part of a regular series, this field specifies the name
 of that column.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     39
-    </td>
-    <td>
-     slug
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     The slug is a short string that uniquely identifies an article from all
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        39
+       </td>
+       <td>
+        slug
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        The slug is a short string that uniquely identifies an article from all
 other articles published on the same day. Please note, however, that
 different articles on different days may have the same slug.
-     <ul>
-      <li>
-       30other
-      </li>
-      <li>
-       12reunion
-      </li>
-     </ul>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     40
-    </td>
-    <td>
-     taxonomicClassifierList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a list of taxonomic classifiers that place this
+        <ul>
+         <li>
+          30other
+         </li>
+         <li>
+          12reunion
+         </li>
+        </ul>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        40
+       </td>
+       <td>
+        taxonomicClassifierList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a list of taxonomic classifiers that place this
 article into a hierarchy of articles. The individual terms of each
 taxonomic classifier are separated with the '/' character.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Top/Features/Travel/Guides/Destinations/North America/United
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Top/Features/Travel/Guides/Destinations/North America/United
 States/Arizona
-       </li>
-       <li>
-        Top/News/U.S./Rockies
-       </li>
-       <li>
-        Top/Opinion
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     41
-    </td>
-    <td>
-     titleList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a list of authored works that correspond to works
+          </li>
+          <li>
+           Top/News/U.S./Rockies
+          </li>
+          <li>
+           Top/Opinion
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        41
+       </td>
+       <td>
+        titleList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a list of authored works that correspond to works
 mentioned in the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        Greystoke: The Legend of Tarzan, Lord of the Apes (Movie)
-       </li>
-       <li>
-        Law and Order (TV Program)
-       </li>
-       <li>
-        BATTLEFIELD EARTH (BOOK)
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     42
-    </td>
-    <td>
-     typesOfMaterialList
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     This field specifies a normalized list of terms describing the general
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           Greystoke: The Legend of Tarzan, Lord of the Apes (Movie)
+          </li>
+          <li>
+           Law and Order (TV Program)
+          </li>
+          <li>
+           BATTLEFIELD EARTH (BOOK)
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        42
+       </td>
+       <td>
+        typesOfMaterialList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        This field specifies a normalized list of terms describing the general
 editorial category of the article.
-     <br>
-      Examples Include:
-      <ol>
-       <li>
-        REVIEW
-       </li>
-       <li>
-        OBITUARY
-       </li>
-       <li>
-        ANALYSIS
-       </li>
-      </ol>
-     </br>
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     43
-    </td>
-    <td>
-     url
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     This field specifies the location of the online version of the article. The
+        <br>
+         Examples Include:
+         <ol>
+          <li>
+           REVIEW
+          </li>
+          <li>
+           OBITUARY
+          </li>
+          <li>
+           ANALYSIS
+          </li>
+         </ol>
+        </br>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        43
+       </td>
+       <td>
+        url
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        This field specifies the location of the online version of the article. The
 "Alternative Url" field is preferred to this field on articles published
 on or after April 02, 2006, as the linked page will have richer content.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     44
-    </td>
-    <td>
-     wordCount
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-     This field specifies the number of words in the body of the article,
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        44
+       </td>
+       <td>
+        wordCount
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+        This field specifies the number of words in the body of the article,
 including the lead paragraph.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+   </div>
+  </div>
  </div>
-</div>
+</body>
 

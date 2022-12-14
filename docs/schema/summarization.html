@@ -11,7 +11,6 @@
       addConcreteNavigation();
     });
   </script>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
 <link href="style.css" rel="stylesheet" type="text/css"/>
 <title>
  Thrift module: summarization
@@ -23,631 +22,651 @@
   </h1>
   <table class="table-bordered table-striped table-condensed">
    <thead>
-    <th>
-     Module
-    </th>
-    <th>
-     Services
-    </th>
-    <th>
-     Data types
-    </th>
-    <th>
-     Constants
-    </th>
+    <tr>
+     <th>
+      Module
+     </th>
+     <th>
+      Services
+     </th>
+     <th>
+      Data types
+     </th>
+     <th>
+      Constants
+     </th>
+    </tr>
    </thead>
-   <tr>
-    <td>
-     summarization
-    </td>
-    <td>
-     <a href="#Svc_SummarizationService">
-      SummarizationService
-     </a>
-     <br/>
-     <ul>
-      <li>
-       <a href="#Fn_SummarizationService_getCapabilities">
-        getCapabilities
-       </a>
-      </li>
-      <li>
-       <a href="#Fn_SummarizationService_summarize">
-        summarize
-       </a>
-      </li>
-     </ul>
-    </td>
-    <td>
-     <a href="#Struct_SummarizationCapability">
-      SummarizationCapability
-     </a>
-     <br/>
-     <a href="#Struct_SummarizationRequest">
-      SummarizationRequest
-     </a>
-     <br/>
-     <a href="#Struct_Summary">
-      Summary
-     </a>
-     <br/>
-     <a href="#Struct_SummaryConcept">
-      SummaryConcept
-     </a>
-     <br/>
-     <a href="#Enum_SummarySourceType">
-      SummarySourceType
-     </a>
-     <br/>
-    </td>
-    <td>
-    </td>
-   </tr>
+   <tbody>
+    <tr>
+     <td>
+      summarization
+     </td>
+     <td>
+      <a href="#Svc_SummarizationService">
+       SummarizationService
+      </a>
+      <br/>
+      <ul>
+       <li>
+        <a href="#Fn_SummarizationService_getCapabilities">
+         getCapabilities
+        </a>
+       </li>
+       <li>
+        <a href="#Fn_SummarizationService_summarize">
+         summarize
+        </a>
+       </li>
+      </ul>
+     </td>
+     <td>
+      <a href="#Struct_SummarizationCapability">
+       SummarizationCapability
+      </a>
+      <br/>
+      <a href="#Struct_SummarizationRequest">
+       SummarizationRequest
+      </a>
+      <br/>
+      <a href="#Struct_Summary">
+       Summary
+      </a>
+      <br/>
+      <a href="#Struct_SummaryConcept">
+       SummaryConcept
+      </a>
+      <br/>
+      <a href="#Enum_SummarySourceType">
+       SummarySourceType
+      </a>
+      <br/>
+     </td>
+     <td>
+     </td>
+    </tr>
+   </tbody>
   </table>
- </div>
-</body>
-<hr/>
-<div id="Enumerations_div">
- <h2 id="Enumerations">
-  Enumerations
- </h2>
- <div class="definition">
-  <h3 id="Enum_SummarySourceType">
-   Enumeration: SummarySourceType
-  </h3>
-  <br/>
-  <table class="table-bordered table-striped table-condensed">
-   <tr>
-    <td>
-     <code>
-      DOCUMENT
-     </code>
-    </td>
-    <td>
-     <code>
-      0
-     </code>
-    </td>
-    <td>
-     <pre>Specifies that sourceIds is a list of Communication.UUIDs.
+  <hr/>
+  <div id="Enumerations_div">
+   <h2 id="Enumerations">
+    Enumerations
+   </h2>
+   <div class="definition">
+    <h3 id="Enum_SummarySourceType">
+     Enumeration: SummarySourceType
+    </h3>
+    <br/>
+    <table class="table-bordered table-striped table-condensed">
+     <tr>
+      <td>
+       <code>
+        DOCUMENT
+       </code>
+      </td>
+      <td>
+       <code>
+        0
+       </code>
+      </td>
+      <td>
+       <pre>Specifies that sourceIds is a list of Communication.UUIDs.
 This can be used for single or multi-document summarization.
 </pre>
-     <br/>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     <code>
-      TOKENIZATION
-     </code>
-    </td>
-    <td>
-     <code>
-      1
-     </code>
-    </td>
-    <td>
-     <pre>Specifies that sourceIds is a list of Tokenization.UUIDs.
+       <br/>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <code>
+        TOKENIZATION
+       </code>
+      </td>
+      <td>
+       <code>
+        1
+       </code>
+      </td>
+      <td>
+       <pre>Specifies that sourceIds is a list of Tokenization.UUIDs.
 </pre>
-     <br/>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     <code>
-      ENTITY
-     </code>
-    </td>
-    <td>
-     <code>
-      2
-     </code>
-    </td>
-    <td>
-     <pre>Specifies that sourceIds is a list of Entity.UUIDs
+       <br/>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <code>
+        ENTITY
+       </code>
+      </td>
+      <td>
+       <code>
+        2
+       </code>
+      </td>
+      <td>
+       <pre>Specifies that sourceIds is a list of Entity.UUIDs
 </pre>
-     <br/>
-    </td>
-   </tr>
-  </table>
- </div>
-</div>
-<hr/>
-<div id="Structs_div">
- <h2 id="Structs">
-  Data structures
- </h2>
- <div class="definition">
-  <h3 id="Struct_SummarizationCapability">
-   Struct: SummarizationCapability
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     type
-    </td>
-    <td>
-     <code>
-      <a href="#Enum_SummarySourceType">
-       SummarySourceType
-      </a>
-     </code>
-    </td>
-    <td>
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     lang
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
- </div> <div class="definition">
-  <h3 id="Struct_SummarizationRequest">
-   Struct: SummarizationRequest
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     queryTerms
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       string
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Terms or features pertinent to the query.
+       <br/>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_SummarizationCapability">
+     Struct: SummarizationCapability
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        type
+       </td>
+       <td>
+        <code>
+         <a href="#Enum_SummarySourceType">
+          SummarySourceType
+         </a>
+        </code>
+       </td>
+       <td>
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        lang
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+   </div>   <div class="definition">
+    <h3 id="Struct_SummarizationRequest">
+     Struct: SummarizationRequest
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        queryTerms
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          string
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Terms or features pertinent to the query.
 Can be empty, meaning summarize all source material with
 no a priori beliefs about what is important to summarize.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     maximumTokens
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-     Limit on how long the returned summary can be in tokens.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     maximumCharacters
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-     Limit on how long the returned summary can be in characters.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     4
-    </td>
-    <td>
-     sourceType
-    </td>
-    <td>
-     <code>
-      <a href="#Enum_SummarySourceType">
-       SummarySourceType
-      </a>
-     </code>
-    </td>
-    <td>
-     How to interpret the ids in sourceIds.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        maximumTokens
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+        Limit on how long the returned summary can be in tokens.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        maximumCharacters
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+        Limit on how long the returned summary can be in characters.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        sourceType
+       </td>
+       <td>
+        <code>
+         <a href="#Enum_SummarySourceType">
+          SummarySourceType
+         </a>
+        </code>
+       </td>
+       <td>
+        How to interpret the ids in sourceIds.
 May be null is sourceIds is null, otherwise must be populated.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     5
-    </td>
-    <td>
-     sourceIds
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="uuid.html#Struct_UUID">
-        uuid.UUID
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list of concrete object ids which serve as the material
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        sourceIds
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="uuid.html#Struct_UUID">
+           uuid.UUID
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of concrete object ids which serve as the material
 to summarize.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     6
-    </td>
-    <td>
-     sourceCommunication
-    </td>
-    <td>
-     <code>
-      <a href="communication.html#Struct_Communication">
-       communication.Communication
-      </a>
-     </code>
-    </td>
-    <td>
-     Alternative to sourceIds+sourceType: provide a Communication
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        6
+       </td>
+       <td>
+        sourceCommunication
+       </td>
+       <td>
+        <code>
+         <a href="communication.html#Struct_Communication">
+          communication.Communication
+         </a>
+        </code>
+       </td>
+       <td>
+        Alternative to sourceIds+sourceType: provide a Communication
 of text to summarize.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>A request to summarize which specifies the length of the desired
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A request to summarize which specifies the length of the desired
 summary and the text data to be summarized.
 Either set sourceCommunication or sourceType and sourceIds.
 </pre>
-  <br/>
- </div>
- <div class="definition">
-  <h3 id="Struct_Summary">
-   Struct: Summary
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     summaryCommunication
-    </td>
-    <td>
-     <code>
-      <a href="communication.html#Struct_Communication">
-       communication.Communication
-      </a>
-     </code>
-    </td>
-    <td>
-     Contains the text of the generated summary.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     concepts
-    </td>
-    <td>
-     <code>
-      list&lt;
-      <code>
-       <a href="#Struct_SummaryConcept">
-        SummaryConcept
-       </a>
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     Concepts mentioned in the summary which are believed to be
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_Summary">
+     Struct: Summary
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        summaryCommunication
+       </td>
+       <td>
+        <code>
+         <a href="communication.html#Struct_Communication">
+          communication.Communication
+         </a>
+        </code>
+       </td>
+       <td>
+        Contains the text of the generated summary.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        concepts
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="#Struct_SummaryConcept">
+           SummaryConcept
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Concepts mentioned in the summary which are believed to be
 interesting and/or worth highlighting.
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>A shortened version of some text, possibly with some concepts
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A shortened version of some text, possibly with some concepts
 annotated as justifications for why particular pieces of the
 summary were kept.
 </pre>
-  <br/>
- </div>
- <div class="definition">
-  <h3 id="Struct_SummaryConcept">
-   Struct: SummaryConcept
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     tokens
-    </td>
-    <td>
-     <code>
-      <a href="structure.html#Struct_TokenRefSequence">
-       structure.TokenRefSequence
-      </a>
-     </code>
-    </td>
-    <td>
-     Location in summaryCommunication of this concept
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     concept
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     Short description of the concept being evoked, e.g. "kbrel:bornIn" or "related:ACME_Corp"
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     confidence
-    </td>
-    <td>
-     <code>
-      double
-     </code>
-    </td>
-    <td>
-     How confident is the system that this concept was evoked by this mention, in [0,1]
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-     <code>
-      1
-     </code>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     4
-    </td>
-    <td>
-     utility
-    </td>
-    <td>
-     <code>
-      double
-     </code>
-    </td>
-    <td>
-     How informative/important it is that this concept be included in the summary (non-negative).
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-     <code>
-      1
-     </code>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>A mention of a concept described in a summary which is thought
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_SummaryConcept">
+     Struct: SummaryConcept
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        tokens
+       </td>
+       <td>
+        <code>
+         <a href="structure.html#Struct_TokenRefSequence">
+          structure.TokenRefSequence
+         </a>
+        </code>
+       </td>
+       <td>
+        Location in summaryCommunication of this concept
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        concept
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        Short description of the concept being evoked, e.g. "kbrel:bornIn" or "related:ACME_Corp"
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        confidence
+       </td>
+       <td>
+        <code>
+         double
+        </code>
+       </td>
+       <td>
+        How confident is the system that this concept was evoked by this mention, in [0,1]
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+        <code>
+         1
+        </code>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        utility
+       </td>
+       <td>
+        <code>
+         double
+        </code>
+       </td>
+       <td>
+        How informative/important it is that this concept be included in the summary (non-negative).
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+        <code>
+         1
+        </code>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A mention of a concept described in a summary which is thought
 to be informative. Concepts might be named entities, facts, or
 events which were determined to be salient in the text being
 summarized.
 </pre>
-  <br/>
- </div>
-</div>
-<hr/>
-<div id="Services_div">
- <h2 id="Services">
-  Services
- </h2>
- <h3 id="Svc_SummarizationService">
-  Service: SummarizationService
- </h3>
- <div class="extends">
-  <em>
-   extends
-  </em>
-  <code>
-   <a href="services.html#Svc_Service">
-    services.Service
-   </a>
-  </code>
- </div>
- <div class="definition">
-  <h4 id="Fn_SummarizationService_summarize">
-   Function: SummarizationService.summarize
-  </h4>
-  <pre><code><a href="#Struct_Summary">Summary</a></code> summarize(<code><a href="#Struct_SummarizationRequest">SummarizationRequest</a></code> query)
+    <br/>
+   </div>
+  </div>
+  <hr/>
+  <div id="Services_div">
+   <h2 id="Services">
+    Services
+   </h2>
+   <h3 id="Svc_SummarizationService">
+    Service: SummarizationService
+   </h3>
+   <div class="extends">
+    <em>
+     extends
+    </em>
+    <code>
+     <a href="services.html#Svc_Service">
+      services.Service
+     </a>
+    </code>
+   </div>
+   <div class="definition">
+    <h4 id="Fn_SummarizationService_summarize">
+     Function: SummarizationService.summarize
+    </h4>
+    <pre><code><a href="#Struct_Summary">Summary</a></code> summarize(<code><a href="#Struct_SummarizationRequest">SummarizationRequest</a></code> query)
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
- </div>
- <div class="definition">
-  <h4 id="Fn_SummarizationService_getCapabilities">
-   Function: SummarizationService.getCapabilities
-  </h4>
-  <pre><code>list&lt;<code><a href="#Struct_SummarizationCapability">SummarizationCapability</a></code>&gt;</code> getCapabilities()
+   </div>
+   <div class="definition">
+    <h4 id="Fn_SummarizationService_getCapabilities">
+     Function: SummarizationService.getCapabilities
+    </h4>
+    <pre><code>list&lt;<code><a href="#Struct_SummarizationCapability">SummarizationCapability</a></code>&gt;</code> getCapabilities()
     throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
 </pre>
+   </div>
+  </div>
  </div>
-</div>
+</body>
 

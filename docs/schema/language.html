@@ -11,7 +11,6 @@
       addConcreteNavigation();
     });
   </script>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
 <link href="style.css" rel="stylesheet" type="text/css"/>
 <title>
  Thrift module: language
@@ -23,141 +22,146 @@
   </h1>
   <table class="table-bordered table-striped table-condensed">
    <thead>
-    <th>
-     Module
-    </th>
-    <th>
-     Services
-    </th>
-    <th>
-     Data types
-    </th>
-    <th>
-     Constants
-    </th>
+    <tr>
+     <th>
+      Module
+     </th>
+     <th>
+      Services
+     </th>
+     <th>
+      Data types
+     </th>
+     <th>
+      Constants
+     </th>
+    </tr>
    </thead>
-   <tr>
-    <td>
-     language
-    </td>
-    <td>
-    </td>
-    <td>
-     <a href="#Struct_LanguageIdentification">
-      LanguageIdentification
-     </a>
-     <br/>
-    </td>
-    <td>
-    </td>
-   </tr>
+   <tbody>
+    <tr>
+     <td>
+      language
+     </td>
+     <td>
+     </td>
+     <td>
+      <a href="#Struct_LanguageIdentification">
+       LanguageIdentification
+      </a>
+      <br/>
+     </td>
+     <td>
+     </td>
+    </tr>
+   </tbody>
   </table>
- </div>
-</body>
-<hr/>
-<div id="Structs_div">
- <h2 id="Structs">
-  Data structures
- </h2>
- <div class="definition">
-  <h3 id="Struct_LanguageIdentification">
-   Struct: LanguageIdentification
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     uuid
-    </td>
-    <td>
-     <code>
-      <a href="uuid.html#Struct_UUID">
-       uuid.UUID
-      </a>
-     </code>
-    </td>
-    <td>
-     Unique identifier for this language identification.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     metadata
-    </td>
-    <td>
-     <code>
-      <a href="metadata.html#Struct_AnnotationMetadata">
-       metadata.AnnotationMetadata
-      </a>
-     </code>
-    </td>
-    <td>
-     Information about where this language identification came from.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     languageToProbabilityMap
-    </td>
-    <td>
-     <code>
-      map&lt;
-      <code>
-       string
-      </code>
-      ,
-      <code>
-       double
-      </code>
-      &gt;
-     </code>
-    </td>
-    <td>
-     A list mapping from a language to the probability that that
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_LanguageIdentification">
+     Struct: LanguageIdentification
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        uuid
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        Unique identifier for this language identification.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        metadata
+       </td>
+       <td>
+        <code>
+         <a href="metadata.html#Struct_AnnotationMetadata">
+          metadata.AnnotationMetadata
+         </a>
+        </code>
+       </td>
+       <td>
+        Information about where this language identification came from.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        languageToProbabilityMap
+       </td>
+       <td>
+        <code>
+         map&lt;
+         <code>
+          string
+         </code>
+         ,
+         <code>
+          double
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list mapping from a language to the probability that that
 language occurs in a given communication.  Each language code should
 occur at most once in this list.  The probabilities do
-     <i>
-      not
-     </i>
-     need to sum to one -- for example, if a single communication is known
+        <i>
+         not
+        </i>
+        need to sum to one -- for example, if a single communication is known
 to contain both English and French, then it would be appropriate
 to assign a probability of 1 to both langauges.  (Manually
 annotated LanguageProb objects should always have probabilities
@@ -165,20 +169,23 @@ of either zero or one; machine-generated LanguageProbs may have
 intermediate probabilities.)
 
 Note: The string key should represent the ISO 639-3 three-letter code.
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>A theory about what languages are present in a given communication
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A theory about what languages are present in a given communication
 or piece of communication.  Note that it is possible to have more
 than one language present in a given communication.
 </pre>
-  <br/>
+    <br/>
+   </div>
+  </div>
  </div>
-</div>
+</body>
 
