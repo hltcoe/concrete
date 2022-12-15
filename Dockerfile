@@ -69,9 +69,9 @@ RUN pip install \
         six
 
 RUN curl -O https://dlcdn.apache.org/thrift/0.17.0/thrift-0.17.0.tar.gz && \
-    tar xvfz thrift-0.17.0.tar.gz && \
+    tar xfz thrift-0.17.0.tar.gz && \
     cd thrift-0.17.0 && \
-    ./configure && \
+    ./configure --without-kotlin && \
     make && \
     make install
 
