@@ -11,7 +11,6 @@
       addConcreteNavigation();
     });
   </script>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
 <link href="style.css" rel="stylesheet" type="text/css"/>
 <title>
  Thrift module: services
@@ -23,472 +22,490 @@
   </h1>
   <table class="table-bordered table-striped table-condensed">
    <thead>
-    <th>
-     Module
-    </th>
-    <th>
-     Services
-    </th>
-    <th>
-     Data types
-    </th>
-    <th>
-     Constants
-    </th>
+    <tr>
+     <th>
+      Module
+     </th>
+     <th>
+      Services
+     </th>
+     <th>
+      Data types
+     </th>
+     <th>
+      Constants
+     </th>
+    </tr>
    </thead>
-   <tr>
-    <td>
-     services
-    </td>
-    <td>
-     <a href="#Svc_Service">
-      Service
-     </a>
-     <br/>
-     <ul>
-      <li>
-       <a href="#Fn_Service_about">
-        about
-       </a>
-      </li>
-      <li>
-       <a href="#Fn_Service_alive">
-        alive
-       </a>
-      </li>
-     </ul>
-    </td>
-    <td>
-     <a href="#Enum_AnnotationTaskType">
-      AnnotationTaskType
-     </a>
-     <br/>
-     <a href="#Struct_AnnotationUnitIdentifier">
-      AnnotationUnitIdentifier
-     </a>
-     <br/>
-     <a href="#Enum_AnnotationUnitType">
-      AnnotationUnitType
-     </a>
-     <br/>
-     <a href="#Struct_AsyncContactInfo">
-      AsyncContactInfo
-     </a>
-     <br/>
-     <a href="#Struct_NotImplementedException">
-      NotImplementedException
-     </a>
-     <br/>
-     <a href="#Struct_ServiceInfo">
-      ServiceInfo
-     </a>
-     <br/>
-     <a href="#Struct_ServicesException">
-      ServicesException
-     </a>
-     <br/>
-    </td>
-    <td>
-    </td>
-   </tr>
+   <tbody>
+    <tr>
+     <td>
+      services
+     </td>
+     <td>
+      <a href="#Svc_Service">
+       Service
+      </a>
+      <br/>
+      <ul>
+       <li>
+        <a href="#Fn_Service_about">
+         about
+        </a>
+       </li>
+       <li>
+        <a href="#Fn_Service_alive">
+         alive
+        </a>
+       </li>
+      </ul>
+     </td>
+     <td>
+      <a href="#Enum_AnnotationTaskType">
+       AnnotationTaskType
+      </a>
+      <br/>
+      <a href="#Struct_AnnotationUnitIdentifier">
+       AnnotationUnitIdentifier
+      </a>
+      <br/>
+      <a href="#Enum_AnnotationUnitType">
+       AnnotationUnitType
+      </a>
+      <br/>
+      <a href="#Struct_AsyncContactInfo">
+       AsyncContactInfo
+      </a>
+      <br/>
+      <a href="#Struct_NotImplementedException">
+       NotImplementedException
+      </a>
+      <br/>
+      <a href="#Struct_ServiceInfo">
+       ServiceInfo
+      </a>
+      <br/>
+      <a href="#Struct_ServicesException">
+       ServicesException
+      </a>
+      <br/>
+     </td>
+     <td>
+     </td>
+    </tr>
+   </tbody>
   </table>
- </div>
-</body>
-<hr/>
-<div id="Enumerations_div">
- <h2 id="Enumerations">
-  Enumerations
- </h2>
- <div class="definition">
-  <h3 id="Enum_AnnotationTaskType">
-   Enumeration: AnnotationTaskType
-  </h3>
-  <pre>Annotation Tasks Types
+  <hr/>
+  <div id="Enumerations_div">
+   <h2 id="Enumerations">
+    Enumerations
+   </h2>
+   <div class="definition">
+    <h3 id="Enum_AnnotationTaskType">
+     Enumeration: AnnotationTaskType
+    </h3>
+    <pre>Annotation Tasks Types
 </pre>
-  <br/>
-  <br/>
-  <table class="table-bordered table-striped table-condensed">
-   <tr>
-    <td>
-     <code>
-      TRANSLATION
-     </code>
-    </td>
-    <td>
-     <code>
-      1
-     </code>
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     <code>
-      NER
-     </code>
-    </td>
-    <td>
-     <code>
-      2
-     </code>
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     <code>
-      TOPICID
-     </code>
-    </td>
-    <td>
-     <code>
-      3
-     </code>
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
- </div>
- <div class="definition">
-  <h3 id="Enum_AnnotationUnitType">
-   Enumeration: AnnotationUnitType
-  </h3>
-  <pre>An annotation unit is the part of the communication to be annotated.
+    <br/>
+    <br/>
+    <table class="table-bordered table-striped table-condensed">
+     <tr>
+      <td>
+       <code>
+        TRANSLATION
+       </code>
+      </td>
+      <td>
+       <code>
+        1
+       </code>
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <code>
+        NER
+       </code>
+      </td>
+      <td>
+       <code>
+        2
+       </code>
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <code>
+        TOPICID
+       </code>
+      </td>
+      <td>
+       <code>
+        3
+       </code>
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div class="definition">
+    <h3 id="Enum_AnnotationUnitType">
+     Enumeration: AnnotationUnitType
+    </h3>
+    <pre>An annotation unit is the part of the communication to be annotated.
 </pre>
-  <br/>
-  <br/>
-  <table class="table-bordered table-striped table-condensed">
-   <tr>
-    <td>
-     <code>
-      COMMUNICATION
-     </code>
-    </td>
-    <td>
-     <code>
-      1
-     </code>
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     <code>
-      SENTENCE
-     </code>
-    </td>
-    <td>
-     <code>
-      2
-     </code>
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
- </div>
-</div>
-<hr/>
-<div id="Structs_div">
- <h2 id="Structs">
-  Data structures
- </h2>
- <div class="definition">
-  <h3 id="Struct_NotImplementedException">
-   Exception: NotImplementedException
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     message
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     The explanation (why the exception occurred)
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     serEx
-    </td>
-    <td>
-     <code>
-      binary
-     </code>
-    </td>
-    <td>
-     The serialized exception
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>An exception to be used when an invoked method has
+    <br/>
+    <br/>
+    <table class="table-bordered table-striped table-condensed">
+     <tr>
+      <td>
+       <code>
+        COMMUNICATION
+       </code>
+      </td>
+      <td>
+       <code>
+        1
+       </code>
+      </td>
+      <td>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <code>
+        SENTENCE
+       </code>
+      </td>
+      <td>
+       <code>
+        2
+       </code>
+      </td>
+      <td>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+  <hr/>
+  <div id="Structs_div">
+   <h2 id="Structs">
+    Data structures
+   </h2>
+   <div class="definition">
+    <h3 id="Struct_NotImplementedException">
+     Exception: NotImplementedException
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        message
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        The explanation (why the exception occurred)
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        serEx
+       </td>
+       <td>
+        <code>
+         binary
+        </code>
+       </td>
+       <td>
+        The serialized exception
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>An exception to be used when an invoked method has
 not been implemented by the service.
 </pre>
-  <br/>
- </div>
- <div class="definition">
-  <h3 id="Struct_ServicesException">
-   Exception: ServicesException
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     message
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     The explanation (why the exception occurred)
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     serEx
-    </td>
-    <td>
-     <code>
-      binary
-     </code>
-    </td>
-    <td>
-     The serialized exception
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>An exception to be used with Concrete services.
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_ServicesException">
+     Exception: ServicesException
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        message
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        The explanation (why the exception occurred)
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        serEx
+       </td>
+       <td>
+        <code>
+         binary
+        </code>
+       </td>
+       <td>
+        The serialized exception
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>An exception to be used with Concrete services.
 </pre>
-  <br/>
- </div>
- <div class="definition">
-  <h3 id="Struct_AnnotationUnitIdentifier">
-   Struct: AnnotationUnitIdentifier
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     communicationId
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     Communication identifier for loading data
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     sentenceId
-    </td>
-    <td>
-     <code>
-      <a href="uuid.html#Struct_UUID">
-       uuid.UUID
-      </a>
-     </code>
-    </td>
-    <td>
-     Sentence identifer if annotating sentences
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>An annotation unit is the part of the communication to be annotated.
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_AnnotationUnitIdentifier">
+     Struct: AnnotationUnitIdentifier
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        communicationId
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        Communication identifier for loading data
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        sentenceId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        Sentence identifer if annotating sentences
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>An annotation unit is the part of the communication to be annotated.
 It can be the entire communication or a particular sentence in the communication.
 If the sentenceID is null, the unit is the entire communication
 </pre>
-  <br/>
- </div>
- <div class="definition">
-  <h3 id="Struct_AsyncContactInfo">
-   Struct: AsyncContactInfo
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     host
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     port
-    </td>
-    <td>
-     <code>
-      i32
-     </code>
-    </td>
-    <td>
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>Contact information for the asynchronous communications.
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_AsyncContactInfo">
+     Struct: AsyncContactInfo
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        host
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        port
+       </td>
+       <td>
+        <code>
+         i32
+        </code>
+       </td>
+       <td>
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>Contact information for the asynchronous communications.
 When a client contacts a server for a job that takes a significant amount of time,
 it is often best to implement this asynchronously.
 We do this by having the client stand up a server to accept the results and
@@ -496,136 +513,142 @@ passing that information to the original server.
 The server may want to create a new thrift client on every request or maintain
 a pool of clients for reuse.
 </pre>
-  <br/>
- </div>
- <div class="definition">
-  <h3 id="Struct_ServiceInfo">
-   Struct: ServiceInfo
-  </h3>
-  <table class="table-bordered table-striped table-condensed">
-   <thead>
-    <th>
-     Key
-    </th>
-    <th>
-     Field
-    </th>
-    <th>
-     Type
-    </th>
-    <th>
-     Description
-    </th>
-    <th>
-     Requiredness
-    </th>
-    <th>
-     Default value
-    </th>
-   </thead>
-   <tr>
-    <td>
-     1
-    </td>
-    <td>
-     name
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     Name of the service
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     2
-    </td>
-    <td>
-     version
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     Version string of the service.
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_ServiceInfo">
+     Struct: ServiceInfo
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        name
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        Name of the service
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        version
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        Version string of the service.
 It is preferred that the services implement semantic versioning: http://semver.org/
 with version strings like x.y.z
-    </td>
-    <td>
-     required
-    </td>
-    <td>
-    </td>
-   </tr>
-   <tr>
-    <td>
-     3
-    </td>
-    <td>
-     description
-    </td>
-    <td>
-     <code>
-      string
-     </code>
-    </td>
-    <td>
-     Description of the service
-    </td>
-    <td>
-     optional
-    </td>
-    <td>
-    </td>
-   </tr>
-  </table>
-  <br/>
-  <pre>Each service is described by this info struct.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        description
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        Description of the service
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>Each service is described by this info struct.
 It is for human consumption and for records of versions in deployments.
 </pre>
-  <br/>
+    <br/>
+   </div>
+  </div>
+  <hr/>
+  <div id="Services_div">
+   <h2 id="Services">
+    Services
+   </h2>
+   <h3 id="Svc_Service">
+    Service: Service
+   </h3>
+   <pre>Base service that all other services should inherit from
+</pre>
+   <br/>
+   <div class="definition">
+    <h4 id="Fn_Service_about">
+     Function: Service.about
+    </h4>
+    <pre><code><a href="#Struct_ServiceInfo">ServiceInfo</a></code> about()
+</pre>
+    <pre>Get information about the service
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
+    <h4 id="Fn_Service_alive">
+     Function: Service.alive
+    </h4>
+    <pre><code>bool</code> alive()
+</pre>
+    <pre>Is the service alive?
+</pre>
+    <br/>
+   </div>
+  </div>
  </div>
-</div>
-<hr/>
-<div id="Services_div">
- <h2 id="Services">
-  Services
- </h2>
- <h3 id="Svc_Service">
-  Service: Service
- </h3>
- <pre>Base service that all other services should inherit from
-</pre>
- <br/>
- <div class="definition">
-  <h4 id="Fn_Service_about">
-   Function: Service.about
-  </h4>
-  <pre><code><a href="#Struct_ServiceInfo">ServiceInfo</a></code> about()
-</pre>
-  <pre>Get information about the service
-</pre>
-  <br/>
- </div>
- <div class="definition">
-  <h4 id="Fn_Service_alive">
-   Function: Service.alive
-  </h4>
-  <pre><code>bool</code> alive()
-</pre>
-  <pre>Is the service alive?
-</pre>
-  <br/>
- </div>
-</div>
+</body>
 

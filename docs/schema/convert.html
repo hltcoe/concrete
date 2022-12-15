@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="concrete-eapi.css"/>
+  <script type="text/javascript" src="concrete_info.js"></script>
+  <script type="text/javascript" src="concrete-eapi.js"></script>
+  <script type="text/javascript" src="tablesorter/jquery-latest.js"></script>
+  <script type="text/javascript" src="tablesorter/jquery.tablesorter.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      addConcreteNavigation();
+    });
+  </script>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>
+ Thrift module: convert
+</title>
+<body>
+ <div class="container-fluid">
+  <h1>
+   Thrift module: convert
+  </h1>
+  <table class="table-bordered table-striped table-condensed">
+   <thead>
+    <tr>
+     <th>
+      Module
+     </th>
+     <th>
+      Services
+     </th>
+     <th>
+      Data types
+     </th>
+     <th>
+      Constants
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      convert
+     </td>
+     <td>
+      <a href="#Svc_ConvertCommunicationService">
+       ConvertCommunicationService
+      </a>
+      <br/>
+      <ul>
+       <li>
+        <a href="#Fn_ConvertCommunicationService_fromConcrete">
+         fromConcrete
+        </a>
+       </li>
+       <li>
+        <a href="#Fn_ConvertCommunicationService_toConcrete">
+         toConcrete
+        </a>
+       </li>
+      </ul>
+     </td>
+     <td>
+     </td>
+     <td>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <hr/>
+  <div id="Services_div">
+   <h2 id="Services">
+    Services
+   </h2>
+   <h3 id="Svc_ConvertCommunicationService">
+    Service: ConvertCommunicationService
+   </h3>
+   <div class="extends">
+    <em>
+     extends
+    </em>
+    <code>
+     <a href="services.html#Svc_Service">
+      services.Service
+     </a>
+    </code>
+   </div>
+   <pre>Convert service methods for converting between Concrete
+Communications and other formats.
+</pre>
+   <br/>
+   <div class="definition">
+    <h4 id="Fn_ConvertCommunicationService_fromConcrete">
+     Function: ConvertCommunicationService.fromConcrete
+    </h4>
+    <pre><code>binary</code> fromConcrete(<code><a href="communication.html#Struct_Communication">communication.Communication</a></code> original)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+    <pre>Converts a Concrete Communication to another format.
+
+The output is encoded as a bytestring.
+It is up to the implementing service to ensure that
+the output format is valid.
+
+Can throw a ConcreteThriftException upon error
+(invalid input, etc.).
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
+    <h4 id="Fn_ConvertCommunicationService_toConcrete">
+     Function: ConvertCommunicationService.toConcrete
+    </h4>
+    <pre><code><a href="communication.html#Struct_Communication">communication.Communication</a></code> toConcrete(<code>binary</code> original)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+    <pre>Converts another format to a Concrete Communication.
+
+The input is encoded as a bytestring.
+It is up to the implementing service to ensure that
+the input format is valid.
+
+Can throw a ConcreteThriftException upon error
+(invalid input, etc.).
+</pre>
+    <br/>
+   </div>
+  </div>
+ </div>
+</body>
+
