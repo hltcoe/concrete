@@ -68,10 +68,10 @@ RUN pip install \
         git+https://chromium.googlesource.com/external/gyp \
         six
 
-RUN curl -O https://dlcdn.apache.org/thrift/0.17.0/thrift-0.17.0.tar.gz && \
-    tar xfz thrift-0.17.0.tar.gz && \
-    cd thrift-0.17.0 && \
-    ./configure --without-kotlin && \
+COPY thrift-0.18.0.tar.gz .
+RUN tar xfz thrift-0.18.0.tar.gz && \
+    cd thrift-0.18.0 && \
+    ./configure --without-kotlin --without-cpp && \
     make && \
     make install
 
