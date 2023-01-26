@@ -141,6 +141,12 @@ struct Situation {
    */
   1: required uuid.UUID uuid
 
+  /**
+   * A corpus-specific and stable id akin to a Freebase mid
+   * or a DBpedia id.
+   */
+  6: optional string id
+
   /** 
    * The core type of this situation (eg EVENT or SENTIMENT),
    * or a coarse grain situation type.
@@ -314,6 +320,12 @@ struct SituationMention {
    * Unique identifier for this situation. 
    */
   1: required uuid.UUID uuid
+
+  /**
+   * A corpus-specific and stable id akin to a Freebase mid
+   * or a DBpedia id.
+   */
+  5: optional string id
 
   /** 
    * The text content of this situation mention. This field is

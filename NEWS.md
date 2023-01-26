@@ -1,5 +1,11 @@
 # News
 
+### Concrete v4.16 - 2022-12-13
+* Added `convert` package including a `ConvertCommunicationService`
+  service.
+* Added custom `id` fields to `EntityMention`, `Situation`,
+  `SituationMention`.
+
 ### Concrete v4.15 - 2019-05-09
 * Added `Context` structure and `AnnotateWithContextService` service.
   `Context`s are intended to be used to convey additional information

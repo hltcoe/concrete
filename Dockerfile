@@ -64,13 +64,14 @@ RUN apt-get update && \
         unzip \
     && rm -rf /var/lib/apt/lists/*
 RUN pip install \
+        beautifulsoup4 \
         git+https://chromium.googlesource.com/external/gyp \
         six
 
-RUN curl -O https://dlcdn.apache.org/thrift/0.16.0/thrift-0.16.0.tar.gz && \
-    tar xvfz thrift-0.16.0.tar.gz && \
-    cd thrift-0.16.0 && \
-    ./configure && \
+RUN curl -O http://archive.apache.org/dist/thrift/0.17.0/thrift-0.17.0.tar.gz && \
+    tar xfz thrift-0.17.0.tar.gz && \
+    cd thrift-0.17.0 && \
+    ./configure --without-kotlin && \
     make && \
     make install
 
