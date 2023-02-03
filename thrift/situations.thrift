@@ -9,35 +9,12 @@ namespace py concrete.situations
 namespace cpp concrete
 #@namespace scala edu.jhu.hlt.miser
 
+include "property.thrift"
 include "structure.thrift"
 include "metadata.thrift"
 include "uuid.thrift"
 include "linking.thrift"
 
-/**
- * Attached to Arguments to support situations where
- * a 'participant' has more than one 'property' (in BinarySRL terms),
- * whereas Arguments notionally only support one Role. 
- */
-struct Property {
-  /**
-   * The required value of the property.
-   */
-  1: required string value
-  
-  /**
-   * Metadata to support this particular property object.
-   */  
-  2: required metadata.AnnotationMetadata metadata
-  
-  /** 
-   * This value is typically boolean, 0.0 or 1.0, but we use a
-   * float in order to potentially capture cases where an annotator is
-   * highly confident that the value is underspecified, via a value of
-   * 0.5.  
-   */
-  3: optional double polarity
-}
 
 /** 
  * A situation argument, consisting of an argument role and a value.
@@ -64,9 +41,9 @@ struct Argument {
   3: optional uuid.UUID situationId
   
   /**
-   * For the BinarySRL task, there may be situations
-   * where more than one property is attached to a single
-   * participant. A list of these properties can be stored in this field.
+   * For multi-label tasks, more than one property can be attached to 
+   * a single participant. A list of these properties can be stored in 
+   * this field.
    */
   4: optional list<Property> propertyList
 }
@@ -219,6 +196,13 @@ struct Situation {
    * SituationSet's metadata. 
    */
   200: optional double confidence
+
+  /**
+   * For multi-label tasks, more than one property can be attached to 
+   * a single situation. A list of these properties can be stored in 
+   * this field.
+   */
+  300: optional list<Property> propertyList
 }
 
 /** 
@@ -292,9 +276,9 @@ struct MentionArgument {
   5: optional double confidence
 
   /**
-   * For the BinarySRL task, there may be situations
-   * where more than one property is attached to a single
-   * participant. A list of these properties can be stored in this field.
+   * For multi-label tasks, more than one property can be attached to 
+   * a single participant. A list of these properties can be stored in 
+   * this field.
    */
   6: optional list<Property> propertyList
 
@@ -402,6 +386,13 @@ struct SituationMention {
    * using the SituationMentionSet's metadata. 
    */
   200: optional double confidence
+
+  /**
+   * For multi-label tasks, more than one property can be attached to 
+   * a single situation mention. A list of these properties can be 
+   * stored in this field.
+   */
+  300: optional list<Property> propertyList
 }
 
 /** 

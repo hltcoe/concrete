@@ -9,6 +9,7 @@ namespace py concrete.entities
 namespace cpp concrete
 #@namespace scala edu.jhu.hlt.miser
 
+include "property.thrift"
 include "structure.thrift"
 include "metadata.thrift"
 include "uuid.thrift"
@@ -87,6 +88,13 @@ struct Entity {
    * mentions' text strings, but it is not required to. 
    */
   5: optional string canonicalName
+
+  /**
+   * For multi-label tasks, more than one property can be attached to 
+   * a single entity. A list of these properties can be stored in 
+   * this field.
+   */
+  8: optional list<Property> propertyList
 }
 
 /** 
@@ -203,6 +211,12 @@ struct EntityMention {
    */
   7: optional list<uuid.UUID> childMentionIdList
 
+  /**
+   * For multi-label tasks, more than one property can be attached to 
+   * a single entity mention. A list of these properties can be stored 
+   * in this field.
+   */
+  9: optional list<Property> propertyList
 }
 
 
