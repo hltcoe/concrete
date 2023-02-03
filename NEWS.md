@@ -1,5 +1,8 @@
 # News
 
+* Added optional parameter `canonicalName` to `Situation` structure.
+* Added propertyList to Situation(Mention) and Entity(Mention).
+
 ### Concrete v4.16 - 2022-12-13
 * Added `convert` package including a `ConvertCommunicationService`
   service.
