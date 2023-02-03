@@ -176,7 +176,7 @@ struct Situation {
    * for this situations's referent.  This string may match one of the
    * mentions' text strings, but it is not required to. 
    */
-  6: optional string canonicalName
+  7: optional string canonicalName
 
   /**
    * A wrapper for TimeML annotations.
