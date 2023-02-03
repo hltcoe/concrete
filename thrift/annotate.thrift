@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Johns Hopkins University HLTCOE. All rights reserved.
+ * Copyright 2012-2023 Johns Hopkins University HLTCOE. All rights reserved.
  * See LICENSE in the project root directory.
  */
 include "context.thrift"

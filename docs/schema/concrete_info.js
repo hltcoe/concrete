@@ -1,4 +1,4 @@
-var CONCRETE_VERSION = '4.16';
+var CONCRETE_VERSION = '4.17';
 var CONCRETE_FILELIST = [
 'access',
 'annotate',
@@ -15,6 +15,7 @@ var CONCRETE_FILELIST = [
 'linking',
 'metadata',
 'nitf',
+'property',
 'results',
 'search',
 'services',

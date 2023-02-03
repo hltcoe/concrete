@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2014 Johns Hopkins University HLTCOE. All rights reserved.
+ * Copyright 2012-2023 Johns Hopkins University HLTCOE. All rights reserved.
  * This software is released under the 2-clause BSD license.
  * See LICENSE in the project root directory.
  */
@@ -45,7 +45,7 @@ struct Argument {
    * a single participant. A list of these properties can be stored in 
    * this field.
    */
-  4: optional list<Property> propertyList
+  4: optional list<property.Property> propertyList
 }
 
 struct Justification {
@@ -209,7 +209,7 @@ struct Situation {
    * a single situation. A list of these properties can be stored in 
    * this field.
    */
-  300: optional list<Property> propertyList
+  300: optional list<property.Property> propertyList
 }
 
 /** 
@@ -287,7 +287,7 @@ struct MentionArgument {
    * a single participant. A list of these properties can be stored in 
    * this field.
    */
-  6: optional list<Property> propertyList
+  6: optional list<property.Property> propertyList
 
 }
 
@@ -399,7 +399,7 @@ struct SituationMention {
    * a single situation mention. A list of these properties can be 
    * stored in this field.
    */
-  300: optional list<Property> propertyList
+  300: optional list<property.Property> propertyList
 }
 
 /** 

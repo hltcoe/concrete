@@ -57,10 +57,6 @@
        MentionArgument
       </a>
       <br/>
-      <a href="#Struct_Property">
-       Property
-      </a>
-      <br/>
       <a href="#Struct_Situation">
        Situation
       </a>
@@ -202,17 +198,17 @@ encoded as an Entity.
         <code>
          list&lt;
          <code>
-          <a href="#Struct_Property">
-           Property
+          <a href="property.html#Struct_Property">
+           property.Property
           </a>
          </code>
          &gt;
         </code>
        </td>
        <td>
-        For the BinarySRL task, there may be situations
-where more than one property is attached to a single
-participant. A list of these properties can be stored in this field.
+        For multi-label tasks, more than one property can be attached to
+a single participant. A list of these properties can be stored in
+this field.
        </td>
        <td>
         optional
@@ -494,17 +490,17 @@ types should be preferred and this field left as null.
         <code>
          list&lt;
          <code>
-          <a href="#Struct_Property">
-           Property
+          <a href="property.html#Struct_Property">
+           property.Property
           </a>
          </code>
          &gt;
         </code>
        </td>
        <td>
-        For the BinarySRL task, there may be situations
-where more than one property is attached to a single
-participant. A list of these properties can be stored in this field.
+        For multi-label tasks, more than one property can be attached to
+a single participant. A list of these properties can be stored in
+this field.
        </td>
        <td>
         optional
@@ -517,111 +513,6 @@ participant. A list of these properties can be stored in this field.
     <br/>
     <pre>A "concrete" argument, that may be used by SituationMentions or EntityMentions
 to avoid conflicts where abstract Arguments were being used to support concrete Mentions.
-</pre>
-    <br/>
-   </div>
-   <div class="definition">
-    <h3 id="Struct_Property">
-     Struct: Property
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        value
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The required value of the property.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        metadata
-       </td>
-       <td>
-        <code>
-         <a href="metadata.html#Struct_AnnotationMetadata">
-          metadata.AnnotationMetadata
-         </a>
-        </code>
-       </td>
-       <td>
-        Metadata to support this particular property object.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        polarity
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        This value is typically boolean, 0.0 or 1.0, but we use a
-float in order to potentially capture cases where an annotator is
-highly confident that the value is underspecified, via a value of
-0.5.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-    <pre>Attached to Arguments to support situations where
-a 'participant' has more than one 'property' (in BinarySRL terms),
-whereas Arguments notionally only support one Role.
 </pre>
     <br/>
    </div>
@@ -845,6 +736,29 @@ direct mentions of the situation, or indirect evidence.
       </tr>
       <tr>
        <td>
+        7
+       </td>
+       <td>
+        canonicalName
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        A string containing a representative, canonical, or "best" name
+for this situations's referent.  This string may match one of the
+mentions' text strings, but it is not required to.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
         54
        </td>
        <td>
@@ -928,6 +842,35 @@ sentiment.
         A confidence score for this individual situation. You can also
 set a confidence score for an entire SituationSet using the
 SituationSet's metadata.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        300
+       </td>
+       <td>
+        propertyList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="property.html#Struct_Property">
+           property.Property
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        For multi-label tasks, more than one property can be attached to
+a single situation. A list of these properties can be stored in
+this field.
        </td>
        <td>
         optional
@@ -1224,6 +1167,35 @@ arguments' tokens should be included.
         A confidence score for this individual situation mention. You
 can also set a confidence score for an entire SituationMentionSet
 using the SituationMentionSet's metadata.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        300
+       </td>
+       <td>
+        propertyList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="property.html#Struct_Property">
+           property.Property
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        For multi-label tasks, more than one property can be attached to
+a single situation mention. A list of these properties can be
+stored in this field.
        </td>
        <td>
         optional

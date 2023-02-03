@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2014 Johns Hopkins University HLTCOE. All rights reserved.
+ * Copyright 2012-2023 Johns Hopkins University HLTCOE. All rights reserved.
  * This software is released under the 2-clause BSD license.
  * See LICENSE in the project root directory.
  */
@@ -94,7 +94,7 @@ struct Entity {
    * a single entity. A list of these properties can be stored in 
    * this field.
    */
-  8: optional list<Property> propertyList
+  8: optional list<property.Property> propertyList
 }
 
 /** 
@@ -216,7 +216,7 @@ struct EntityMention {
    * a single entity mention. A list of these properties can be stored 
    * in this field.
    */
-  9: optional list<Property> propertyList
+  9: optional list<property.Property> propertyList
 }
 
 
