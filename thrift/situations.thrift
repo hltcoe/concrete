@@ -172,6 +172,13 @@ struct Situation {
   5: optional list<Justification> justificationList
 
   /**
+   * A string containing a representative, canonical, or "best" name
+   * for this situations's referent.  This string may match one of the
+   * mentions' text strings, but it is not required to. 
+   */
+  6: optional string canonicalName
+
+  /**
    * A wrapper for TimeML annotations.
    */
   54: optional TimeML timeML
