@@ -10,6 +10,7 @@ RUN apt-get update && \
         flex \
         git \
         libboost-all-dev \
+        libssl-dev \
         pkg-config \
         python-is-python3 \
         python3 \
