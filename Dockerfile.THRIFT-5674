@@ -3,9 +3,11 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y \
+        bison \
         build-essential \
         curl \
         default-jdk \
+        flex \
         git \
         libboost-all-dev \
         pkg-config \
