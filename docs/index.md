@@ -266,14 +266,24 @@ SituationMentionSet cSms = cSmsList.get(0); // Since there's only one.
 
 # Docker
 
-We provide a Docker image containing the latest concrete, and
-Java and Python libraries. This can be found on
-[Dockerhub](https://hub.docker.com/r/hltcoe/concrete/):
+See the [hltcoe DockerHub page](https://hub.docker.com/r/hltcoe) for a list of
+Docker images that perform common workflows using Concrete.  For example:
 
-```
-docker pull hltcoe/concrete
-docker run --rm -it hltcoe/concrete:latest /bin/bash
-```
+* The [hltcoe/lome](https://hub.docker.com/r/hltcoe/lome) image reads
+  an input directory of plain text files and writes corresponding Concrete
+  Communication files to an output directory.
+* The [hltcoe/patapsco](https://hub.docker.com/r/hltcoe/patapsco) image runs
+  [Patapsco](https://github.com/hltcoe/patapsco),
+  a customizable cross-lingual information retrieval pipeline, on a collection of
+  documents.
+* The [hltcoe/turkle](https://hub.docker.com/r/hltcoe/turkle) image runs
+  [Turkle](https://github.com/hltcoe/turkle),
+  a clone of Amazon's Mechanical Turk service that runs in your local environment.
 
-The second command launches a concrete container with an interactive
-bash shell.  Type `exit` to exit the shell and stop the container.
+See the [hltcoe GitHub page](https://github.com/hltcoe) for further Concrete-based
+projects using Docker.  For example:
+
+* The [simple-search-demo](https://github.com/hltcoe/simple-search-demo) system
+  uses Docker Compose to index a zip file of Concrete Communications and provide
+  programmatic access to them via Concrete Fetch and Search services.  It also
+  starts a web app that provides interactive user access to the data.
