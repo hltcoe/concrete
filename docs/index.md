@@ -15,8 +15,20 @@ motivation, have a look at the white paper,
 Ferraro et al., 2014: [Concretely Annotated Corpora](http://www.akbc.ws/2014/submissions/akbc2014_submission_18.pdf).
 For details about the Concrete data format, see
 [the Concrete schema](http://hltcoe.github.io/concrete/schema/).
+If you use Concrete for your research, please cite us:
 
-In addition to data serialization, we provide Concretely annotated data! We've
+```bibtex
+@inproceedings{Ferraro2014Concretely,
+  title        = {Concretely Annotated Corpora},
+  author       = {Ferraro, Francis and Thomas, Max and Gormley, Matthew R. and
+                  Wolfe, Travis and Harman, Craig and Van Durme, Benjamin},
+  year         = 2014,
+  booktitle    = {4th Workshop on Automated Knowledge Base Construction (AKBC)}
+}
+
+```
+
+In addition to data serialization, we provide Concretely annotated data!  We've
 done the hard work of running a variety of tools, such as, Stanford's NLP
 pipeline and HLTCOE/JHU NLP tools, on an abundance of data. For more information,
 See [the Excellent HLT website](http://hltcoe.github.io/).
