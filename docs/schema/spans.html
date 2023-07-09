@@ -65,88 +65,6 @@
     Data structures
    </h2>
    <div class="definition">
-    <h3 id="Struct_AudioSpan">
-     Struct: AudioSpan
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        start
-       </td>
-       <td>
-        <code>
-         i64
-        </code>
-       </td>
-       <td>
-        Start time (in seconds)
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        ending
-       </td>
-       <td>
-        <code>
-         i64
-        </code>
-       </td>
-       <td>
-        End time (in seconds)
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-    <pre>A span of audio within a single communication, identified by a
-pair of time offests. Time offsets are zero-based.
-
-NOTE: This span represents a best guess, or 'provenance':
-it cannot be guaranteed that this text span matches the _exact_
-text of the original document, but is the annotation's best
-effort at such a representation.
-</pre>
-    <br/>
-   </div>   <div class="definition">
     <h3 id="Struct_TextSpan">
      Struct: TextSpan
     </h3>
@@ -225,6 +143,89 @@ are encoded using UTF-8:
   https://thrift.apache.org/docs/types
 The offsets are character-based, not byte-based - a character with a
 three-byte UTF-8 representation only counts as one character.
+
+NOTE: This span represents a best guess, or 'provenance':
+it cannot be guaranteed that this text span matches the _exact_
+text of the original document, but is the annotation's best
+effort at such a representation.
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_AudioSpan">
+     Struct: AudioSpan
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        start
+       </td>
+       <td>
+        <code>
+         i64
+        </code>
+       </td>
+       <td>
+        Start time (in seconds)
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        ending
+       </td>
+       <td>
+        <code>
+         i64
+        </code>
+       </td>
+       <td>
+        End time (in seconds)
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A span of audio within a single communication, identified by a
+pair of time offests. Time offsets are zero-based.
 
 NOTE: This span represents a best guess, or 'provenance':
 it cannot be guaranteed that this text span matches the _exact_

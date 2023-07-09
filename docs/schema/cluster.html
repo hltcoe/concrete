@@ -69,6 +69,117 @@
     Data structures
    </h2>
    <div class="definition">
+    <h3 id="Struct_ClusterMember">
+     Struct: ClusterMember
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        communicationId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        UUID of the Communication which contains the item specified by 'elementId'.
+This is ancillary info assuming UUIDs are indeed universally unique.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        setId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        UUID of the Entity|Situation(Mention)Set which contains the item specified by 'elementId'.
+This is ancillary info assuming UUIDs are indeed universally unique.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        elementId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        UUID of the EntityMention, Entity, SituationMention, or Situation that
+this item represents. This is the characteristic field.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>An item being clustered. Does not designate cluster _membership_, as in
+"item x belongs to cluster C", but rather just the item ("x" in this
+example). Membership is indicated through Cluster objects.  An item may be a
+Entity, EntityMention, Situation, SituationMention, or technically anything
+with a UUID.
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
     <h3 id="Struct_Cluster">
      Struct: Cluster
     </h3>
@@ -180,117 +291,6 @@ of the child clusters.  (For hierarchical clustering only).
     <br/>
     <pre>A set of items which are alike in some way.  Has an implicit id which is the
 index of this Cluster in its parent Clustering's 'clusterList'.
-</pre>
-    <br/>
-   </div>
-   <div class="definition">
-    <h3 id="Struct_ClusterMember">
-     Struct: ClusterMember
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        communicationId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        UUID of the Communication which contains the item specified by 'elementId'.
-This is ancillary info assuming UUIDs are indeed universally unique.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        setId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        UUID of the Entity|Situation(Mention)Set which contains the item specified by 'elementId'.
-This is ancillary info assuming UUIDs are indeed universally unique.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        elementId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        UUID of the EntityMention, Entity, SituationMention, or Situation that
-this item represents. This is the characteristic field.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-    <pre>An item being clustered. Does not designate cluster _membership_, as in
-"item x belongs to cluster C", but rather just the item ("x" in this
-example). Membership is indicated through Cluster objects.  An item may be a
-Entity, EntityMention, Situation, SituationMention, or technically anything
-with a UUID.
 </pre>
     <br/>
    </div>

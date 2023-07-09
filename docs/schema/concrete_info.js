@@ -1,4 +1,4 @@
-var CONCRETE_VERSION = '4.17';
+var CONCRETE_VERSION = '4.18';
 var CONCRETE_FILELIST = [
 'access',
 'annotate',

@@ -761,6 +761,159 @@ assumed the ID of the communication is the same as communicationId.
     <br/>
    </div>
    <div class="definition">
+    <h3 id="Struct_SearchResultItem">
+     Struct: SearchResultItem
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        communicationId
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        sentenceId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        The UUID of the returned sentence, which appears in the
+communication referenced by communicationId.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        score
+       </td>
+       <td>
+        <code>
+         double
+        </code>
+       </td>
+       <td>
+        Values are not restricted in range (e.g., do not have to be
+within [0,1]).  Higher is better.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        tokens
+       </td>
+       <td>
+        <code>
+         <a href="structure.html#Struct_TokenRefSequence">
+          structure.TokenRefSequence
+         </a>
+        </code>
+       </td>
+       <td>
+        If SearchType=ENTITY_MENTIONS then this field should be populated.
+Otherwise, this field may be optionally populated in order to
+provide a hint to the client as to where to center a
+visualization, or the extraction of context, etc.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        entity
+       </td>
+       <td>
+        <code>
+         <a href="entities.html#Struct_Entity">
+          entities.Entity
+         </a>
+        </code>
+       </td>
+       <td>
+        If SearchType=ENTITIES then this field should be populated.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>An individual element returned from a search.  Most/all methods
+will return a communicationId, possibly with an associated score.
+For example if the target element type of the search is Sentence
+then the sentenceId field should be populated.
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
     <h3 id="Struct_SearchResult">
      Struct: SearchResult
     </h3>
@@ -918,158 +1071,6 @@ If multilingual, use the string "multilingual".
     </table>
     <br/>
     <pre>Single wrapper for results from all the various Search* services.
-</pre>
-    <br/>
-   </div>   <div class="definition">
-    <h3 id="Struct_SearchResultItem">
-     Struct: SearchResultItem
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        communicationId
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        sentenceId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        The UUID of the returned sentence, which appears in the
-communication referenced by communicationId.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        score
-       </td>
-       <td>
-        <code>
-         double
-        </code>
-       </td>
-       <td>
-        Values are not restricted in range (e.g., do not have to be
-within [0,1]).  Higher is better.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        tokens
-       </td>
-       <td>
-        <code>
-         <a href="structure.html#Struct_TokenRefSequence">
-          structure.TokenRefSequence
-         </a>
-        </code>
-       </td>
-       <td>
-        If SearchType=ENTITY_MENTIONS then this field should be populated.
-Otherwise, this field may be optionally populated in order to
-provide a hint to the client as to where to center a
-visualization, or the extraction of context, etc.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        entity
-       </td>
-       <td>
-        <code>
-         <a href="entities.html#Struct_Entity">
-          entities.Entity
-         </a>
-        </code>
-       </td>
-       <td>
-        If SearchType=ENTITIES then this field should be populated.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-    <pre>An individual element returned from a search.  Most/all methods
-will return a communicationId, possibly with an associated score.
-For example if the target element type of the search is Sentence
-then the sentenceId field should be populated.
 </pre>
     <br/>
    </div>

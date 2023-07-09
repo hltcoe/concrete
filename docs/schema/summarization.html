@@ -159,79 +159,6 @@ This can be used for single or multi-document summarization.
     Data structures
    </h2>
    <div class="definition">
-    <h3 id="Struct_SummarizationCapability">
-     Struct: SummarizationCapability
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        type
-       </td>
-       <td>
-        <code>
-         <a href="#Enum_SummarySourceType">
-          SummarySourceType
-         </a>
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        lang
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-   </div>   <div class="definition">
     <h3 id="Struct_SummarizationRequest">
      Struct: SummarizationRequest
     </h3>
@@ -414,94 +341,6 @@ Either set sourceCommunication or sourceType and sourceIds.
     <br/>
    </div>
    <div class="definition">
-    <h3 id="Struct_Summary">
-     Struct: Summary
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        summaryCommunication
-       </td>
-       <td>
-        <code>
-         <a href="communication.html#Struct_Communication">
-          communication.Communication
-         </a>
-        </code>
-       </td>
-       <td>
-        Contains the text of the generated summary.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        concepts
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="#Struct_SummaryConcept">
-           SummaryConcept
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        Concepts mentioned in the summary which are believed to be
-interesting and/or worth highlighting.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-    <pre>A shortened version of some text, possibly with some concepts
-annotated as justifications for why particular pieces of the
-summary were kept.
-</pre>
-    <br/>
-   </div>
-   <div class="definition">
     <h3 id="Struct_SummaryConcept">
      Struct: SummaryConcept
     </h3>
@@ -629,6 +468,168 @@ to be informative. Concepts might be named entities, facts, or
 events which were determined to be salient in the text being
 summarized.
 </pre>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_Summary">
+     Struct: Summary
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        summaryCommunication
+       </td>
+       <td>
+        <code>
+         <a href="communication.html#Struct_Communication">
+          communication.Communication
+         </a>
+        </code>
+       </td>
+       <td>
+        Contains the text of the generated summary.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        concepts
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="#Struct_SummaryConcept">
+           SummaryConcept
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Concepts mentioned in the summary which are believed to be
+interesting and/or worth highlighting.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A shortened version of some text, possibly with some concepts
+annotated as justifications for why particular pieces of the
+summary were kept.
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_SummarizationCapability">
+     Struct: SummarizationCapability
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        type
+       </td>
+       <td>
+        <code>
+         <a href="#Enum_SummarySourceType">
+          SummarySourceType
+         </a>
+        </code>
+       </td>
+       <td>
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        lang
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
     <br/>
    </div>
   </div>
