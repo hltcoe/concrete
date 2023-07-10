@@ -5,7 +5,7 @@
   not
 * Update `docs/schema/concrete_info.js` with new version number from above
 * Regenerate docs
-  * To do this, you need `python3`, then run:
+  * To do this, ensure you have Python 3 (as `python`) with the `beautifulsoup4` package and run:
     * `pip install -r requirements.txt` (if needed)
     * `cd docs`
     * `sh regenerate_docs.sh $(which thrift)` (or pass in another

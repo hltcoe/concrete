@@ -69,6 +69,22 @@
         </a>
        </li>
       </ul>
+      <a href="#Svc_AnnotateCommunicationBatchService">
+       AnnotateCommunicationBatchService
+      </a>
+      <br/>
+      <ul>
+       <li>
+        <a href="#Fn_AnnotateCommunicationBatchService_annotate">
+         annotate
+        </a>
+       </li>
+       <li>
+        <a href="#Fn_AnnotateCommunicationBatchService_getMetadata">
+         getMetadata
+        </a>
+       </li>
+      </ul>
       <a href="#Svc_AnnotateWithContextService">
        AnnotateWithContextService
       </a>
@@ -151,6 +167,55 @@ understand the essential functions of the analytic.
     <pre><code>void</code> shutdown()
 </pre>
     <pre>Indicate to the server it should shut down.
+</pre>
+    <br/>
+   </div>
+   <h3 id="Svc_AnnotateCommunicationBatchService">
+    Service: AnnotateCommunicationBatchService
+   </h3>
+   <div class="extends">
+    <em>
+     extends
+    </em>
+    <code>
+     <a href="services.html#Svc_Service">
+      services.Service
+     </a>
+    </code>
+   </div>
+   <pre>Batch annotator service methods. For concrete analytics that
+are to be stood up as independent services, accessible
+from any programming language.
+
+Intended to supersede AnnotateCommunicationService.
+</pre>
+   <br/>
+   <div class="definition">
+    <h4 id="Fn_AnnotateCommunicationBatchService_annotate">
+     Function: AnnotateCommunicationBatchService.annotate
+    </h4>
+    <pre><code>list&lt;<code><a href="communication.html#Struct_Communication">communication.Communication</a></code>&gt;</code> annotate(<code>list&lt;<code><a href="communication.html#Struct_Communication">communication.Communication</a></code>&gt;</code> originals)
+    throws <code><a href="services.html#Struct_ServicesException">services.ServicesException</a></code>
+</pre>
+    <pre>Main annotation method. Takes a list of communications as input
+and returns a new list as output.  The returned list of
+Communications should correspond one-to-one to the original list.
+
+It is up to the implementing service to verify that
+the input communications are valid.
+
+Can throw a ServicesException upon error
+(invalid input, analytic exception, etc.).
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
+    <h4 id="Fn_AnnotateCommunicationBatchService_getMetadata">
+     Function: AnnotateCommunicationBatchService.getMetadata
+    </h4>
+    <pre><code><a href="metadata.html#Struct_AnnotationMetadata">metadata.AnnotationMetadata</a></code> getMetadata()
+</pre>
+    <pre>Return the tool's AnnotationMetadata.
 </pre>
     <br/>
    </div>

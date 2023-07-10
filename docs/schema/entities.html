@@ -312,6 +312,169 @@ thought of as a coreference set.
     <br/>
    </div>
    <div class="definition">
+    <h3 id="Struct_EntitySet">
+     Struct: EntitySet
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        uuid
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        Unique identifier for this set.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        metadata
+       </td>
+       <td>
+        <code>
+         <a href="metadata.html#Struct_AnnotationMetadata">
+          metadata.AnnotationMetadata
+         </a>
+        </code>
+       </td>
+       <td>
+        Information about where this set came from.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        3
+       </td>
+       <td>
+        entityList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="#Struct_Entity">
+           Entity
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        List of entities in this set.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        4
+       </td>
+       <td>
+        linkingList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="linking.html#Struct_Linking">
+           linking.Linking
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        Entity linking annotations associated with this EntitySet.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        5
+       </td>
+       <td>
+        mentionSetId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        An optional UUID pointer to an EntityMentionSet.
+
+If this field is present, consumers can assume that all
+Entity objects in this EntitySet have EntityMentions that are included
+in the named EntityMentionSet.
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A theory about the set of entities that are present in a
+message. See also: Entity.
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
     <h3 id="Struct_EntityMention">
      Struct: EntityMention
     </h3>
@@ -719,168 +882,6 @@ message. See also: EntityMention
 This type does not represent a coreference relationship, which is handled by Entity.
 This type is meant to represent the output of a entity-mention-identifier,
 which is often a part of an in-doc coreference system.
-</pre>
-    <br/>
-   </div>   <div class="definition">
-    <h3 id="Struct_EntitySet">
-     Struct: EntitySet
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        uuid
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        Unique identifier for this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        metadata
-       </td>
-       <td>
-        <code>
-         <a href="metadata.html#Struct_AnnotationMetadata">
-          metadata.AnnotationMetadata
-         </a>
-        </code>
-       </td>
-       <td>
-        Information about where this set came from.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        3
-       </td>
-       <td>
-        entityList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="#Struct_Entity">
-           Entity
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        List of entities in this set.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        4
-       </td>
-       <td>
-        linkingList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="linking.html#Struct_Linking">
-           linking.Linking
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        Entity linking annotations associated with this EntitySet.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        5
-       </td>
-       <td>
-        mentionSetId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        An optional UUID pointer to an EntityMentionSet.
-
-If this field is present, consumers can assume that all
-Entity objects in this EntitySet have EntityMentions that are included
-in the named EntityMentionSet.
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-    <pre>A theory about the set of entities that are present in a
-message. See also: Entity.
 </pre>
     <br/>
    </div>

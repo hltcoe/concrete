@@ -97,87 +97,6 @@
     Data structures
    </h2>
    <div class="definition">
-    <h3 id="Struct_Annotation">
-     Struct: Annotation
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        id
-       </td>
-       <td>
-        <code>
-         <a href="services.html#Struct_AnnotationUnitIdentifier">
-          services.AnnotationUnitIdentifier
-         </a>
-        </code>
-       </td>
-       <td>
-        Identifier of the part of the communication being annotated.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        communication
-       </td>
-       <td>
-        <code>
-         <a href="communication.html#Struct_Communication">
-          communication.Communication
-         </a>
-        </code>
-       </td>
-       <td>
-        Communication with the annotation stored in it.
-The location of the annotation depends on the annotation unit identifier
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-    <pre>Annotation on a communication.
-</pre>
-    <br/>
-   </div>   <div class="definition">
     <h3 id="Struct_AnnotationTask">
      Struct: AnnotationTask
     </h3>
@@ -303,6 +222,88 @@ The location of the annotation depends on the annotation unit identifier
     </table>
     <br/>
     <pre>Annotation task including information for pulling data.
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_Annotation">
+     Struct: Annotation
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        id
+       </td>
+       <td>
+        <code>
+         <a href="services.html#Struct_AnnotationUnitIdentifier">
+          services.AnnotationUnitIdentifier
+         </a>
+        </code>
+       </td>
+       <td>
+        Identifier of the part of the communication being annotated.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        communication
+       </td>
+       <td>
+        <code>
+         <a href="communication.html#Struct_Communication">
+          communication.Communication
+         </a>
+        </code>
+       </td>
+       <td>
+        Communication with the annotation stored in it.
+The location of the annotation depends on the annotation unit identifier
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>Annotation on a communication.
 </pre>
     <br/>
    </div>

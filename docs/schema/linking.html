@@ -69,91 +69,6 @@
     Data structures
    </h2>
    <div class="definition">
-    <h3 id="Struct_Link">
-     Struct: Link
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        sourceId
-       </td>
-       <td>
-        <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
-        </code>
-       </td>
-       <td>
-        The "root" of this Link; points to a EntityMention UUID, Entity UUID, etc.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        linkTargetList
-       </td>
-       <td>
-        <code>
-         list&lt;
-         <code>
-          <a href="#Struct_LinkTarget">
-           LinkTarget
-          </a>
-         </code>
-         &gt;
-        </code>
-       </td>
-       <td>
-        A list of LinkTarget objects that this Link contains.
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-    <pre>A structure that represents the origin of an entity linking annotation.
-</pre>
-    <br/>
-   </div>
-   <div class="definition">
     <h3 id="Struct_LinkTarget">
      Struct: LinkTarget
     </h3>
@@ -284,6 +199,91 @@ Should be populated alongside 'dbId'.
     </table>
     <br/>
     <pre>A structure that represents the target of an entity linking annotation.
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_Link">
+     Struct: Link
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        sourceId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        The "root" of this Link; points to a EntityMention UUID, Entity UUID, etc.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        linkTargetList
+       </td>
+       <td>
+        <code>
+         list&lt;
+         <code>
+          <a href="#Struct_LinkTarget">
+           LinkTarget
+          </a>
+         </code>
+         &gt;
+        </code>
+       </td>
+       <td>
+        A list of LinkTarget objects that this Link contains.
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>A structure that represents the origin of an entity linking annotation.
 </pre>
     <br/>
    </div>

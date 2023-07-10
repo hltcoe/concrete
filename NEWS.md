@@ -1,5 +1,8 @@
 # News
 
+### Concrete v4.18 - 2023-07-09
+* Added `AnnotateCommunicationBatchService`.
+
 ### Concrete v4.17 - 2023-02-03
 * Added optional parameter `canonicalName` to `Situation` structure.
 * Added propertyList to Situation(Mention) and Entity(Mention).

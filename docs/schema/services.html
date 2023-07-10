@@ -199,84 +199,6 @@
     Data structures
    </h2>
    <div class="definition">
-    <h3 id="Struct_NotImplementedException">
-     Exception: NotImplementedException
-    </h3>
-    <table class="table-bordered table-striped table-condensed">
-     <thead>
-      <tr>
-       <th>
-        Key
-       </th>
-       <th>
-        Field
-       </th>
-       <th>
-        Type
-       </th>
-       <th>
-        Description
-       </th>
-       <th>
-        Requiredness
-       </th>
-       <th>
-        Default value
-       </th>
-      </tr>
-     </thead>
-     <tbody>
-      <tr>
-       <td>
-        1
-       </td>
-       <td>
-        message
-       </td>
-       <td>
-        <code>
-         string
-        </code>
-       </td>
-       <td>
-        The explanation (why the exception occurred)
-       </td>
-       <td>
-        required
-       </td>
-       <td>
-       </td>
-      </tr>
-      <tr>
-       <td>
-        2
-       </td>
-       <td>
-        serEx
-       </td>
-       <td>
-        <code>
-         binary
-        </code>
-       </td>
-       <td>
-        The serialized exception
-       </td>
-       <td>
-        optional
-       </td>
-       <td>
-       </td>
-      </tr>
-     </tbody>
-    </table>
-    <br/>
-    <pre>An exception to be used when an invoked method has
-not been implemented by the service.
-</pre>
-    <br/>
-   </div>
-   <div class="definition">
     <h3 id="Struct_ServicesException">
      Exception: ServicesException
     </h3>
@@ -354,8 +276,8 @@ not been implemented by the service.
     <br/>
    </div>
    <div class="definition">
-    <h3 id="Struct_AnnotationUnitIdentifier">
-     Struct: AnnotationUnitIdentifier
+    <h3 id="Struct_NotImplementedException">
+     Exception: NotImplementedException
     </h3>
     <table class="table-bordered table-striped table-condensed">
      <thead>
@@ -386,7 +308,7 @@ not been implemented by the service.
         1
        </td>
        <td>
-        communicationId
+        message
        </td>
        <td>
         <code>
@@ -394,7 +316,7 @@ not been implemented by the service.
         </code>
        </td>
        <td>
-        Communication identifier for loading data
+        The explanation (why the exception occurred)
        </td>
        <td>
         required
@@ -407,17 +329,15 @@ not been implemented by the service.
         2
        </td>
        <td>
-        sentenceId
+        serEx
        </td>
        <td>
         <code>
-         <a href="uuid.html#Struct_UUID">
-          uuid.UUID
-         </a>
+         binary
         </code>
        </td>
        <td>
-        Sentence identifer if annotating sentences
+        The serialized exception
        </td>
        <td>
         optional
@@ -428,9 +348,8 @@ not been implemented by the service.
      </tbody>
     </table>
     <br/>
-    <pre>An annotation unit is the part of the communication to be annotated.
-It can be the entire communication or a particular sentence in the communication.
-If the sentenceID is null, the unit is the entire communication
+    <pre>An exception to be used when an invoked method has
+not been implemented by the service.
 </pre>
     <br/>
    </div>
@@ -512,6 +431,87 @@ We do this by having the client stand up a server to accept the results and
 passing that information to the original server.
 The server may want to create a new thrift client on every request or maintain
 a pool of clients for reuse.
+</pre>
+    <br/>
+   </div>
+   <div class="definition">
+    <h3 id="Struct_AnnotationUnitIdentifier">
+     Struct: AnnotationUnitIdentifier
+    </h3>
+    <table class="table-bordered table-striped table-condensed">
+     <thead>
+      <tr>
+       <th>
+        Key
+       </th>
+       <th>
+        Field
+       </th>
+       <th>
+        Type
+       </th>
+       <th>
+        Description
+       </th>
+       <th>
+        Requiredness
+       </th>
+       <th>
+        Default value
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        1
+       </td>
+       <td>
+        communicationId
+       </td>
+       <td>
+        <code>
+         string
+        </code>
+       </td>
+       <td>
+        Communication identifier for loading data
+       </td>
+       <td>
+        required
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        2
+       </td>
+       <td>
+        sentenceId
+       </td>
+       <td>
+        <code>
+         <a href="uuid.html#Struct_UUID">
+          uuid.UUID
+         </a>
+        </code>
+       </td>
+       <td>
+        Sentence identifer if annotating sentences
+       </td>
+       <td>
+        optional
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <br/>
+    <pre>An annotation unit is the part of the communication to be annotated.
+It can be the entire communication or a particular sentence in the communication.
+If the sentenceID is null, the unit is the entire communication
 </pre>
     <br/>
    </div>

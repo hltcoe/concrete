@@ -59,6 +59,33 @@ service AnnotateCommunicationService {
 }
 
 /**
+ * Batch annotator service methods. For concrete analytics that
+ * are to be stood up as independent services, accessible
+ * from any programming language.
+ * 
+ * Intended to supersede AnnotateCommunicationService.
+ */
+service AnnotateCommunicationBatchService extends services.Service {
+  /**
+   * Main annotation method. Takes a list of communications as input
+   * and returns a new list as output.  The returned list of
+   * Communications should correspond one-to-one to the original list.
+   *
+   * It is up to the implementing service to verify that
+   * the input communications are valid.
+   *
+   * Can throw a ServicesException upon error
+   * (invalid input, analytic exception, etc.).
+   */
+  list<communication.Communication> annotate(1: list<communication.Communication> originals) throws (1: services.ServicesException ex)
+
+  /**
+   * Return the tool's AnnotationMetadata.
+   */
+  metadata.AnnotationMetadata getMetadata()
+}
+
+/**
  * A service that provides an alternative to Annotate,
  * with the ability to pass along an additional Context
  * parameter that conveys additional information about the
